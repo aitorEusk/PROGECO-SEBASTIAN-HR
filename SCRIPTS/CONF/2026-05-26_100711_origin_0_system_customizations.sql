@@ -1,8 +1,12 @@
-﻿Update [AspNetUsers] set [Email]='aitor@euskodata.com' where [Id]=N'0'
+﻿Update [AspNetUsers] set [Email]='_aitor@euskodata.com' where [Id]=N'0'
 Update [AspNetUsers] set [Email]='aitor@euskodata.com' where [Id]=N'1'
+Update [AspNetUsers] set [NormalizedEmail]='AITOR@EUSKODATA.COM' where [Id]=N'1'
 Update [AspNetUsers] set [PasswordHash]='AEdQTjgpHt65HUjftBJiPaoLhwkKjH1YhrlMq1Mpy/x5vsfckbkHg9c8xlAr7itgIw==' where [Id]=N'1'
 Update [AspNetUsers] set [CultureId]='es-ES' where [Id]=N'1'
+Update [AspNetUsers] set [flxUpdatedDate]='2026-05-26T09:44:00' where [Id]=N'1'
 Update [Documents_Category] set [Category]='Genérico' where [CategoryId]=N'sysdoc-generic'
+Update [Jobs] set [Enabled]=1 where [JobName]=N'BuildMailsandnotifications'
+Update [Jobs] set [flxUpdatedDate]='2026-05-26T09:53:00' where [JobName]=N'BuildMailsandnotifications'
 Update [Objects_Search] set [SQLSentence]='( EXISTS (
  SELECT * FROM [dbo].[AspNetUsers] FlxTblFilter 
  LEFT JOIN (Select Id, Name from ASPNetRoles where Hidden=0 ) [FlxCmb1] ON [FlxCmb1].[Id]=[AspNetUsers].[RoleId] 
