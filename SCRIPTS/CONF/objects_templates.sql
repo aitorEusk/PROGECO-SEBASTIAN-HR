@@ -1,0 +1,464 @@
+﻿
+
+BEGIN TRY
+
+DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar(max),''),N'
+[{
+	"TemplateId":"Notificaciones_Likes",
+	"ObjectName":"PERS_Notificacion",
+	"TypeId":"list",
+	"Descrip":"Notificaciones_Likes",
+	"Body":"  <div class=\"emp-new-vote emp-flex-align\" id=\"emp-new-vote-total\">\r\n',
+N'    <i class=\"flx-icon icon-eye\"><\/i>\r\n',
+N'    <div class=\"text\">{{translate|Total Views}}<\/div>\r\n',
+N'    <div class=\"number\">{{TotalReads}}<\/div>\r\n',
+N'  <\/div>\r\n',
+N'\r\n',
+N'  <!-- <flx-navbutton type=\"execprocess\" processname=\"pEmp_likes_News_Article\" objectname=\"emp_News_Article\" objectwhere=\"NewsId={{NewsId}}\" targetid=\"popup\" excludehist=\"false\" showprogress=\"false\">\r\n',
+N'    <div class=\"emp-new-vote emp-flex-align\" id=\"emp-new-vote-like\">\r\n',
+N'      <i class=\"fa fa-thumbs-o-up\"><\/i>\r\n',
+N'      <div class=\"text\">{{translate|Likes}}<\/div>\r\n',
+N'      <div class=\"number\">{{TotalLikes}}<\/div>\r\n',
+N'      <i class=\"arrow fa fa-long-arrow-up\"><\/i>\r\n',
+N'    <\/div>\r\n',
+N'  <\/flx-navbutton>\r\n',
+N'\r\n',
+N'  <flx-navbutton type=\"execprocess\" processname=\"pEmp_noLikes_News_Article\" objectname=\"emp_News_Article\" objectwhere=\"NewsId={{NewsId}}\" targetid=\"popup\" excludehist=\"false\" showprogress=\"false\">\r\n',
+N'    <div class=\"emp-new-vote emp-flex-align\" id=\"emp-new-vote-dislike\">\r\n',
+N'      <i class=\"fa fa-thumbs-o-down\"><\/i>\r\n',
+N'      <div class=\"text\">{{translate|Dislikes}}<\/div>\r\n',
+N'      <div class=\"number\">{{TotalNoLikes}}<\/div>\r\n',
+N'      <i class=\"arrow fa fa-long-arrow-down\"><\/i>\r\n',
+N'    <\/div>      \r\n',
+N'  <\/flx-navbutton> -->\r\n',
+N'\r\n',
+N'",
+	"ViewName":"Notificaciones_Contador_Visitas",
+	"Header":"<div class=\"padding-l\">\r\n',
+N'  \t<div class=\"emp-flex-wrap-align\">",
+	"Footer":"\t<\/div>\r\n',
+N'<\/div>\r\n',
+N'",
+	"IsDefault":false,
+	"Offline":false,
+	"UserDefinedGroups":false,
+	"Active":true,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2025-03-05T08:49:00",
+	"flxUpdatedDate":"2025-03-05T08:50:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"TemplateId":"Notificaciones_Plantilla",
+	"ObjectName":"PERS_Notificacion",
+	"TypeId":"list",
+	"Descrip":"Notificaciones_Plantilla",
+	"Body":"<div class=\"col-12 col-l-12 col-m-12 col-s-12 nopadding mod-expand\">\r\n',
+N'    <div class=\"row row-line clickable\">\r\n',
+N'        <flx-navbutton type=\"openpage\" pagetypeid=\"view\" objectname=\"Pers_Notificacion\" objectwhere=\"(PERS_Notificaciones.IdNotificacion=''{{IdNotificacion}}'')\" defaults=\"\" targetid=\"current\" excludehist=\"false\">\r\n',
+N'            <div class=\"col-1 col-l-1 col-m-1 col-s-1 text-center\">\r\n',
+N'                <p>{{IdNotificacion}}<\/p>\r\n',
+N'            <\/div>\r\n',
+N'\r\n',
+N'            <div class=\"col-5 col-l-5 col-m-5 col-s-5 margin-top-s\">               \r\n',
+N'                <p>{{Titulo}}<\/p>\r\n',
+N'            <\/div>\r\n',
+N'            <div class=\"col-2 col-l-2 col-m-2 col-s-2 margin-top-s text-center\">                \r\n',
+N'                <p>{{Inserted}}<\/p>\r\n',
+N'            <\/div>\r\n',
+N'            <div class=\"col-2 col-l-2 col-m-2 col-s-2 margin-top-s text-center\">               \r\n',
+N'                <p>{{Inserted By}}<\/p>\r\n',
+N'            <\/div>\r\n',
+N'            <div class=\"col-2 col-l-2 col-m-2 col-s-2 margin-top-s text-center\">               \r\n',
+N'                <p>{{Empleado}}<\/p>\r\n',
+N'            <\/div>\r\n',
+N'        <\/flx-navbutton>\r\n',
+N'    <\/div>\r\n',
+N'<\/div>",
+	"ViewName":"PERS_NotificacionDefaultList",
+	"Header":"<div class=\"col-12 col-l-12 col-m-12 col-s-12 nopadding mod-expand\">  \r\n',
+N'  <div class=\"row nopadding\">\r\n',
+N'    <div class=\"col-1 col-l-1 col-m-1 col-s-1 nopadding text-center bg-notify opacity-70 \">Nº Notificación<br\/><\/div>  \r\n',
+N'    <div class=\"col-5 col-l-5 col-m-5 col-s-5 nopadding text-center bg-notify\">Titulo<br\/><\/div>  \r\n',
+N'    <div class=\"col-2 col-l-2 col-m-2 col-s-2 nopadding text-center bg-notify opacity-70\">Fecha<br\/><\/div>\r\n',
+N'    <div class=\"col-2 col-l-2 col-m-2 col-s-2 nopadding text-center bg-notify \">Creado por<br\/><\/div>  \r\n',
+N'    <div class=\"col-2 col-l-2 col-m-2 col-s-2 nopadding text-center bg-notify opacity-70\">Destinatario<br\/><\/div>\r\n',
+N'  <\/div>\r\n',
+N'<\/div>",
+	"IsDefault":true,
+	"Offline":false,
+	"UserDefinedGroups":false,
+	"Active":true,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2025-03-04T21:26:00",
+	"flxUpdatedDate":"2025-05-22T16:40:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"TemplateId":"Notificaciones_Tarjetas",
+	"ObjectName":"PERS_Notificacion",
+	"TypeId":"list",
+	"Descrip":"Notificaciones_Tarjetas",
+	"Body":"<div class=\"col-3 col-m-6 col-s-12 padding-m emp-flex-wrap \">\r\n',
+N'  <div class=\"col-12 hr-card padding-m\">\r\n',
+N'  \t<flx-navbutton class = \"clickable\" type=\"openpage\" pagetypeid=\"view\" objectname=\"PERS_Notificacion\" objectwhere=\"PERS_Notificaciones.IdNotificacion = {{IdNotificacion}}\" defaults=\"\"  excludehist=\"false\">          \r\n',
+N'    \t<div class=\"col-12\">\r\n',
+N'       \t\t<span class=\"col-8 col-m-12 padding-0 size-l emp-flex-justify-between\"><strong class=\"ellipsisNoWidth\">{{Titulo}}<\/strong><small class=\"txt-outstanding\"> <\/small><\/span>\r\n',
+N'          \t<!-- <span class=\"col-4 col-m-12 padding-0 size-s emp-flex-end bold {{StatusId|switch:[pending:txt-warning,accepted:txt-success,denied:txt-danger, else: txt-info]}}\">{{Status}}<\/span> -->\r\n',
+N'          \t<span class=\"col-8 col-m-12 padding-0 size-s\">{{Empleado}}<\/span>  \r\n',
+N'          \t<span class=\"col-4 col-m-12 padding-0 size-s emp-flex-end \">{{Inserted}}<\/span>\r\n',
+N'    \t<\/div>\r\n',
+N'        <div class=\"col-12 col-m-12 col-s-12 col-l-12 size-s margin-top-m emp-border-top \"><\/div>\r\n',
+N'      \t<div class=\"col-12 size-s margin-top-m \">{{texto|string:200}}<\/div>\r\n',
+N'\r\n',
+N'    <\/flx-navbutton>\r\n',
+N'  <\/div>\r\n',
+N'<\/div>\r\n',
+N'\r\n',
+N'\r\n',
+N'\r\n',
+N'",
+	"ViewName":"PERS_NotificacionDefaultList",
+	"Header":"<style>\r\n',
+N'    .hr-border,\r\n',
+N'    .hr-card {\r\n',
+N'        border: 1px solid #cfd7df;\r\n',
+N'        border-radius: 10px;\r\n',
+N'    }\r\n',
+N'\r\n',
+N'    .emp-border-top {\r\n',
+N'        border-top: 1px solid #dde4eb;\r\n',
+N'    }\r\n',
+N'<\/style>\r\n',
+N'\r\n',
+N'<div class=\"emp-flex-wrap padding-top-l txt-notify\">",
+	"Footer":"\r\n',
+N'  <\/div>\r\n',
+N'<\/div>",
+	"IsDefault":false,
+	"Offline":false,
+	"UserDefinedGroups":false,
+	"Active":true,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2025-03-05T13:34:00",
+	"flxUpdatedDate":"2025-03-05T14:48:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"TemplateId":"PERS_emp_EmployeeListTemplate",
+	"ObjectName":"emp_Employee",
+	"TypeId":"list",
+	"Descrip":"PERS_emp_EmployeeListTemplate",
+	"Body":"<div class=\"col-12 col-l-12 col-m-12 col-s-12 nopadding mod-expand\">  \r\n',
+N'  <div class=\"row row-line clickable\"> \r\n',
+N'    <flx-navbutton type=\"openpage\" pagetypeid=\"view\" objectname=\"emp_Employee\" objectwhere=\"(Employees.EmployeeId=''{{EmployeeId}}'')\" defaults=\"\" targetid=\"current\" excludehist=\"false\">   \r\n',
+N'    <div class=\"col-2 col-l-2 col-m-2 col-s-2 text-left\">\r\n',
+N'      <div class=\"col-8 margin-top-s\">{{EmployeeId}}<\/div>\r\n',
+N'    <\/div>\t   \r\n',
+N'      <div class=\"col-2 col-l-2 col-m-2 col-s-2 margin-top-s\">\r\n',
+N'        <div class=\"\">{{Name}}<\/strong><\/div>\r\n',
+N'      <\/div>\t      \r\n',
+N'      <div class=\"col-2 col-l-2 col-m-2 col-s-2 margin-top-s\">\r\n',
+N'        <i class=\"\"><\/i>{{Surname}}\r\n',
+N'      <\/div>\r\n',
+N'    <\/flx-navbutton>\t\r\n',
+N'\t<div class=\"col-2 col-l-2 col-m-2 col-s-2 margin-top-s\">\r\n',
+N'      <div class=\"ellipsis\" title=\"{{Mail|isnull:{{translate|no mail}}}}\"><i class=\"flx-icon icon-email icon-margin-right \"><\/i><a  href=\"mailto:{{Mail|isnull:#}}\">{{Mail|isnull:{{translate|no e-mail}}}}<\/a><\/div>\r\n',
+N'    <\/div>\r\n',
+N'\t<div class=\"col-2 col-l-2 col-m-2 col-s-2 margin-top-s\"  >\r\n',
+N'      <div class=\"ellipsis\" title=\"{{Phone|isnull:{{translate|no phone}}}}\"> <i class=\"flx-icon icon-phone icon-margin-right \" ><\/i><a  href=\"tel:{{Phone|isnull:#}}\">{{Phone|isnull:{{translate|no phone}}}}<\/a><\/div>\r\n',
+N'    <\/div>\r\n',
+N'     <div class=\"col-2 col-l-2 col-m-2 col-s-2 \" >\r\n',
+N'      <small class=\"text-center\">{{AreaDescrip}}<\/small>\r\n',
+N'    <\/div>\r\n',
+N'  <\/div>\r\n',
+N'<\/div>",
+	"ViewName":"PERS_emp_EmployeeExtendedInfo",
+	"Header":"<div class=\"col-12 col-l-12 col-m-12 col-s-12 nopadding mod-expand\">  \r\n',
+N'  <div class=\"row nopadding\">\r\n',
+N'    <div class=\"col-2 col-l-2 col-m-2 col-s-2 nopadding text-center bg-notify opacity-70 \">Código Empleado<br\/><\/div>  \r\n',
+N'    <div class=\"col-2 col-l-2 col-m-2 col-s-2 nopadding text-center bg-notify\">Nombre<br\/><\/div>  \r\n',
+N'    <div class=\"col-2 col-l-2 col-m-2 col-s-2 nopadding text-center bg-notify opacity-70\">Apellidos<br\/><\/div>\r\n',
+N'    <div class=\"col-2 col-l-3 col-m-2 col-s-2 nopadding text-center bg-notify\">Correo Electrónico<br\/><\/div>\r\n',
+N'    <div class=\"col-2 col-l-3 col-m-3 col-s-3 nopadding text-center bg-notify opacity-70\">Teléfono<br\/><\/div>\r\n',
+N'    <div class=\"col-2 col-l-2 col-m-2 col-s-2 hidden-m hidden-s nopadding text-center bg-notify\">Área<br><\/div>\r\n',
+N'  <\/div>\r\n',
+N'<\/div>",
+	"Footer":"<\/div>\r\n',
+N'<\/div>",
+	"IsDefault":true,
+	"Offline":false,
+	"UserDefinedGroups":false,
+	"Active":true,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2025-02-13T17:04:00",
+	"flxUpdatedDate":"2025-04-07T16:10:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"TemplateId":"PERS_Marcaje_Plantilla",
+	"ObjectName":"Pers_Marcaje",
+	"TypeId":"generic",
+	"Descrip":"PERS_Marcaje_Plantilla",
+	"Body":"<div class=\"col-12 col-l-12 col-m-12 col-s-12 nopadding mod-expand\">  \n',
+N'  <div class=\"row row-line\">\n',
+N' \n',
+N'    <div class=\"col-6 col-l-6 col-m-6 col-s-6 nopadding text-center txt-primary\">\n',
+N'          {{DateTime|date:L}}  -  {{DateTime|date:LTS}}\n',
+N'    <\/div>\n',
+N'\t    <div class=\"col-6 col-l-6 col-m-6 col-s-6 nopadding text-center txt-primary\">\n',
+N'          {{TimeTypeDescr}}\n',
+N'    <\/div>\n',
+N'  <\/div>\n',
+N'<\/div>",
+	"ViewName":"PERS_Marcaje_Empleado",
+	"Header":"<div class=\"col-12 col-l-12 col-m-12 nopadding mod-expand\">  \n',
+N'<div class=\"row\">\n',
+N'  \n',
+N'  <div class=\"col-6 col-l-6 col-m-6 col-s-6 nopadding text-center bg-info\">Fecha<br\/><\/div>\n',
+N'  <div class=\"col-6 col-l-6 col-m-6 col-s-6 nopadding text-center bg-info\">Tipo<br\/><\/div>\n',
+N'\n',
+N'<\/div>\n',
+N'  <\/div>\n',
+N'",
+	"IsDefault":false,
+	"Offline":false,
+	"UserDefinedGroups":false,
+	"Active":true,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2025-02-13T17:04:00",
+	"flxUpdatedDate":"2025-02-13T17:04:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"TemplateId":"PERS_News_Category",
+	"ObjectName":"emp_News_Category",
+	"TypeId":"list",
+	"Descrip":"PERS_News_Category",
+	"Body":"    <flx-navbutton  type=\"openpage\" pagetypeid=\"{{Article|isnull:edit,view}}\" objectname=\"emp_News_Article\" objectwhere=\"{{Article|isnull:,News_Articles.NewsId={{NewsId}}}}\" defaults=\"{''CategoryId'':''{{CategoryId}}''}\" targetid=\"current\" excludehist=\"false\" showprogress=\"false\">\r\n',
+N'      <li class=\"padding-s margin-bottom-l clearfix {{Article|isnull:,{{IsRead|switch:[1:emp-read,else:emp-unread]}}}}\">\r\n',
+N'        <span title=\"{{translate|Click to create new article}}\" class=\"clickable padding-left-l {{Article|isnull:,hidden}}\">{{translate|No articles were found}}<\/span>\r\n',
+N'\r\n',
+N'        <div class=\"{{Article|isnull:hidden,{{IsRead|switch:[0:txt-info,else:]}}}}\">\r\n',
+N'          <div class=\"col-1\">\r\n',
+N'            <i class=\"flx-icon icon-double-check emp-card-badge text-center {{IsRead|switch:[1:,else:hidden]}} {{Article|isnull:hidden,}}\"><\/i>\r\n',
+N'            <i class=\"flx-icon icon-pin emp-card-badge text-center {{OnTop|bool:,hidden}} {{Article|isnull:hidden,}}\"><\/i>\r\n',
+N'          <\/div>\r\n',
+N'          <div class=\"col-8 {{IsRead|switch:[1:emp-text-black,else:txt-info]}}\">\r\n',
+N'            <h6 class=\"emp-textoverflow\">\r\n',
+N'              <span class=\"title\">{{Article}}<\/span>\r\n',
+N'              <span style=\"font-weight: normal;\"> - {{PubDate}}<\/span> \r\n',
+N'            <\/h6>\r\n',
+N'          <\/div>\r\n',
+N'          <div class=\"col-3 padding-0 text-center\">\r\n',
+N'            <span class=\"size-s {{Writer|switch:[{{currentReference}}:{{State|switch:[Draft:emp-badge-yellow,else:hidden]}},else:hidden]}} {{Article|isnull:hidden,}}\">{{translate|Draft}}<\/span>\r\n',
+N'          <\/div>\r\n',
+N'        <\/div>\r\n',
+N'      <\/li>\r\n',
+N'    <\/flx-navbutton>\t",
+	"ViewName":"emp_News_Categories_View_2",
+	"Header":"<div class=\"padding-l padding-top-0\">\r\n',
+N' \t<h1 class=\"txt-notify margin-left-xl emp-big-title\"><i class=\"flx-icon icon-news1 icon-margin-right\"><\/i>{{translate|News}}<\/h1>\r\n',
+N'  \t<div class=\"row emp-flex-wrap\">",
+	"Footer":"  <\/div>\r\n',
+N'<\/div>",
+	"Empty":"<div class=\"padding-l\">\r\n',
+N'\t<h1 class=\"txt-notify margin-left-xl emp-big-title\"><i class=\"flx-icon icon-news1\"><\/i>{{translate|News}}<\/h1>\t<hr>  \r\n',
+N'\t<div class=\"padding-l\">\r\n',
+N'        <flx-navbutton  type=\"openpage\" pagetypeid=\"edit\" objectname=\"emp_News_Category\" objectwhere=\"\" defaults=\"\" targetid=\"popup800x600\" excludehist=\"false\">\r\n',
+N'          \t<span title=\"{{translate|Click to create new category}}\" class=\"clickable\">{{translate|No categories were found}}...<\/span>\r\n',
+N'        <\/flx-navbutton>  \t\t\r\n',
+N'  \t<\/div>\r\n',
+N'<\/div>",
+	"IsDefault":false,
+	"Offline":false,
+	"UserDefinedGroups":false,
+	"Active":true,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2025-03-05T15:38:00",
+	"flxUpdatedDate":"2025-03-05T15:51:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"TemplateId":"PERS_Notificacion_Template_View",
+	"ObjectName":"PERS_Notificacion",
+	"TypeId":"view",
+	"Descrip":"PERS_Notificacion_Template_View",
+	"Body":"\r\n',
+N'  <div class=\"padding-left-m\">\r\n',
+N'    <div class=\"padding-left-l\">\r\n',
+N'      <h3 class=\"padding-m txt-info\"><b>{{Titulo}}<\/b><\/h3>\r\n',
+N'      <h5 class=\"padding-m\">{{Texto}}<\/h5>\r\n',
+N'    <\/div>\r\n',
+N'    <hr>\r\n',
+N'    <small>{{translate|Inserted by}} : {{Inserted By}}<\/small>\r\n',
+N'    <br>\r\n',
+N'    <small>{{translate|Creation date}} : {{Inserted}}<\/small>\r\n',
+N'    <br>\r\n',
+N'    <small>{{translate|Last update}} : {{Last Update}}<\/small>\r\n',
+N'  <\/div>",
+	"ViewName":"PERS_NotificacionDefaultList",
+	"Header":"<!-- <div class=\"padding-l\">\r\n',
+N'  {{Image|isnull:,\r\n',
+N'  \t<div class=\"text-center padding-bottom-l\">\r\n',
+N'    \t<img src=\"{{Image|url}}\" width=\"300\"\/>\r\n',
+N'  \t\t<br>\r\n',
+N'    \t<br>\r\n',
+N'  \t<\/div>\r\n',
+N'  }}\r\n',
+N'   -->",
+	"Footer":"<\/div>",
+	"IsDefault":true,
+	"Offline":false,
+	"UserDefinedGroups":false,
+	"Active":true,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2025-03-05T09:08:00",
+	"flxUpdatedDate":"2025-03-05T10:29:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"TemplateId":"PERS_Notificaciones_Reads_Template",
+	"ObjectName":"PERS_Notificacion",
+	"TypeId":"list",
+	"Descrip":"PERS_Notificaciones_Reads_Template",
+	"Body":"<div class=\"margin-top-m padding-top-m padding-bottom-m clearfix emp-news-reads emp-borderbottom-hover emp-color-hover emp-flex-align\">\r\n',
+N'  <div class=\"col-2\">\r\n',
+N'    <img src=\"{{Photo|isnull:.\/img\/Avatars\/avatar_blank.png,{{Photo|url}}}}\" class=\"img-responsive img-circle\" \/>\r\n',
+N'  <\/div>\r\n',
+N'  <div class=\"col-6 name\">\r\n',
+N'    <h6 class=\"margin-bottom-s\">{{Name}} {{Surname}}<\/h6>\r\n',
+N'    <i class=\"flx-icon {{AreaId|switch:[1:icon-business,2:icon-combine-chart,3:icon-currencies,4:icon-group-3,5:icon-presentation,6:icon-laptop,7:icon-factory-2,8:icon-phone-3,else:icon-client]}} icon-margin-right txt-notify\"><\/i>\r\n',
+N'    <small class=\"emp-textoverflow\">{{Area}}<\/small>\r\n',
+N'  <\/div>\r\n',
+N'  <div class=\"col-2 size-s date\">{{LastReadDate|date:L}}<\/div>\r\n  <div class=\"col-2 size-s times text-center\">\r\n')+
+concat(convert(nvarchar(max),''),N'    <h6 class=\"margin-bottom-s\"><i class=\"fa fa-eye\"><\/i><\/h6>\r\n',
+N'    {{ReadTimes}} {{translate|times}}\r\n',
+N'  <\/div>\r\n',
+N'  <br>\r\n',
+N'<\/div>\r\n',
+N'",
+	"ViewName":"PERS_Notificaciones_Reads",
+	"Header":"<div class=\"padding-l padding-bottom-0\">\r\n',
+N'  <h3 class=\"padding-left-l txt-info emp-bold\"><i class=\"fa fa-eye icon-margin-right\"><\/i>{{translate|Read by}}<\/h3>\r\n',
+N'  ",
+	"Footer":"\r\n',
+N'<\/div>",
+	"Empty":"<div class=\"padding-l\">\r\n',
+N'  <h3 class=\"padding-left-l\"><i class=\"fa fa-eye icon-margin-right icon-bg-circle\"><\/i>{{translate|Read by}}<\/h3>\r\n',
+N'  <div class=\"padding-l\">\r\n',
+N'    <ul>\r\n',
+N'      <li>\r\n',
+N'       {{translate|Read}} 1 {{translate|time}}\r\n',
+N'      <\/li>\r\n',
+N'    <\/ul>\r\n',
+N'  <\/div>\r\n',
+N'<\/div>\r\n',
+N'\r\n',
+N'    ",
+	"IsDefault":false,
+	"Offline":false,
+	"UserDefinedGroups":false,
+	"Active":true,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2025-03-05T08:53:00",
+	"flxUpdatedDate":"2025-03-05T08:53:00",
+	"OriginAddonId":"Main",
+	"OriginId":2}]')
+
+
+MERGE INTO [Objects_Templates] AS Target
+USING ( 
+SELECT * from OPENJSON(@DATA) WITH (
+[TemplateId] nvarchar(50) '$.TemplateId'
+,[ObjectName] nvarchar(50) '$.ObjectName'
+,[TypeId] nvarchar(50) '$.TypeId'
+,[Descrip] nvarchar(500) '$.Descrip'
+,[Body] nvarchar(max) '$.Body'
+,[ViewName] nvarchar(255) '$.ViewName'
+,[WhereSentence] nvarchar(1000) '$.WhereSentence'
+,[Header] nvarchar(max) '$.Header'
+,[Footer] nvarchar(max) '$.Footer'
+,[Empty] nvarchar(max) '$.Empty'
+,[ModuleClass] nvarchar(100) '$.ModuleClass'
+,[IsDefault] bit '$.IsDefault'
+,[Offline] bit '$.Offline'
+,[UserDefinedGroups] bit '$.UserDefinedGroups'
+,[Active] bit '$.Active'
+,[flxInsertedBy] nvarchar(256) '$.flxInsertedBy'
+,[flxUpdatedBy] nvarchar(256) '$.flxUpdatedBy'
+,[flxInsertedDate] smalldatetime '$.flxInsertedDate'
+,[flxUpdatedDate] smalldatetime '$.flxUpdatedDate'
+,[OriginAddonId] nvarchar(256) '$.OriginAddonId'
+,[OriginId] int '$.OriginId'
+) 
+) AS Source ([TemplateId],[ObjectName],[TypeId],[Descrip],[Body],[ViewName],[WhereSentence],[Header],[Footer],[Empty],[ModuleClass],[IsDefault],[Offline],[UserDefinedGroups],[Active],[flxInsertedBy],[flxUpdatedBy],[flxInsertedDate],[flxUpdatedDate],[OriginAddonId],[OriginId])
+ON (Target.[TemplateId] = Source.[TemplateId])
+WHEN MATCHED AND (
+	NULLIF(Source.[ObjectName], Target.[ObjectName]) IS NOT NULL OR NULLIF(Target.[ObjectName], Source.[ObjectName]) IS NOT NULL OR 
+	NULLIF(Source.[TypeId], Target.[TypeId]) IS NOT NULL OR NULLIF(Target.[TypeId], Source.[TypeId]) IS NOT NULL OR 
+	NULLIF(Source.[Descrip], Target.[Descrip]) IS NOT NULL OR NULLIF(Target.[Descrip], Source.[Descrip]) IS NOT NULL OR 
+	NULLIF(Source.[Body], Target.[Body]) IS NOT NULL OR NULLIF(Target.[Body], Source.[Body]) IS NOT NULL OR 
+	NULLIF(Source.[ViewName], Target.[ViewName]) IS NOT NULL OR NULLIF(Target.[ViewName], Source.[ViewName]) IS NOT NULL OR 
+	NULLIF(Source.[WhereSentence], Target.[WhereSentence]) IS NOT NULL OR NULLIF(Target.[WhereSentence], Source.[WhereSentence]) IS NOT NULL OR 
+	NULLIF(Source.[Header], Target.[Header]) IS NOT NULL OR NULLIF(Target.[Header], Source.[Header]) IS NOT NULL OR 
+	NULLIF(Source.[Footer], Target.[Footer]) IS NOT NULL OR NULLIF(Target.[Footer], Source.[Footer]) IS NOT NULL OR 
+	NULLIF(Source.[Empty], Target.[Empty]) IS NOT NULL OR NULLIF(Target.[Empty], Source.[Empty]) IS NOT NULL OR 
+	NULLIF(Source.[ModuleClass], Target.[ModuleClass]) IS NOT NULL OR NULLIF(Target.[ModuleClass], Source.[ModuleClass]) IS NOT NULL OR 
+	NULLIF(Source.[IsDefault], Target.[IsDefault]) IS NOT NULL OR NULLIF(Target.[IsDefault], Source.[IsDefault]) IS NOT NULL OR 
+	NULLIF(Source.[Offline], Target.[Offline]) IS NOT NULL OR NULLIF(Target.[Offline], Source.[Offline]) IS NOT NULL OR 
+	NULLIF(Source.[UserDefinedGroups], Target.[UserDefinedGroups]) IS NOT NULL OR NULLIF(Target.[UserDefinedGroups], Source.[UserDefinedGroups]) IS NOT NULL OR 
+	NULLIF(Source.[Active], Target.[Active]) IS NOT NULL OR NULLIF(Target.[Active], Source.[Active]) IS NOT NULL OR 
+	NULLIF(Source.[flxInsertedBy], Target.[flxInsertedBy]) IS NOT NULL OR NULLIF(Target.[flxInsertedBy], Source.[flxInsertedBy]) IS NOT NULL OR 
+	NULLIF(Source.[flxUpdatedBy], Target.[flxUpdatedBy]) IS NOT NULL OR NULLIF(Target.[flxUpdatedBy], Source.[flxUpdatedBy]) IS NOT NULL OR 
+	NULLIF(Source.[flxInsertedDate], Target.[flxInsertedDate]) IS NOT NULL OR NULLIF(Target.[flxInsertedDate], Source.[flxInsertedDate]) IS NOT NULL OR 
+	NULLIF(Source.[flxUpdatedDate], Target.[flxUpdatedDate]) IS NOT NULL OR NULLIF(Target.[flxUpdatedDate], Source.[flxUpdatedDate]) IS NOT NULL OR 
+	NULLIF(Source.[OriginAddonId], Target.[OriginAddonId]) IS NOT NULL OR NULLIF(Target.[OriginAddonId], Source.[OriginAddonId]) IS NOT NULL OR 
+	NULLIF(Source.[OriginId], Target.[OriginId]) IS NOT NULL OR NULLIF(Target.[OriginId], Source.[OriginId]) IS NOT NULL) THEN
+ UPDATE SET
+  [ObjectName] = Source.[ObjectName], 
+  [TypeId] = Source.[TypeId], 
+  [Descrip] = Source.[Descrip], 
+  [Body] = Source.[Body], 
+  [ViewName] = Source.[ViewName], 
+  [WhereSentence] = Source.[WhereSentence], 
+  [Header] = Source.[Header], 
+  [Footer] = Source.[Footer], 
+  [Empty] = Source.[Empty], 
+  [ModuleClass] = Source.[ModuleClass], 
+  [IsDefault] = Source.[IsDefault], 
+  [Offline] = Source.[Offline], 
+  [UserDefinedGroups] = Source.[UserDefinedGroups], 
+  [Active] = Source.[Active], 
+  [flxInsertedBy] = Source.[flxInsertedBy], 
+  [flxUpdatedBy] = Source.[flxUpdatedBy], 
+  [flxInsertedDate] = Source.[flxInsertedDate], 
+  [flxUpdatedDate] = Source.[flxUpdatedDate], 
+  [OriginAddonId] = Source.[OriginAddonId], 
+  [OriginId] = Source.[OriginId]
+WHEN NOT MATCHED BY TARGET THEN
+ INSERT([TemplateId],[ObjectName],[TypeId],[Descrip],[Body],[ViewName],[WhereSentence],[Header],[Footer],[Empty],[ModuleClass],[IsDefault],[Offline],[UserDefinedGroups],[Active],[flxInsertedBy],[flxUpdatedBy],[flxInsertedDate],[flxUpdatedDate],[OriginAddonId],[OriginId])
+ VALUES(Source.[TemplateId],Source.[ObjectName],Source.[TypeId],Source.[Descrip],Source.[Body],Source.[ViewName],Source.[WhereSentence],Source.[Header],Source.[Footer],Source.[Empty],Source.[ModuleClass],Source.[IsDefault],Source.[Offline],Source.[UserDefinedGroups],Source.[Active],Source.[flxInsertedBy],Source.[flxUpdatedBy],Source.[flxInsertedDate],Source.[flxUpdatedDate],Source.[OriginAddonId],Source.[OriginId])
+WHEN NOT MATCHED BY SOURCE AND TARGET.OriginId = 2 THEN 
+ DELETE
+;
+END TRY
+BEGIN CATCH
+    DECLARE @ERRORNUMBER	INT,@ERRORMSG		VARCHAR(MAX),@ERRORSTATE		INT
+    SELECT @ERRORNUMBER = 50000 + ERROR_NUMBER(),@ERRORMSG = ERROR_MESSAGE(), @ERRORSTATE = ERROR_STATE();
+    THROW @ERRORNUMBER, @ERRORMSG, @ERRORSTATE
+END CATCH
+GO
+
+
+
+
+

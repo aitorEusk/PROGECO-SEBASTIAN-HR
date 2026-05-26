@@ -4,33 +4,33 @@ BEGIN TRY
 
 DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar(max),''),N'
 [{
-	"TabModuleName":"emp_HolidaysAndAbsencesEmployeeTab",
-	"ModuleName":"emp_MyAbsenceList",
-	"Order":1,
-	"flxInsertedBy":"admin",
-	"flxUpdatedBy":"admin",
-	"flxInsertedDate":"2026-05-26T09:07:00",
-	"flxUpdatedDate":"2026-05-26T09:07:00",
-	"OriginAddonId":"Main",
-	"OriginId":2
-},{
-	"TabModuleName":"emp_HolidaysAndAbsencesEmployeeTab",
-	"ModuleName":"emp_myHolidays",
+	"SearchId":"19EFADCE-C9B4-4A0D-AF50-AF6869A3E161",
+	"ObjectName":"Pers_Marcaje",
+	"PropertyName":"DateTime",
+	"ObjectPath":"Pers_Marcaje",
+	"Size":2,
 	"Order":0,
+	"Label":"Fecha",
+	"PropertySearchType":"date-range",
 	"flxInsertedBy":"admin",
 	"flxUpdatedBy":"admin",
-	"flxInsertedDate":"2026-05-26T09:07:00",
-	"flxUpdatedDate":"2026-05-26T09:07:00",
+	"flxInsertedDate":"2026-05-26T08:53:00",
+	"flxUpdatedDate":"2026-05-26T08:53:00",
 	"OriginAddonId":"Main",
 	"OriginId":2}]')
 
 
-MERGE INTO [Pages_Modules_Tabs] AS Target
+MERGE INTO [Objects_Search_Properties] AS Target
 USING ( 
 SELECT * from OPENJSON(@DATA) WITH (
-[TabModuleName] nvarchar(100) '$.TabModuleName'
-,[ModuleName] nvarchar(100) '$.ModuleName'
+[SearchId] uniqueidentifier '$.SearchId'
+,[ObjectName] nvarchar(50) '$.ObjectName'
+,[PropertyName] nvarchar(50) '$.PropertyName'
+,[ObjectPath] nvarchar(500) '$.ObjectPath'
+,[Size] int '$.Size'
 ,[Order] int '$.Order'
+,[Label] nvarchar(250) '$.Label'
+,[PropertySearchType] nvarchar(20) '$.PropertySearchType'
 ,[flxInsertedBy] nvarchar(256) '$.flxInsertedBy'
 ,[flxUpdatedBy] nvarchar(256) '$.flxUpdatedBy'
 ,[flxInsertedDate] smalldatetime '$.flxInsertedDate'
@@ -38,10 +38,14 @@ SELECT * from OPENJSON(@DATA) WITH (
 ,[OriginAddonId] nvarchar(256) '$.OriginAddonId'
 ,[OriginId] int '$.OriginId'
 ) 
-) AS Source ([TabModuleName],[ModuleName],[Order],[flxInsertedBy],[flxUpdatedBy],[flxInsertedDate],[flxUpdatedDate],[OriginAddonId],[OriginId])
-ON (Target.[TabModuleName] = Source.[TabModuleName] AND Target.[ModuleName] = Source.[ModuleName])
+) AS Source ([SearchId],[ObjectName],[PropertyName],[ObjectPath],[Size],[Order],[Label],[PropertySearchType],[flxInsertedBy],[flxUpdatedBy],[flxInsertedDate],[flxUpdatedDate],[OriginAddonId],[OriginId])
+ON (Target.[SearchId] = Source.[SearchId] AND Target.[ObjectName] = Source.[ObjectName] AND Target.[PropertyName] = Source.[PropertyName])
 WHEN MATCHED AND (
+	NULLIF(Source.[ObjectPath], Target.[ObjectPath]) IS NOT NULL OR NULLIF(Target.[ObjectPath], Source.[ObjectPath]) IS NOT NULL OR 
+	NULLIF(Source.[Size], Target.[Size]) IS NOT NULL OR NULLIF(Target.[Size], Source.[Size]) IS NOT NULL OR 
 	NULLIF(Source.[Order], Target.[Order]) IS NOT NULL OR NULLIF(Target.[Order], Source.[Order]) IS NOT NULL OR 
+	NULLIF(Source.[Label], Target.[Label]) IS NOT NULL OR NULLIF(Target.[Label], Source.[Label]) IS NOT NULL OR 
+	NULLIF(Source.[PropertySearchType], Target.[PropertySearchType]) IS NOT NULL OR NULLIF(Target.[PropertySearchType], Source.[PropertySearchType]) IS NOT NULL OR 
 	NULLIF(Source.[flxInsertedBy], Target.[flxInsertedBy]) IS NOT NULL OR NULLIF(Target.[flxInsertedBy], Source.[flxInsertedBy]) IS NOT NULL OR 
 	NULLIF(Source.[flxUpdatedBy], Target.[flxUpdatedBy]) IS NOT NULL OR NULLIF(Target.[flxUpdatedBy], Source.[flxUpdatedBy]) IS NOT NULL OR 
 	NULLIF(Source.[flxInsertedDate], Target.[flxInsertedDate]) IS NOT NULL OR NULLIF(Target.[flxInsertedDate], Source.[flxInsertedDate]) IS NOT NULL OR 
@@ -49,7 +53,11 @@ WHEN MATCHED AND (
 	NULLIF(Source.[OriginAddonId], Target.[OriginAddonId]) IS NOT NULL OR NULLIF(Target.[OriginAddonId], Source.[OriginAddonId]) IS NOT NULL OR 
 	NULLIF(Source.[OriginId], Target.[OriginId]) IS NOT NULL OR NULLIF(Target.[OriginId], Source.[OriginId]) IS NOT NULL) THEN
  UPDATE SET
+  [ObjectPath] = Source.[ObjectPath], 
+  [Size] = Source.[Size], 
   [Order] = Source.[Order], 
+  [Label] = Source.[Label], 
+  [PropertySearchType] = Source.[PropertySearchType], 
   [flxInsertedBy] = Source.[flxInsertedBy], 
   [flxUpdatedBy] = Source.[flxUpdatedBy], 
   [flxInsertedDate] = Source.[flxInsertedDate], 
@@ -57,8 +65,8 @@ WHEN MATCHED AND (
   [OriginAddonId] = Source.[OriginAddonId], 
   [OriginId] = Source.[OriginId]
 WHEN NOT MATCHED BY TARGET THEN
- INSERT([TabModuleName],[ModuleName],[Order],[flxInsertedBy],[flxUpdatedBy],[flxInsertedDate],[flxUpdatedDate],[OriginAddonId],[OriginId])
- VALUES(Source.[TabModuleName],Source.[ModuleName],Source.[Order],Source.[flxInsertedBy],Source.[flxUpdatedBy],Source.[flxInsertedDate],Source.[flxUpdatedDate],Source.[OriginAddonId],Source.[OriginId])
+ INSERT([SearchId],[ObjectName],[PropertyName],[ObjectPath],[Size],[Order],[Label],[PropertySearchType],[flxInsertedBy],[flxUpdatedBy],[flxInsertedDate],[flxUpdatedDate],[OriginAddonId],[OriginId])
+ VALUES(Source.[SearchId],Source.[ObjectName],Source.[PropertyName],Source.[ObjectPath],Source.[Size],Source.[Order],Source.[Label],Source.[PropertySearchType],Source.[flxInsertedBy],Source.[flxUpdatedBy],Source.[flxInsertedDate],Source.[flxUpdatedDate],Source.[OriginAddonId],Source.[OriginId])
 WHEN NOT MATCHED BY SOURCE AND TARGET.OriginId = 2 THEN 
  DELETE
 ;

@@ -13,6 +13,61 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"flxInsertedDate":"2026-05-25T15:51:00",
 	"flxUpdatedDate":"2026-05-25T15:51:00",
 	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"PageName":"emp_MyCV",
+	"ModuleName":"PERS_Empleados_Marcajes",
+	"LayoutPositionId":"CenterPosition",
+	"Order":3,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-05-26T08:57:00",
+	"flxUpdatedDate":"2026-05-26T08:57:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"PageName":"Notificacion_View",
+	"ModuleName":"Pers_Notificacion_View_Module",
+	"LayoutPositionId":"TopPosition",
+	"Order":0,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2025-03-04T21:42:00",
+	"flxUpdatedDate":"2025-03-04T21:42:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"PageName":"Notificacion_View",
+	"ModuleName":"PERS_Notificaciones_Reads_Module",
+	"LayoutPositionId":"RightPosition",
+	"Order":1,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2025-03-05T08:52:00",
+	"flxUpdatedDate":"2025-03-05T08:52:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"PageName":"Notificacion_View",
+	"ModuleName":"PERS_Notiificaciones_Likeas_Module",
+	"LayoutPositionId":"RightPosition",
+	"Order":0,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2025-03-05T08:46:00",
+	"flxUpdatedDate":"2025-03-05T08:46:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"PageName":"PERS_News",
+	"ModuleName":"PERS_News_Categories_List_Module",
+	"LayoutPositionId":"TopPosition",
+	"Order":0,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2025-03-05T15:31:00",
+	"flxUpdatedDate":"2025-03-05T15:31:00",
+	"OriginAddonId":"Main",
 	"OriginId":2}]')
 
 
