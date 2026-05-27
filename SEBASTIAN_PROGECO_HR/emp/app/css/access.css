@@ -1,0 +1,161 @@
+:root {
+    --background: transparent;
+    --ion-background-color: transparent;
+    --ion-color-primary: #06456b;
+    --ion-color-primary-shade: #06456b;
+    --ion-color-primary-tint: #06456b;
+}
+
+body {
+--background: transparent;
+  background: transparent;
+}
+
+.home h3 {
+    font-size: 20px;
+    color: #06456b;
+    margin-left: 16px;
+}
+
+.ionicon {
+  color: white;
+}
+
+.novedades{
+  width: 90%;
+  height: 140px;
+  background-image: url('../img/image-background-login-sebastian-blue.png');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center center; 
+  opacity: 75%;
+  padding-right: 5%;
+}
+
+.chip-location{
+  text-align: center;
+}
+
+.ion-color-header {
+      	--ion-color-base: #06456b !important;
+}
+:root {
+    --ion-color-outstanding: #fff;
+}
+
+.news-title {
+    font-size: larger !important;
+    font-weight: bold !important;
+    text-transform: capitalize !important;
+    color: #04314c;
+}
+
+.news-article {
+  color: #04314c !important;
+ /* .news-header {
+    text-align: -webkit-right;
+    margin-top: -15px;
+  }*/
+}
+
+.home-content {
+    background: #f8f8ff !important;
+}
+   
+.home-button {
+      margin: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #06456b;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    width: 89%;
+    height: 30%;
+    border: 2px solid;
+}
+         
+.button-solid {
+  --box-shadow: 0;
+  --background: none;
+}
+.header-map {
+  background-color: rgb(50 93 123 / 1%);
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 0 15px rgb(6 69 107 / 41%);
+    margin: 6%;
+    color: #06456b;
+    margin-top: 20px;
+    width: 90%;
+}
+
+.header-home {
+    background-color: rgb(50 93 123 / 1%);
+    padding: 10px;
+    margin: 3%;
+    color: #06456b;
+    margin-top: 20px;
+}
+
+.date {
+    width: 95%;
+    font-size: 1.2em;
+    color: #04314c;
+    padding: 10px;
+    border-radius: 8px;
+    border-color: #04314c2b;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.footer-md::before {
+  height:0px;
+}
+
+.footer-md {
+    padding-bottom: 15px;
+}
+
+flx-usermenu .option {
+    background: #06456b;
+}
+
+flx-usermenu .complete-name {
+    color: #04314c;
+}
+
+.square .content {
+    background: #06456b3d;
+    color: #06456b;
+}
+
+.home-img {
+    float: right;
+    margin: 16px 16px 0px;
+}
+
+
+.item.sc-ion-label-md-h, .item .sc-ion-label-md-h {
+    color: #03314d;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.item-label {
+    background: white;
+    margin: 5px 20px 5px 20px;
+    border-radius: 14px;
+}
+
+.alert-wrapper.sc-ion-alert-md {
+    background: white;
+}
+
+body > app-root > ion-app > ion-menu > ion-content {
+    background: rgba( 255, 255, 255, 0.5 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}

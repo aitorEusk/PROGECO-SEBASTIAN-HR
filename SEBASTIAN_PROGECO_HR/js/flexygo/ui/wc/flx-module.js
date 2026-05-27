@@ -1,0 +1,1589 @@
+/**
+ * @namespace flexygo.ui.wc
+ */
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var flexygo;
+(function (flexygo) {
+    var ui;
+    (function (ui) {
+        var wc;
+        (function (wc_1) {
+            /**
+           * Library for the FlxModuleElement web component.
+           *
+           * @class FlxModuleElement
+           * @constructor
+           * @return {FlxModuleElement}
+           */
+            class FlxModuleElement extends HTMLElement {
+                constructor() {
+                    super();
+                    this.uuid = null;
+                    this.moduleConfig = null;
+                    this.moduleName = null;
+                    this.objectname = 'temp';
+                    this.objectwhere = 'temp';
+                    this.moduleTitle = '';
+                    this.icon = '';
+                    this.headerClass = 'bg-module';
+                    this.moduleClass = '';
+                    this.canCollapse = true;
+                    this.canEnlarge = true;
+                    this.canRefresh = true;
+                    this.canConfig = true;
+                    this.objectdefaults = null;
+                    this.isClone = false;
+                    this.ManualInit = false;
+                    this.HTMLInit = null;
+                    this.ModuleViewers = false;
+                    this.componentString = '';
+                    this.moduleInitClass = null;
+                    this.JSAfterLoad = null;
+                    this.mode = null;
+                    this.reportname = null;
+                    this.reportwhere = null;
+                    this.processname = null;
+                    this.emptyTop = false;
+                    this.emptyTimer = null;
+                    this.TemplateToolbarCollection = null;
+                    this.newObjectWhere = null;
+                    this.skeleton = null;
+                    //This variable stores the scroll before loading the skeleton so when the skeleton gets removed the scroll gets restored and also the element which the scroll will be applied
+                    this.skeleton_data = { scroll: null, element: null };
+                    this.module = null;
+                    this.ctxMenusValues = {};
+                }
+                /**
+               * Fires when element is attached to DOM
+               * @method connectedCallback
+               */
+                connectedCallback() {
+                    this.uuid = flexygo.utils.uniqueUUID();
+                    //Remove handler on element DOM remove
+                    $(this).on("destroy", function () {
+                        $(this).off("destroy");
+                        flexygo.events.unRegisterModule(this);
+                    });
+                }
+                /**
+                * Init the webcomponent.
+                * @method init
+                */
+                init() {
+                    let me = $(this);
+                    let def;
+                    //We only initiate the skeleton if its not a manual init module, the skeleton module property comes from navigation.ts openPageReturn function
+                    if (!this.ManualInit && this.skeleton && this.skeleton !== 'No Skeleton') {
+                        me.find('.cntBody').addClass('displayingSkeleton');
+                        me.find('.cntBody').append(`<span class="flxSkeleton">${this.skeleton}</span>`);
+                    }
+                    let histObj = flexygo.history.get(me);
+                    if (typeof histObj != 'undefined' && histObj.defaults) {
+                        if (typeof histObj.defaults == 'string') {
+                            //We first try firectly parsing, if it fails we replace the ' fro " because they are normally used to avoid HTML attributes from breaking
+                            try {
+                                def = JSON.parse(histObj.defaults);
+                            }
+                            catch (_a) {
+                                def = JSON.parse(flexygo.utils.parser.replaceAll(histObj.defaults, "'", '"'));
+                            }
+                        }
+                        else {
+                            def = histObj.defaults;
+                        }
+                    }
+                    if (this.componentString && this.componentString.length > 0) {
+                        this.module = $('<' + this.componentString + ' />').attr('ObjectName', this.objectname).attr('ObjectWhere', this.objectwhere).attr('reportName', this.reportname).attr('reportWhere', this.reportwhere).attr('processName', this.processname).attr('id', 'mod-' + this.moduleName).attr('modulename', this.moduleName);
+                        if (this.ManualInit) {
+                            this.module.attr('manualInit', 'true');
+                            if (this.HTMLInit && this.HTMLInit.length > 0) {
+                                me.find('.cntBody').append('<div class="flx-noInitContent">' + flexygo.utils.parser.recursiveCompile(def, this.HTMLInit, this) + '</div>');
+                            }
+                        }
+                        if (!this.module.attr('mode')) {
+                            this.module.attr('mode', this.mode);
+                        }
+                        if (this.isClone) {
+                            this.module.attr('isClone', "true");
+                        }
+                        me.find('.cntBody').find('#' + this.module.attr("id")).remove();
+                        me.find('.cntBody').append(this.module);
+                        if (this.module.is('flx-list[mode=list]')) {
+                            me.find('.cntBody').addClass("overflowx");
+                        }
+                        else {
+                            me.find('.cntBody').removeClass("overflowx");
+                        }
+                    }
+                    this.loadHeader();
+                    //if(this.ModuleViewers){
+                    //    flexygo.utils.checkObserverModule(this, 3000);
+                    //}
+                    flexygo.events.registerModule(this);
+                }
+                /**
+                * Loads module header.
+                * @method loadHeader
+                */
+                loadHeader() {
+                    let me = $(this);
+                    //Module tiitle & icon
+                    me.find('.cntTitle').html(this.moduleTitle);
+                    if (this.icon && this.icon != '') {
+                        let moduleIcon = $('<i class="' + this.icon + '" />');
+                        me.find('.cntIcon').html(moduleIcon[0].outerHTML);
+                    }
+                    if (this.headerClass && this.headerClass != '') {
+                        me.find('.cntHeader').addClass(this.headerClass);
+                    }
+                    if (this.moduleInitClass) {
+                        me.attr('Class', this.moduleInitClass);
+                    }
+                    else {
+                        this.moduleInitClass = me.attr('Class');
+                    }
+                    if (this.moduleClass && this.moduleClass != '') {
+                        me.addClass(this.moduleClass);
+                    }
+                    //Module Buttons configuration
+                    me.find('.cntButtons').empty();
+                    if (this.canConfig) {
+                        var btnConfig = $('<b class="flx-icon icon-settings develop-only" />').on('click', () => {
+                            this.openConfig();
+                        });
+                        me.find('.cntButtons').append(btnConfig);
+                    }
+                    var btnMoreOptions = $('<b class="flx-icon icon-more-1 develop-only" />').on('click', (e) => {
+                        this.showContextMenuOptions(e.target);
+                    });
+                    me.find('.cntButtons').append(btnMoreOptions);
+                    let moduleObject = this.getObjectName(0);
+                    if (!flexygo.utils.isBlank(moduleObject)) {
+                        var btnWizard = $('<b class="flx-icon icon-wizard-1 develop-only" />').on('click', () => {
+                            let modObj = this.getObjectName();
+                            if (!flexygo.utils.isBlank(modObj) && !modObj.includes("{{")) {
+                                let mobj = new flexygo.obj.Entity(modObj);
+                                let mcnf = mobj.getConfig();
+                                flexygo.nav.openPageName('syspage-generic-objectwizard', 'sysObject', "ObjectName='" + mcnf.ObjectName + "'", '{"step":8}', 'current', false, $(this));
+                            }
+                            else {
+                                flexygo.msg.warning(flexygo.localization.translate('formatsmanager.requiredobject'));
+                            }
+                        });
+                        me.find('.cntButtons').append(btnWizard);
+                    }
+                    if (this.canEnlarge) {
+                        var btnFullScreen = $('<b class="flx-icon icon-resize" />').on('click', () => {
+                            this.toggleFullScreen();
+                        });
+                        me.find('.cntButtons').append(btnFullScreen);
+                        me.find('.cntHeader').on('dblclick', () => {
+                            this.toggleFullScreen();
+                        });
+                    }
+                    if (this.canCollapse) {
+                        var btnCollapse = $('<b class="flx-icon icon-minus" />').on('click', () => {
+                            this.toggle();
+                        });
+                        me.find('.cntButtons').append(btnCollapse);
+                    }
+                    if (this.canRefresh) {
+                        var btnRefresh = $('<b class="flx-icon icon-sincronize" />').on('click', () => {
+                            this.refresh();
+                        });
+                        me.find('.cntButtons').append(btnRefresh);
+                    }
+                    /*            if (this.canRefresh) {*/
+                    var btnViewer = $(`<b id="flx-viewer-module" class="hidden"><div id="flx-flip-front"><i class="flx-icon icon-view icon-lg margin-0" clickable></i></div><div id="flx-flip-back"></div></b>`);
+                    me.find('.cntButtons').append(btnViewer);
+                    //}
+                    me.find('div.cntBodyHeader div.ctnArrowHeader').off('click').on('click', () => {
+                        if (this.emptyTop) {
+                            me.find('div.cntHeader, div.cntBodyHeader').css({ 'bottom': '' });
+                            me.find('div.cntBodyHeader div.ctnArrowHeader i').css({ 'transform': '' });
+                            this.emptyTop = false;
+                        }
+                        else {
+                            me.find('div.cntHeader, div.cntBodyHeader').css({ 'bottom': '46px' });
+                            me.find('div.cntBodyHeader div.ctnArrowHeader i').css({ 'transform': 'rotate(90deg)' });
+                            this.emptyTop = true;
+                            clearTimeout(this.emptyTimer);
+                            this.emptyTimer = setTimeout(() => {
+                                if (this.emptyTop) {
+                                    me.find('div.cntHeader, div.cntBodyHeader').css({ 'bottom': '' });
+                                    me.find('div.cntBodyHeader div.ctnArrowHeader i').css({ 'transform': '' });
+                                    this.emptyTop = false;
+                                }
+                            }, 5000);
+                        }
+                    });
+                }
+                getObjectName(type = 1) {
+                    let modObj;
+                    if (this.moduleConfig) {
+                        if (this.moduleConfig.WebComponent.toLowerCase() == 'flx-moduletab') {
+                            modObj = (type == 0 ? "0" : this.module[0].activeModule.ModuleObjectName);
+                        }
+                        else {
+                            modObj = this.module[0].objectname;
+                        }
+                        if (modObj == null || modObj == undefined || modObj == "") {
+                            modObj = this.moduleConfig.ModuleObjectName;
+                        }
+                    }
+                    return modObj;
+                }
+                showContextMenuOptions(e) {
+                    let triggerElement = $(e);
+                    var cntMenu = $('flx-contextmenu')[0];
+                    if (cntMenu.hideMenu(triggerElement))
+                        return;
+                    let menuUl = $('<ul/>'), menuLi = $('<li/>');
+                    let btn = new flexygo.api.ToolbarButton;
+                    btn.TypeId = "page";
+                    btn.Text = flexygo.localization.translate('modulemanager.security');
+                    btn.IconClass = "flx-icon icon-group-security";
+                    btn.TargetId = "popup";
+                    btn.PageName = "syspage-generic-modulesecurity";
+                    menuUl.append(menuLi.append(this.getButton(btn, "sysModule", `Modules.moduleName='${this.moduleName}'`, null, null, null, null, true)));
+                    menuLi = $('<li/>');
+                    btn = new flexygo.api.ToolbarButton;
+                    btn.TypeId = "list";
+                    btn.Text = flexygo.localization.translate('modulemanager.events');
+                    btn.IconClass = "flx-icon icon-wifi";
+                    btn.TargetId = "popup";
+                    menuUl.append(menuLi.append(this.getButton(btn, "sysModuleEvents", `Modules_Events.moduleName='${this.moduleName}'`, '{\'ModuleName\':\'' + this.moduleName + '\'}', null, null, null, true)));
+                    menuLi = $('<li/>');
+                    btn = new flexygo.api.ToolbarButton;
+                    btn.TypeId = "edit";
+                    btn.Text = flexygo.localization.translate('modulemanager.changepagerelation');
+                    btn.IconClass = "flx-icon icon-project";
+                    btn.TargetId = "popup";
+                    menuUl.append(menuLi.append(this.getButton(btn, "sysPageModule", `moduleName='${this.moduleName}' and PageName='${$(triggerElement).closest('main').attr('pagename')}'`, null, null, null, null, true)));
+                    cntMenu.showMenu(menuUl, triggerElement);
+                }
+                /**
+              * Refresh module.
+              * @method refresh
+              */
+                refresh() {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        let me = $(this);
+                        //We show the Skeleton Element and hide the content
+                        if (this.skeleton && this.skeleton !== 'No Skeleton') {
+                            //If the active module is an flx-list we save its scroll so we can restore it after it has been fully refreshed
+                            const active_module_type = flexygo.utils.modules.getActiveModuleType(this);
+                            if (active_module_type.startsWith('flx-list')) {
+                                //We search for the element that contains the scroll, normally the #mainContent or the modal main, but if instead of a flexy its a CRM we gotta get the main from #mainContent because for some reason its the element containing the scroll there
+                                let module_container = this.closest('#mainContent');
+                                if (!module_container)
+                                    module_container = this.closest('main');
+                                else if (module_container.scrollTop === 0) {
+                                    const main_element = module_container.querySelector('main');
+                                    if (main_element.scrollTop > 0)
+                                        module_container = main_element;
+                                }
+                                this.skeleton_data.scroll = module_container.scrollTop;
+                                this.skeleton_data.element = module_container;
+                            }
+                            me.find('.cntBody').append(`<span class="flxSkeleton">${this.skeleton}</span>`);
+                            this.querySelector('.cntBody').classList.add('displayingSkeleton');
+                            me.find('.cntBody').find('.flxSkeleton .skeletonHeader, .flxSkeleton .skeletonFooter').hide(); //We hide the Skeleton header and footer cause they do not get refreshed
+                        }
+                        me.find(".moduleToolbar > .btn-group > .tooltip").tooltip('hide');
+                        let refreshable_element = me.find('.cntBody>:first-child');
+                        yield this.refreshFlexygoElements(refreshable_element, me);
+                        //We need to reload the filter after the list if there's one
+                        if (me.find('flx-filter').length > 0) {
+                            let wc = me.find('flx-filter')[0];
+                            wc.refresh();
+                        }
+                        //We remove the skeleton element
+                        flexygo.utils.modules.removeSkeleton(this);
+                        let ev = {
+                            class: "module",
+                            type: "refreshed",
+                            sender: this
+                        };
+                        flexygo.events.trigger(ev, me);
+                        return;
+                    });
+                }
+                refreshFlexygoElements(elements, me) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        for (var i = 0; i < elements.length; i++) {
+                            let flexygo_component = elements[i];
+                            me.find('.cntButtons .pager').empty();
+                            me.find('.cntBodyHeader .pager').empty();
+                            me.find('.cntBodyFooter .pager').empty();
+                            if (typeof flexygo_component != 'undefined') {
+                                yield flexygo_component.refresh();
+                                const component_name = flexygo_component.tagName.toLowerCase();
+                                if ((component_name == 'flx-moduletab') || (component_name == 'flx-buttontab')) {
+                                    return;
+                                }
+                            }
+                        }
+                        return;
+                    });
+                }
+                moduleLoaded(wc) {
+                    //TODO_TS: wc es un WebControl
+                    let me = $(this);
+                    let jsAF = '';
+                    if (this.JSAfterLoad) {
+                        jsAF = this.JSAfterLoad;
+                    }
+                    if ((me.attr('type').toLowerCase() == 'flx-moduletab') || (me.attr('type').toLowerCase() == 'flx-buttontab')) {
+                        let tab = me.find('flx-moduletab:last')[0];
+                        let cnf = tab.activeModule;
+                        if (cnf.JSAfterLoad) {
+                            jsAF = cnf.JSAfterLoad;
+                        }
+                    }
+                    if ((me.attr('type').toLowerCase() == 'flx-edit') && (jsAF == '')) {
+                        let edit = me.find('flx-edit:last')[0];
+                        if (edit.mode.toLowerCase() == 'process') {
+                            if (edit.JSforParams) {
+                                jsAF = edit.JSforParams;
+                            }
+                        }
+                    }
+                    flexygo.utils.modules.removeSkeleton(this);
+                    if (jsAF != '') {
+                        flexygo.utils.execDynamicCode.call(this, jsAF);
+                    }
+                    let ev = {
+                        class: "module",
+                        type: "loaded",
+                        sender: this
+                    };
+                    flexygo.events.trigger(ev, me);
+                }
+                toggle() {
+                    $(this).find('.icon-minus, .icon-plus').toggleClass("icon-minus icon-plus");
+                    $(this).find('.cntBody, .cntBodyHeader, .cntFooterHeader').toggle();
+                }
+                setButtons(buttons, objectname, objectwhere, reportname, processname, reportwhere, callBack, print = false) {
+                    var _a;
+                    let me = $(this);
+                    if (me.find('.cntBodyHeader .moduleToolbar').length == 0) {
+                        me.find('.cntBodyHeader').append('<div class="moduleToolbar btn-toolbar" />');
+                    }
+                    else {
+                        me.find('.cntBodyHeader .moduleToolbar').empty();
+                    }
+                    if (me.find('.cntBodyHeader .moduleButtons').length == 0) {
+                        me.find('.cntBodyHeader').append('<div class="moduleButtons btn-toolbar" />');
+                    }
+                    else {
+                        me.find('.cntBodyHeader .moduleButtons').empty();
+                    }
+                    if (me.find('.cntBodyFooter .moduleButtons').length == 0) {
+                        me.find('.cntBodyFooter').append('<div class="moduleButtons btn-toolbar" />');
+                    }
+                    else {
+                        me.find('.cntBodyFooter .moduleButtons').empty();
+                    }
+                    var defString = (_a = flexygo.history.get(me)) === null || _a === void 0 ? void 0 : _a.defaults;
+                    if (this.objectdefaults) {
+                        defString = JSON.stringify(this.objectdefaults);
+                    }
+                    if (buttons) {
+                        let arrBtn = flexygo.utils.sortObject(buttons, 'PositionId', 'Order');
+                        let btnGroup;
+                        if (arrBtn.length > 0) {
+                            let lastPosition = arrBtn[0].PositionId;
+                            let arrChildBtn = [];
+                            for (let i = 0; i < arrBtn.length; i++) {
+                                let btn = arrBtn[i];
+                                if (btn.ParentButtonId) {
+                                    arrChildBtn.push(btn);
+                                }
+                                else {
+                                    let type = btn.TypeId;
+                                    if (type) {
+                                        type = type.toLowerCase();
+                                    }
+                                    if (!btnGroup) {
+                                        btnGroup = $('<div class="btn-group" />');
+                                    }
+                                    if (btn.PositionId != lastPosition) {
+                                        this.addGroup(lastPosition, btnGroup);
+                                        btnGroup = $('<div class="btn-group" />');
+                                    }
+                                    if (type == 'separator' || type == 'placeholder') {
+                                        this.addGroup(lastPosition, btnGroup);
+                                        btnGroup = null;
+                                    }
+                                    else {
+                                        btnGroup.append(this.getButton(btn, objectname, objectwhere, defString, reportname, this.reportwhere, processname, undefined, callBack, print));
+                                    }
+                                    lastPosition = btn.PositionId;
+                                }
+                            }
+                            if (btnGroup) {
+                                this.addGroup(lastPosition, btnGroup);
+                            }
+                            if (arrChildBtn.length > 0) {
+                                this.setChildButtons($(this), arrChildBtn, objectname, objectwhere, defString, reportname, this.reportwhere, processname);
+                            }
+                        }
+                    }
+                }
+                setChildButtons(container, childBtns, objectname, objectwhere, defString, reportname, reportwhere, processname) {
+                    let parentIds = [];
+                    let newBtns = childBtns.reduce((groupedBtns, btn) => {
+                        if (!groupedBtns[btn.ParentButtonId]) {
+                            groupedBtns[btn.ParentButtonId] = [];
+                            parentIds.push(btn.ParentButtonId);
+                        }
+                        groupedBtns[btn.ParentButtonId].push(btn);
+                        return groupedBtns;
+                    }, {});
+                    //Combines the previous ctxMenuValues and the newBtns (for when toolbars are loaded on an flx-list or in the template and in the smae module toolbar)
+                    this.ctxMenusValues = Object.assign(Object.assign({}, this.ctxMenusValues), newBtns);
+                    parentIds.forEach(id => {
+                        let btn = container.find(`[buttonid="${id}"]`);
+                        let uniqueId = flexygo.utils.uniqueUUID();
+                        btn.addClass('hasSubmenus clickable');
+                        if (btn.attr('data-type') === 'text') {
+                            btn.attr("id", uniqueId);
+                            btn.append('<span class="caret"/>');
+                            btn.attr('onclick', flexygo.utils.functionToString(`this.closest('flx-module').printToolbarContextMenu`, [uniqueId, id, objectname, objectwhere, defString, reportname, reportwhere, processname]));
+                        }
+                        else if (btn.attr('data-type') === 'objectmenu') {
+                            btn.attr("objectname", objectname);
+                            btn.attr("objectwhere", objectwhere);
+                            btn.attr("defString", defString);
+                            btn.attr("reportname", reportname);
+                            btn.attr("reportwhere", reportwhere);
+                            btn.attr("processname", processname);
+                        }
+                        else {
+                            let showMenuBtn = $(`<button id="${uniqueId}" subButtonid="${id}" class="${(btn[0] ? btn[0].className : 'btn btn-default')}"><span class="caret"/></button>`);
+                            showMenuBtn.attr('onclick', flexygo.utils.functionToString(`this.closest('flx-module').printToolbarContextMenu`, [uniqueId, id, objectname, objectwhere, defString, reportname, reportwhere, processname]));
+                            showMenuBtn.attr('onfocus', `$(this).closest('span.submenuContainer').addClass('focused')`);
+                            showMenuBtn.attr('onfocusout', `$(this).closest('span.submenuContainer').removeClass('focused')`);
+                            btn.after(showMenuBtn);
+                            $(this).find(`[buttonid="${id}"],[subButtonid="${id}"]`).wrapAll('<span class="submenuContainer"/>');
+                        }
+                    });
+                }
+                printToolbarContextMenu(id, btnId, objectname, objectwhere, defString, reportname, reportwhere, processname) {
+                    let triggerElement = $('#' + id);
+                    var cntMenu = $('flx-contextmenu')[0];
+                    if (cntMenu.hideMenu(triggerElement))
+                        return;
+                    let childBtns = this.ctxMenusValues[btnId];
+                    let menuUl = this.setMenuButtons(childBtns, btnId, objectname, objectwhere, defString, reportname, reportwhere, processname);
+                    if (triggerElement[0].hasAttribute('tabindex')) {
+                        menuUl.find('span[buttonid]').each((i, btn) => {
+                            btn.setAttribute('tabindex', triggerElement.attr('tabindex'));
+                            $(btn).on('keypress', (e) => {
+                                if (e.key === "Enter") {
+                                    $(btn).click();
+                                }
+                            });
+                        });
+                    }
+                    cntMenu.showMenu(menuUl, triggerElement);
+                    //A partir de aqu� cambiamos la posici�n del men� en caso de ser necesario
+                    if (!triggerElement[0].hasAttribute('subbuttonid')) {
+                        return;
+                    }
+                    let posElement = triggerElement.parent().find('[buttonid]');
+                    cntMenu.menu.position({
+                        my: "left top",
+                        at: 'left bottom',
+                        of: posElement,
+                        collision: 'flip flip'
+                    });
+                }
+                setMenuButtons(childBtns, parentId, objectname, objectwhere, defString, reportname, reportwhere, processname) {
+                    var menuLi, button, menuUl = $('<ul/>');
+                    childBtns.forEach(btn => {
+                        menuLi = $('<li/>');
+                        button = this.getButton(btn, objectname, objectwhere, defString, reportname, reportwhere, processname, true);
+                        button.attr('parentId', parentId);
+                        menuUl.append(menuLi.append(button));
+                        let subMenuBtns = this.ctxMenusValues[btn.ButtonId];
+                        if (subMenuBtns && subMenuBtns.length > 0) {
+                            menuLi.find('> span').append('<span gotSubmenus/>');
+                            let rightArrow = menuLi.find('span[gotSubmenus]');
+                            if (btn.TypeId === 'Text') {
+                                menuLi.click(ev => {
+                                    this.showSubmenu(ev, subMenuBtns, btn.ButtonId, objectname, objectwhere, defString, reportname, reportwhere, processname);
+                                });
+                            }
+                            else {
+                                rightArrow.click(ev => {
+                                    ev.stopPropagation();
+                                    this.showSubmenu(ev, subMenuBtns, btn.ButtonId, objectname, objectwhere, defString, reportname, reportwhere, processname, $(ev.currentTarget).closest('li'));
+                                });
+                            }
+                        }
+                    });
+                    return menuUl;
+                }
+                showSubmenu(ev, btns, parentId, objectname, objectwhere, defString, reportname, reportwhere, processname, trueElement) {
+                    ev.stopPropagation();
+                    var menu = $('<div flxsubmenu/>'), parent = (trueElement ? trueElement : $(ev.currentTarget));
+                    let menuUl = this.setMenuButtons(btns, parentId, objectname, objectwhere, defString, reportname, reportwhere, processname);
+                    menu.append(menuUl);
+                    menuUl.find('li').addClass('isSubMenu');
+                    let ctxMenu = $('body flx-contextmenu .flx-contextmenu:visible');
+                    let subMenu = ctxMenu.find(`[flxsubmenu]`);
+                    if (subMenu.length > 0 && !parent.hasClass('isSubMenu')) {
+                        subMenu.remove();
+                    }
+                    ctxMenu.append(menu);
+                    $(this).find('[flxsubmenu]:visible').hide();
+                    menu.show();
+                    menu.position({
+                        my: "left top",
+                        at: 'right top',
+                        of: parent,
+                        collision: 'flip flip'
+                    });
+                }
+                getTemplateToolbar(buttons, objectname, objectwhere, reportname, processname, reportwhere) {
+                    var _a;
+                    let me = $(this);
+                    var defString = (_a = flexygo.history.get(me)) === null || _a === void 0 ? void 0 : _a.defaults;
+                    if (this.objectdefaults) {
+                        defString = JSON.stringify(this.objectdefaults);
+                    }
+                    if (buttons) {
+                        let arrBtn = flexygo.utils.sortObject(buttons, 'PositionId', 'Order');
+                        let toolbar = $('<div class="btn-toolbar" />');
+                        let btnGroup = $('<div class="btn-group" />');
+                        if (arrBtn.length > 0) {
+                            let lastPosition = arrBtn[0].PositionId;
+                            let arrChildBtn = [];
+                            for (let i = 0; i < arrBtn.length; i++) {
+                                let btn = arrBtn[i];
+                                if (btn.ParentButtonId) {
+                                    arrChildBtn.push(btn);
+                                }
+                                else {
+                                    let type = btn.TypeId;
+                                    if (type) {
+                                        type = type.toLowerCase();
+                                    }
+                                    if (!btnGroup) {
+                                        btnGroup = $('<div class="btn-group" />');
+                                    }
+                                    if (btn.PositionId != lastPosition) {
+                                        toolbar.append(btnGroup);
+                                        btnGroup = $('<div class="btn-group" />');
+                                    }
+                                    if (type == 'separator' || type == 'placeholder') {
+                                        toolbar.append(btnGroup);
+                                        btnGroup = null;
+                                    }
+                                    else {
+                                        btnGroup.append(this.getButton(btn, objectname, objectwhere, defString, reportname, this.reportwhere, processname));
+                                    }
+                                    if (i === arrBtn.length - 1) {
+                                        toolbar.append(btnGroup);
+                                    }
+                                    lastPosition = btn.PositionId;
+                                }
+                            }
+                            this.setChildButtons(toolbar, arrChildBtn, objectname, objectwhere, defString, reportname, reportwhere, processname);
+                            return toolbar.prop('outerHTML');
+                        }
+                    }
+                }
+                refreshButtons(buttons, objectname, objectwhere, reportname, processname) {
+                    var _a;
+                    let me = $(this);
+                    var defString = (_a = flexygo.history.get(me)) === null || _a === void 0 ? void 0 : _a.defaults;
+                    if (this.objectdefaults) {
+                        defString = JSON.stringify(this.objectdefaults);
+                    }
+                    if (buttons) {
+                        let arrChildBtn = [];
+                        for (let key in buttons) {
+                            if (buttons[key].ParentButtonId) {
+                                arrChildBtn.push(buttons[key]);
+                            }
+                            else {
+                                let htmlBtn = me.find('[ButtonId="' + buttons[key].ButtonId + '"]');
+                                if (htmlBtn.length > 0) {
+                                    this.refreshButton(htmlBtn, buttons[key], objectname, objectwhere, defString, reportname, null, processname);
+                                }
+                            }
+                        }
+                        if (arrChildBtn.length > 0) {
+                            this.setChildButtons($(this), arrChildBtn, objectname, objectwhere, defString, reportname, this.reportwhere, processname);
+                        }
+                    }
+                }
+                addGroup(position, btnGroup) {
+                    if (position) {
+                        position = position.toLowerCase();
+                    }
+                    let me = $(this);
+                    switch (position) {
+                        case 'toolbar':
+                            me.find('.cntBodyHeader .moduleToolbar').append(btnGroup);
+                            break;
+                        case 'top':
+                            me.find('.cntBodyHeader .moduleButtons').append(btnGroup);
+                            break;
+                        case 'bottom':
+                            me.find('.cntBodyFooter .moduleButtons').append(btnGroup);
+                            break;
+                    }
+                }
+                refreshButton(htmlBtn, btn, objectname, objectwhere, objectdefaults, reportname, reportwhere, processname) {
+                    let newBtn = this.getButton(btn, objectname, objectwhere, objectdefaults, reportname, reportwhere, processname);
+                    htmlBtn.replaceWith(newBtn);
+                }
+                getButton(btn, objectname, objectwhere, objectdefaults, reportname, reportwhere, processname, notABtn, callBack, print = false) {
+                    let type = btn.TypeId;
+                    if (type) {
+                        type = type.toLowerCase();
+                    }
+                    let htmlBTN = $('<button class="btn btn-default" />');
+                    if (notABtn) {
+                        htmlBTN = $('<span/>');
+                    }
+                    htmlBTN.attr('ButtonId', btn.ButtonId);
+                    if (!btn.HideText) {
+                        //if (type == 'presets') {
+                        //    htmlBTN.html('<span>' + $(this).attr('presetname') + '</span>');
+                        //}
+                        //else {
+                        htmlBTN.html('<span>' + btn.Text + '</span>');
+                        //}
+                    }
+                    if (btn.CssClass) {
+                        htmlBTN.addClass(btn.CssClass);
+                    }
+                    //IconClass ImagePath
+                    if (btn.IconClass && btn.IconClass != '') {
+                        htmlBTN.prepend('<i class="' + btn.IconClass + '" flx-fw></i> ');
+                    }
+                    else if (btn.ImagePath && btn.ImagePath != '') {
+                        htmlBTN.prepend('<img src="' + btn.ImagePath + '" alt="" /> ');
+                    }
+                    if (btn.ToolTip && btn.ToolTip != '') {
+                        htmlBTN.attr('title', btn.ToolTip);
+                    }
+                    if (type && type != '') {
+                        htmlBTN.attr('data-type', type);
+                    }
+                    //btn.TargetId
+                    switch (type) {
+                        case 'delete':
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.wc.FlxModuleElement.prototype.deleteModule', [objectname, objectwhere], ['$(this).closest(\'flx-module\')', '$(this)']));
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.delete'), placement: 'bottom' });
+                            break;
+                        case 'save':
+                            htmlBTN.addClass("saveButton");
+                            htmlBTN.attr('onclick', "flexygo.ui.wc.FlxModuleElement.prototype.checkNewComboObjectsMessage($(this).closest('flx-module')).then((res) => { if(res) " + flexygo.utils.functionToString('flexygo.ui.wc.FlxModuleElement.prototype.saveModule', [objectname, objectwhere], ['$(this).closest(\'flx-module\')', '$(this)']) + ";})");
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.save'), placement: 'bottom' });
+                            break;
+                        case 'saveview':
+                            htmlBTN.addClass("saveButton");
+                            htmlBTN.attr('onclick', "const module = this.closest('flx-contextmenu') ? this.closest('flx-contextmenu').parent.closest('flx-module') : $(this).closest('flx-module'); flexygo.ui.wc.FlxModuleElement.prototype.checkNewComboObjectsMessage(module).then((res) => { if(res) " + flexygo.utils.functionToString('flexygo.ui.wc.FlxModuleElement.prototype.saveModule', [objectname, objectwhere], ['$(`[buttonId="${$(this).attr("parentId") ? $(this).attr("parentId") : $(this).attr("buttonId") }"]`).closest(\'flx-module\')', '$(this)', '\'view\'', objectdefaults, undefined, undefined, undefined, btn.ExcludeHist]) + ";})");
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.save'), placement: 'bottom' });
+                            break;
+                        case 'saveandnew':
+                            htmlBTN.addClass("saveButton");
+                            htmlBTN.attr('onclick', "const module = this.closest('flx-contextmenu') ? this.closest('flx-contextmenu').parent.closest('flx-module') : $(this).closest('flx-module'); flexygo.ui.wc.FlxModuleElement.prototype.checkNewComboObjectsMessage(module).then((res) => { if(res) " + flexygo.utils.functionToString('flexygo.ui.wc.FlxModuleElement.prototype.saveModule', [objectname, objectwhere], ['$(`[buttonId="${$(this).attr("parentId") ? $(this).attr("parentId") : $(this).attr("buttonId") }"]`).closest(\'flx-module\')', '$(this)', '\'edit\'', objectdefaults, undefined, undefined, undefined, btn.ExcludeHist]) + ";})");
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.save'), placement: 'bottom' });
+                            break;
+                        case 'saverow':
+                            htmlBTN.addClass("saveRowButton");
+                            htmlBTN.attr('onclick', "flexygo.ui.wc.FlxModuleElement.prototype.checkNewComboObjectsMessage($(this).closest('tr')).then((res) => { if(res) " + flexygo.utils.functionToString('flexygo.ui.wc.saveRow', [objectname, objectwhere], ['$(this).closest(\'flx-list\')', '$(this)']) + ";})");
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.save'), placement: 'bottom' });
+                            break;
+                        case 'new':
+                            var objN = objectname;
+                            if (btn.ObjectName) {
+                                objN = btn.ObjectName;
+                            }
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.nav.openPage', ['edit', objN, null, objectdefaults, btn.TargetId, btn.ExcludeHist], ['$(this)']));
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.new'), placement: 'bottom' });
+                            break;
+                        case 'edit':
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.nav.openPage', ['edit', objectname, objectwhere, objectdefaults, btn.TargetId, btn.ExcludeHist], ['$(this)']));
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.edit'), placement: 'bottom' });
+                            break;
+                        case 'view':
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.nav.openPage', ['view', objectname, objectwhere, objectdefaults, btn.TargetId, btn.ExcludeHist], ['$(this)']));
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.view'), placement: 'bottom' });
+                            break;
+                        case 'list':
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.nav.openPage', ['list', objectname, objectwhere, objectdefaults, btn.TargetId, btn.ExcludeHist], ['$(this)']));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'page':
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.nav.openPageName', [btn.PageName, objectname, objectwhere, objectdefaults, btn.TargetId, btn.ExcludeHist], ['$(this)']));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'print':
+                            //htmlBTN.on('click', () => {
+                            //    this.toImage();
+                            //});
+                            //htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.print'), placement: 'bottom' });
+                            //break;
+                            htmlBTN.append('<span class="caret"></span>');
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.exports.printListMenu', [objectname, objectwhere, objectdefaults], ['$(this)']));
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.print'), placement: 'bottom', trigger: 'hover' });
+                            break;
+                        case 'help':
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.nav.openHelpId', [btn.HelpId, btn.TargetId, btn.ExcludeHist], ['$(this)']));
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.help'), placement: 'bottom' });
+                            break;
+                        case 'templates':
+                            htmlBTN.append('<span class="caret"></span>');
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.templates.templateList', [objectname], ['$(this).closest(\'flx-module\')', '$(this)']));
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.templates'), placement: 'bottom' });
+                            break;
+                        case 'objectmenu':
+                            htmlBTN.append('<span class="caret"></span>');
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.nav.getObjectMenu', [objectname, objectwhere, objectdefaults], ['$(this)', null]));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'process':
+                            let retFunction = flexygo.utils.functionToString('flexygo.nav.execProcess', [btn.ProcessName, objectname, objectwhere, objectdefaults, null, btn.TargetId, btn.ExcludeHist], ['$(this)']);
+                            if (btn.BagOnly) {
+                                retFunction = 'if(flexygo.selection.getArray(\'' + btn.BagObject + '\').length==0){flexygo.msg.error(\'flxmodule.noItemsSelected\');}else{' + retFunction + '}';
+                            }
+                            htmlBTN.attr('onclick', retFunction);
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'report':
+                            if (btn.ReportHasParams) {
+                                htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.nav.openReportsParams', [btn.ReportName, reportwhere, objectname, objectwhere, objectdefaults, btn.TargetId, btn.ExcludeHist], ['$(this)']));
+                            }
+                            else {
+                                htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.nav.viewReport', [btn.ReportName, reportwhere, objectname, objectwhere, objectdefaults, null, btn.TargetId, btn.ExcludeHist,]));
+                            }
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'processmenu':
+                            htmlBTN.append('<span class="caret"></span>');
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.nav.getObjectMenu', [objectname, objectwhere, objectdefaults], ['$(this)', null, "'processes'"]));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'relations':
+                            htmlBTN.append('<span class="caret"></span>');
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.nav.getObjectMenu', [objectname, objectwhere, objectdefaults], ['$(this)', null, "'relations'"]));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'reportmenu':
+                            htmlBTN.append('<span class="caret"></span>');
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.nav.getObjectMenu', [objectname, objectwhere, objectdefaults], ['$(this)', null, "'reports'"]));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'runreport':
+                            htmlBTN.addClass("saveReportButton");
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.wc.FlxModuleElement.prototype.saveReportParams', [reportname, reportwhere, objectname, objectwhere, objectdefaults], ['$(this).closest(\'flx-module\')', '$(this)', print]));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'runprocess':
+                            htmlBTN.addClass("execProcessButton");
+                            if (flexygo.utils.isBlank(callBack)) {
+                                htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.wc.FlxModuleElement.prototype.execProcessParams', [processname, objectname, objectwhere, objectdefaults], ['$(this).closest(\'flx-module\')', '$(this)']));
+                            }
+                            else {
+                                htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.wc.FlxModuleElement.prototype.execProcessParams', [processname, objectname, objectwhere, objectdefaults], ['$(this).closest(\'flx-module\')', '$(this)', callBack]));
+                            }
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'back':
+                            htmlBTN.on('click', () => {
+                                window.history.back();
+                            });
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.back'), placement: 'bottom' });
+                            break;
+                        case 'filter':
+                            htmlBTN.append('<span class="caret"></span>');
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.wc.loadFilter', [objectname], ['$(this).closest(\'flx-module\')', '$(this)']));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'presets':
+                            htmlBTN.append('<span class="caret"></span>');
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.wc.loadPresets', [objectname], ['$(this).closest(\'flx-module\')', '$(this)']));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'savedsearches':
+                            htmlBTN.append('<span class="caret"></span>');
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.wc.loadSavedSearches', [objectname], ['$(this).closest(\'flx-module\')', '$(this)']));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'select':
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.wc.FlxModuleElement.prototype.execSelectEntity', [objectname, objectwhere], ['$(this).closest(\'flx-module\')', '$(this)']));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'bag':
+                            htmlBTN.addClass('bagButton');
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.wc.FlxModuleElement.prototype.toggleBag', [objectname, objectwhere], ['$(this)']));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'clearrow':
+                            htmlBTN.attr('onclick', 'flexygo.ui.wc.clearRow($(this).closest(\'flx-list\'),$(this));');
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'export':
+                            htmlBTN.append('<span class="caret"></span>');
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.exports.exportListMenu', [objectname, objectwhere, objectdefaults], ['$(this)']));
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.export'), placement: 'bottom', trigger: 'hover' });
+                            break;
+                        case 'sort':
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.templates.showSortManager', [objectname], ['$(this).closest(\'flx-module\')', '$(this)']));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'text':
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'assistantchatgpt':
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.wc.FlxAIElement.prototype.open_from_toolbar', [btn.SettingId], ['$(this)']));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'bagselectall':
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.wc.FlxModuleElement.prototype.bagSelectionAll', [btn.ObjectName, objectwhere], ['$(this).closest(\'flx-module\')', '$(this)']));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        case 'bagselectnone':
+                            htmlBTN.attr('onclick', flexygo.utils.functionToString('flexygo.ui.wc.FlxModuleElement.prototype.bagSelectionNone', [btn.ObjectName, objectwhere], ['$(this).closest(\'flx-module\')', '$(this)']));
+                            if (htmlBTN.attr('title'))
+                                htmlBTN.tooltip({ title: htmlBTN.attr('title'), placement: 'bottom' });
+                            break;
+                        default:
+                            htmlBTN.attr('onclick', 'alert(\'Unknown function ' + type + '\');');
+                            htmlBTN.tooltip({ title: flexygo.localization.translate('flxmodule.unknown'), placement: 'bottom' });
+                            break;
+                    }
+                    return htmlBTN;
+                }
+                changeTemplate() {
+                    console.warn('Method: changeTemplate');
+                }
+                closeWindow() {
+                    $(this).parent().parent().parent().find('.ui-dialog-titlebar-close').click();
+                }
+                toggleFullScreen() {
+                    let me = $(this);
+                    me.toggleClass("fullscreen");
+                    me.find('.icon-minus, .icon-plus').toggle();
+                    me.find('.icon-resize, .icon-collapse').toggleClass('icon-resize icon-collapse');
+                    if (this.module.is('flx-list') || this.module.is('flx-moduletab')) {
+                        if (!this.module.is('flx-list[mode=list]')) {
+                            $(this).find('.cntBody').toggleClass("overflowx");
+                        }
+                    }
+                    let ev = {
+                        class: "module",
+                        type: "resized",
+                        sender: this
+                    };
+                    flexygo.events.trigger(ev, me);
+                }
+                setObjectDescrip(objDescrip) {
+                    let me = $(this);
+                    if (this.moduleTitle.toLowerCase() == '{{objectdescrip}}') {
+                        this.moduleTitle = objDescrip;
+                        me.find('.cntTitle').html(this.moduleTitle);
+                    }
+                }
+                toImage() {
+                    let opt;
+                    html2canvas($(this)[0], {
+                        onrendered: (canvas) => {
+                            var myImage = canvas.toDataURL("image/png");
+                            var tWindow = window.open("", "print module");
+                            $(tWindow.document.body).html("<img id='Image' src=" + myImage + " style='width:100%;'></img>").ready(() => {
+                                tWindow.focus();
+                                tWindow.print();
+                                tWindow.close();
+                            });
+                        }
+                    });
+                }
+                openConfig() {
+                    flexygo.nav.openPage('edit', 'sysModule', "moduleName='" + this.moduleName + "'", null, 'popup', true);
+                }
+                toggleBag(objectname, objectwhere, itm) {
+                    let obj = new flexygo.obj.Entity(objectname, objectwhere);
+                    let bagField = obj.getConfig().UniqueIdentifier;
+                    let eventType = 'check';
+                    if (bagField) {
+                        obj.read();
+                        if (typeof obj.data[bagField] == 'undefined') {
+                            let textError = flexygo.localization.translate('flxmodule.nofieldBagError').replace('{0}', bagField);
+                            flexygo.msg.error(textError);
+                        }
+                        else {
+                            if (flexygo.selection.toggle(objectname, obj.data[bagField].Value)) {
+                                itm.addClass('active');
+                                itm.closest('tr').addClass('selected');
+                            }
+                            else {
+                                eventType = 'uncheck';
+                                itm.removeClass('active');
+                                itm.closest('tr').removeClass('selected');
+                            }
+                        }
+                    }
+                    else {
+                        flexygo.msg.error('flxmodule.uniqueBagError');
+                    }
+                    let mod = itm.closest('flx-module');
+                    let selectionLength = flexygo.selection.getArray(objectname).length;
+                    let currentFilter;
+                    if (mod.find('flx-list').length > 0) {
+                        let list = mod.find('flx-list')[0];
+                        if (list.moduleButtons) {
+                            if (selectionLength == 0) {
+                                currentFilter = list.processwhere;
+                            }
+                            else {
+                                currentFilter = flexygo.selection.getFilterString(objectname);
+                            }
+                            mod[0].refreshButtons(list.moduleButtons, list.collectionname, currentFilter);
+                            if (list.presetId) {
+                                list.changePresetText();
+                            }
+                        }
+                        var ev = {
+                            class: "entity",
+                            type: eventType,
+                            sender: list,
+                            masterIdentity: list.collectionname,
+                            detailIdentity: { moduleFilter: currentFilter, selectedItems: flexygo.selection.getArray(objectname) }
+                        };
+                        flexygo.events.trigger(ev, mod);
+                    }
+                    if (selectionLength > 0) {
+                        this.activeBagButtons(mod);
+                        mod.find('.moduleToolbar [data-type="objectmenu"] .badge').html(selectionLength.toString());
+                        mod.find('.moduleToolbar [data-type="objectmenu"] .caret').hide();
+                    }
+                    else {
+                        mod.find('.moduleToolbar [data-type="objectmenu"] .badge').remove();
+                        mod.find('.moduleToolbar [data-type="objectmenu"] .caret').show();
+                    }
+                }
+                activeBagButtons(mod) {
+                    if (mod.find('[data-type="objectmenu"] .badge').length === 0) {
+                        let badgeSelect = $('<span class="badge badge-pill badge-warning"></span>');
+                        mod.find('.moduleToolbar [data-type="objectmenu"]').append(badgeSelect);
+                    }
+                }
+                //Module(mdl)
+                bagSelectionNone(objectName, objectWhere, mdl, button, cllbck) {
+                    let flxList = mdl.find('flx-list')[0];
+                    flexygo.selection.clear(objectName);
+                    mdl[0].refresh().then(() => {
+                        var ev = {
+                            class: "entity",
+                            type: "uncheck",
+                            sender: flxList,
+                            masterIdentity: flxList.collectionname,
+                            detailIdentity: { moduleFilter: flxList.processwhere, selectedItems: flexygo.selection.getArray(objectName) }
+                        };
+                        flexygo.events.trigger(ev, mdl);
+                    });
+                }
+                //Module(mdl)
+                bagSelectionAll(objectName, objectWhere, mdl, button, cllbck) {
+                    let flxList = mdl.find('flx-list')[0];
+                    let currentFilter = flxList.processwhere;
+                    let additionalWhere = flxList.additionalWhere;
+                    flexygo.ajax.post('~/api/List', 'GetBagPage', { ObjectName: objectName, ObjectWhere: currentFilter, AdditionalWhere: additionalWhere }, (response) => {
+                        if (response.length > 0) {
+                            let newArray = flexygo.selection.getArray(objectName).concat(response);
+                            flexygo.selection.appendArray(objectName, newArray);
+                            mdl[0].refresh().then(() => {
+                                let selectionLength = flexygo.selection.getArray(objectName).length;
+                                if (selectionLength > 0) {
+                                    currentFilter = flexygo.selection.getFilterString(objectName);
+                                }
+                                var ev = {
+                                    class: "entity",
+                                    type: "check",
+                                    sender: flxList,
+                                    masterIdentity: flxList.collectionname,
+                                    detailIdentity: { moduleFilter: currentFilter, selectedItems: flexygo.selection.getArray(objectName) }
+                                };
+                                flexygo.events.trigger(ev, mdl);
+                            });
+                        }
+                    });
+                }
+                bagShowOnlySelected(objectName, objectWhere, module, button, cllbck) {
+                    if (flexygo.selection.getArray(objectName).length > 0) {
+                        let colWhere = flexygo.selection.getFilterString(objectName);
+                        flexygo.nav.openPage('list', $(module).find('flx-list')[0].collectionname, colWhere, null, 'modal', true);
+                    }
+                    else {
+                        flexygo.msg.error('flxmodule.noItemsSelected');
+                    }
+                }
+                deleteModule(objectName, objectWhere, module, button, cllbck) {
+                    let resultCallback = (result) => __awaiter(this, void 0, void 0, function* () {
+                        if (result) {
+                            this.deleteModuleResponse(objectName, objectWhere, module, button, cllbck);
+                        }
+                    });
+                    let obj = new flexygo.obj.Entity(objectName, objectWhere);
+                    let deleteConfirm = obj.getDeleteConfirm();
+                    if (!flexygo.utils.isBlank(deleteConfirm)) {
+                        this.deleteConfirmPrompt(objectName, objectWhere, deleteConfirm, module, button, cllbck);
+                    }
+                    else {
+                        flexygo.msg.confirm(flexygo.localization.translate('filtermanager.sure'), resultCallback);
+                    }
+                }
+                deleteConfirmPrompt(objectName, objectWhere, deleteConfirm, module, button, cllbck, valueConfirm, errorMessage) {
+                    flexygo.msg.prompt('<i class="flx-icon icon-delete-1"></i> ' + flexygo.localization.translate('flxmodule.titleDeleteConfirm'), flexygo.localization.translate('flxmodule.messageDeleteConfirm').replace('{0}', deleteConfirm), (res) => {
+                        if (res.toLowerCase() === deleteConfirm.toLowerCase()) {
+                            this.deleteModuleResponse(objectName, objectWhere, module, button, cllbck);
+                        }
+                        else {
+                            this.deleteConfirmPrompt(objectName, objectWhere, deleteConfirm, module, button, cllbck, res, flexygo.localization.translate('flxmodule.errorDeleteConfirm'));
+                        }
+                    }, '', (flexygo.utils.isBlank(valueConfirm) ? '' : valueConfirm));
+                    if (!flexygo.utils.isBlank(errorMessage)) {
+                        let prompt = $(module).closest('body').find('.lobibox-prompt')[1];
+                        $(prompt).find('.lobibox-input').after('<small class="txt-danger">' + errorMessage + '</small>');
+                        setTimeout(() => { $(prompt).find('.lobibox-input').focus(); }, 300);
+                    }
+                }
+                //Module(mdl)
+                deleteModuleResponse(objectName, objectWhere, mdl, button, cllbck, lastProcessName, lastAfterProcessName) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        let obj = new flexygo.obj.Entity(objectName, objectWhere);
+                        obj.read();
+                        if (obj.delete(lastProcessName, lastAfterProcessName)) {
+                            if (obj.jsCode) {
+                                if (obj.lastProcessName || obj.lastAfterProcessName) {
+                                    var proc = new flexygo.obj.Entity('SysProcesses', `ProcessName='${(obj.lastProcessName || obj.lastAfterProcessName)}'`);
+                                    proc.read();
+                                    if (proc.data && proc.data.ConfirmText && proc.data.ConfirmText.Value) {
+                                        let res = yield flexygo.msg.confirm(proc.data.ConfirmText.Value);
+                                        if (!res)
+                                            return;
+                                    }
+                                }
+                                yield flexygo.utils.execAsyncFunction(obj.jsCode, ['sysObj', 'triggerElement'], [obj, button]).then((res) => {
+                                    if (res === false)
+                                        return;
+                                    this.deleteModuleResponse(objectName, objectWhere, mdl, button, cllbck, obj.lastProcessName, obj.lastAfterProcessName);
+                                }).catch((err) => {
+                                    flexygo.msg.error(flexygo.utils.getErrorMessage(err));
+                                });
+                            }
+                            else {
+                                if (obj.warningMessage) {
+                                    flexygo.msg.warning(obj.warningMessage);
+                                }
+                                else {
+                                    if (obj.successMessage) {
+                                        flexygo.msg.success(obj.successMessage);
+                                    }
+                                    else {
+                                        flexygo.msg.success(flexygo.localization.translate('flxmodule.deleted'));
+                                    }
+                                }
+                                let currentForm = $(button).closest('.ui-dialog');
+                                if (currentForm.length > 0 && objectName == flexygo.history.get(button).objectname) {
+                                    currentForm.remove();
+                                }
+                                else {
+                                    if (!mdl) {
+                                        mdl = $(button).closest('flx-module');
+                                    }
+                                    //module.find('flx-edit, flx-list, flx-view').data('controller').refresh();
+                                    if (mdl) {
+                                        var edit = mdl.find("flx-edit").first();
+                                        if (edit.length > 0) {
+                                            edit.attr("objectWhere", "");
+                                        }
+                                        let wcModule = mdl[0];
+                                        if (wcModule) {
+                                            wcModule.refresh();
+                                        }
+                                    }
+                                }
+                                if (cllbck) {
+                                    cllbck();
+                                }
+                            }
+                        }
+                    });
+                }
+                saveModule(objectName, objectWhere, module, button, afterSaveGoTo = '', defaults = null, lastObj, lastProcessName, lastAfterProcessName, excludeHist = false) {
+                    var _a;
+                    if (objectWhere.includes('&quot;')) {
+                        objectWhere = objectWhere.replace(/&quot;/g, '"');
+                    }
+                    if (!button || !button.is(':disabled') || lastObj) {
+                        if (module.find('flx-edit').length > 0) {
+                            let edit = module.find('flx-edit')[0];
+                            if (edit.loadingDependencies > 0) {
+                                edit.pendingSaveButton = button;
+                                edit.addLock();
+                                return;
+                            }
+                        }
+                        //check if moduletab and editgrid
+                        let isEditGridOnTab = false;
+                        if (!lastObj && $(module)[0].componentString == 'flx-moduletab') {
+                            if ($(module).find('.modulediv flx-list').length > 0 && $(module).find('.modulediv flx-list').attr('mode') == 'edit') {
+                                isEditGridOnTab = true;
+                            }
+                        }
+                        // Checks if is an edit grid, (if = edit, else = edit-grid)
+                        if (((lastObj || $(module)[0]).componentString != 'flx-list mode="edit"') && !isEditGridOnTab) {
+                            if ($(module)[0].componentString == 'flx-edit') {
+                                let edit = module.find('flx-edit')[0];
+                                edit.validateSQLProperties();
+                            }
+                            if (module.find('form').valid() || lastObj) {
+                                //We check for possible combo with values that should be saved before object itself
+                                this.checkAndSaveNewComboValues(module);
+                                let props;
+                                if (!lastObj) {
+                                    $('.saveButton').prop('disabled', true);
+                                    props = module.find('[property]');
+                                }
+                                if (lastObj || props.length > 0) {
+                                    let obj;
+                                    if (!lastObj) {
+                                        obj = new flexygo.obj.Entity(objectName, objectWhere);
+                                        obj.read();
+                                        for (var i = 0; i < props.length; i++) {
+                                            let prop = $(props[i])[0];
+                                            obj.data[prop.property].Value = prop.getValue();
+                                        }
+                                    }
+                                    else {
+                                        obj = lastObj;
+                                    }
+                                    let ret;
+                                    let eventName;
+                                    if (!objectWhere || objectWhere == '') {
+                                        ret = obj.insert(lastProcessName, lastAfterProcessName);
+                                        eventName = 'insert';
+                                    }
+                                    else {
+                                        ret = obj.update(lastProcessName, lastAfterProcessName);
+                                        eventName = 'update';
+                                    }
+                                    $('.saveButton').prop('disabled', false);
+                                    if (ret) {
+                                        if (obj.jsCode) {
+                                            let executeJS = () => __awaiter(this, void 0, void 0, function* () {
+                                                if (obj.lastProcessName || obj.lastAfterProcessName) {
+                                                    var proc = new flexygo.obj.Entity('SysProcesses', `ProcessName='${(obj.lastProcessName || obj.lastAfterProcessName)}'`);
+                                                    proc.read();
+                                                    if (proc.data && proc.data.ConfirmText && proc.data.ConfirmText.Value) {
+                                                        let res = yield flexygo.msg.confirm(proc.data.ConfirmText.Value);
+                                                        if (!res)
+                                                            return;
+                                                    }
+                                                }
+                                                if (!this.newObjectWhere && obj.objectWhere)
+                                                    this.newObjectWhere = obj.objectWhere; //Sets the newObjectWhere to avoid loading a new incomplete edit
+                                                flexygo.utils.execAsyncFunction(obj.jsCode, ['sysObj', 'triggerElement'], [obj, button]).then((res) => {
+                                                    if (res === false) {
+                                                        this.newObjectWhere = null;
+                                                        return;
+                                                    }
+                                                    this.saveModule(objectName, objectWhere, module, button, afterSaveGoTo, defaults, obj, obj.lastProcessName, obj.lastAfterProcessName, excludeHist);
+                                                }).catch((err) => {
+                                                    flexygo.msg.error(flexygo.utils.getErrorMessage(err));
+                                                });
+                                            });
+                                            executeJS();
+                                            return true;
+                                        }
+                                        if (obj.warningMessage) {
+                                            flexygo.msg.warning(obj.warningMessage);
+                                        }
+                                        else {
+                                            if (obj.getConfig().ConfirmOkText) {
+                                                if (obj.successMessage) {
+                                                    flexygo.msg.success(obj.successMessage);
+                                                }
+                                                else {
+                                                    flexygo.msg.success(flexygo.localization.translate('flxmodule.saved'));
+                                                }
+                                            }
+                                        }
+                                        let modBody = module.find('.cntBody');
+                                        modBody.css('min-height', modBody.height() + 'px');
+                                        let editModule = module.is('flx-edit') ? module : module.find('flx-edit');
+                                        //If the edit being saved is of one of this objects it won't get refreshed on update
+                                        const non_refreshable_objects = ['sysProcess', 'sysObjectTemplate'];
+                                        const doesnt_need_refresh = non_refreshable_objects.includes(editModule[0].objectname) && eventName === 'update';
+                                        if (editModule.length > 0) {
+                                            if (doesnt_need_refresh) {
+                                                //If we save a nonrefreshable edit, we reinitialize its areYouSure so it does not appear by mistake
+                                                //We blur the currently focused element to avoid areYouSure from not getting triggered, and we reinitialize it after
+                                                //blur has triggered areYouSure event
+                                                const currently_focused_element = document.activeElement;
+                                                currently_focused_element.blur();
+                                                setTimeout(() => {
+                                                    editModule.find('form').trigger('reinitialize.areYouSure');
+                                                    currently_focused_element.focus();
+                                                }, 100);
+                                            }
+                                            //We refresh the edit so if there's a trigger or an autogerative ID fields get properly regenerated
+                                            let modTab = editModule.closest('flx-moduletab');
+                                            if (eventName === 'insert' && modTab.length > 0) {
+                                                modTab.attr('ObjectWhere', obj.objectWhere);
+                                                modTab.attr('ObjectName', obj.objectName);
+                                                modTab.attr('isClone', 'false');
+                                                let tabWc = modTab[0];
+                                                if (!doesnt_need_refresh)
+                                                    tabWc.refresh();
+                                            }
+                                            else {
+                                                editModule.attr('ObjectWhere', (this.newObjectWhere || obj.objectWhere));
+                                                editModule.attr('ObjectName', obj.objectName);
+                                                editModule.attr('isClone', 'false');
+                                                let editWc = editModule[0];
+                                                if (!doesnt_need_refresh)
+                                                    editWc.refresh();
+                                            }
+                                        }
+                                        this.newObjectWhere = null;
+                                        //This is now controlled by Entity
+                                        //$(document).trigger(eventName, [obj, editModule.edit]);
+                                        var context = flexygo.history.get(module);
+                                        if (context) {
+                                            if (obj.objectName.toLowerCase() == ((_a = context.objectname) === null || _a === void 0 ? void 0 : _a.toLowerCase())) {
+                                                let params = {
+                                                    StrType: context.pagetypeid,
+                                                    ObjectName: obj.objectName,
+                                                    ObjectWhere: obj.objectWhere
+                                                };
+                                                flexygo.ajax.post('~/api/Page', 'GetPageObjectDefaults', params, (response) => {
+                                                    $(module).closest('.pageContainer').find('flx-module').each((i, e) => {
+                                                        if ($(e).is('[init="false"]')) {
+                                                            let mod = $(e);
+                                                            mod.removeAttr('init');
+                                                            e.objectname = obj.objectName;
+                                                            e.objectwhere = obj.objectWhere;
+                                                            //Refresh defaults for dependant modules
+                                                            if (response.Modules[e.moduleName]) {
+                                                                e.objectdefaults = response.Modules[e.moduleName].ObjectDefaults;
+                                                                if (e.objectdefaults) {
+                                                                    for (let key in e.objectdefaults) {
+                                                                        if (e.objectdefaults[key] != null && e.objectdefaults[key].toString().indexOf('/Date(') != -1) {
+                                                                            e.objectdefaults[key] = moment(moment.utc(e.objectdefaults[key]).toDate()).format('YYYY-MM-DDTHH:mm:ss');
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                            e.init();
+                                                            mod.show();
+                                                        }
+                                                        else if (e.moduleName != module.moduleName) {
+                                                            if (response.Modules[e.moduleName]) {
+                                                                e.objectdefaults = response.Modules[e.moduleName].ObjectDefaults;
+                                                                if (e.objectdefaults) {
+                                                                    for (let key in e.objectdefaults) {
+                                                                        if (e.objectdefaults[key] != null && e.objectdefaults[key].toString().indexOf('/Date(') != -1) {
+                                                                            e.objectdefaults[key] = moment(moment.utc(e.objectdefaults[key]).toDate()).format('YYYY-MM-DDTHH:mm:ss');
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    });
+                                                });
+                                            }
+                                        }
+                                        if (!obj.warningMessage) {
+                                            if (afterSaveGoTo === 'view') {
+                                                flexygo.nav.openPage('view', objectName, obj.objectWhere, defaults, 'current', excludeHist, module);
+                                            }
+                                            else if (afterSaveGoTo === 'edit') {
+                                                flexygo.nav.openPage('edit', objectName, '', defaults, 'current', excludeHist, module);
+                                            }
+                                        }
+                                        return true;
+                                    }
+                                    else {
+                                        button.animate({ backgroundColor: flexygo.colors.danger }, 700);
+                                    }
+                                }
+                                else {
+                                    flexygo.msg.success(flexygo.localization.translate('flxmodule.noprop'));
+                                }
+                            }
+                            else {
+                                let reqProps = [];
+                                for (let i = 0; i < module.find('form').validate().errorList.length; i++) {
+                                    let reqPoperty = module.find('form').validate().errorList[i].element.name;
+                                    let reqLabel = module.find('label[lblproperty="' + reqPoperty + '"]').text();
+                                    reqProps.push((reqLabel ? reqLabel.replace(':', '') : reqPoperty));
+                                }
+                                flexygo.msg.warning(flexygo.localization.translate('flxmodule.requiredsaving') + ' ' + reqProps.join(', '));
+                            }
+                            return false;
+                        }
+                        else {
+                            //edit grid
+                            //run through all dirty forms an do a save row
+                            let rowsToSave = $(module).find('flx-list[mode="edit"] tbody tr[objectname].form.dirty, flx-list[mode="edit"] tfoot tr.rowInsert.dirty');
+                            for (let i = 0; i < rowsToSave.length; i++) {
+                                let row = $(rowsToSave[i]);
+                                wc_1.saveRow(row.attr("objectname") || row.closest('flx-list')[0].objectname, row.attr("objectwhere"), module.find('flx-list'), $(row).find('button.saveRowButton'), false);
+                            }
+                        }
+                    }
+                }
+                checkAndSaveNewComboValues(container) {
+                    let combos_with_objects = container.find('[AddValuesToObject="true"]');
+                    if (!combos_with_objects.length)
+                        return;
+                    combos_with_objects.each((_, combo) => {
+                        let res;
+                        const display_field = combo.options.ComboAllowSave_DisplayField;
+                        const value_field = combo.options.ComboAllowSave_ValueField;
+                        //DBCombos will just insert its current new value
+                        if (combo.type === 'dbcombo') {
+                            res = this.addNewComboValue(container, combo, combo.getValue(), display_field);
+                            if (res.success) {
+                                combo.setValue(res.object.data[value_field].Value);
+                                combo.removeAttribute("AddValuesToObject");
+                            }
+                            else {
+                                //Falta traducir
+                                throw new Error(flexygo.localization.translate('Ha habido un error en la inserción de x'));
+                            }
+                            return;
+                        }
+                        //MultiCombos will insert every new value they contain
+                        combo.querySelectorAll('.label-warning').forEach(value_div => {
+                            res = this.addNewComboValue(container, combo, value_div.textContent, display_field);
+                            if (res.success) {
+                                value_div.children[0].click();
+                                combo.addValue(res.object.data[value_field].Value);
+                            }
+                            else {
+                                //Falta traducir
+                                throw new Error(flexygo.localization.translate('Ha habido un error en la inserción de x'));
+                            }
+                        });
+                    });
+                }
+                //Inserts a new value that has been created using a dbcombo/multicombo
+                addNewComboValue(container, combo, value, display_field) {
+                    let new_object = new flexygo.obj.Entity(combo.options.ComboAllowSave_Object);
+                    new_object.read();
+                    new_object.data[display_field].Value = value;
+                    if (combo.options.ComboAllowSave_Defaults) {
+                        let json_values = {};
+                        const props = container.find('[property]');
+                        props.each((i, prop) => {
+                            json_values[prop.property] = prop.getValue();
+                        });
+                        const defaults = flexygo.utils.parser.recursiveCompile(json_values, combo.options.ComboAllowSave_Defaults);
+                        const json_defaults = JSON.parse(defaults);
+                        for (const property in json_defaults) {
+                            new_object.data[property].Value = json_defaults[property];
+                        }
+                    }
+                    return { success: new_object.insert(), object: new_object };
+                }
+                checkNewComboObjectsMessage(container) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        let combos_with_objects = container.find('[AddValuesToObject="true"]');
+                        if (combos_with_objects.length) {
+                            let i = 0, show_warning_message = false, objects_to_save = [];
+                            while (i < combos_with_objects.length) {
+                                let current_combo = combos_with_objects[i];
+                                //The confirm message will show up only if its a combo with an assigned new value
+                                if (current_combo.options.ComboAllowSave_WarningMessage && current_combo.options.ComboAllowSave_Object && (current_combo.type === 'dbcombo' || current_combo.querySelector('.label-warning'))) {
+                                    objects_to_save.push(current_combo.options.ComboAllowSave_Object);
+                                    show_warning_message = true;
+                                }
+                                i++;
+                            }
+                            if (show_warning_message) {
+                                //Falta traducción
+                                const warning_message = flexygo.localization.translate('comboTexts.warningMessage').replace('@', objects_to_save.join(', '));
+                                return yield flexygo.msg.confirm(warning_message);
+                            }
+                        }
+                        return true;
+                    });
+                }
+                saveReportParams(reportname, reportwhere, objectname, objectwhere, objectdefaults, module, button, print = false) {
+                    if ($(module)[0].componentString.includes('flx-edit')) {
+                        let edit = module.find('flx-edit')[0];
+                        edit.validateSQLProperties();
+                    }
+                    if (!button || !button.is(':disabled')) {
+                        if (module.find('form').valid()) {
+                            //We check for possible combo with values that should be saved before object itself
+                            this.checkAndSaveNewComboValues(module);
+                            $('.saveReportButton').prop('disabled', true);
+                            var props = module.find('[property]');
+                            var params = new Array();
+                            if (props.length > 0) {
+                                for (let i = 0; i < props.length; i++) {
+                                    let prop = $(props[i])[0];
+                                    if (!prop.options || !prop.options.DetachedFromDB) {
+                                        params.push({ 'key': prop.property, 'value': prop.getValue() });
+                                    }
+                                }
+                                flexygo.nav.viewReport(reportname, reportwhere, objectname, objectwhere, objectdefaults, params, 'new', true, undefined, print);
+                            }
+                            else {
+                                flexygo.msg.success(flexygo.localization.translate('flxmodule.noparams'));
+                            }
+                            $('.saveReportButton').prop('disabled', false);
+                        }
+                        else {
+                            flexygo.msg.warning(flexygo.localization.translate('flxmodule.requiredreport'));
+                        }
+                    }
+                }
+                execProcessParams(processname, objectname, objectwhere, defaults, module, button, callBack) {
+                    if ($(module)[0].componentString.includes('flx-edit')) {
+                        let edit = module.find('flx-edit')[0];
+                        edit.validateSQLProperties();
+                    }
+                    if (!button || !button.is(':disabled')) {
+                        if (module.find('form').valid()) {
+                            //We check for possible combo with values that should be saved before object itself
+                            this.checkAndSaveNewComboValues(module);
+                            $('.execProcessButton').prop('disabled', true);
+                            let props = module.find('[property]');
+                            let params = new Array();
+                            if (props.length > 0) {
+                                for (var i = 0; i < props.length; i++) {
+                                    let prop = $(props[i])[0];
+                                    let edit = module.find('flx-edit:first')[0];
+                                    if (!edit.data[prop.property].DetachedFromDB) {
+                                        params.push({ 'key': prop.property, 'value': prop.getValue() });
+                                    }
+                                }
+                                flexygo.nav.execProcess(processname, objectname, objectwhere, defaults, params, 'new', true, button, callBack);
+                            }
+                            else {
+                                flexygo.msg.error(flexygo.localization.translate('flxmodule.noparams'));
+                            }
+                            $('.execProcessButton').prop('disabled', false);
+                        }
+                        else {
+                            flexygo.msg.warning(flexygo.localization.translate('flxmodule.requiredrunning'));
+                        }
+                    }
+                }
+                execSelectEntity(objectname, objectwhere, module, button) {
+                    let obj = new flexygo.obj.Entity(objectname, objectwhere);
+                    obj.read();
+                    let ev = {
+                        class: "entity",
+                        type: "selected",
+                        sender: obj,
+                        masterIdentity: objectname,
+                        detailIdentity: objectwhere
+                    };
+                    flexygo.events.trigger(ev, module);
+                }
+                startLoading() {
+                    $(this).find('.icon-sincronize').addClass('icon-spin-reverse txt-outstanding');
+                    $(this).addClass('loading');
+                    NProgress.start();
+                }
+                stopLoading() {
+                    $(this).find('.icon-sincronize').removeClass('icon-spin-reverse txt-outstanding');
+                    $(this).removeClass('loading');
+                    NProgress.done();
+                }
+                /**
+                * Checks if form is dirty.
+                * @method checkDirtyEdit
+                * @return {boolean}
+                */
+                checkDirtyEdit() {
+                    let me = $(this);
+                    let dlg = me.closest("main.pageContainer");
+                    let form = me.find('form');
+                    let dirtyForms = form.filter('.dirty');
+                    if (dirtyForms.length != 0 && document.body.contains(this)) {
+                        setTimeout(() => {
+                            Lobibox.confirm({
+                                title: flexygo.localization.translate('flxedit.areyousuretitle'),
+                                msg: flexygo.localization.translate('flxedit.areyousuremsg'),
+                                buttons: {
+                                    yes: {
+                                        'class': 'lobibox-btn lobibox-btn-yes',
+                                        text: flexygo.localization.translate('flxedit.areyousuremsgyes'),
+                                        closeOnClick: true
+                                    },
+                                    no: {
+                                        'class': 'lobibox-btn lobibox-btn-no',
+                                        text: flexygo.localization.translate('flxedit.areyousuremsgno'),
+                                        closeOnClick: true
+                                    }
+                                },
+                                iconClass: '',
+                                callback: (dialog, type, ev) => {
+                                    if (type == "yes") {
+                                        let ev = {
+                                            class: "dialog",
+                                            type: "closed",
+                                            sender: dlg.data('context')
+                                        };
+                                        dlg.addClass("closing");
+                                        flexygo.events.trigger(ev, me);
+                                        dlg.dialog('close');
+                                        //dlg.dialog('destroy').remove();
+                                    }
+                                }
+                            });
+                        }, 150);
+                        return false; //cancel default close
+                    }
+                }
+            }
+            wc_1.FlxModuleElement = FlxModuleElement;
+        })(wc = ui.wc || (ui.wc = {}));
+    })(ui = flexygo.ui || (flexygo.ui = {}));
+})(flexygo || (flexygo = {}));
+window.customElements.define("flx-module", flexygo.ui.wc.FlxModuleElement);
+//# sourceMappingURL=flx-module.js.map

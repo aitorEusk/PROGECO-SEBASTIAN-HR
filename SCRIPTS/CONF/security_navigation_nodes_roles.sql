@@ -14,6 +14,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"NodeId":"81976233-9618-4050-9414-01C019DFEF1B",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:55:00",
+	"flxUpdatedDate":"2026-05-27T12:55:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"NodeId":"40ADF0B6-F298-4561-B2AA-0583C7ADA608",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":false,
@@ -21,6 +31,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"flxUpdatedBy":"admin",
 	"flxInsertedDate":"2026-05-25T15:07:00",
 	"flxUpdatedDate":"2026-05-25T15:07:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"40ADF0B6-F298-4561-B2AA-0583C7ADA608",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:55:00",
+	"flxUpdatedDate":"2026-05-27T12:55:00",
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
@@ -34,6 +54,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"NodeId":"6E2DB47B-B45E-4AD0-9863-296C7F4323C7",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:59:00",
+	"flxUpdatedDate":"2026-05-27T12:59:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"NodeId":"F87AC06F-FD50-4867-A538-29D6E28AA013",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":false,
@@ -41,6 +71,86 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"flxUpdatedBy":"admin",
 	"flxInsertedDate":"2026-05-25T15:07:00",
 	"flxUpdatedDate":"2026-05-25T15:07:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"3468C35B-9A5A-4F9E-9E03-2D6A1CBED087",
+	"RoleId":"access-points",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T11:18:00",
+	"flxUpdatedDate":"2026-05-27T11:18:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"3468C35B-9A5A-4F9E-9E03-2D6A1CBED087",
+	"RoleId":"admins",
+	"CanView":true,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T11:18:00",
+	"flxUpdatedDate":"2026-05-27T11:18:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"3468C35B-9A5A-4F9E-9E03-2D6A1CBED087",
+	"RoleId":"allUsers",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T11:18:00",
+	"flxUpdatedDate":"2026-05-27T11:18:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"3468C35B-9A5A-4F9E-9E03-2D6A1CBED087",
+	"RoleId":"HR_Manager",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T11:18:00",
+	"flxUpdatedDate":"2026-05-27T11:18:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"3468C35B-9A5A-4F9E-9E03-2D6A1CBED087",
+	"RoleId":"hresources",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T11:18:00",
+	"flxUpdatedDate":"2026-05-27T11:18:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"3468C35B-9A5A-4F9E-9E03-2D6A1CBED087",
+	"RoleId":"hresourcesLow",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T11:18:00",
+	"flxUpdatedDate":"2026-05-27T11:18:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"3468C35B-9A5A-4F9E-9E03-2D6A1CBED087",
+	"RoleId":"PERS_ADMIN_PROGECO",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T11:18:00",
+	"flxUpdatedDate":"2026-05-27T11:18:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"3468C35B-9A5A-4F9E-9E03-2D6A1CBED087",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T11:18:00",
+	"flxUpdatedDate":"2026-05-27T11:18:00",
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
@@ -61,6 +171,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"flxUpdatedBy":"unknown",
 	"flxInsertedDate":"2026-05-25T15:14:00",
 	"flxUpdatedDate":"2026-05-25T15:14:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"33729CFF-90CE-4E0C-B101-34A296BC8937",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:59:00",
+	"flxUpdatedDate":"2026-05-27T12:59:00",
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
@@ -94,6 +214,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"NodeId":"5484D299-9CBA-4F7E-9491-48E361AF9A92",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:54:00",
+	"flxUpdatedDate":"2026-05-27T12:54:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"NodeId":"D4A3B26E-8B7B-4ED4-B929-5C72EB548F91",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":false,
@@ -114,6 +244,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"NodeId":"7574EC3B-AD4E-4615-A4FC-673411C5365F",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:55:00",
+	"flxUpdatedDate":"2026-05-27T12:55:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"NodeId":"E41FDFCF-8220-4738-B444-6D99EA57F817",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":false,
@@ -121,6 +261,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"flxUpdatedBy":"unknown",
 	"flxInsertedDate":"2026-05-25T15:18:00",
 	"flxUpdatedDate":"2026-05-25T15:18:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"E41FDFCF-8220-4738-B444-6D99EA57F817",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:54:00",
+	"flxUpdatedDate":"2026-05-27T12:54:00",
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
@@ -134,6 +284,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"NodeId":"7C98CEE1-5F95-40A0-87C2-8642591F5772",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T13:00:00",
+	"flxUpdatedDate":"2026-05-27T13:00:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"NodeId":"E44086AB-23FA-4BDD-A40D-871DA21D5FAE",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":false,
@@ -141,6 +301,26 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"flxUpdatedBy":"admin",
 	"flxInsertedDate":"2026-05-25T15:07:00",
 	"flxUpdatedDate":"2026-05-25T15:07:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"E44086AB-23FA-4BDD-A40D-871DA21D5FAE",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:54:00",
+	"flxUpdatedDate":"2026-05-27T12:54:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"F259E34C-4B4A-4BAB-94F5-896067E1DA12",
+	"RoleId":"hresourcesLow",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:59:00",
+	"flxUpdatedDate":"2026-05-27T12:59:00",
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
@@ -154,6 +334,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"NodeId":"F259E34C-4B4A-4BAB-94F5-896067E1DA12",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:59:00",
+	"flxUpdatedDate":"2026-05-27T12:59:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"NodeId":"BA322241-F49A-465F-8153-8D8F7454759B",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":false,
@@ -161,6 +351,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"flxUpdatedBy":"unknown",
 	"flxInsertedDate":"2026-05-25T15:14:00",
 	"flxUpdatedDate":"2026-05-25T15:14:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"BA322241-F49A-465F-8153-8D8F7454759B",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T13:02:00",
+	"flxUpdatedDate":"2026-05-27T13:02:00",
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
@@ -194,6 +394,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"NodeId":"B4CE29EA-73B6-4BA2-B542-B7A3B1A1EB2B",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:54:00",
+	"flxUpdatedDate":"2026-05-27T12:54:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"NodeId":"B9C8C632-D925-44D9-9C4D-BE1C22A444B5",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":true,
@@ -224,6 +434,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"NodeId":"7C916D42-9C12-4878-9192-D0B1DA9041E7",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T13:00:00",
+	"flxUpdatedDate":"2026-05-27T13:00:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"NodeId":"9E044228-0E3B-4289-8D44-D1B157B779AA",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":false,
@@ -241,6 +461,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"flxUpdatedBy":"unknown",
 	"flxInsertedDate":"2026-05-25T15:18:00",
 	"flxUpdatedDate":"2026-05-25T15:18:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"C05C4D31-7084-4266-85BD-E1AC09A2AB10",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:55:00",
+	"flxUpdatedDate":"2026-05-27T12:55:00",
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
@@ -264,6 +494,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"NodeId":"9CFDC5AF-37B2-4120-9514-E80B99220D22",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T12:55:00",
+	"flxUpdatedDate":"2026-05-27T12:55:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"NodeId":"7BC20473-3A82-4541-90DF-FDE15F7E8363",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":false,
@@ -271,6 +511,16 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"flxUpdatedBy":"unknown",
 	"flxInsertedDate":"2026-05-25T15:25:00",
 	"flxUpdatedDate":"2026-05-25T15:25:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"7BC20473-3A82-4541-90DF-FDE15F7E8363",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-27T13:00:00",
+	"flxUpdatedDate":"2026-05-27T13:00:00",
 	"OriginAddonId":"Main",
 	"OriginId":2}]')
 

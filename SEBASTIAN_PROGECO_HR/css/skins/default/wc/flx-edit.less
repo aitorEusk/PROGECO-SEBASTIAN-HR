@@ -1,0 +1,2001 @@
+@import "../CssVars.less";
+
+flx-edit .edit-form {
+    margin: 10px;
+}
+
+flx-edit .item, .flx-edit .item {
+    width: 100%;
+    height: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+@media (max-width: @large) {
+    flx-edit .item, .flx-edit .item {
+        padding: 0;
+    }
+}
+
+flx-edit .input-group {
+    padding-right: 15px;
+}
+
+flx-text[type="cron"] .popover {
+    position: fixed;
+}
+
+
+flx-edit .item > label {
+    display: inline-block;
+    font-size: .8em;
+    font-weight: normal;
+}
+
+.size-xs flx-edit .item > label {
+    font-size: .9em;
+}
+
+flx-edit .item [data-tag=control] .btn {
+    font-size: 14px;
+}
+
+.flxdependency-modal-sentence {
+    .sweet-modal-content {
+        padding: 35px 15px;
+    }
+
+    b {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 8px;
+    }
+
+    code {
+        color: #485980;
+    }
+}
+
+// Inputs WC Less Styles
+// HTML Editor*
+flx-htmledit .note-editor {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    overflow: hidden;
+
+    .note-statusbar {
+        display: none;
+    }
+
+    .panel-heading {
+        flex-shrink: 0;
+    }
+
+    &.note-frame .note-editing-area {
+        overflow-y: auto;
+        flex-grow: 1;
+    }
+}
+
+.grid-stack-item .item div[data-tag=control] {
+    &:has(flx-code,flx-textarea,flx-radio,flx-image,flx-upload,flx-whiteboard,flx-htmledit,flx-wacom) {
+        height: ~"calc(100% - 31px)";
+    }
+
+    :is(flx-image, flx-whiteboard, flx-upload, flx-textarea) > :first-child {
+        height: 100%;
+    }
+
+    flx-upload {
+        .upload-container {
+            min-height: 100%;
+
+            .upload-btn {
+                border: none;
+                border-top: 1px solid @border-module-color;
+                border-radius: 0;
+            }
+        }
+    }
+}
+
+//Text area
+flx-textarea .btn {
+    padding: 0 12px;
+    height: 100%
+}
+
+flx-textarea > div {
+    height: 100%
+}
+
+flx-textarea textarea.form-control {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+}
+
+flx-textarea > div > label {
+    word-break: keep-all;
+    white-space: pre-wrap;
+    min-height: 30px;
+    height: inherit !important;
+    max-height: 500px;
+    overflow-x: auto;
+}
+
+flx-textarea {
+    .fullScreenText {
+        position: fixed;
+        z-index: 11;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        resize: none;
+    }
+}
+
+
+//Checbox classes
+flx-check > div {
+    display: inline-block;
+    margin-right: 1em;
+    margin-left: .4em;
+    vertical-align:middle;
+}
+
+flx-check input[type=checkbox] {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+flx-check input[type=checkbox] + label {
+    height: 1.2em;
+    font-size: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 1px;
+}
+
+flx-check input[type=checkbox]:focus + label {
+    outline: 1px solid silver; //5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+
+flx-check input[type=checkbox]:checked + label:before {
+    content: "\f1f0";
+    font-family: 'Flexygo-icons' !important;
+}
+
+input[type=checkbox]:indeterminate + label:before {
+    content: "\ead5";
+    font-family: 'Flexygo-icons' !important;
+}
+
+flx-check label {
+    border: solid 1px @border-module-color;
+    border-radius: 4px;
+    width: 1.2em;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: normal;
+}
+
+flx-check input[type=checkbox][disabled] + label {
+    cursor: no-drop;
+    background-color: #eee;
+}
+
+flx-range {
+    &.is-ios-ipad .form-control {
+        //12px is the padding left and right combined that ipads do add
+        min-width: calc(50% - 12px);
+        max-width: calc(50% - 12px);
+    }
+
+    .form-control {
+        width: 50%;
+        display: inline
+    }
+}
+
+//Radio Classes
+
+
+flx-radio div {
+    padding-top: 6px;
+    height: 100%;
+    overflow: auto;
+}
+
+flx-radio div label {
+    display: block;
+    font-weight: normal;
+}
+
+flx-radio div.inline label {
+    display: inline;
+    margin-right: 1em;
+}
+
+
+//TAGS
+flx-multicombo div.bootstrap-tagsinput {
+    border: none !important;
+    cursor: default;
+
+    input {
+        cursor: default;
+    }
+}
+
+flx-multicombo div.input-group {
+    border: 1px solid #ccc;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-collapse: separate;
+}
+
+flx-tag div.bootstrap-tagsinput, flx-multicombo div.bootstrap-tagsinput {
+    border-radius: 0;
+    width: 100%
+}
+
+flx-tag div.bootstrap-tagsinput:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+flx-tag div.bootstrap-tagsinput:nth-last-child(2) {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+flx-filter flx-tag div.bootstrap-tagsinput:nth-last-child(2), flx-filter flx-multicombo div:not(.mobileinputdiv) div.bootstrap-tagsinput {
+    height: 15px;
+    overflow: auto
+}
+
+flx-filter flx-multicombo > div:not(.mobileinputdiv).input-group:hover,
+flx-filter flx-multicombo > div:not(.mobileinputdiv).input-group.opened {
+    position: relative;
+    z-index: 999;
+}
+
+flx-filter flx-multicombo ul {
+    margin-top: 7px;
+}
+
+
+//DISABLED CONTROLS
+flx-tag[Disabled] > div > div, flx-code[Disabled] > div {
+    background-color: #eee;
+    opacity: 1;
+}
+
+
+
+flx-dbcombo > i, flx-multicombo > i {
+    position: relative;
+    top: -18px;
+    float: right;
+    right: 5px;
+    font-size: .6em;
+}
+
+flx-multicombo, flx-dbcombo {
+    .newValueField {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        --margin: 5px;
+
+        & > span {
+            margin-left: var(--margin);
+
+            span {
+                margin-left: var(--margin);
+            }
+        }
+
+        small {
+            margin-right: var(--margin);
+        }
+    }
+}
+
+flx-module.fullscreen {
+    flx-dbcombo > ul, flx-multicombo > ul {
+        position: fixed;
+    }
+}
+
+flx-dbcombo > ul, flx-multicombo > ul {
+    border-radius: 4px;
+    color: @txt-menu-color;
+    position: fixed;
+    top: auto;
+    min-height: 22px;
+    height: fit-content;
+
+    @media (max-width: @medium) {
+        z-index: 999999;
+    }
+
+    z-index: 7;
+    list-style-type: none;
+    font-family: 'latoregular';
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid @outstanding-color;
+    font-size: 1em;
+    background-color: @menu-color;
+    padding: 0 !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    li {
+        cursor: pointer;
+    }
+}
+
+flx-dbcombo > ul.mobile, flx-multicombo > ul.mobile {
+    padding-top: 30px !important;
+    z-index: 999999;
+}
+
+html.tactilMode flx-multicombo label.closed i, html.tactilMode flx-dbcombo ul i.flx-icon {
+    font-size: 28px;
+}
+
+html.tactilMode flx-module span.cntButtons {
+    font-size: 18px;
+}
+
+html.tactilMode input[type="search"]::-webkit-search-cancel-button {
+    font-size: 20px;
+    margin-right: 15px;
+}
+flx-multicombo label.cleared {
+    min-width:15px;
+}
+flx-multicombo label.cleared i {
+    font-size: 9px;
+    color: #27477a;
+}
+
+html.tactilMode flx-multicombo label.cleared i {
+    font-size: 20px;
+}
+
+flx-dbcombo > ul li, flx-multicombo > ul li {
+    padding: 5px !important;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
+
+flx-dbcombo > ul.mobile li, flx-multicombo > ul.mobile li {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+flx-dbcombo > ul li:hover, flx-multicombo > ul li:hover {
+    color: @nav-color;
+    background-color: @txt-nav-color;
+}
+
+flx-dbcombo > ul li.selected {
+    background-color: @outstanding-color;
+}
+
+//Creamos el seleccionador del multicombo
+flx-multicombo > ul li.selected {
+    background-color: @outstanding-color;
+}
+flx-multicombo > ul li.selected .txt-outstanding {
+    color: @txt-outstanding-color;
+}
+
+
+flx-dbcombo > ul li.selected .txt-outstanding {
+    color: @txt-outstanding-color;
+}
+
+flx-dbcombo div.item-float ~ ul li, flx-multicombo div.item-float ~ ul li {
+    float: left;
+}
+
+flx-dbcombo button.flx-caret, flx-multicombo button.flx-caret {
+    border-left: 0;
+}
+
+flx-dbcombo div.mobilebackground, flx-multicombo div.mobilebackground {
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: @medium) {
+        z-index: 999998;
+    }
+    z-index: 6;
+    opacity: .7;
+}
+
+flx-dbcombo ul div.mobileinputdiv, flx-multicombo ul div.mobileinputdiv {
+    padding-right: unset;
+    position: fixed;
+    width: 95.5%;
+    top: 4px;
+}
+
+flx-dbcombo > ul, flx-multicombo > ul {
+    > div.load-more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        margin-bottom: -50px;
+        flex-direction: column;
+        position: sticky;
+        bottom: 0;
+        background: white;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        clear: both;
+
+        i {
+            animation: scroll ease 2s infinite;
+        }
+
+        @media (max-width: @medium) {
+            margin-bottom: -100px;
+        }
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateY(0);
+        }
+
+        30% {
+            transform: translateY(5px);
+        }
+    }
+}
+//CODE EDITOR
+flx-edit .CodeMirror {
+    border-radius: 3px;
+    border-color: @border-module-color;
+    border-left: 1px solid @border-module-color;
+}
+
+flx-edit .CodeMirror .CodeMirror-gutters {
+    border-left-width: 0;
+}
+//DEVELOPE MODE
+flx-edit .grid-stack-item .grid-stack-item-content {
+    height: 100%
+}
+
+
+
+.property-toolbar {
+    display: none;
+    float: right;
+    width: auto;
+}
+
+
+.develop flx-edit .grid-stack .grid-stack-placeholder > .placeholder-content {
+    background-color: #ffffde;
+}
+
+:not(.develop) flx-edit .grid-stack > .grid-stack-item > .grid-stack-item-content {
+    position: static;
+}
+//SWITcHES
+flx-switch > div {
+    margin: 9px ;
+}
+
+flx-switch > div.inline {
+    display: inline-block;
+}
+
+flx-switch > div.switch-danger .onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: @danger-color;
+}
+//Swtich without text
+flx-switch .onoffswitch {
+    position: relative;
+    width: 2.5em;
+    height: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+flx-switch .onoffswitch-checkbox {
+    display: none;
+}
+flx-switch .onoffswitch-label:hover{
+    color: inherit;
+}
+
+flx-switch .onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    background-color: #fff;
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.15);
+    height: 100%;
+    margin: 0;
+}
+
+
+flx-switch[disabled] .onoffswitch-label, flx-switch[mode="view"] .onoffswitch-label {
+    cursor: not-allowed;
+}
+
+flx-switch .onoffswitch-inner {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+flx-switch .onoffswitch-switch {
+    display: block;
+    width: 15px;
+    left: 1px;
+    height: 15px;
+    background: #fff;
+    position: absolute;
+    border: 1px solid #999;
+    box-sizing: content-box;
+    border-radius: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    --offset-value: calc(98%);
+}
+
+.size-xs .onoffswitch-switch {
+    --offset-value: 10px;
+    width: 11px;
+    height: 11px;
+}
+
+.size-s .onoffswitch-switch {
+    --offset-value: 14px;
+    width: 12px;
+    height: 12px;
+}
+
+
+.size-m .onoffswitch-switch {
+    --offset-value: 17px;
+    width: 14px;
+    height: 14px;
+}
+
+.size-l .onoffswitch-switch {
+    --offset-value: ~"calc(100% + 7px)";
+    width: 16px;
+    height: 16px;
+}
+
+flx-switch .onoffswitch-checkbox:checked + .onoffswitch-label {
+    background: @outstanding-color;
+}
+
+flx-switch .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    transform: translate(var(--offset-value),-50%);
+}
+
+//Swtich with text
+flx-switch .switch-text.onoffswitch {
+    width: 55px;
+}
+flx-switch .switch-text .onoffswitch-inner {
+    width: 200%;
+    display: flex;
+    text-align: center;
+    transform: translateX(-39%);
+    transition: transform 200ms ease-in-out;
+}
+flx-switch .switch-text .onoffswitch-checkbox:checked + .onoffswitch-label > .onoffswitch-inner {
+    transform: translateX(-10%);
+    color: white;
+}
+
+
+flx-switch .switch-text .onoffswitch-inner:before, .switch-text .onoffswitch-inner:after {
+    height: inherit;
+    line-height: 20px;
+    font-size: .6em;
+    flex: 1;
+    content: var(--switch-text);
+}
+
+flx-switch .switch-text .onoffswitch-inner:before {
+    --switch-text: "ON";    
+}
+
+flx-switch .switch-text .onoffswitch-inner:after {
+    --switch-text: "OFF";
+}
+
+
+flx-switch:has(input[sqlvalidator="0"]) {
+    label.onoffswitch-label, span.onoffswitch-switch {
+        border-color: @danger-color;
+    }
+
+    label.txt-danger {
+        float: left;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+
+        &:hover {
+            white-space: normal;
+            overflow: visible;
+            text-overflow: inherit;
+        }
+    }
+}
+
+flx-separator legend {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    display: flex;
+    align-items: center;
+}
+
+flx-separator legend.placeHolder {
+    color: silver;
+    border: 0 none;
+}
+
+flx-separator .spanPlaceHolder {
+    display: none;
+}
+// END SWITCH
+// COMBO*
+flx-dbcombo[disabled] > div > div .flx-caret, flx-multicombo[disabled] > div > div {
+    background-color: #eee;
+    cursor: not-allowed
+}
+
+flx-multicombo[disabled] * {
+    cursor: not-allowed !important;
+}
+
+flx-dbcombo[disabled] > div > div .flx-caret:hover {
+    background-color: #eee;
+    cursor: not-allowed;
+    border-color: #ccc
+}
+// END Combo
+//Image
+flx-image .cpr-view-container {
+    width: 100%;
+    height: ~"calc(100% - 15px)";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+flx-image .cpr-subcontainer, .flx-cpr-image .cpr-subcontainer {
+    width: 100%;
+    height: 90%;
+}
+
+flx-image .cpr-heading, .flx-cpr-image .cpr-heading {
+    text-align: center;
+}
+
+flx-image .cpr-btn, .flx-cpr-image .cpr-btn {
+    width: 46px;
+    margin: 2.5px 0 2.5px 0;
+}
+
+flx-image .cpr-panel, .flx-cpr-image .cpr-panel {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+flx-image .cpr-cropper, .flx-cpr-image .cpr-cropper {
+    height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+flx-image .cpr-btn-group, .flx-cpr-image .cpr-btn-group {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+flx-image .cpr-btn-save, .flx-cpr-image .cpr-btn-save {
+    margin: 0 auto;
+    width: 49%;
+    float: left;
+}
+
+flx-image .cpr-btn-remove, .flx-cpr-image .cpr-btn-remove {
+    margin: 0 auto;
+    width: 49%;
+    float: right;
+}
+
+flx-image .cpr-btn-browse, .flx-cpr-image .cpr-btn-browse {
+    margin: 8px auto;
+    width: 100%;
+}
+
+flx-image .cpr-span, .flx-cpr-image .cpr-span {
+    position: absolute;
+    width: 97%;
+    text-align: center;
+    font-size: 36px;
+    opacity: .4;
+}
+
+flx-image .cpr-dragging, .flx-cpr-image .cpr-dragging {
+    filter: blur(3px) grayscale(67%);
+}
+
+.flx-cpr-image .img-responsive {
+    margin: 0 auto;
+}
+
+flx-image .ctl-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0,0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0,0, .24);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+flx-image .ctl-image {
+    max-height: 100%;
+}
+
+flx-image .ctl-container-locked {
+    cursor: not-allowed !important;
+    background-color: #eee !important;
+}
+
+flx-image .ctl-image-locked {
+    filter: grayscale(100%);
+}
+
+flx-image .ctl-icon {
+    position: absolute;
+    font-size: 35px;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.5);
+}
+
+flx-image div.ctl-hover:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+}
+
+flx-image div.ctl-hover:hover .ctl-image {
+    opacity: .7;
+    transform: scale(1.1);
+    filter: grayscale(75%);
+}
+
+flx-image div.ctl-hover:hover .ctl-icon {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+flx-image .ctl-cpr-transition, .flx-cpr-image .ctl-cpr-transition {
+    transition: .3s cubic-bezier(.25, .8, .25, 1);
+    -webkit-transition: all .3s cubic-bezier(.25, .8, .25, 1);
+    -moz-transition: all .3s cubic-bezier(.25, .8, .25, 1);
+    -o-transition: all .3s cubic-bezier(.25, .8, .25, 1);
+}
+
+flx-image {
+    height: inherit;
+}
+
+flx-image .cpr-btn-save-imagemanager, .flx-cpr-image .cpr-btn-save-imagemanager {
+    width: 100% !important;
+}
+//End Image
+//WhiteBoard
+flx-whiteboard .cpr-view-container, flx-wacom .cpr-view-container {
+    width: 100%;
+    height: ~"calc(100% - 15px)";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/*flx-whiteboard .cpr-subcontainer, .flx-cpr-image .cpr-subcontainer {
+    width: 100%;
+    height: 90%;
+}
+
+flx-whiteboard .cpr-heading, .flx-cpr-image .cpr-heading {
+    text-align: center;
+}
+
+flx-whiteboard .cpr-btn, .flx-cpr-image .cpr-btn {
+    width: 46px;
+    margin: 2.5px 0 2.5px 0;
+}
+
+flx-whiteboard .cpr-panel, .flx-cpr-image .cpr-panel {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+flx-whiteboard .cpr-cropper, .flx-cpr-image .cpr-cropper {
+    height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+flx-whiteboard .cpr-btn-group, .flx-cpr-image .cpr-btn-group {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+flx-whiteboard .cpr-btn-save, .flx-cpr-image .cpr-btn-save {
+    margin: 0 auto;
+    width: 49%;
+    float: left;
+}
+
+flx-whiteboard .cpr-btn-remove, .flx-cpr-image .cpr-btn-remove {
+    margin: 0 auto;
+    width: 49%;
+    float: right;
+}
+
+flx-whiteboard .cpr-btn-browse, .flx-cpr-image .cpr-btn-browse {
+    margin: 8px auto;
+    width: 100%;
+}*/
+flx-whiteboard .cpr-span, flx-wacom .cpr-span, .flx-cpr-image .cpr-span {
+    position: absolute;
+    width: 97%;
+    text-align: center;
+    font-size: 36px;
+    opacity: .4;
+}
+
+flx-whiteboard .cpr-dragging,flx-wacom .cpr-dragging, .flx-cpr-image .cpr-dragging {
+    filter: blur(3px) grayscale(67%);
+}
+
+.flx-cpr-whiteboard .img-responsive {
+    margin: 0 auto;
+}
+
+flx-whiteboard .ctl-container, flx-wacom .ctl-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0,0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0,0, .24);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+flx-whiteboard .ctl-image, flx-wacom .ctl-image {
+    max-height: 100%;
+}
+
+flx-whiteboard .ctl-container-locked, flx-wacom .ctl-container-locked {
+    cursor: not-allowed !important;
+    background-color: #eee !important;
+}
+
+flx-whiteboard .ctl-image-locked, flx-wacom .ctl-image-locked {
+    filter: grayscale(100%);
+}
+
+flx-whiteboard .ctl-icon, flx-wacom .ctl-icon {
+    position: absolute;
+    font-size: 35px;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.5);
+}
+
+flx-whiteboard div.ctl-hover:hover, flx-wacom div.ctl-hover:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+}
+
+flx-whiteboard div.ctl-hover:hover .ctl-image, flx-wacom div.ctl-hover:hover .ctl-image {
+    opacity: .7;
+    transform: scale(1.1);
+    filter: grayscale(75%);
+}
+
+flx-whiteboard div.ctl-hover:hover .ctl-icon, flx-wacom div.ctl-hover:hover .ctl-icon {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+flx-whiteboard .ctl-cpr-transition, flx-wacom .ctl-cpr-transition, .flx-cpr-image .ctl-cpr-transition {
+    transition: .3s cubic-bezier(.25, .8, .25, 1);
+    -webkit-transition: all .3s cubic-bezier(.25, .8, .25, 1);
+    -moz-transition: all .3s cubic-bezier(.25, .8, .25, 1);
+    -o-transition: all .3s cubic-bezier(.25, .8, .25, 1);
+}
+
+flx-whiteboard, flx-wacom {
+    height: inherit;
+}
+
+flx-whiteboard .cpr-btn-save-imagemanager, flx-wacom .cpr-btn-save-imagemanager, .flx-cpr-image .cpr-btn-save-imagemanager {
+    width: 100% !important;
+}
+//END whiteboard
+//Upload
+flx-upload {
+    .upload-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        flex-direction: column;
+        width: 100%;
+        border: solid 1px #ccc;
+        border-radius: 4px;
+        min-height: 110px;
+        height: ~"calc(100% - 30px)";
+        overflow: hidden;
+
+        .upload-btn {
+            background-color: @outstanding-color;
+            color: @txt-outstanding-color;
+            border-radius: unset;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 11px;
+            padding-bottom: 11px;
+            width: 100%;
+            transition: all .15s ease-in-out 0s;
+
+            &:hover {
+                background-color: darken(@outstanding-color, 10%);
+            }
+        }
+
+        .upload-drag-container {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            width: ~"calc(100% - 10px)";
+            height: ~"calc(50% - 10px)";
+            margin: 6px;
+            padding: 4px;
+            background-color: white;
+            position: relative;
+            border: 1px dashed transparent;
+            border-radius: 4px;
+
+
+            &.upload-dragging {
+                border-color: #6f6f6f;
+                opacity: .4;
+
+                span {
+                    opacity: 1;
+                    z-index: 1;
+                }
+
+                .uploaded-flies {
+                    opacity: .6;
+                }
+            }
+
+            &.upload-uploading {
+                span {
+                    color: white;
+                }
+
+                .uploaded-flies {
+                    opacity: 0;
+                }
+            }
+
+            span {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                top: 50%;
+                width: 100%;
+                text-align: center;
+                font-size: 1.5em;
+                opacity: .4;
+                transition: all .15s ease-in-out 0s;
+            }
+
+            .uploaded-flies {
+                height: 100%;
+                width: 100%;
+                overflow: auto;
+                display: flex;
+                flex-wrap: wrap;
+
+                .upload-file {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-radius: 6px;
+                    background-color: fade(@outstanding-color, 10);
+                    color: @outstanding-color;
+                    overflow: hidden;
+                    transition: all .15s ease-in-out 0s;
+                    height: 36px;
+                    margin: 4px;
+                    padding: 0px 10px;
+                    flex: 1 1 150px;
+                    backdrop-filter: brightness(10);
+                    -webkit-backdrop-filter: brightness(10);
+
+                    > div:first-child {
+                        max-width: 56%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        > i {
+                            margin-right: 6px;
+                        }
+
+                        > small {
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                    }
+
+                    > div:last-child {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        a {
+                            color: unset;
+                            text-decoration: unset;
+                        }
+
+                        i {
+                            cursor: pointer;
+                            opacity: .8;
+                            font-weight: bold;
+                            transition: all .15s ease-in-out 0s;
+                            border-radius: 4px;
+                            padding: 4px 6px;
+                            margin-left: 1px;
+
+                            &:hover {
+                                opacity: 1;
+                                background-color: fade(@outstanding-color, 20);
+                            }
+                        }
+
+                        .upload-file-delete {
+                            &:hover {
+                                color: @danger-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//END Upload
+//Image Manager
+flx-imagemanager .im-transition {
+    transition: all .4s cubic-bezier(.25, .8, .25, 1);
+    -webkit-transition: all .4s cubic-bezier(.25, .8, .25, 1);
+    -moz-transition: all .4s cubic-bezier(.25, .8, .25, 1);
+    -o-transition: all .4s cubic-bezier(.25, .8, .25, 1);
+}
+
+flx-imagemanager .im-btn-container {
+    display: flex;
+    position: relative;
+    padding: 5px;
+    align-items: center;
+    box-shadow: 0 7px 9px -7px rgba(0, 0, 0, .5);
+    z-index: 3;
+}
+
+flx-imagemanager .im-pry-container {
+    overflow-x: hidden;
+    min-height: 74vh;
+    max-height: 74vh;
+    margin: 0 10px;
+}
+
+flx-imagemanager[mode=view] .im-pry-container {
+    min-height: unset;
+    max-height: unset;
+    overflow: hidden;
+}
+
+flx-imagemanager .im-pry-container-single {
+    overflow: hidden;
+}
+
+flx-imagemanager .im-pry-container-empty {
+    min-height: unset !important;
+    max-height: unset !important;
+    height: unset !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+flx-imagemanager .im-pry-container-empty .im-empty {
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+    position: relative
+}
+
+flx-imagemanager .im-pry-container-empty .im-empty:hover {
+    opacity: .15;
+    transform: scale(1.15);
+}
+
+flx-imagemanager .im-pry-container-empty .im-empty:hover ~ .im-empty-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+flx-imagemanager .im-pry-container-empty:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+}
+
+flx-imagemanager .im-pry-container-empty .im-empty-icon {
+    transform: scale(1.5);
+    opacity: 0;
+    font-size: 48px;
+    position: absolute;
+    top: ~"calc(50% - 24px)";
+    left: ~"calc(50% - 24px)";
+    transition-delay: .25s;
+}
+
+flx-imagemanager .im-btn {
+    width: 100%;
+    margin: 5px;
+}
+
+flx-imagemanager .im-btn-settings {
+    min-width: 36px;
+    max-width: 36px;
+    height: 36px;
+}
+
+@keyframes start {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes start {
+    from {
+        -webkit-transform: scale(0);
+    }
+
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+
+flx-imagemanager .im-wall .im-item[data-state="init"] {
+    display: none;
+}
+
+flx-imagemanager .im-wall .im-item[data-state="start"] {
+    display: block;
+    animation: start .35s;
+    -webkit-animation: start .35s;
+}
+
+flx-imagemanager .im-item {
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+    overflow: hidden;
+    cursor: -webkit-grab;
+    margin: 10px 0;
+}
+
+flx-imagemanager[mode=view] .im-item {
+    width: 175px;
+    height: 175px;
+}
+
+flx-imagemanager .im-item:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+    transition: box-shadow .3s cubic-bezier(.25, .8, .25, 1) !important;
+}
+
+flx-imagemanager .im-item:hover .im-data {
+    background-color: fade(@outstanding-color, 17%);
+}
+
+flx-imagemanager .im-item:hover .im-data .im-data-container {
+    opacity: 1;
+}
+
+flx-imagemanager .im-item:hover .im-data .im-data-item {
+    transform: scale(1);
+}
+
+flx-imagemanager .im-item:hover .im-data .im-data-descrip hr {
+    width: 70%;
+}
+
+flx-imagemanager .im-item:hover .im-data .im-mainimage {
+    opacity: 1;
+}
+
+flx-imagemanager .im-item:hover .im-data .im-removeimage {
+    opacity: 1;
+}
+
+flx-imagemanager .im-item:hover .im-image {
+    opacity: .7;
+    transform: scale(1.1);
+    filter: grayscale(75%);
+    transition-delay: .1s;
+}
+
+flx-imagemanager .im-item:active {
+    cursor: -webkit-grabbing;
+}
+
+flx-imagemanager .im-item-single {
+    cursor: default !important;
+}
+
+
+
+flx-imagemanager .im-image {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+flx-imagemanager .im-data {
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    z-index: 1;
+}
+
+flx-imagemanager .im-removeimage {
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    padding-top: 4px;
+    padding-right: 8px;
+    z-index: 1;
+}
+
+flx-imagemanager .im-removeimage:hover {
+    cursor: pointer;
+    color: @danger-color
+}
+
+flx-imagemanager .im-mainimage {
+    width: 60px;
+    height: 25px;
+    opacity: 0;
+}
+
+flx-imagemanager .im-mainimage:hover {
+    cursor: pointer;
+}
+
+flx-imagemanager .im-mainimage:hover .im-item-corner {
+    border-color: @outstanding-color transparent transparent transparent;
+}
+
+flx-imagemanager .im-mainimage:hover .im-mi-item-corner {
+    border-color: @primary-color transparent transparent transparent !important;
+}
+
+flx-imagemanager .im-mi-mainimage {
+    opacity: 1 !important;
+}
+
+flx-imagemanager .im-item-corner {
+    top: 0;
+    left: 0;
+    border-style: solid;
+    border-width: 25px 60px 0 0;
+    border-color: @primary-color transparent transparent transparent;
+}
+
+flx-imagemanager .im-item-corner-icon {
+    color: white;
+    margin: 5px;
+    position: absolute;
+    z-index: 1;
+    font-size: 10px;
+}
+
+flx-imagemanager .im-mi-item-corner {
+    border-color: @outstanding-color transparent transparent transparent !important;
+}
+
+flx-imagemanager .im-data-container {
+    opacity: 0;
+}
+
+flx-imagemanager .im-data-item {
+    transform: scale(1.4);
+}
+
+flx-imagemanager .im-data-descrip {
+    float: none;
+    width: 100%;
+    height: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+flx-imagemanager .im-data-descrip-single {
+    margin-top: 25px;
+}
+
+flx-imagemanager .im-data-descrip span {
+    display: block;
+    color: white;
+    text-shadow: 1px 1px 6px rgb(120, 120, 120);
+}
+
+flx-imagemanager .im-data-descrip hr {
+    display: block;
+    border-top: 1px solid #ccc;
+    margin: 1px auto 8px;
+    width: 0%;
+    transition-delay: .25s;
+    border-color: white;
+}
+
+
+flx-imagemanager .im-data-preview {
+    float: left;
+    transition-delay: .15s;
+}
+
+flx-imagemanager .im-data-edit {
+    float: right;
+    transition-delay: .15s;
+}
+
+flx-imagemanager .im-data-icon {
+    color: white;
+    margin: 0 auto;
+    transition-delay: .22s;
+    text-shadow: 1px 1px 6px rgba(120, 120, 120, .68);
+}
+
+flx-imagemanager .im-data-container-action {
+    width: ~"calc(50% - 30px)";
+    height: ~"calc(50% - 55px)";
+    margin: 15px 15px;
+    cursor: pointer;
+    border-radius: 3%;
+    display: flex;
+    align-items: center;
+}
+
+flx-imagemanager[mode=view] .im-data-container-action {
+    width: 50%;
+}
+
+flx-imagemanager .im-data-container-action:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+    background-color: fade(@outstanding-color, 25%);
+}
+
+flx-imagemanager .im-background-container {    
+    position: relative;
+
+    .background-elements {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5em;
+        opacity: 0.4;
+        transition: all 0.15s ease-in-out 0s;
+    }
+}
+
+//END Image Manager
+//File
+flx-file .f-btn {
+    background-color: @outstanding-color;
+    color: white;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+flx-file .f-text {
+    cursor: default !important;
+    background-color: white !important;
+}
+//END File
+// Separator
+legend i {
+    margin-right: .5em
+}
+// END Separator
+flx-edit .grid-stack > .grid-stack-item > .grid-stack-item-content, flx-view .grid-stack > .grid-stack-item > .grid-stack-item-content {
+    overflow-x: visible;
+    overflow-y: visible
+}
+// FILTER
+flx-filter > div.item {
+    margin-bottom: .2em;
+}
+// TEXT
+flx-text[mode=view] label, flx-combo[mode=view], flx-dbcombo[mode=view] label {
+    overflow: hidden;
+}
+// BOOTSTRAP OVERRIDES
+input[type=checkbox], input[type=radio] {
+    margin: 0 4px 0 0;
+    line-height: normal;
+    display: inline;
+}
+
+.label-info {
+    background-color: @outstanding-color !important;
+}
+
+flx-edit label.required:after {
+    content: "*";
+    color: @danger-color;
+}
+
+label:hover {
+    color: @nav-color;
+}
+
+label > span.help-icon, legend > span.help-icon, th[data-sort] > span.help-icon {
+    font-size: 12px;
+    color: @txt-nav-color;
+}
+
+label > span.danger-icon, legend > span.danger-icon {
+    font-size: 12px;
+    color: lighten(@danger-color, 20);
+}
+
+label:hover > span.help-icon, legend:hover > span.help-icon, th[data-sort] > span.help-icon:hover {
+    cursor: pointer;
+    color: @outstanding-color;
+}
+
+label:hover > span.danger-icon, legend:hover > span.danger-icon {
+    cursor: pointer;
+    color: @danger-color;
+}
+
+label > span.help-icon:before, legend > span.help-icon:before, th[data-sort] > span.help-icon:before {
+    font-family: 'Flexygo-icons';
+    content: "\f233";
+    margin-left: 5px;
+    position: relative;
+    top: 1px;
+}
+
+label > span.danger-icon:before, legend > span.danger-icon:before {
+    font-family: 'Flexygo-icons';
+    content: "\ebf7";
+    margin-left: 5px;
+    position: relative;
+    top: 1px;
+}
+
+.btn-group-xs > .btn, .btn-xs {
+    padding: 2px 2px;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.propertyMenu {
+    min-width: 250px;
+    z-index: 91;
+}
+
+.propertyMenu li {
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.propertyMenu li.separator {
+    border-bottom: solid 1px @border-module-color
+}
+
+
+.propertyMenu .form-actions {
+    text-align: center;
+}
+
+.propertyMenu .form-actions .bg-info {
+    margin-right: 10px;
+}
+
+.propertyMenu flx-dbcombo li {
+    white-space: nowrap
+}
+
+.propertyMenu .btnmenu {
+    border: solid 1px grey;
+    width: 30%;
+    min-width: auto;
+    display: inline-block;
+    text-align: center;
+}
+
+.propertyMenu .input-group {
+    padding-right: 4px
+}
+
+.propertyMenu ul li > span {
+    display: block;
+}
+
+.propertyMenu .addsep {
+    margin-top: 5px;
+    cursor: pointer
+}
+
+:not(.develop) .hideControl {
+    display: none;
+}
+
+flx-text[type=date] > div > input.form-control {
+    line-height: 1.3;
+}
+
+    flx-textarea > div > span.input-group-addon {
+        height: 100%;
+    }
+    //OVERRIDES GRIDSTACK Z-INDEX
+    .grid-stack > .grid-stack-item > .grid-stack-item-content {
+        z-index: unset !important;
+        overflow-y: hidden;
+    }
+
+flx-edit .lockedCode input {
+    display: block;
+    border-top-width: initial;
+    border-right-width: initial;
+    border-left-width: initial;
+    border-top-color: initial;
+    border-right-color: initial;
+    border-left-color: initial;
+    box-shadow: #fff 0px 0px;
+    height: 35px;
+    line-height: 30px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-size-adjust: 100%;
+    width: 100%;
+    text-align: right;
+    border-style: none none solid;
+    border-image: initial;
+    border-radius: 0px;
+    background-color: transparent !important;
+}
+flx-textarea > div > span.input-group-addon {
+    height: 100%;
+}
+//OVERRIDES GRIDSTACK Z-INDEX
+.grid-stack > .grid-stack-item > .grid-stack-item-content {
+    z-index: unset !important;
+    overflow-y: hidden;
+}
+
+//FLX-CODE ASSISTANT BUTTON
+flx-code:not([editor="monaco"]) .btn-assistant {
+    position: absolute;
+    right: 12px;
+    top: 30px;
+    z-index: 3;
+}
+flx-code:not([editor="monaco"]) .btn-assistant:nth-child(2) {
+    margin-right: 25px;
+}
+flx-code:not([editor="monaco"]) .btn-assistant:nth-child(3) {
+    margin-right: 50px;
+}
+//Google places address container on modal
+.pac-container {
+    z-index: 100000!important;
+}
+
+//Tactil mode dateTimePicker
+.def-flx-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0.5;
+    z-index: 999;
+}
+
+html.tactilMode input[type="date"]::-webkit-calendar-picker-indicator, html.tactilMode input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+flx-list .flxRszTbl .bootstrap-datetimepicker-widget tr:nth-child(odd):not(.rowHeader),
+flx-list .flxRszTbl .bootstrap-datetimepicker-widget tr:nth-child(even):not(.rowHeader),
+flx-list .flxRszTbl .bootstrap-datetimepicker-widget tr th:not(:hover),
+flx-list .flxRszTbl .bootstrap-datetimepicker-widget tr:nth-child(odd):not(.rowHeader):hover,
+flx-list .flxRszTbl .bootstrap-datetimepicker-widget tr:nth-child(odd):not(.rowHeader):hover {
+    background-color: transparent !important;
+    color: @txt-color;
+}
+
+flx-list .flxRszTbl tr .bootstrap-datetimepicker-widget th {
+    border: none;
+    color: @txt-color;
+}
+
+
+flx-list .flxRszTbl .bootstrap-datetimepicker-widget tr:not(.rowHeader):not(.rowInsert):hover, 
+.flx-list .bootstrap-datetimepicker-widget tr:not(.rowHeader):not(.rowInsert):hover, 
+flx-list .bootstrap-datetimepicker-widget tr.selected:not(.rowHeader):not(.rowInsert):hover, 
+.flx-list .bootstrap-datetimepicker-widget tr.selected:not(.rowHeader):not(.rowInsert):hover {
+    background-color: @bg-color;
+    color: @txt-color;
+}
+
+flx-list .flxRszTbl .bootstrap-datetimepicker-widget tr th,
+flx-list .flxRszTbl .bootstrap-datetimepicker-widget tr:nth-child(odd):not(.rowHeader):hover,
+flx-list .flxRszTbl .bootstrap-datetimepicker-widget tr:nth-child(even):not(.rowHeader):hover {
+    background-color: transparent !important;
+}
+
+.bootstrap-datetimepicker-widget .day {
+    border: none
+}
+
+.bootstrap-datetimepicker-widget .old, .bootstrap-datetimepicker-widget .new {
+    font-style: italic;
+}
+
+.bootstrap-datetimepicker-widget .weekend {
+    color: @danger-color;
+}
+
+//flx-barcode styles
+body > div.barcode-backdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #0000001f;
+    z-index: 9999999;
+    height: 200%;
+    backdrop-filter: blur(1px);
+}
+
+.barcode-scanner {
+    transform: translate(50%,-50%);
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    z-index: 10000000;
+    min-width: 95vw;
+    min-height: 50vh;
+    background-color: @module-color;
+    border-radius: @border-radius;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+
+    > div {
+        display: flex;
+        justify-content: center;
+        height: ~"calc(50vh - 20px)"; //We substract the padding pixels
+        width: 100%;
+        padding: 10px 30px;
+    }
+
+    .barcode-scanner-reader {
+        border-right: 1px solid @muted-blue;
+
+        .barcode-scanner-container {
+            display: flex;
+            height: 70%;
+            width: 100%;
+
+            video, #qr-shaded-region {
+                border-radius: @border-radius;
+            }
+        }
+
+        .barcode-select-span {
+            height: 20%;
+
+            .fa-camera {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .barcode-scanner-file {
+        .barcode-dropzone {
+            height: 83%;
+            border: 2px dashed @muted-blue;
+            border-radius: @border-radius;
+            font-size: 1.5em;
+            color: fade(@txt-color, 60);
+
+            &.dropping {
+                background: fade(@muted-blue, 20);
+            }
+        }
+
+        .barcode-button-span, .barcode-upload, .barcode-dropzone {
+            width: 100%;
+        }
+    }
+
+    .barcode-button-span {
+        height: 20%;
+
+         button {
+            background-color: @outstanding-color;
+            color: white;
+            border: none;
+            border-radius: @border-radius;
+            height: 50%;
+
+            &:hover {
+                background: darken(@outstanding-color, 10);
+            }
+        }
+    }
+
+    h1 {
+        height: 10%;
+        font-weight: 500;
+    }
+
+    .barcode-scanner-file, .barcode-scanner-reader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &.barcode-mobile {
+        height: ~"95dvh";
+
+        .barcode-scanner-reader {
+            border: none;
+        }
+
+        > div {
+            height: ~"calc(80vh - 20px)"; //We substract the padding pixels
+        }
+
+        h1 {
+            height: 5%;
+        }
+    }
+
+    .barcode-switch {
+        background: @nav-color;
+        color: white;
+        border-radius: @border-radius;
+        padding: 10px 20px;
+        border: none;
+    }
+}
+
+.barcode-scanner-close {
+    position: fixed;
+    top: 26vh;
+    right: 4vw;
+    z-index: 100000000;
+
+    &.barcode-mobile {
+        top: ~"5dvh";
+        right: 7vw;
+    }
+}
+
+.barcodeLock {
+    overflow: hidden;
+}
+
+/*NEW STYLES EDIT VIEW AND EDIT GRID*/
+
+flx-edit flx-tag div.bootstrap-tagsinput:nth-last-child(2), flx-edit flx-multicombo div:not(.mobileinputdiv) div.bootstrap-tagsinput {
+    height: 15px;
+    overflow: auto
+}
+//EDIT GRID
+
+flx-viewmanager .pnlSQL > flx-code[editor="monaco"] {
+    display: block;
+    height: 300px;
+    margin: 0 0 5px 0;
+}
+
+flx-code[editor="monaco"], flx-code[editor="monaco"] div.superContainer, flx-code.fullscreen[editor="monaco"] div.monacoContainer {
+    height: 100%;
+    width: 100%;
+}
+flx-code[editor="monaco"] div.monacoContainer {
+    height: 100%;
+    width: 100%;
+}
+flx-code[editor="monaco"] div.superContainer {
+    border: 1px solid #ccc;
+    padding:5px;
+    border-radius:4px;
+}
+
+flx-code[editor="monaco"].fullscreen{
+    z-index:91;
+}
+flx-code[editor="monaco"][template="true"]{
+    display:block;
+}
+flx-code[editor="monaco"] div.monaco-placeholder {
+    display: none;
+    margin-top: 2px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.7;
+}
+flx-code[editor="monaco"][template="true"]:not(.fullscreen) div.monaco-placeholder{
+    position: relative;
+}
+flx-code[editor="monaco"] div.monaco-placeholder {
+    position: absolute;
+    display:flex;
+}
+flx-code[editor="monaco"] div.monaco-placeholder.focused {
+    user-select:none;
+    color:transparent;
+}
+ flx-code[editor="monaco"] div.monaco-placeholder > span {
+    overflow: hidden;
+    margin: 0 24px 0 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    pointer-events: none;
+}
+ flx-code[editor="monaco"] div.wizardButtons{
+    display: grid;
+    position: absolute;
+    z-index: 1;
+}
+flx-code[editor="monaco"] div.wizardButtons > button.btn {
+    background: none;
+    font-size: 16px;
+}
+ flx-code:not(.fullscreen)[editor="monaco"] .monaco-editor-overlaymessage {
+    display: none !important;
+}
+//styles to avoid wrong align items in the form grid caused by help icon headbox
+
+div.item:has(flx-code[editor="monaco"]) label > span.help-icon {
+    font-size: inherit;
+}
+div.item:has(flx-code[editor="monaco"]) label {
+    vertical-align: inherit;
+}
+/*------------------------------------------------------------------------*/
+
+
+/*New styles due to AI button*/
+flx-textarea .input-group {
+    display: flex;
+}
+flx-textarea .input-group span.input-group-addon/*, *//*flx-textarea .input-group span.input-group-btn*/{
+    padding: 0;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+}
+flx-textarea .input-group .input-group-addon i {
+    align-items: center;
+    z-index: 3;
+    justify-content: center;
+    display: flex;
+    flex: 1;
+}
+flx-textarea:focus-within :is(span.input-group-addon,textarea.form-control) {
+    border-color: #66afe9;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+flx-textarea .input-group .input-group-addon button {
+    border: none;
+}
+flx-textarea textarea{
+    resize: none;
+}
+flx-textarea .input-group-addon:not(:first-child):not(:last-child) {
+    border-top-right-radius: @border-radius;
+    border-bottom-right-radius: @border-radius;
+}

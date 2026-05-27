@@ -1,0 +1,3877 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Controls/">
+      
+      
+        <link rel="next" href="../CustomStored/">
+      
+      
+      <link rel="icon" href="../../docs_assets/images/logos/fl-favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>DLL Personalizada - Flexygo Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom-colors.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/base.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/code-highlighting.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/css-class-components.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/404-error.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-modal.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-copy.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-namepropagator.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-versions.css">
+    
+      <link rel="stylesheet" href="../../docs_assets/fh-structural/fonts/flags/flags.css">
+    
+      <link rel="stylesheet" href="../../docs_assets/fh-structural/fonts/flexygo/utils.css">
+    
+      <link rel="stylesheet" href="../../docs_assets/fh-structural/fonts/flexygo/flexygo-icons.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/flexygo-styles/main-flexygo-styles.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/flexygo-styles/cols.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/flexygo-styles/list-groups.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dll-personalizada" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Flexygo Docs" class="md-header__button md-logo" aria-label="Flexygo Docs" data-md-component="logo">
+      
+  <img src="../../docs_assets/images/logos/fl.svg" alt="logo">
+
+      Docs
+    </a>
+    <fh-versions></fh-versions>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+          </span>
+        </div>
+      </div>
+    </div>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <span onclick="changeLanguage('en')" class="md-select__link">
+              English
+            </span>
+          </li>
+        
+          <li class="md-select__item">
+            <span onclick="changeLanguage('es')" class="md-select__link">
+              Español
+            </span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="darkmode" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0M8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0M3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8m13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8m-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13m3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061M2.343 2.343a.75.75 0 0 1 1.061 0l1.06 1.061a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-1.06-1.06a.75.75 0 0 1 0-1.06Z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="fh-sidebar md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="fh-sidebarheader">
+                  <a href="../.." title="Flexygo Docs" class="md-header__button md-logo" aria-label="Flexygo Docs" data-md-component="logo">
+                    
+  <img src="../../docs_assets/images/logos/fl.svg" alt="logo">
+
+                    Docs
+                  </a>
+                  <fh-versions></fh-versions>
+                </div>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+    
+    <ul class="md-nav__list" data-md-scrollfix>
+        
+            
+            
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a Flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Formación
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Formación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1Training/Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cursos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1Training/VideoTutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VideoTutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Addons
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Addons/1Addons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Addons/WhatsApp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WhatsApp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ahora Business Hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ahora Business Hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhSign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Firma Abh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhSms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abh Sms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhTicket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ticket Abh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Conectores
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Conectores
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/AhoraERP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Ahora ERP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/AzureADIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Azure AD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/AzureFormRecognizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure Form Recognizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/ClaveAuthentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Autenticación Cl@ve
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/FaceRecognition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reconocimiento Facial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Google/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Google
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/GoogleAPIKey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google API Key
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/GooglePlaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Places
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/MailChimp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con MailChimp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/MailChimpProcesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Procesos de ejemplo de MailChimp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Office365/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Office 365
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/OpenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con ChatGPT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/OtherflexygoIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Passbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Passbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/PowerBI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Power BI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/PushNotifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notificaciones Push
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/RedSys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RedSys
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Scales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Básculas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/SendinBlue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con SendinBlue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/WacomSignature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Wacom SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Información
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Información
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/FriendlyURLs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    URLs amigables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/GoodPractices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buenas prácticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/MFA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flexygo MFA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/MailAccountsSettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ajustes de cuenta de email
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/Navigator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modulo de navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/PageHierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Page Hierarchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/1HowToInstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingIntefaceTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agregar un test de interfaz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingNugetPackage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear paquete NuGet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingProduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear un producto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingUnitaryTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agregar un test unitario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingWebComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear un WebComponent propio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8">
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Chart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/ChartII/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chart II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Chatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chatter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/DocAndImageManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Manager And Image Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Funnel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funnel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Kanban/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kanban
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/ModuleManagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/ObjectFilters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Filtros de Objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/PlannerModule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planificador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Popover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Popover y Tooltip
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/SchedulerCalendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programador y Calendario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/TimelineModule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Línea de tiempo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/WebMail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Mail
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    App Offline
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            App Offline
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/AccessandDescription/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descripción de la App Offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/DesignEnvironment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entorno de diseño
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/DesigningApp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diseñar la App offline de flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/NavigationOptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Opciones de navegación offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IA offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineAndEmulatordifferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diferencias entre emulador y app
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineDatabase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base de datos offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/ReturnDataProcess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proceso de retorno de datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/Trackingconfiguration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuración del seguimiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/UsefulTokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_11">
+        
+          
+          <label class="md-nav__link" for="__nav_9_11" id="__nav_9_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Funciones JS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_11">
+            <span class="md-nav__icon md-icon"></span>
+            Funciones JS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Camera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cámara
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exportaciones (Exports)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formularios (Forms)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mensages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/NFC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NFC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Online-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navegación online
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Zebra-Printer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zebra Printer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programación
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Programación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CommonFunctions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funciones Comunes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ContextVariables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables de Contexto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controles de formulario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    DLL Personalizada
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    DLL Personalizada
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#c-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      C# Personalizado
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CustomStored/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Procedimiento Almacenado Personalizado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DatabaseScriptJobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trabajo de script de base de datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eventos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FormValidators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validadores de Formulario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Imports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Importaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LinkedServers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Servidores Vinculados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NoticesSentences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sentencia de Notificación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Automatización de tests
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UpdateTypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de Actualización
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Componente Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11">
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Informes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Informes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reporting/Newsandversionnotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Noticias y notas de versión
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12">
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Estilos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Estilos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/CSSAndTypography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipografía y Estilos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/FlagIcons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Íconos de Banderas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/GridOptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Opciones de la cuadrícula
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/Icon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iconos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/Timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cronología
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13">
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Plantillas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Plantillas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formatos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/NavigationButton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Botón de navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/ObjectTemplates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plantillas de Objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Skeletons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esqueletos de carga
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Targets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Objetivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+    </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            <div class="fh-maincontainer">
+              
+                <div class="md-content" data-md-component="content">
+                  <article class="md-content__inner md-typeset">
+                    
+                      
+
+
+
+<h1 id="dll-personalizada">DLL Personalizada<a class="headerlink" href="#dll-personalizada" title="Permanent link">¶</a></h1>
+<p>En algunos casos, es necesario programar funcionalidades que flexygo no tiene. Para esto, es posible personalizar nuestras propias DLLs. Es necesario:</p>
+<ol>
+<li>Crear una nueva clase de biblioteca con Framework 4.6</li>
+<li>Agregar referencias a las bibliotecas de flexygo (Tabla 1.)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Tabla 1. Bibliotecas de flexygo</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flxDataManager</td>
+<td>flxEntity</td>
+<td>flxGlobals</td>
+</tr>
+<tr>
+<td>flxLocalization</td>
+<td>flxMail</td>
+<td>flxObjectConfig</td>
+</tr>
+<tr>
+<td>flxSession</td>
+<td>flxSettings</td>
+<td>flxUtilities</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>Ver el código SampleCode.vb:</p>
+<p><fh-modal class="button" modal_id="fhmodal_insert" modal_title="Función de insertar, actualizar y eliminar objeto">Función de insertar, actualizar y eliminar objeto</fh-modal></p>
+<p><fh-modal class="button" modal_id="fhmodal_process" modal_title="Proceso de objeto con parámetros">Proceso de objeto con parámetros</fh-modal></p>
+<p><fh-modal class="button" modal_id="fhmodal_process_no_params" modal_title="Proceso de objeto sin parámetros">Proceso de objeto sin parámetros</fh-modal></p>
+<p><fh-modal class="button" modal_id="fhmodal_collection" modal_title="Proceso de colección con parámetros">Proceso de colección con parámetros *</fh-modal></p>
+<p><fh-modal class="button" modal_id="fhmodal_collection_no_params" modal_title="Proceso de colección sin parámetros">Proceso de colección sin parámetros *</fh-modal></p>
+<p><fh-modal class="button" modal_id="fhmodal_load" modal_title="Cargar objeto o cambiar propiedad">Cargar objeto o cambiar propiedad</fh-modal></p>
+<p class="flx-warning-card">No olvide configurar el Identificador Único en la configuración del objeto</p>
+</li>
+<li>
+<p>Compilar la DLL personalizada y agregarla a la carpeta ~/custom/bin</p>
+</li>
+<li>Configurar su proceso dentro de flexygo, visualizar imagen (Imagen 1.) </li>
+</ol>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Custom_DLL/Custom_DLL.png" data-desc-position="bottom"><img alt="Custom DLL configuration example" src="../../docs_assets/images/Custom_DLL/Custom_DLL.png" title="Image 1. Custom DLL configuration example"></a></p>
+<h2 id="c-personalizado">C# Personalizado<a class="headerlink" href="#c-personalizado" title="Permanent link">¶</a></h2>
+<p>Los procesos de C# embebidos sirven para el mismo propósito que los procesos de DLL personalizadas.</p>
+<p>Las referencias a bibliotecas y el código del proceso se insertan directamente en el formulario de flexygo (Imagen 2.)</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Custom_DLL/CSharpProcess.png" data-desc-position="bottom"><img alt="Custom C# Process in flexygo" src="../../docs_assets/images/Custom_DLL/CSharpProcess.png" title="Image 2. Custom C# Process in flexygo"></a></p>
+<p>Cuando guardas tu proceso C# en flexygo, se compila para verificar si hay errores.</p>
+<p>Para comenzar a depurar un proceso C#: </p>
+<ol>
+<li>Necesitas activar el modo de depuración en el Área de Administración navegando a Entorno -&gt; Configuración -&gt; Procesos de Depuración.</li>
+<li>Para establecer un punto de interrupción en una ubicación específica de tu código C#, puedes insertar.
+<div class="language-vbnet highlight"><span class="filename">VB.net</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Debugger</span><span class="p">.</span><span class="n">Break</span><span class="p">()</span><span class="err">;</span>
+</span></code></pre></div></li>
+</ol>
+<p>Esto abrirá el código C# generado en Visual Studio, permitiéndote depurar el proceso.</p>
+<p></p><div id="fhmodal_process" class="language-vbnet highlight"><span class="filename">VB.net</span><pre><span></span><code><span id="__span-fhmodal_process-1"><a id="__codelineno-fhmodal_process-1" name="__codelineno-fhmodal_process-1" href="#__codelineno-fhmodal_process-1"></a><span class="c">''' &lt;summary&gt;</span>
+</span><span id="__span-fhmodal_process-2"><a id="__codelineno-fhmodal_process-2" name="__codelineno-fhmodal_process-2" href="#__codelineno-fhmodal_process-2"></a><span class="w">    </span><span class="c">''' Sample object process executed from object with params</span>
+</span><span id="__span-fhmodal_process-3"><a id="__codelineno-fhmodal_process-3" name="__codelineno-fhmodal_process-3" href="#__codelineno-fhmodal_process-3"></a><span class="w">    </span><span class="c">''' &lt;/summary&gt;</span>
+</span><span id="__span-fhmodal_process-4"><a id="__codelineno-fhmodal_process-4" name="__codelineno-fhmodal_process-4" href="#__codelineno-fhmodal_process-4"></a><span class="w">    </span><span class="c">''' &lt;param name="Entity"&gt;The entity.&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_process-5"><a id="__codelineno-fhmodal_process-5" name="__codelineno-fhmodal_process-5" href="#__codelineno-fhmodal_process-5"></a><span class="w">    </span><span class="c">''' &lt;param name="Ret"&gt;Returns a Process Helper.&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_process-6"><a id="__codelineno-fhmodal_process-6" name="__codelineno-fhmodal_process-6" href="#__codelineno-fhmodal_process-6"></a><span class="w">    </span><span class="c">''' &lt;param name="Param1"&gt;Sample string param&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_process-7"><a id="__codelineno-fhmodal_process-7" name="__codelineno-fhmodal_process-7" href="#__codelineno-fhmodal_process-7"></a><span class="w">    </span><span class="c">''' &lt;param name="Param2"&gt;Sample integer param&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_process-8"><a id="__codelineno-fhmodal_process-8" name="__codelineno-fhmodal_process-8" href="#__codelineno-fhmodal_process-8"></a><span class="w">    </span><span class="c">''' &lt;returns&gt;&lt;c&gt;true&lt;/c&gt; if no error, &lt;c&gt;false&lt;/c&gt; otherwise.&lt;/returns&gt;</span>
+</span><span id="__span-fhmodal_process-9"><a id="__codelineno-fhmodal_process-9" name="__codelineno-fhmodal_process-9" href="#__codelineno-fhmodal_process-9"></a><span class="w">    </span><span class="c">''' &lt;exception cref="System.Exception"&gt;Returns error&lt;/exception&gt;</span>
+</span><span id="__span-fhmodal_process-10"><a id="__codelineno-fhmodal_process-10" name="__codelineno-fhmodal_process-10" href="#__codelineno-fhmodal_process-10"></a><span class="k">Public</span><span class="w"> </span><span class="k">Shared</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="nf">SampleUserProcessWithParams</span><span class="p">(</span><span class="k">ByVal</span><span class="w"> </span><span class="n">Entity</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">EntityObject</span><span class="p">,</span><span class="w"> </span><span class="k">ByRef</span><span class="w"> </span><span class="n">Ret</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ProcessHelper</span><span class="p">,</span><span class="w"> </span><span class="k">ByVal</span><span class="w"> </span><span class="n">Param1</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="k">ByVal</span><span class="w"> </span><span class="n">Param2</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Integer</span><span class="p">)</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Boolean</span>
+</span><span id="__span-fhmodal_process-11"><a id="__codelineno-fhmodal_process-11" name="__codelineno-fhmodal_process-11" href="#__codelineno-fhmodal_process-11"></a><span class="w">        </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_process-12"><a id="__codelineno-fhmodal_process-12" name="__codelineno-fhmodal_process-12" href="#__codelineno-fhmodal_process-12"></a>
+</span><span id="__span-fhmodal_process-13"><a id="__codelineno-fhmodal_process-13" name="__codelineno-fhmodal_process-13" href="#__codelineno-fhmodal_process-13"></a><span class="w">            </span><span class="c">''Do Something</span>
+</span><span id="__span-fhmodal_process-14"><a id="__codelineno-fhmodal_process-14" name="__codelineno-fhmodal_process-14" href="#__codelineno-fhmodal_process-14"></a>
+</span><span id="__span-fhmodal_process-15"><a id="__codelineno-fhmodal_process-15" name="__codelineno-fhmodal_process-15" href="#__codelineno-fhmodal_process-15"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_process-16"><a id="__codelineno-fhmodal_process-16" name="__codelineno-fhmodal_process-16" href="#__codelineno-fhmodal_process-16"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">SucessMessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Cache reloaded"</span>
+</span><span id="__span-fhmodal_process-17"><a id="__codelineno-fhmodal_process-17" name="__codelineno-fhmodal_process-17" href="#__codelineno-fhmodal_process-17"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_process-18"><a id="__codelineno-fhmodal_process-18" name="__codelineno-fhmodal_process-18" href="#__codelineno-fhmodal_process-18"></a>
+</span><span id="__span-fhmodal_process-19"><a id="__codelineno-fhmodal_process-19" name="__codelineno-fhmodal_process-19" href="#__codelineno-fhmodal_process-19"></a><span class="w">        </span><span class="k">Catch</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">Exception</span>
+</span><span id="__span-fhmodal_process-20"><a id="__codelineno-fhmodal_process-20" name="__codelineno-fhmodal_process-20" href="#__codelineno-fhmodal_process-20"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_process-21"><a id="__codelineno-fhmodal_process-21" name="__codelineno-fhmodal_process-21" href="#__codelineno-fhmodal_process-21"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ex</span>
+</span><span id="__span-fhmodal_process-22"><a id="__codelineno-fhmodal_process-22" name="__codelineno-fhmodal_process-22" href="#__codelineno-fhmodal_process-22"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_process-23"><a id="__codelineno-fhmodal_process-23" name="__codelineno-fhmodal_process-23" href="#__codelineno-fhmodal_process-23"></a><span class="w">        </span><span class="k">End</span><span class="w"> </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_process-24"><a id="__codelineno-fhmodal_process-24" name="__codelineno-fhmodal_process-24" href="#__codelineno-fhmodal_process-24"></a><span class="w">    </span><span class="k">End</span><span class="w"> </span><span class="k">Function</span>
+</span></code></pre></div>
+<div id="fhmodal_insert" class="language-vbnet highlight"><span class="filename">VB.net</span><pre><span></span><code><span id="__span-fhmodal_insert-1"><a id="__codelineno-fhmodal_insert-1" name="__codelineno-fhmodal_insert-1" href="#__codelineno-fhmodal_insert-1"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Configuration.Tokens</span>
+</span><span id="__span-fhmodal_insert-2"><a id="__codelineno-fhmodal_insert-2" name="__codelineno-fhmodal_insert-2" href="#__codelineno-fhmodal_insert-2"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Data</span>
+</span><span id="__span-fhmodal_insert-3"><a id="__codelineno-fhmodal_insert-3" name="__codelineno-fhmodal_insert-3" href="#__codelineno-fhmodal_insert-3"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Exceptions</span>
+</span><span id="__span-fhmodal_insert-4"><a id="__codelineno-fhmodal_insert-4" name="__codelineno-fhmodal_insert-4" href="#__codelineno-fhmodal_insert-4"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Objects</span>
+</span><span id="__span-fhmodal_insert-5"><a id="__codelineno-fhmodal_insert-5" name="__codelineno-fhmodal_insert-5" href="#__codelineno-fhmodal_insert-5"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Processing</span>
+</span><span id="__span-fhmodal_insert-6"><a id="__codelineno-fhmodal_insert-6" name="__codelineno-fhmodal_insert-6" href="#__codelineno-fhmodal_insert-6"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Processing.ProcessManager</span>
+</span><span id="__span-fhmodal_insert-7"><a id="__codelineno-fhmodal_insert-7" name="__codelineno-fhmodal_insert-7" href="#__codelineno-fhmodal_insert-7"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Utilities.General</span>
+</span><span id="__span-fhmodal_insert-8"><a id="__codelineno-fhmodal_insert-8" name="__codelineno-fhmodal_insert-8" href="#__codelineno-fhmodal_insert-8"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Utilities.General.Util</span>
+</span><span id="__span-fhmodal_insert-9"><a id="__codelineno-fhmodal_insert-9" name="__codelineno-fhmodal_insert-9" href="#__codelineno-fhmodal_insert-9"></a>
+</span><span id="__span-fhmodal_insert-10"><a id="__codelineno-fhmodal_insert-10" name="__codelineno-fhmodal_insert-10" href="#__codelineno-fhmodal_insert-10"></a><span class="k">Public</span><span class="w"> </span><span class="k">Class</span><span class="w"> </span><span class="nc">SampleDataProcesses</span>
+</span><span id="__span-fhmodal_insert-11"><a id="__codelineno-fhmodal_insert-11" name="__codelineno-fhmodal_insert-11" href="#__codelineno-fhmodal_insert-11"></a>
+</span><span id="__span-fhmodal_insert-12"><a id="__codelineno-fhmodal_insert-12" name="__codelineno-fhmodal_insert-12" href="#__codelineno-fhmodal_insert-12"></a>
+</span><span id="__span-fhmodal_insert-13"><a id="__codelineno-fhmodal_insert-13" name="__codelineno-fhmodal_insert-13" href="#__codelineno-fhmodal_insert-13"></a><span class="w">    </span><span class="c">''' &lt;summary&gt;</span>
+</span><span id="__span-fhmodal_insert-14"><a id="__codelineno-fhmodal_insert-14" name="__codelineno-fhmodal_insert-14" href="#__codelineno-fhmodal_insert-14"></a><span class="w">    </span><span class="c">''' Insert new object</span>
+</span><span id="__span-fhmodal_insert-15"><a id="__codelineno-fhmodal_insert-15" name="__codelineno-fhmodal_insert-15" href="#__codelineno-fhmodal_insert-15"></a><span class="w">    </span><span class="c">''' &lt;/summary&gt;</span>
+</span><span id="__span-fhmodal_insert-16"><a id="__codelineno-fhmodal_insert-16" name="__codelineno-fhmodal_insert-16" href="#__codelineno-fhmodal_insert-16"></a><span class="w">    </span><span class="c">''' &lt;param name="Entity"&gt;User Entity object with all info&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_insert-17"><a id="__codelineno-fhmodal_insert-17" name="__codelineno-fhmodal_insert-17" href="#__codelineno-fhmodal_insert-17"></a><span class="w">    </span><span class="c">''' &lt;param name="Ret"&gt;ProcessHelper for returning results&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_insert-18"><a id="__codelineno-fhmodal_insert-18" name="__codelineno-fhmodal_insert-18" href="#__codelineno-fhmodal_insert-18"></a><span class="w">    </span><span class="k">Public</span><span class="w"> </span><span class="k">Shared</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="nf">InsertObj</span><span class="p">(</span><span class="n">Entity</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">EntityObject</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ProcessHelper</span><span class="p">)</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Boolean</span>
+</span><span id="__span-fhmodal_insert-19"><a id="__codelineno-fhmodal_insert-19" name="__codelineno-fhmodal_insert-19" href="#__codelineno-fhmodal_insert-19"></a><span class="w">        </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_insert-20"><a id="__codelineno-fhmodal_insert-20" name="__codelineno-fhmodal_insert-20" href="#__codelineno-fhmodal_insert-20"></a>
+</span><span id="__span-fhmodal_insert-21"><a id="__codelineno-fhmodal_insert-21" name="__codelineno-fhmodal_insert-21" href="#__codelineno-fhmodal_insert-21"></a><span class="w">            </span><span class="k">If</span><span class="w"> </span><span class="k">Not</span><span class="w"> </span><span class="n">Entity</span><span class="p">.</span><span class="n">CanInsert</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_insert-22"><a id="__codelineno-fhmodal_insert-22" name="__codelineno-fhmodal_insert-22" href="#__codelineno-fhmodal_insert-22"></a><span class="w">                </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">LocalizedException</span><span class="p">(</span><span class="s">"You do Not have enough credentials to insert this Object."</span><span class="p">)</span>
+</span><span id="__span-fhmodal_insert-23"><a id="__codelineno-fhmodal_insert-23" name="__codelineno-fhmodal_insert-23" href="#__codelineno-fhmodal_insert-23"></a><span class="w">                </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-24"><a id="__codelineno-fhmodal_insert-24" name="__codelineno-fhmodal_insert-24" href="#__codelineno-fhmodal_insert-24"></a><span class="w">            </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_insert-25"><a id="__codelineno-fhmodal_insert-25" name="__codelineno-fhmodal_insert-25" href="#__codelineno-fhmodal_insert-25"></a>
+</span><span id="__span-fhmodal_insert-26"><a id="__codelineno-fhmodal_insert-26" name="__codelineno-fhmodal_insert-26" href="#__codelineno-fhmodal_insert-26"></a><span class="w">            </span><span class="c">''Do something here before insert</span>
+</span><span id="__span-fhmodal_insert-27"><a id="__codelineno-fhmodal_insert-27" name="__codelineno-fhmodal_insert-27" href="#__codelineno-fhmodal_insert-27"></a>
+</span><span id="__span-fhmodal_insert-28"><a id="__codelineno-fhmodal_insert-28" name="__codelineno-fhmodal_insert-28" href="#__codelineno-fhmodal_insert-28"></a>
+</span><span id="__span-fhmodal_insert-29"><a id="__codelineno-fhmodal_insert-29" name="__codelineno-fhmodal_insert-29" href="#__codelineno-fhmodal_insert-29"></a><span class="w">            </span><span class="k">If</span><span class="w"> </span><span class="n">Entity</span><span class="p">.</span><span class="n">InsertProcess</span><span class="p">(</span><span class="n">Entity</span><span class="p">.</span><span class="n">TableName</span><span class="p">,</span><span class="w"> </span><span class="n">Settings</span><span class="p">.</span><span class="n">ObjectSettings</span><span class="p">.</span><span class="n">eUpdateType</span><span class="p">.</span><span class="n">Standard</span><span class="p">,</span><span class="w"> </span><span class="s">""</span><span class="p">)</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_insert-30"><a id="__codelineno-fhmodal_insert-30" name="__codelineno-fhmodal_insert-30" href="#__codelineno-fhmodal_insert-30"></a>
+</span><span id="__span-fhmodal_insert-31"><a id="__codelineno-fhmodal_insert-31" name="__codelineno-fhmodal_insert-31" href="#__codelineno-fhmodal_insert-31"></a><span class="w">                </span><span class="c">''Do something here after insert</span>
+</span><span id="__span-fhmodal_insert-32"><a id="__codelineno-fhmodal_insert-32" name="__codelineno-fhmodal_insert-32" href="#__codelineno-fhmodal_insert-32"></a>
+</span><span id="__span-fhmodal_insert-33"><a id="__codelineno-fhmodal_insert-33" name="__codelineno-fhmodal_insert-33" href="#__codelineno-fhmodal_insert-33"></a><span class="w">                </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_insert-34"><a id="__codelineno-fhmodal_insert-34" name="__codelineno-fhmodal_insert-34" href="#__codelineno-fhmodal_insert-34"></a><span class="w">                </span><span class="k">Return</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_insert-35"><a id="__codelineno-fhmodal_insert-35" name="__codelineno-fhmodal_insert-35" href="#__codelineno-fhmodal_insert-35"></a><span class="w">            </span><span class="k">Else</span>
+</span><span id="__span-fhmodal_insert-36"><a id="__codelineno-fhmodal_insert-36" name="__codelineno-fhmodal_insert-36" href="#__codelineno-fhmodal_insert-36"></a><span class="w">                </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-37"><a id="__codelineno-fhmodal_insert-37" name="__codelineno-fhmodal_insert-37" href="#__codelineno-fhmodal_insert-37"></a><span class="w">                </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Entity</span><span class="p">.</span><span class="n">LastException</span>
+</span><span id="__span-fhmodal_insert-38"><a id="__codelineno-fhmodal_insert-38" name="__codelineno-fhmodal_insert-38" href="#__codelineno-fhmodal_insert-38"></a><span class="w">                </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-39"><a id="__codelineno-fhmodal_insert-39" name="__codelineno-fhmodal_insert-39" href="#__codelineno-fhmodal_insert-39"></a><span class="w">            </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_insert-40"><a id="__codelineno-fhmodal_insert-40" name="__codelineno-fhmodal_insert-40" href="#__codelineno-fhmodal_insert-40"></a>
+</span><span id="__span-fhmodal_insert-41"><a id="__codelineno-fhmodal_insert-41" name="__codelineno-fhmodal_insert-41" href="#__codelineno-fhmodal_insert-41"></a><span class="w">        </span><span class="k">Catch</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">Exception</span>
+</span><span id="__span-fhmodal_insert-42"><a id="__codelineno-fhmodal_insert-42" name="__codelineno-fhmodal_insert-42" href="#__codelineno-fhmodal_insert-42"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-43"><a id="__codelineno-fhmodal_insert-43" name="__codelineno-fhmodal_insert-43" href="#__codelineno-fhmodal_insert-43"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ex</span>
+</span><span id="__span-fhmodal_insert-44"><a id="__codelineno-fhmodal_insert-44" name="__codelineno-fhmodal_insert-44" href="#__codelineno-fhmodal_insert-44"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-45"><a id="__codelineno-fhmodal_insert-45" name="__codelineno-fhmodal_insert-45" href="#__codelineno-fhmodal_insert-45"></a><span class="w">        </span><span class="k">End</span><span class="w"> </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_insert-46"><a id="__codelineno-fhmodal_insert-46" name="__codelineno-fhmodal_insert-46" href="#__codelineno-fhmodal_insert-46"></a><span class="w">    </span><span class="k">End</span><span class="w"> </span><span class="k">Function</span><span class="w">   </span>
+</span><span id="__span-fhmodal_insert-47"><a id="__codelineno-fhmodal_insert-47" name="__codelineno-fhmodal_insert-47" href="#__codelineno-fhmodal_insert-47"></a><span class="k">End</span><span class="w"> </span><span class="k">Class</span>
+</span><span id="__span-fhmodal_insert-48"><a id="__codelineno-fhmodal_insert-48" name="__codelineno-fhmodal_insert-48" href="#__codelineno-fhmodal_insert-48"></a>
+</span><span id="__span-fhmodal_insert-49"><a id="__codelineno-fhmodal_insert-49" name="__codelineno-fhmodal_insert-49" href="#__codelineno-fhmodal_insert-49"></a><span class="w">    </span><span class="k">Public</span><span class="w"> </span><span class="k">Shared</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="nf">UpdateObj</span><span class="p">(</span><span class="n">Entity</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">EntityObject</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ProcessHelper</span><span class="p">)</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Boolean</span>
+</span><span id="__span-fhmodal_insert-50"><a id="__codelineno-fhmodal_insert-50" name="__codelineno-fhmodal_insert-50" href="#__codelineno-fhmodal_insert-50"></a><span class="w">        </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_insert-51"><a id="__codelineno-fhmodal_insert-51" name="__codelineno-fhmodal_insert-51" href="#__codelineno-fhmodal_insert-51"></a>
+</span><span id="__span-fhmodal_insert-52"><a id="__codelineno-fhmodal_insert-52" name="__codelineno-fhmodal_insert-52" href="#__codelineno-fhmodal_insert-52"></a><span class="w">            </span><span class="k">If</span><span class="w"> </span><span class="k">Not</span><span class="w"> </span><span class="n">Entity</span><span class="p">.</span><span class="n">CanUpdate</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_insert-53"><a id="__codelineno-fhmodal_insert-53" name="__codelineno-fhmodal_insert-53" href="#__codelineno-fhmodal_insert-53"></a><span class="w">                </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">LocalizedException</span><span class="p">(</span><span class="s">"You do Not have enough credentials to update this Object."</span><span class="p">)</span>
+</span><span id="__span-fhmodal_insert-54"><a id="__codelineno-fhmodal_insert-54" name="__codelineno-fhmodal_insert-54" href="#__codelineno-fhmodal_insert-54"></a><span class="w">                </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-55"><a id="__codelineno-fhmodal_insert-55" name="__codelineno-fhmodal_insert-55" href="#__codelineno-fhmodal_insert-55"></a><span class="w">            </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_insert-56"><a id="__codelineno-fhmodal_insert-56" name="__codelineno-fhmodal_insert-56" href="#__codelineno-fhmodal_insert-56"></a>
+</span><span id="__span-fhmodal_insert-57"><a id="__codelineno-fhmodal_insert-57" name="__codelineno-fhmodal_insert-57" href="#__codelineno-fhmodal_insert-57"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">lTabla</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">DataTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Entity</span><span class="p">.</span><span class="n">GetData</span><span class="p">.</span><span class="n">Tables</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">GetChanges</span>
+</span><span id="__span-fhmodal_insert-58"><a id="__codelineno-fhmodal_insert-58" name="__codelineno-fhmodal_insert-58" href="#__codelineno-fhmodal_insert-58"></a>
+</span><span id="__span-fhmodal_insert-59"><a id="__codelineno-fhmodal_insert-59" name="__codelineno-fhmodal_insert-59" href="#__codelineno-fhmodal_insert-59"></a><span class="w">            </span><span class="c">'Dim OldValue As String = lTabla.Rows(0)("my_data_field", DataRowVersion.Original)</span>
+</span><span id="__span-fhmodal_insert-60"><a id="__codelineno-fhmodal_insert-60" name="__codelineno-fhmodal_insert-60" href="#__codelineno-fhmodal_insert-60"></a><span class="w">            </span><span class="c">'Dim NewValue As String = lTabla.Rows(0)("my_data_field", DataRowVersion.Original)</span>
+</span><span id="__span-fhmodal_insert-61"><a id="__codelineno-fhmodal_insert-61" name="__codelineno-fhmodal_insert-61" href="#__codelineno-fhmodal_insert-61"></a><span class="w">            </span><span class="c">'Use this sintax to compare old and new values</span>
+</span><span id="__span-fhmodal_insert-62"><a id="__codelineno-fhmodal_insert-62" name="__codelineno-fhmodal_insert-62" href="#__codelineno-fhmodal_insert-62"></a>
+</span><span id="__span-fhmodal_insert-63"><a id="__codelineno-fhmodal_insert-63" name="__codelineno-fhmodal_insert-63" href="#__codelineno-fhmodal_insert-63"></a><span class="w">            </span><span class="c">''Do something here begore update.</span>
+</span><span id="__span-fhmodal_insert-64"><a id="__codelineno-fhmodal_insert-64" name="__codelineno-fhmodal_insert-64" href="#__codelineno-fhmodal_insert-64"></a>
+</span><span id="__span-fhmodal_insert-65"><a id="__codelineno-fhmodal_insert-65" name="__codelineno-fhmodal_insert-65" href="#__codelineno-fhmodal_insert-65"></a><span class="w">            </span><span class="k">If</span><span class="w"> </span><span class="n">Entity</span><span class="p">.</span><span class="n">UpdateProcess</span><span class="p">(</span><span class="n">Settings</span><span class="p">.</span><span class="n">ObjectSettings</span><span class="p">.</span><span class="n">eUpdateType</span><span class="p">.</span><span class="n">Standard</span><span class="p">,</span><span class="w"> </span><span class="s">""</span><span class="p">)</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_insert-66"><a id="__codelineno-fhmodal_insert-66" name="__codelineno-fhmodal_insert-66" href="#__codelineno-fhmodal_insert-66"></a>
+</span><span id="__span-fhmodal_insert-67"><a id="__codelineno-fhmodal_insert-67" name="__codelineno-fhmodal_insert-67" href="#__codelineno-fhmodal_insert-67"></a>
+</span><span id="__span-fhmodal_insert-68"><a id="__codelineno-fhmodal_insert-68" name="__codelineno-fhmodal_insert-68" href="#__codelineno-fhmodal_insert-68"></a><span class="w">                </span><span class="c">''Do something here after update.</span>
+</span><span id="__span-fhmodal_insert-69"><a id="__codelineno-fhmodal_insert-69" name="__codelineno-fhmodal_insert-69" href="#__codelineno-fhmodal_insert-69"></a>
+</span><span id="__span-fhmodal_insert-70"><a id="__codelineno-fhmodal_insert-70" name="__codelineno-fhmodal_insert-70" href="#__codelineno-fhmodal_insert-70"></a><span class="w">                </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_insert-71"><a id="__codelineno-fhmodal_insert-71" name="__codelineno-fhmodal_insert-71" href="#__codelineno-fhmodal_insert-71"></a><span class="w">                </span><span class="k">Return</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_insert-72"><a id="__codelineno-fhmodal_insert-72" name="__codelineno-fhmodal_insert-72" href="#__codelineno-fhmodal_insert-72"></a><span class="w">            </span><span class="k">Else</span>
+</span><span id="__span-fhmodal_insert-73"><a id="__codelineno-fhmodal_insert-73" name="__codelineno-fhmodal_insert-73" href="#__codelineno-fhmodal_insert-73"></a><span class="w">                </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-74"><a id="__codelineno-fhmodal_insert-74" name="__codelineno-fhmodal_insert-74" href="#__codelineno-fhmodal_insert-74"></a><span class="w">                </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Entity</span><span class="p">.</span><span class="n">LastException</span>
+</span><span id="__span-fhmodal_insert-75"><a id="__codelineno-fhmodal_insert-75" name="__codelineno-fhmodal_insert-75" href="#__codelineno-fhmodal_insert-75"></a><span class="w">                </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-76"><a id="__codelineno-fhmodal_insert-76" name="__codelineno-fhmodal_insert-76" href="#__codelineno-fhmodal_insert-76"></a><span class="w">            </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_insert-77"><a id="__codelineno-fhmodal_insert-77" name="__codelineno-fhmodal_insert-77" href="#__codelineno-fhmodal_insert-77"></a>
+</span><span id="__span-fhmodal_insert-78"><a id="__codelineno-fhmodal_insert-78" name="__codelineno-fhmodal_insert-78" href="#__codelineno-fhmodal_insert-78"></a><span class="w">        </span><span class="k">Catch</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">Exception</span>
+</span><span id="__span-fhmodal_insert-79"><a id="__codelineno-fhmodal_insert-79" name="__codelineno-fhmodal_insert-79" href="#__codelineno-fhmodal_insert-79"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-80"><a id="__codelineno-fhmodal_insert-80" name="__codelineno-fhmodal_insert-80" href="#__codelineno-fhmodal_insert-80"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ex</span>
+</span><span id="__span-fhmodal_insert-81"><a id="__codelineno-fhmodal_insert-81" name="__codelineno-fhmodal_insert-81" href="#__codelineno-fhmodal_insert-81"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-82"><a id="__codelineno-fhmodal_insert-82" name="__codelineno-fhmodal_insert-82" href="#__codelineno-fhmodal_insert-82"></a><span class="w">        </span><span class="k">End</span><span class="w"> </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_insert-83"><a id="__codelineno-fhmodal_insert-83" name="__codelineno-fhmodal_insert-83" href="#__codelineno-fhmodal_insert-83"></a><span class="w">    </span><span class="k">End</span><span class="w"> </span><span class="k">Function</span>
+</span><span id="__span-fhmodal_insert-84"><a id="__codelineno-fhmodal_insert-84" name="__codelineno-fhmodal_insert-84" href="#__codelineno-fhmodal_insert-84"></a>
+</span><span id="__span-fhmodal_insert-85"><a id="__codelineno-fhmodal_insert-85" name="__codelineno-fhmodal_insert-85" href="#__codelineno-fhmodal_insert-85"></a><span class="w">    </span><span class="k">Public</span><span class="w"> </span><span class="k">Shared</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="nf">DeleteObj</span><span class="p">(</span><span class="n">Entity</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">EntityObject</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ProcessHelper</span><span class="p">)</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Boolean</span>
+</span><span id="__span-fhmodal_insert-86"><a id="__codelineno-fhmodal_insert-86" name="__codelineno-fhmodal_insert-86" href="#__codelineno-fhmodal_insert-86"></a><span class="w">        </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_insert-87"><a id="__codelineno-fhmodal_insert-87" name="__codelineno-fhmodal_insert-87" href="#__codelineno-fhmodal_insert-87"></a>
+</span><span id="__span-fhmodal_insert-88"><a id="__codelineno-fhmodal_insert-88" name="__codelineno-fhmodal_insert-88" href="#__codelineno-fhmodal_insert-88"></a><span class="w">            </span><span class="k">If</span><span class="w"> </span><span class="k">Not</span><span class="w"> </span><span class="n">Entity</span><span class="p">.</span><span class="n">CanDelete</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_insert-89"><a id="__codelineno-fhmodal_insert-89" name="__codelineno-fhmodal_insert-89" href="#__codelineno-fhmodal_insert-89"></a><span class="w">                </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">LocalizedException</span><span class="p">(</span><span class="s">"You do Not have enough credentials to delete this Object."</span><span class="p">)</span>
+</span><span id="__span-fhmodal_insert-90"><a id="__codelineno-fhmodal_insert-90" name="__codelineno-fhmodal_insert-90" href="#__codelineno-fhmodal_insert-90"></a><span class="w">                </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-91"><a id="__codelineno-fhmodal_insert-91" name="__codelineno-fhmodal_insert-91" href="#__codelineno-fhmodal_insert-91"></a><span class="w">            </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_insert-92"><a id="__codelineno-fhmodal_insert-92" name="__codelineno-fhmodal_insert-92" href="#__codelineno-fhmodal_insert-92"></a>
+</span><span id="__span-fhmodal_insert-93"><a id="__codelineno-fhmodal_insert-93" name="__codelineno-fhmodal_insert-93" href="#__codelineno-fhmodal_insert-93"></a><span class="w">            </span><span class="c">'Do something here before delete</span>
+</span><span id="__span-fhmodal_insert-94"><a id="__codelineno-fhmodal_insert-94" name="__codelineno-fhmodal_insert-94" href="#__codelineno-fhmodal_insert-94"></a>
+</span><span id="__span-fhmodal_insert-95"><a id="__codelineno-fhmodal_insert-95" name="__codelineno-fhmodal_insert-95" href="#__codelineno-fhmodal_insert-95"></a><span class="w">            </span><span class="k">If</span><span class="w"> </span><span class="n">Entity</span><span class="p">.</span><span class="n">DeleteProcess</span><span class="p">(</span><span class="n">Entity</span><span class="p">.</span><span class="n">TableName</span><span class="p">,</span><span class="w"> </span><span class="n">Settings</span><span class="p">.</span><span class="n">ObjectSettings</span><span class="p">.</span><span class="n">eUpdateType</span><span class="p">.</span><span class="n">Standard</span><span class="p">,</span><span class="w"> </span><span class="s">""</span><span class="p">)</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_insert-96"><a id="__codelineno-fhmodal_insert-96" name="__codelineno-fhmodal_insert-96" href="#__codelineno-fhmodal_insert-96"></a>
+</span><span id="__span-fhmodal_insert-97"><a id="__codelineno-fhmodal_insert-97" name="__codelineno-fhmodal_insert-97" href="#__codelineno-fhmodal_insert-97"></a><span class="w">                </span><span class="c">'Do something here after delete</span>
+</span><span id="__span-fhmodal_insert-98"><a id="__codelineno-fhmodal_insert-98" name="__codelineno-fhmodal_insert-98" href="#__codelineno-fhmodal_insert-98"></a>
+</span><span id="__span-fhmodal_insert-99"><a id="__codelineno-fhmodal_insert-99" name="__codelineno-fhmodal_insert-99" href="#__codelineno-fhmodal_insert-99"></a><span class="w">                </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_insert-100"><a id="__codelineno-fhmodal_insert-100" name="__codelineno-fhmodal_insert-100" href="#__codelineno-fhmodal_insert-100"></a><span class="w">                </span><span class="k">Return</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_insert-101"><a id="__codelineno-fhmodal_insert-101" name="__codelineno-fhmodal_insert-101" href="#__codelineno-fhmodal_insert-101"></a><span class="w">            </span><span class="k">Else</span>
+</span><span id="__span-fhmodal_insert-102"><a id="__codelineno-fhmodal_insert-102" name="__codelineno-fhmodal_insert-102" href="#__codelineno-fhmodal_insert-102"></a><span class="w">                </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-103"><a id="__codelineno-fhmodal_insert-103" name="__codelineno-fhmodal_insert-103" href="#__codelineno-fhmodal_insert-103"></a><span class="w">                </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Entity</span><span class="p">.</span><span class="n">LastException</span>
+</span><span id="__span-fhmodal_insert-104"><a id="__codelineno-fhmodal_insert-104" name="__codelineno-fhmodal_insert-104" href="#__codelineno-fhmodal_insert-104"></a><span class="w">                </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-105"><a id="__codelineno-fhmodal_insert-105" name="__codelineno-fhmodal_insert-105" href="#__codelineno-fhmodal_insert-105"></a><span class="w">            </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_insert-106"><a id="__codelineno-fhmodal_insert-106" name="__codelineno-fhmodal_insert-106" href="#__codelineno-fhmodal_insert-106"></a>
+</span><span id="__span-fhmodal_insert-107"><a id="__codelineno-fhmodal_insert-107" name="__codelineno-fhmodal_insert-107" href="#__codelineno-fhmodal_insert-107"></a><span class="w">        </span><span class="k">Catch</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">Exception</span>
+</span><span id="__span-fhmodal_insert-108"><a id="__codelineno-fhmodal_insert-108" name="__codelineno-fhmodal_insert-108" href="#__codelineno-fhmodal_insert-108"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-109"><a id="__codelineno-fhmodal_insert-109" name="__codelineno-fhmodal_insert-109" href="#__codelineno-fhmodal_insert-109"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ex</span>
+</span><span id="__span-fhmodal_insert-110"><a id="__codelineno-fhmodal_insert-110" name="__codelineno-fhmodal_insert-110" href="#__codelineno-fhmodal_insert-110"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_insert-111"><a id="__codelineno-fhmodal_insert-111" name="__codelineno-fhmodal_insert-111" href="#__codelineno-fhmodal_insert-111"></a><span class="w">        </span><span class="k">End</span><span class="w"> </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_insert-112"><a id="__codelineno-fhmodal_insert-112" name="__codelineno-fhmodal_insert-112" href="#__codelineno-fhmodal_insert-112"></a><span class="w">    </span><span class="k">End</span><span class="w"> </span><span class="k">Function</span>
+</span></code></pre></div>
+<div id="fhmodal_collection" class="language-vbnet highlight"><span class="filename">VB.net</span><pre><span></span><code><span id="__span-fhmodal_collection-1"><a id="__codelineno-fhmodal_collection-1" name="__codelineno-fhmodal_collection-1" href="#__codelineno-fhmodal_collection-1"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Configuration.Tokens</span>
+</span><span id="__span-fhmodal_collection-2"><a id="__codelineno-fhmodal_collection-2" name="__codelineno-fhmodal_collection-2" href="#__codelineno-fhmodal_collection-2"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Data</span>
+</span><span id="__span-fhmodal_collection-3"><a id="__codelineno-fhmodal_collection-3" name="__codelineno-fhmodal_collection-3" href="#__codelineno-fhmodal_collection-3"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Exceptions</span>
+</span><span id="__span-fhmodal_collection-4"><a id="__codelineno-fhmodal_collection-4" name="__codelineno-fhmodal_collection-4" href="#__codelineno-fhmodal_collection-4"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Objects</span>
+</span><span id="__span-fhmodal_collection-5"><a id="__codelineno-fhmodal_collection-5" name="__codelineno-fhmodal_collection-5" href="#__codelineno-fhmodal_collection-5"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Processing</span>
+</span><span id="__span-fhmodal_collection-6"><a id="__codelineno-fhmodal_collection-6" name="__codelineno-fhmodal_collection-6" href="#__codelineno-fhmodal_collection-6"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Processing.ProcessManager</span>
+</span><span id="__span-fhmodal_collection-7"><a id="__codelineno-fhmodal_collection-7" name="__codelineno-fhmodal_collection-7" href="#__codelineno-fhmodal_collection-7"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Utilities.General</span>
+</span><span id="__span-fhmodal_collection-8"><a id="__codelineno-fhmodal_collection-8" name="__codelineno-fhmodal_collection-8" href="#__codelineno-fhmodal_collection-8"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Utilities.General.Util</span>
+</span><span id="__span-fhmodal_collection-9"><a id="__codelineno-fhmodal_collection-9" name="__codelineno-fhmodal_collection-9" href="#__codelineno-fhmodal_collection-9"></a>
+</span><span id="__span-fhmodal_collection-10"><a id="__codelineno-fhmodal_collection-10" name="__codelineno-fhmodal_collection-10" href="#__codelineno-fhmodal_collection-10"></a><span class="k">Public</span><span class="w"> </span><span class="k">Class</span><span class="w"> </span><span class="nc">SampleUserProcesses</span>
+</span><span id="__span-fhmodal_collection-11"><a id="__codelineno-fhmodal_collection-11" name="__codelineno-fhmodal_collection-11" href="#__codelineno-fhmodal_collection-11"></a>
+</span><span id="__span-fhmodal_collection-12"><a id="__codelineno-fhmodal_collection-12" name="__codelineno-fhmodal_collection-12" href="#__codelineno-fhmodal_collection-12"></a>
+</span><span id="__span-fhmodal_collection-13"><a id="__codelineno-fhmodal_collection-13" name="__codelineno-fhmodal_collection-13" href="#__codelineno-fhmodal_collection-13"></a><span class="w">    </span><span class="c">''' &lt;summary&gt;</span>
+</span><span id="__span-fhmodal_collection-14"><a id="__codelineno-fhmodal_collection-14" name="__codelineno-fhmodal_collection-14" href="#__codelineno-fhmodal_collection-14"></a><span class="w">    </span><span class="c">''' Sample collection process executed from collection </span>
+</span><span id="__span-fhmodal_collection-15"><a id="__codelineno-fhmodal_collection-15" name="__codelineno-fhmodal_collection-15" href="#__codelineno-fhmodal_collection-15"></a><span class="w">    </span><span class="c">''' &lt;/summary&gt;</span>
+</span><span id="__span-fhmodal_collection-16"><a id="__codelineno-fhmodal_collection-16" name="__codelineno-fhmodal_collection-16" href="#__codelineno-fhmodal_collection-16"></a><span class="w">    </span><span class="c">''' &lt;param name="Entity"&gt;The entity collection.&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_collection-17"><a id="__codelineno-fhmodal_collection-17" name="__codelineno-fhmodal_collection-17" href="#__codelineno-fhmodal_collection-17"></a><span class="w">    </span><span class="c">''' &lt;param name="Ret"&gt;Returns a Process Helper.&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_collection-18"><a id="__codelineno-fhmodal_collection-18" name="__codelineno-fhmodal_collection-18" href="#__codelineno-fhmodal_collection-18"></a><span class="w">    </span><span class="c">''' &lt;returns&gt;&lt;c&gt;true&lt;/c&gt; if no error, &lt;c&gt;false&lt;/c&gt; otherwise.&lt;/returns&gt;</span>
+</span><span id="__span-fhmodal_collection-19"><a id="__codelineno-fhmodal_collection-19" name="__codelineno-fhmodal_collection-19" href="#__codelineno-fhmodal_collection-19"></a><span class="w">    </span><span class="c">''' &lt;exception cref="System.Exception"&gt;Returns error&lt;/exception&gt;</span>
+</span><span id="__span-fhmodal_collection-20"><a id="__codelineno-fhmodal_collection-20" name="__codelineno-fhmodal_collection-20" href="#__codelineno-fhmodal_collection-20"></a><span class="w">    </span><span class="k">Public</span><span class="w"> </span><span class="k">Shared</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="nf">SampleUserProcess</span><span class="p">(</span><span class="k">ByVal</span><span class="w"> </span><span class="n">Entity</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">EntityCollection</span><span class="p">,</span><span class="w"> </span><span class="k">ByRef</span><span class="w"> </span><span class="n">Ret</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ProcessHelper</span><span class="p">)</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Boolean</span>
+</span><span id="__span-fhmodal_collection-21"><a id="__codelineno-fhmodal_collection-21" name="__codelineno-fhmodal_collection-21" href="#__codelineno-fhmodal_collection-21"></a><span class="w">        </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_collection-22"><a id="__codelineno-fhmodal_collection-22" name="__codelineno-fhmodal_collection-22" href="#__codelineno-fhmodal_collection-22"></a>
+</span><span id="__span-fhmodal_collection-23"><a id="__codelineno-fhmodal_collection-23" name="__codelineno-fhmodal_collection-23" href="#__codelineno-fhmodal_collection-23"></a><span class="w">            </span><span class="k">If</span><span class="w"> </span><span class="n">Entity</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_collection-24"><a id="__codelineno-fhmodal_collection-24" name="__codelineno-fhmodal_collection-24" href="#__codelineno-fhmodal_collection-24"></a><span class="w">                </span><span class="k">For</span><span class="w"> </span><span class="k">Each</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">EntityObject</span><span class="w"> </span><span class="ow">In</span><span class="w"> </span><span class="n">Entity</span>
+</span><span id="__span-fhmodal_collection-25"><a id="__codelineno-fhmodal_collection-25" name="__codelineno-fhmodal_collection-25" href="#__codelineno-fhmodal_collection-25"></a><span class="w">                    </span><span class="c">''Do Something</span>
+</span><span id="__span-fhmodal_collection-26"><a id="__codelineno-fhmodal_collection-26" name="__codelineno-fhmodal_collection-26" href="#__codelineno-fhmodal_collection-26"></a><span class="w">                </span><span class="k">Next</span>
+</span><span id="__span-fhmodal_collection-27"><a id="__codelineno-fhmodal_collection-27" name="__codelineno-fhmodal_collection-27" href="#__codelineno-fhmodal_collection-27"></a><span class="w">            </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_collection-28"><a id="__codelineno-fhmodal_collection-28" name="__codelineno-fhmodal_collection-28" href="#__codelineno-fhmodal_collection-28"></a>
+</span><span id="__span-fhmodal_collection-29"><a id="__codelineno-fhmodal_collection-29" name="__codelineno-fhmodal_collection-29" href="#__codelineno-fhmodal_collection-29"></a>
+</span><span id="__span-fhmodal_collection-30"><a id="__codelineno-fhmodal_collection-30" name="__codelineno-fhmodal_collection-30" href="#__codelineno-fhmodal_collection-30"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_collection-31"><a id="__codelineno-fhmodal_collection-31" name="__codelineno-fhmodal_collection-31" href="#__codelineno-fhmodal_collection-31"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_collection-32"><a id="__codelineno-fhmodal_collection-32" name="__codelineno-fhmodal_collection-32" href="#__codelineno-fhmodal_collection-32"></a>
+</span><span id="__span-fhmodal_collection-33"><a id="__codelineno-fhmodal_collection-33" name="__codelineno-fhmodal_collection-33" href="#__codelineno-fhmodal_collection-33"></a><span class="w">        </span><span class="k">Catch</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">Exception</span>
+</span><span id="__span-fhmodal_collection-34"><a id="__codelineno-fhmodal_collection-34" name="__codelineno-fhmodal_collection-34" href="#__codelineno-fhmodal_collection-34"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_collection-35"><a id="__codelineno-fhmodal_collection-35" name="__codelineno-fhmodal_collection-35" href="#__codelineno-fhmodal_collection-35"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ex</span>
+</span><span id="__span-fhmodal_collection-36"><a id="__codelineno-fhmodal_collection-36" name="__codelineno-fhmodal_collection-36" href="#__codelineno-fhmodal_collection-36"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_collection-37"><a id="__codelineno-fhmodal_collection-37" name="__codelineno-fhmodal_collection-37" href="#__codelineno-fhmodal_collection-37"></a><span class="w">        </span><span class="k">End</span><span class="w"> </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_collection-38"><a id="__codelineno-fhmodal_collection-38" name="__codelineno-fhmodal_collection-38" href="#__codelineno-fhmodal_collection-38"></a><span class="w">    </span><span class="k">End</span><span class="w"> </span><span class="k">Function</span>
+</span><span id="__span-fhmodal_collection-39"><a id="__codelineno-fhmodal_collection-39" name="__codelineno-fhmodal_collection-39" href="#__codelineno-fhmodal_collection-39"></a><span class="w">  </span><span class="k">End</span><span class="w"> </span><span class="k">Class</span>
+</span></code></pre></div>
+<div id="fhmodal_collection_no_params" class="language-vbnet highlight"><span class="filename">VB.net</span><pre><span></span><code><span id="__span-fhmodal_collection_no_params-1"><a id="__codelineno-fhmodal_collection_no_params-1" name="__codelineno-fhmodal_collection_no_params-1" href="#__codelineno-fhmodal_collection_no_params-1"></a><span class="c">''' &lt;summary&gt;</span>
+</span><span id="__span-fhmodal_collection_no_params-2"><a id="__codelineno-fhmodal_collection_no_params-2" name="__codelineno-fhmodal_collection_no_params-2" href="#__codelineno-fhmodal_collection_no_params-2"></a><span class="w">    </span><span class="c">''' Sample collection process executed from collection with params</span>
+</span><span id="__span-fhmodal_collection_no_params-3"><a id="__codelineno-fhmodal_collection_no_params-3" name="__codelineno-fhmodal_collection_no_params-3" href="#__codelineno-fhmodal_collection_no_params-3"></a><span class="w">    </span><span class="c">''' &lt;/summary&gt;</span>
+</span><span id="__span-fhmodal_collection_no_params-4"><a id="__codelineno-fhmodal_collection_no_params-4" name="__codelineno-fhmodal_collection_no_params-4" href="#__codelineno-fhmodal_collection_no_params-4"></a><span class="w">    </span><span class="c">''' &lt;param name="Entity"&gt;The entity collection.&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_collection_no_params-5"><a id="__codelineno-fhmodal_collection_no_params-5" name="__codelineno-fhmodal_collection_no_params-5" href="#__codelineno-fhmodal_collection_no_params-5"></a><span class="w">    </span><span class="c">''' &lt;param name="Ret"&gt;Returns a Process Helper.&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_collection_no_params-6"><a id="__codelineno-fhmodal_collection_no_params-6" name="__codelineno-fhmodal_collection_no_params-6" href="#__codelineno-fhmodal_collection_no_params-6"></a><span class="w">    </span><span class="c">''' &lt;param name="Param1"&gt;Sample string param&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_collection_no_params-7"><a id="__codelineno-fhmodal_collection_no_params-7" name="__codelineno-fhmodal_collection_no_params-7" href="#__codelineno-fhmodal_collection_no_params-7"></a><span class="w">    </span><span class="c">''' &lt;param name="Param2"&gt;Sample integer param&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_collection_no_params-8"><a id="__codelineno-fhmodal_collection_no_params-8" name="__codelineno-fhmodal_collection_no_params-8" href="#__codelineno-fhmodal_collection_no_params-8"></a><span class="w">    </span><span class="c">''' &lt;returns&gt;&lt;c&gt;true&lt;/c&gt; if no error, &lt;c&gt;false&lt;/c&gt; otherwise.&lt;/returns&gt;</span>
+</span><span id="__span-fhmodal_collection_no_params-9"><a id="__codelineno-fhmodal_collection_no_params-9" name="__codelineno-fhmodal_collection_no_params-9" href="#__codelineno-fhmodal_collection_no_params-9"></a><span class="w">    </span><span class="c">''' &lt;exception cref="System.Exception"&gt;Returns error&lt;/exception&gt;</span>
+</span><span id="__span-fhmodal_collection_no_params-10"><a id="__codelineno-fhmodal_collection_no_params-10" name="__codelineno-fhmodal_collection_no_params-10" href="#__codelineno-fhmodal_collection_no_params-10"></a><span class="w">    </span><span class="k">Public</span><span class="w"> </span><span class="k">Shared</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="nf">SampleUserProcessWithParams</span><span class="p">(</span><span class="k">ByVal</span><span class="w"> </span><span class="n">Entity</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">EntityCollection</span><span class="p">,</span><span class="w"> </span><span class="k">ByRef</span><span class="w"> </span><span class="n">Ret</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ProcessHelper</span><span class="p">,</span><span class="w"> </span><span class="k">ByVal</span><span class="w"> </span><span class="n">Param1</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="k">ByVal</span><span class="w"> </span><span class="n">Param2</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Integer</span><span class="p">)</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Boolean</span>
+</span><span id="__span-fhmodal_collection_no_params-11"><a id="__codelineno-fhmodal_collection_no_params-11" name="__codelineno-fhmodal_collection_no_params-11" href="#__codelineno-fhmodal_collection_no_params-11"></a><span class="w">        </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_collection_no_params-12"><a id="__codelineno-fhmodal_collection_no_params-12" name="__codelineno-fhmodal_collection_no_params-12" href="#__codelineno-fhmodal_collection_no_params-12"></a>
+</span><span id="__span-fhmodal_collection_no_params-13"><a id="__codelineno-fhmodal_collection_no_params-13" name="__codelineno-fhmodal_collection_no_params-13" href="#__codelineno-fhmodal_collection_no_params-13"></a><span class="w">            </span><span class="k">If</span><span class="w"> </span><span class="n">Entity</span><span class="p">.</span><span class="n">Count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_collection_no_params-14"><a id="__codelineno-fhmodal_collection_no_params-14" name="__codelineno-fhmodal_collection_no_params-14" href="#__codelineno-fhmodal_collection_no_params-14"></a><span class="w">                </span><span class="k">For</span><span class="w"> </span><span class="k">Each</span><span class="w"> </span><span class="n">obj</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">EntityObject</span><span class="w"> </span><span class="ow">In</span><span class="w"> </span><span class="n">Entity</span>
+</span><span id="__span-fhmodal_collection_no_params-15"><a id="__codelineno-fhmodal_collection_no_params-15" name="__codelineno-fhmodal_collection_no_params-15" href="#__codelineno-fhmodal_collection_no_params-15"></a><span class="w">                    </span><span class="c">''Do Something</span>
+</span><span id="__span-fhmodal_collection_no_params-16"><a id="__codelineno-fhmodal_collection_no_params-16" name="__codelineno-fhmodal_collection_no_params-16" href="#__codelineno-fhmodal_collection_no_params-16"></a><span class="w">                </span><span class="k">Next</span>
+</span><span id="__span-fhmodal_collection_no_params-17"><a id="__codelineno-fhmodal_collection_no_params-17" name="__codelineno-fhmodal_collection_no_params-17" href="#__codelineno-fhmodal_collection_no_params-17"></a><span class="w">            </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_collection_no_params-18"><a id="__codelineno-fhmodal_collection_no_params-18" name="__codelineno-fhmodal_collection_no_params-18" href="#__codelineno-fhmodal_collection_no_params-18"></a>
+</span><span id="__span-fhmodal_collection_no_params-19"><a id="__codelineno-fhmodal_collection_no_params-19" name="__codelineno-fhmodal_collection_no_params-19" href="#__codelineno-fhmodal_collection_no_params-19"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_collection_no_params-20"><a id="__codelineno-fhmodal_collection_no_params-20" name="__codelineno-fhmodal_collection_no_params-20" href="#__codelineno-fhmodal_collection_no_params-20"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_collection_no_params-21"><a id="__codelineno-fhmodal_collection_no_params-21" name="__codelineno-fhmodal_collection_no_params-21" href="#__codelineno-fhmodal_collection_no_params-21"></a>
+</span><span id="__span-fhmodal_collection_no_params-22"><a id="__codelineno-fhmodal_collection_no_params-22" name="__codelineno-fhmodal_collection_no_params-22" href="#__codelineno-fhmodal_collection_no_params-22"></a><span class="w">        </span><span class="k">Catch</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">Exception</span>
+</span><span id="__span-fhmodal_collection_no_params-23"><a id="__codelineno-fhmodal_collection_no_params-23" name="__codelineno-fhmodal_collection_no_params-23" href="#__codelineno-fhmodal_collection_no_params-23"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_collection_no_params-24"><a id="__codelineno-fhmodal_collection_no_params-24" name="__codelineno-fhmodal_collection_no_params-24" href="#__codelineno-fhmodal_collection_no_params-24"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ex</span>
+</span><span id="__span-fhmodal_collection_no_params-25"><a id="__codelineno-fhmodal_collection_no_params-25" name="__codelineno-fhmodal_collection_no_params-25" href="#__codelineno-fhmodal_collection_no_params-25"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_collection_no_params-26"><a id="__codelineno-fhmodal_collection_no_params-26" name="__codelineno-fhmodal_collection_no_params-26" href="#__codelineno-fhmodal_collection_no_params-26"></a><span class="w">        </span><span class="k">End</span><span class="w"> </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_collection_no_params-27"><a id="__codelineno-fhmodal_collection_no_params-27" name="__codelineno-fhmodal_collection_no_params-27" href="#__codelineno-fhmodal_collection_no_params-27"></a><span class="w">    </span><span class="k">End</span><span class="w"> </span><span class="k">Function</span>
+</span></code></pre></div>
+<div id="fhmodal_load" class="language-vbnet highlight"><span class="filename">VB.net</span><pre><span></span><code><span id="__span-fhmodal_load-1"><a id="__codelineno-fhmodal_load-1" name="__codelineno-fhmodal_load-1" href="#__codelineno-fhmodal_load-1"></a><span class="c">''' &lt;summary&gt;</span>
+</span><span id="__span-fhmodal_load-2"><a id="__codelineno-fhmodal_load-2" name="__codelineno-fhmodal_load-2" href="#__codelineno-fhmodal_load-2"></a><span class="w">    </span><span class="c">''' Sample load object/change property custom process.</span>
+</span><span id="__span-fhmodal_load-3"><a id="__codelineno-fhmodal_load-3" name="__codelineno-fhmodal_load-3" href="#__codelineno-fhmodal_load-3"></a><span class="w">    </span><span class="c">''' &lt;/summary&gt;</span>
+</span><span id="__span-fhmodal_load-4"><a id="__codelineno-fhmodal_load-4" name="__codelineno-fhmodal_load-4" href="#__codelineno-fhmodal_load-4"></a><span class="w">    </span><span class="c">''' &lt;param name="aSender"&gt;FormSender with objectname, processname or reportname, entity if proceeded and current form values.&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_load-5"><a id="__codelineno-fhmodal_load-5" name="__codelineno-fhmodal_load-5" href="#__codelineno-fhmodal_load-5"></a><span class="w">    </span><span class="c">''' &lt;param name="Ret"&gt;Returns a Process Helper.&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_load-6"><a id="__codelineno-fhmodal_load-6" name="__codelineno-fhmodal_load-6" href="#__codelineno-fhmodal_load-6"></a><span class="w">    </span><span class="c">''' &lt;returns&gt;List(Of FormAction) with actions to do with properties.&lt;/returns&gt;</span>
+</span><span id="__span-fhmodal_load-7"><a id="__codelineno-fhmodal_load-7" name="__codelineno-fhmodal_load-7" href="#__codelineno-fhmodal_load-7"></a><span class="w">    </span><span class="c">''' &lt;exception cref="System.Exception"&gt;Returns error&lt;/exception&gt;</span>
+</span><span id="__span-fhmodal_load-8"><a id="__codelineno-fhmodal_load-8" name="__codelineno-fhmodal_load-8" href="#__codelineno-fhmodal_load-8"></a><span class="w">    </span><span class="k">Public</span><span class="w"> </span><span class="k">Shared</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="nf">SampleLoadProcess</span><span class="p">(</span><span class="k">ByVal</span><span class="w"> </span><span class="n">aSender</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">FormSender</span><span class="p">,</span><span class="w"> </span><span class="k">ByRef</span><span class="w"> </span><span class="n">Ret</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ProcessHelper</span><span class="p">)</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">FormAction</span><span class="p">)</span>
+</span><span id="__span-fhmodal_load-9"><a id="__codelineno-fhmodal_load-9" name="__codelineno-fhmodal_load-9" href="#__codelineno-fhmodal_load-9"></a><span class="w">        </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_load-10"><a id="__codelineno-fhmodal_load-10" name="__codelineno-fhmodal_load-10" href="#__codelineno-fhmodal_load-10"></a>
+</span><span id="__span-fhmodal_load-11"><a id="__codelineno-fhmodal_load-11" name="__codelineno-fhmodal_load-11" href="#__codelineno-fhmodal_load-11"></a><span class="w">            </span><span class="c">'Define new action after load/change</span>
+</span><span id="__span-fhmodal_load-12"><a id="__codelineno-fhmodal_load-12" name="__codelineno-fhmodal_load-12" href="#__codelineno-fhmodal_load-12"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">action</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">FormAction</span>
+</span><span id="__span-fhmodal_load-13"><a id="__codelineno-fhmodal_load-13" name="__codelineno-fhmodal_load-13" href="#__codelineno-fhmodal_load-13"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">PropertyName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"OriginId"</span>
+</span><span id="__span-fhmodal_load-14"><a id="__codelineno-fhmodal_load-14" name="__codelineno-fhmodal_load-14" href="#__codelineno-fhmodal_load-14"></a>
+</span><span id="__span-fhmodal_load-15"><a id="__codelineno-fhmodal_load-15" name="__codelineno-fhmodal_load-15" href="#__codelineno-fhmodal_load-15"></a><span class="w">            </span><span class="c">'Set new value to this property</span>
+</span><span id="__span-fhmodal_load-16"><a id="__codelineno-fhmodal_load-16" name="__codelineno-fhmodal_load-16" href="#__codelineno-fhmodal_load-16"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">changeValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_load-17"><a id="__codelineno-fhmodal_load-17" name="__codelineno-fhmodal_load-17" href="#__codelineno-fhmodal_load-17"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">newValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"1"</span>
+</span><span id="__span-fhmodal_load-18"><a id="__codelineno-fhmodal_load-18" name="__codelineno-fhmodal_load-18" href="#__codelineno-fhmodal_load-18"></a>
+</span><span id="__span-fhmodal_load-19"><a id="__codelineno-fhmodal_load-19" name="__codelineno-fhmodal_load-19" href="#__codelineno-fhmodal_load-19"></a><span class="w">            </span><span class="c">'Change default class to one property</span>
+</span><span id="__span-fhmodal_load-20"><a id="__codelineno-fhmodal_load-20" name="__codelineno-fhmodal_load-20" href="#__codelineno-fhmodal_load-20"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">changeClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_load-21"><a id="__codelineno-fhmodal_load-21" name="__codelineno-fhmodal_load-21" href="#__codelineno-fhmodal_load-21"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">newClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"box-danger"</span>
+</span><span id="__span-fhmodal_load-22"><a id="__codelineno-fhmodal_load-22" name="__codelineno-fhmodal_load-22" href="#__codelineno-fhmodal_load-22"></a>
+</span><span id="__span-fhmodal_load-23"><a id="__codelineno-fhmodal_load-23" name="__codelineno-fhmodal_load-23" href="#__codelineno-fhmodal_load-23"></a><span class="w">            </span><span class="c">'Define if property is required</span>
+</span><span id="__span-fhmodal_load-24"><a id="__codelineno-fhmodal_load-24" name="__codelineno-fhmodal_load-24" href="#__codelineno-fhmodal_load-24"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">changeRequired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_load-25"><a id="__codelineno-fhmodal_load-25" name="__codelineno-fhmodal_load-25" href="#__codelineno-fhmodal_load-25"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">newRequired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_load-26"><a id="__codelineno-fhmodal_load-26" name="__codelineno-fhmodal_load-26" href="#__codelineno-fhmodal_load-26"></a>
+</span><span id="__span-fhmodal_load-27"><a id="__codelineno-fhmodal_load-27" name="__codelineno-fhmodal_load-27" href="#__codelineno-fhmodal_load-27"></a><span class="w">            </span><span class="c">'Define if property is enabled</span>
+</span><span id="__span-fhmodal_load-28"><a id="__codelineno-fhmodal_load-28" name="__codelineno-fhmodal_load-28" href="#__codelineno-fhmodal_load-28"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">changeEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_load-29"><a id="__codelineno-fhmodal_load-29" name="__codelineno-fhmodal_load-29" href="#__codelineno-fhmodal_load-29"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">newEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_load-30"><a id="__codelineno-fhmodal_load-30" name="__codelineno-fhmodal_load-30" href="#__codelineno-fhmodal_load-30"></a>
+</span><span id="__span-fhmodal_load-31"><a id="__codelineno-fhmodal_load-31" name="__codelineno-fhmodal_load-31" href="#__codelineno-fhmodal_load-31"></a><span class="w">            </span><span class="c">'Define current visibility to this property</span>
+</span><span id="__span-fhmodal_load-32"><a id="__codelineno-fhmodal_load-32" name="__codelineno-fhmodal_load-32" href="#__codelineno-fhmodal_load-32"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">changeVisibility</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_load-33"><a id="__codelineno-fhmodal_load-33" name="__codelineno-fhmodal_load-33" href="#__codelineno-fhmodal_load-33"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">newVisibility</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_load-34"><a id="__codelineno-fhmodal_load-34" name="__codelineno-fhmodal_load-34" href="#__codelineno-fhmodal_load-34"></a>
+</span><span id="__span-fhmodal_load-35"><a id="__codelineno-fhmodal_load-35" name="__codelineno-fhmodal_load-35" href="#__codelineno-fhmodal_load-35"></a><span class="w">            </span><span class="c">'set new sql for this property</span>
+</span><span id="__span-fhmodal_load-36"><a id="__codelineno-fhmodal_load-36" name="__codelineno-fhmodal_load-36" href="#__codelineno-fhmodal_load-36"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">changeSQL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_load-37"><a id="__codelineno-fhmodal_load-37" name="__codelineno-fhmodal_load-37" href="#__codelineno-fhmodal_load-37"></a><span class="w">            </span><span class="n">action</span><span class="p">.</span><span class="n">newSQL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"select ObjectName from objects where objectname like '%docu%'"</span>
+</span><span id="__span-fhmodal_load-38"><a id="__codelineno-fhmodal_load-38" name="__codelineno-fhmodal_load-38" href="#__codelineno-fhmodal_load-38"></a>
+</span><span id="__span-fhmodal_load-39"><a id="__codelineno-fhmodal_load-39" name="__codelineno-fhmodal_load-39" href="#__codelineno-fhmodal_load-39"></a>
+</span><span id="__span-fhmodal_load-40"><a id="__codelineno-fhmodal_load-40" name="__codelineno-fhmodal_load-40" href="#__codelineno-fhmodal_load-40"></a><span class="w">            </span><span class="c">''Append to afterload action array.</span>
+</span><span id="__span-fhmodal_load-41"><a id="__codelineno-fhmodal_load-41" name="__codelineno-fhmodal_load-41" href="#__codelineno-fhmodal_load-41"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">actionResult</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">FormAction</span><span class="p">)</span>
+</span><span id="__span-fhmodal_load-42"><a id="__codelineno-fhmodal_load-42" name="__codelineno-fhmodal_load-42" href="#__codelineno-fhmodal_load-42"></a><span class="w">            </span><span class="n">actionResult</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</span><span id="__span-fhmodal_load-43"><a id="__codelineno-fhmodal_load-43" name="__codelineno-fhmodal_load-43" href="#__codelineno-fhmodal_load-43"></a>
+</span><span id="__span-fhmodal_load-44"><a id="__codelineno-fhmodal_load-44" name="__codelineno-fhmodal_load-44" href="#__codelineno-fhmodal_load-44"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_load-45"><a id="__codelineno-fhmodal_load-45" name="__codelineno-fhmodal_load-45" href="#__codelineno-fhmodal_load-45"></a>
+</span><span id="__span-fhmodal_load-46"><a id="__codelineno-fhmodal_load-46" name="__codelineno-fhmodal_load-46" href="#__codelineno-fhmodal_load-46"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="n">actionResult</span>
+</span><span id="__span-fhmodal_load-47"><a id="__codelineno-fhmodal_load-47" name="__codelineno-fhmodal_load-47" href="#__codelineno-fhmodal_load-47"></a>
+</span><span id="__span-fhmodal_load-48"><a id="__codelineno-fhmodal_load-48" name="__codelineno-fhmodal_load-48" href="#__codelineno-fhmodal_load-48"></a><span class="w">        </span><span class="k">Catch</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">Exception</span>
+</span><span id="__span-fhmodal_load-49"><a id="__codelineno-fhmodal_load-49" name="__codelineno-fhmodal_load-49" href="#__codelineno-fhmodal_load-49"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_load-50"><a id="__codelineno-fhmodal_load-50" name="__codelineno-fhmodal_load-50" href="#__codelineno-fhmodal_load-50"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ex</span>
+</span><span id="__span-fhmodal_load-51"><a id="__codelineno-fhmodal_load-51" name="__codelineno-fhmodal_load-51" href="#__codelineno-fhmodal_load-51"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">Nothing</span>
+</span><span id="__span-fhmodal_load-52"><a id="__codelineno-fhmodal_load-52" name="__codelineno-fhmodal_load-52" href="#__codelineno-fhmodal_load-52"></a><span class="w">        </span><span class="k">End</span><span class="w"> </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_load-53"><a id="__codelineno-fhmodal_load-53" name="__codelineno-fhmodal_load-53" href="#__codelineno-fhmodal_load-53"></a><span class="w">    </span><span class="k">End</span><span class="w"> </span><span class="k">Function</span>
+</span></code></pre></div>
+<div id="fhmodal_process_no_params" class="language-vbnet highlight"><span class="filename">VB.net</span><pre><span></span><code><span id="__span-fhmodal_process_no_params-1"><a id="__codelineno-fhmodal_process_no_params-1" name="__codelineno-fhmodal_process_no_params-1" href="#__codelineno-fhmodal_process_no_params-1"></a><span class="c">''' &lt;summary&gt;</span>
+</span><span id="__span-fhmodal_process_no_params-2"><a id="__codelineno-fhmodal_process_no_params-2" name="__codelineno-fhmodal_process_no_params-2" href="#__codelineno-fhmodal_process_no_params-2"></a><span class="w">    </span><span class="c">''' Sample object process executed from object with params</span>
+</span><span id="__span-fhmodal_process_no_params-3"><a id="__codelineno-fhmodal_process_no_params-3" name="__codelineno-fhmodal_process_no_params-3" href="#__codelineno-fhmodal_process_no_params-3"></a><span class="w">    </span><span class="c">''' &lt;/summary&gt;</span>
+</span><span id="__span-fhmodal_process_no_params-4"><a id="__codelineno-fhmodal_process_no_params-4" name="__codelineno-fhmodal_process_no_params-4" href="#__codelineno-fhmodal_process_no_params-4"></a><span class="w">    </span><span class="c">''' &lt;param name="Entity"&gt;The entity.&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_process_no_params-5"><a id="__codelineno-fhmodal_process_no_params-5" name="__codelineno-fhmodal_process_no_params-5" href="#__codelineno-fhmodal_process_no_params-5"></a><span class="w">    </span><span class="c">''' &lt;param name="Ret"&gt;Returns a Process Helper.&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_process_no_params-6"><a id="__codelineno-fhmodal_process_no_params-6" name="__codelineno-fhmodal_process_no_params-6" href="#__codelineno-fhmodal_process_no_params-6"></a><span class="w">    </span><span class="c">''' &lt;param name="Param1"&gt;Sample string param&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_process_no_params-7"><a id="__codelineno-fhmodal_process_no_params-7" name="__codelineno-fhmodal_process_no_params-7" href="#__codelineno-fhmodal_process_no_params-7"></a><span class="w">    </span><span class="c">''' &lt;param name="Param2"&gt;Sample integer param&lt;/param&gt;</span>
+</span><span id="__span-fhmodal_process_no_params-8"><a id="__codelineno-fhmodal_process_no_params-8" name="__codelineno-fhmodal_process_no_params-8" href="#__codelineno-fhmodal_process_no_params-8"></a><span class="w">    </span><span class="c">''' &lt;returns&gt;&lt;c&gt;true&lt;/c&gt; if no error, &lt;c&gt;false&lt;/c&gt; otherwise.&lt;/returns&gt;</span>
+</span><span id="__span-fhmodal_process_no_params-9"><a id="__codelineno-fhmodal_process_no_params-9" name="__codelineno-fhmodal_process_no_params-9" href="#__codelineno-fhmodal_process_no_params-9"></a><span class="w">    </span><span class="c">''' &lt;exception cref="System.Exception"&gt;Returns error&lt;/exception&gt;</span>
+</span><span id="__span-fhmodal_process_no_params-10"><a id="__codelineno-fhmodal_process_no_params-10" name="__codelineno-fhmodal_process_no_params-10" href="#__codelineno-fhmodal_process_no_params-10"></a><span class="w">    </span><span class="k">Public</span><span class="w"> </span><span class="k">Shared</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="nf">SampleUserProcessWithParams</span><span class="p">(</span><span class="k">ByVal</span><span class="w"> </span><span class="n">Entity</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">EntityObject</span><span class="p">,</span><span class="w"> </span><span class="k">ByRef</span><span class="w"> </span><span class="n">Ret</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ProcessHelper</span><span class="p">,</span><span class="w"> </span><span class="k">ByVal</span><span class="w"> </span><span class="n">Param1</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="k">ByVal</span><span class="w"> </span><span class="n">Param2</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Integer</span><span class="p">)</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Boolean</span>
+</span><span id="__span-fhmodal_process_no_params-11"><a id="__codelineno-fhmodal_process_no_params-11" name="__codelineno-fhmodal_process_no_params-11" href="#__codelineno-fhmodal_process_no_params-11"></a><span class="w">        </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_process_no_params-12"><a id="__codelineno-fhmodal_process_no_params-12" name="__codelineno-fhmodal_process_no_params-12" href="#__codelineno-fhmodal_process_no_params-12"></a>
+</span><span id="__span-fhmodal_process_no_params-13"><a id="__codelineno-fhmodal_process_no_params-13" name="__codelineno-fhmodal_process_no_params-13" href="#__codelineno-fhmodal_process_no_params-13"></a><span class="w">            </span><span class="c">''Do Something</span>
+</span><span id="__span-fhmodal_process_no_params-14"><a id="__codelineno-fhmodal_process_no_params-14" name="__codelineno-fhmodal_process_no_params-14" href="#__codelineno-fhmodal_process_no_params-14"></a>
+</span><span id="__span-fhmodal_process_no_params-15"><a id="__codelineno-fhmodal_process_no_params-15" name="__codelineno-fhmodal_process_no_params-15" href="#__codelineno-fhmodal_process_no_params-15"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_process_no_params-16"><a id="__codelineno-fhmodal_process_no_params-16" name="__codelineno-fhmodal_process_no_params-16" href="#__codelineno-fhmodal_process_no_params-16"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">SucessMessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Cache reloaded"</span>
+</span><span id="__span-fhmodal_process_no_params-17"><a id="__codelineno-fhmodal_process_no_params-17" name="__codelineno-fhmodal_process_no_params-17" href="#__codelineno-fhmodal_process_no_params-17"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_process_no_params-18"><a id="__codelineno-fhmodal_process_no_params-18" name="__codelineno-fhmodal_process_no_params-18" href="#__codelineno-fhmodal_process_no_params-18"></a>
+</span><span id="__span-fhmodal_process_no_params-19"><a id="__codelineno-fhmodal_process_no_params-19" name="__codelineno-fhmodal_process_no_params-19" href="#__codelineno-fhmodal_process_no_params-19"></a><span class="w">        </span><span class="k">Catch</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">Exception</span>
+</span><span id="__span-fhmodal_process_no_params-20"><a id="__codelineno-fhmodal_process_no_params-20" name="__codelineno-fhmodal_process_no_params-20" href="#__codelineno-fhmodal_process_no_params-20"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_process_no_params-21"><a id="__codelineno-fhmodal_process_no_params-21" name="__codelineno-fhmodal_process_no_params-21" href="#__codelineno-fhmodal_process_no_params-21"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ex</span>
+</span><span id="__span-fhmodal_process_no_params-22"><a id="__codelineno-fhmodal_process_no_params-22" name="__codelineno-fhmodal_process_no_params-22" href="#__codelineno-fhmodal_process_no_params-22"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_process_no_params-23"><a id="__codelineno-fhmodal_process_no_params-23" name="__codelineno-fhmodal_process_no_params-23" href="#__codelineno-fhmodal_process_no_params-23"></a><span class="w">        </span><span class="k">End</span><span class="w"> </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_process_no_params-24"><a id="__codelineno-fhmodal_process_no_params-24" name="__codelineno-fhmodal_process_no_params-24" href="#__codelineno-fhmodal_process_no_params-24"></a><span class="w">    </span><span class="k">End</span><span class="w"> </span><span class="k">Function</span>
+</span></code></pre></div><p></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                  </article>
+                </div>
+              
+              
+                
+                <div class="fh-rightsidebar md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#c-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      C# Personalizado
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+        
+      </main>
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/fh-structural/utils.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-modal.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-copy.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-popover.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-namepropagator.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-versions.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/flx-navbutton.js"></script>
+      
+        <script src="../../javascripts/cultures/default_language.js"></script>
+      
+        <script src="../../javascripts/cultures/es.js"></script>
+      
+        <script src="../../javascripts/cultures/en.js"></script>
+      
+    
+    <dialog id="navigation-dialog" closedby="any">
+      <p class="input-group">
+        <label>Your flexys URL:</label>
+        <input type="text" id="navigation-dialog-flexy-url" value="https://">
+      </p>
+      <div class="button-container">
+        <button class="button" onclick="_nav(document.getElementById('navigation-dialog-flexy-url').value)">Confirm</button>
+      </div>
+    </dialog>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "zoom"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

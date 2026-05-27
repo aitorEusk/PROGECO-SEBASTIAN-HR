@@ -1,0 +1,282 @@
+﻿@import "../CssVars.less";
+
+/*flx-voicesearch .input-group-addon {
+    background-color: @outstanding-color;
+    color: @txt-outstanding-color;
+}
+
+flx-voicesearch .input-group-addon {
+    padding: 2px 4px 2px 4px;
+    text-align: center;
+    border: 1px solid @outstanding-color;
+    border-radius: 4px;
+}*/
+
+flx-nav li.wcsearch:has(flx-voicesearch) {
+    z-index: 11 !important;
+}
+flx-voicesearch .main-search-btn {
+    display: table-cell;
+    margin: 0;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+
+}
+
+flx-voicesearch .search .hidden {
+    display: table !important;
+    position: fixed !important;
+    top: 12px;
+    width: 1%;
+    transition: width 0.4s ease-in-out, visibility 0.4s;
+    visibility: hidden;
+    border-collapse: separate;
+    top: 12px;
+    margin-left: 6px;
+}
+
+flx-voicesearch .search:hover .hidden {
+    width: 80%;
+    visibility: visible;
+    transition: width 0.4s ease-in-out;
+}
+
+@media (max-width: @medium) {
+    flx-voicesearch .search .hidden {
+        display: table !important;
+        position: relative !important;
+        top: 0px;
+        width: 95%;
+        transition: none;
+        visibility: visible;
+        border-collapse: separate;
+        margin-left: 6px;
+    }
+
+    flx-voicesearch .search:hover .hidden {
+        width: 95%;
+        visibility: visible;
+        transition: none;
+    }
+}
+
+flx-voicesearch .main-search-btn i {
+    background-color: @outstanding-color;
+    color: @primary-color;
+    padding: 2px;
+    border-radius: 50%;
+}
+
+flx-voicesearch .input-group-addon.cnf {
+    background-color: white;
+    border-color: #ccc;
+    color: silver;
+    border-left-color: white;
+    padding: 2px 1px 2px 1px
+}
+
+flx-voicesearch .input-group-addon.cnf i {
+    font-size: 10px;
+}
+
+flx-voicesearch .input-group-addon .icon-large {
+    overflow: hidden;
+}
+
+flx-voicesearch .input-group-addon i {
+    font-size: 18px
+}
+
+flx-voicesearch #main-search-voice-btn {
+    border-left: none;
+}
+
+flx-voicesearch input {
+    border-right: 0px !important;
+    line-height: normal;
+}
+
+//Fixed size for li
+li flx-voicesearch .input-group {
+    /*max-width: 180px;
+    max-height: 25px;*/
+}
+
+li flx-voicesearch .form-control {
+    height: 25px;
+    border-left:none;
+}
+
+
+@media (max-width: @medium) {
+    flx-voicesearch .input-group {
+        width: 100%;
+        height: inherit;
+    }
+
+    li flx-voicesearch .input-group {
+        width: 100%;
+        height: inherit;
+    }
+
+    li flx-voicesearch .form-control {
+        height: inherit
+    }
+}
+@media (min-width: @medium) {
+    flx-voicesearch {
+        > div.search {
+            position: absolute;
+        }
+    }
+    }
+    ul.search-options.sortable {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.search-options.sortable li {
+        width: 250px;
+        cursor: move;
+    }
+
+
+    ul.search-options.sortable li:hover {
+    }
+
+    ul.search-options.sortable li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
+        border-color: #999;
+    }
+
+    ul.search-options.sortable .mjs-nestedSortable-leaf {
+    }
+
+    ul.search-options.sortable .placeholder {
+        border: 1px dashed silver;
+        background-color: #fcf0bf;
+    }
+
+flx-voicesearch .search-screen {
+    position: fixed;
+    width: 100%;
+    height: 0;
+    background-color: @header-color;
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+    transition: .3s linear .3s;
+}
+
+flx-voicesearch .close-icon {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+flx-voicesearch .search-screen.fullScreen .flx-icon {
+    font-size: 30px;
+}
+
+flx-voicesearch .drop-icon {
+    position: absolute;
+    top: 42px;
+    right: 100px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+flx-voicesearch .drop-icon-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+flx-voicesearch .search-box {
+    width: 100%;
+    max-width: 600px;
+    height: 60px;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 60px;
+}
+
+flx-voicesearch .search-screen.fullScreen {
+    transition: height 2s;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    height: 100vh;
+}
+
+flx-voicesearch .search-screen.fullScreen .search-box,
+.search-screen.fullScreen .close-icon {
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    opacity: 1;
+}
+
+@media (min-width: @medium) {
+    flx-voicesearch #search-after {
+        display: none
+    }
+}
+
+@media (max-width: @small) {
+
+    flx-voicesearch .search-screen {
+        position: fixed;
+        width: 100%;
+        height: 0;
+        background-color: @header-color;
+        opacity: 0.85;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        overflow: hidden;
+        transition: .3s linear .3s;
+    }
+
+    flx-voicesearch .search-box {
+        width: 100%;
+        max-width: 600px;
+        height: 60px;
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 20px;
+        margin-left: 5px;
+    }
+
+    flx-voicesearch .drop-icon {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 15px;
+        cursor: pointer;
+        color: @txt-header-color;
+    }
+
+    flx-voicesearch .close-icon {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        color: @txt-header-color;
+    }
+}

@@ -1,0 +1,4996 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ModuleManagement/">
+      
+      
+        <link rel="next" href="../ObjectFilters/">
+      
+      
+      <link rel="icon" href="../../../docs_assets/images/logos/fl-favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Modules - Flexygo Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom-colors.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/base.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/code-highlighting.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/css-class-components.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/404-error.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/components/fh-modal.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/components/fh-copy.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/components/fh-namepropagator.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/components/fh-versions.css">
+    
+      <link rel="stylesheet" href="../../../docs_assets/fh-structural/fonts/flags/flags.css">
+    
+      <link rel="stylesheet" href="../../../docs_assets/fh-structural/fonts/flexygo/utils.css">
+    
+      <link rel="stylesheet" href="../../../docs_assets/fh-structural/fonts/flexygo/flexygo-icons.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flexygo-styles/main-flexygo-styles.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flexygo-styles/cols.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flexygo-styles/list-groups.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modules" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="Flexygo Docs" class="md-header__button md-logo" aria-label="Flexygo Docs" data-md-component="logo">
+      
+  <img src="../../../docs_assets/images/logos/fl.svg" alt="logo">
+
+      Docs
+    </a>
+    <fh-versions></fh-versions>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+          </span>
+        </div>
+      </div>
+    </div>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <span onclick="changeLanguage('en')" class="md-select__link">
+              English
+            </span>
+          </li>
+        
+          <li class="md-select__item">
+            <span onclick="changeLanguage('es')" class="md-select__link">
+              Español
+            </span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="darkmode" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0M8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0M3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8m13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8m-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13m3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061M2.343 2.343a.75.75 0 0 1 1.061 0l1.06 1.061a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-1.06-1.06a.75.75 0 0 1 0-1.06Z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="fh-sidebar md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="fh-sidebarheader">
+                  <a href="../../" title="Flexygo Docs" class="md-header__button md-logo" aria-label="Flexygo Docs" data-md-component="logo">
+                    
+  <img src="../../../docs_assets/images/logos/fl.svg" alt="logo">
+
+                    Docs
+                  </a>
+                  <fh-versions></fh-versions>
+                </div>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+    
+    <ul class="md-nav__list" data-md-scrollfix>
+        
+            
+            
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Training
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Training
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1Training/Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1Training/VideoTutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VideoTutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Addons
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Addons/1Addons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Information
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Addons/WhatsApp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WhatsApp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ahora Business Hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ahora Business Hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhSign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abh Sign
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhSms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abh Sms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhTicket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abh Ticket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Connectors
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Connectors
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/AhoraERP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ahora ERP Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/AzureADIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure AD Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/AzureFormRecognizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure Form Recognizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/ClaveAuthentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cl@ve Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/FaceRecognition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Face Recognition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Google/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/GoogleAPIKey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google API Key
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/GooglePlaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Places
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/MailChimp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MailChimp Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/MailChimpProcesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MailChimp Demo Processes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Office365/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Office 365 Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/OpenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ChatGPT integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/OtherflexygoIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flexygo Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Passbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Passbook integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/PowerBI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Power BI Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/PushNotifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Push Notifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/RedSys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RedSys
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Scales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scales Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/SendinBlue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SendinBlue Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/WacomSignature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wacom SDK Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Information
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Information
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/FriendlyURLs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Friendly URLs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/GoodPractices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Good practices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/MFA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flexygo MFA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/MailAccountsSettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mail Accounts Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/Navigator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigator Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/PageHierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Page Hierarchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/1HowToInstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingIntefaceTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Add an interface test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingNugetPackage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create NuGet package
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingProduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create a product
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingUnitaryTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Add a unit test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingWebComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create a custom WebComponent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ChartII/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chart II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chatter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DocAndImageManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Manager &amp; Image Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Funnel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funnel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kanban/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kanban
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ModuleManagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#button-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Button Tab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Tab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calendar-and-scheduller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calendar and Scheduller
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-image-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document &amp; Image Manager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chatter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easy-pie-easy-info-easy-line-and-sparklines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Easy Pie, Easy Info, Easy Line and Sparklines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-object-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Object List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funnel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML Module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kanban" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kanban
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Filter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nav-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nav Panel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-graphic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Graphic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Edit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Reports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Search
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object View
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organization-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organization Chart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Objects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-related-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Related Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-related-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Related Reports
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ObjectFilters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Object Filters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PlannerModule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Popover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Popover and Tooltip
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SchedulerCalendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scheduler and Calendar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TimelineModule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Timeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebMail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Mail
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Offline App
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Offline App
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/AccessandDescription/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offline App description
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/DesignEnvironment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design environment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/DesigningApp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Designing flexygo offline App
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/NavigationOptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offline Navigation options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offline AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineAndEmulatordifferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    App/Emulator differences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineDatabase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offline Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/ReturnDataProcess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Return Data Process
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/Trackingconfiguration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tracking configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/UsefulTokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_11">
+        
+          
+          <label class="md-nav__link" for="__nav_9_11" id="__nav_9_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    JS Functions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_11">
+            <span class="md-nav__icon md-icon"></span>
+            JS Functions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Camera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Camera
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exports
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Forms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/NFC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NFC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Online-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Online navigation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Zebra-Printer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zebra Printer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10">
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/CommonFunctions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Common Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/ContextVariables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Form controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/CustomDLL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom DLL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/CustomStored/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom Stored Procedure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/DatabaseScriptJobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database script job
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/FormValidators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Form Validators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Imports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Imports
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/LinkedServers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linked Servers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/NoticesSentences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notices Sentences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test Automation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/UpdateTypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/WebAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/WebComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Component
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11">
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reporting
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Reporting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reporting/Newsandversionnotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    News and version notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12">
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Style
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Style
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/CSSAndTypography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Typography and Styles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/FlagIcons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag Icons
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/GridOptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grid Options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/Icon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Icons
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/Timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Timeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13">
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Templates
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Templates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formats
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/NavigationButton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigation button
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/ObjectTemplates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Object Templates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Skeletons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Skeletons
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Targets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Targets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+    </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            <div class="fh-maincontainer">
+              
+                <div class="md-content" data-md-component="content">
+                  <article class="md-content__inner md-typeset">
+                    
+                      
+
+
+
+<h1 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">¶</a></h1>
+<p><strong>Flexygo</strong> modules have been specially designed to facilitate the creation of various utilities that will be useful for your project. Modules can help us to add additional information to existen pages, for instance, using Popover you can show additional information; organizate your team work with Kanban module; represent location with Maps.</p>
+<p class="flx-warning-card">Before you'll start to configure selected modules, it's essential to read the article about <a href="../ModuleManagement/">Module Management</a></p>
+<p>In this chapter we will shortly explain all <strong>flexygo</strong> modules, for more information you'll be able to redirect to the special article with detailed module information.</p>
+<h2 id="button-tab">Button Tab<a class="headerlink" href="#button-tab" title="Permanent link">¶</a></h2>
+<p>A tab button is a UI component that is placed inside of a tab bar. The following module does the function of a tab, but with the appearance of a drop-down button. This module can be useful when you need to save space on your page.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/buttonTab.png" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/ModulesConf/buttonTab.png" title="Image 1. Button Tab"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/buttonTabConf.png" data-desc-position="bottom"><img alt="Button Tab" src="../../../docs_assets/images/ModulesConf/buttonTabConf.png" title="Image 2. Button Tab Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Button Tab</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+</tbody>
+</table>
+<h2 id="module-tab">Module Tab<a class="headerlink" href="#module-tab" title="Permanent link">¶</a></h2>
+<p>A module tab is a design pattern where content is separated into different panes, and each pane is viewable one at a time. The user requests content to be displayed by clicking the content’s corresponding tab control. The following module works as a tabulator with different modules inside. It can be used as traditional tab or as dropdown buttons.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/moduletab.png" data-desc-position="bottom"><img alt="Module Tab" src="../../../docs_assets/images/ModulesConf/moduletab.png" title="Image 3. Module Tab"></a></p>
+<p>To add this module ans setup its configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/moduletabConf.png" data-desc-position="bottom"><img alt="Module Tab Configuration" src="../../../docs_assets/images/ModulesConf/moduletabConf.png" title="Image 4. Module Tab Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, Module tab or Module dropdown buttons</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+</tbody>
+</table>
+<h2 id="calendar-and-scheduller">Calendar and Scheduller<a class="headerlink" href="#calendar-and-scheduller" title="Permanent link">¶</a></h2>
+<p>The following module allows us to display a calendar. It provides its users with features that help them plan and schedule important events and tasks while also enabling various functions such as creating time reports and analyzing the time allocation to different sectors.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/CalendarMonth.png" data-desc-position="bottom"><img alt="Calendar" src="../../../docs_assets/images/ModulesConf/CalendarMonth.png" title="Image 5. Calendar"></a></p>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="Scheduler&amp;Calendar.md">Manual Calendar and Scheduler</a></p>
+<p><a href="https://youtu.be/lKKMce5PsrA">Video Scheduller</a></p>
+</div>
+<h2 id="chart">Chart<a class="headerlink" href="#chart" title="Permanent link">¶</a></h2>
+<p>A chart is a graphical representation for data visualization, in which "the data is represented by symbols, such as bars in a bar chart, lines in a line chart, or slices in a pie chart". A chart can represent tabular numeric data, functions or some kinds of quality structure and provides different info. The following module allows us to display different types of charts.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/Chart.png" data-desc-position="bottom"><img alt="Chart" src="../../../docs_assets/images/ModulesConf/Chart.png" title="Image 6. Chart"></a></p>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="../Chart/">Manual Chart</a></p>
+<p><a href="../ChartII/">Manual Chart II</a></p>
+<p><a href="https://youtu.be/Nj8si7aUPe4">Video Chart</a></p>
+</div>
+<h2 id="document-image-manager">Document &amp; Image Manager<a class="headerlink" href="#document-image-manager" title="Permanent link">¶</a></h2>
+<p>Thanks to this module, you can upload documents and pictures that will be linked to a particular object. Subsequently, you can edit and delete uploaded documents/pictures.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/DocumentManager.png" data-desc-position="bottom"><img alt="Document Manager" src="../../../docs_assets/images/ModulesConf/DocumentManager.png" title="Image 7. Chart"></a></p>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="../Chart/">Manual Document &amp; Image Manager</a></p>
+<p><a href="https://youtu.be/qNQOoO1TcyA">Video Document and Image Manager</a></p>
+<p><a href="https://youtu.be/ktET_gXxdl0">Video Document Manager</a></p>
+<p><a href="https://youtu.be/apdpn_i0t4A">Video Image Manager</a></p>
+</div>
+<h2 id="chatter">Chatter<a class="headerlink" href="#chatter" title="Permanent link">¶</a></h2>
+<p>Chatter is a type of module, which allows us to create object related conversations.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Chatter/chatter-example.png" data-desc-position="bottom"><img alt="Chatter" src="../../../docs_assets/images/Chatter/chatter-example.png" title="Image 8. Chatter"></a></p>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="../Chatter/">Manual Chatter</a></p>
+</div>
+<h2 id="easy-pie-easy-info-easy-line-and-sparklines">Easy Pie, Easy Info, Easy Line and Sparklines<a class="headerlink" href="#easy-pie-easy-info-easy-line-and-sparklines" title="Permanent link">¶</a></h2>
+<p>Easy Pie, Easy Info, Easy Line and Sparklines are some of the web components you can use for charting. Combined in a HTML module, you could obtain results similar to these ones:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/EasyInfoExamples.png" data-desc-position="bottom"><img alt="Easy Pie" src="../../../docs_assets/images/ModulesConf/EasyInfoExamples.png" title="Image 9. Easy Pie"></a></p>
+<p>Check out additional help to see how to set it up</p>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="../ChartII/">Manual Easy Pie/Line/Info</a></p>
+</div>
+<h2 id="edit-object-list">Edit Object List<a class="headerlink" href="#edit-object-list" title="Permanent link">¶</a></h2>
+<p>This module allows you to edit the content of the collection without opening a new window.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/EditObjectList.png" data-desc-position="bottom"><img alt="Edit Object List" src="../../../docs_assets/images/ModulesConf/EditObjectList.png" title="Image 10. Edit Object List"></a></p>
+<p>To add this module we must fill in the following fields.</p>
+<p>1. Use Object's wizard to configure the Edit Grid Properties</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/PrevEditObjectList.png" data-desc-position="bottom"><img alt="Edit Grid Properties" src="../../../docs_assets/images/ModulesConf/PrevEditObjectList.png" title="Image 11. Edit Grid Properties"></a></p>
+<p>2. Then you can configure the module</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/EditObjectListConf.png" data-desc-position="bottom"><img alt="Edit Grid Configuration" src="../../../docs_assets/images/ModulesConf/EditObjectListConf.png" title="Image 12. Edit Grid Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Edit Object List/td&gt;</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object (Collection) that we want to edit</td>
+</tr>
+</tbody>
+</table>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="https://youtu.be/UH-WqcCFWJI">Video Edit Object List</a></p>
+</div>
+<h2 id="funnel">Funnel<a class="headerlink" href="#funnel" title="Permanent link">¶</a></h2>
+<p>The funnel is commonly uses in marketing to shows the way a potential customer goes from becoming aware of your brand to purchasing a good or service.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/funnel.png" data-desc-position="bottom"><img alt="Funnel" src="../../../docs_assets/images/ModulesConf/funnel.png" title="Image 13. Funnel"></a></p>
+<p>To add this module use its configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/funnelConf.png" data-desc-position="bottom"><img alt="Edit Grid Configuration" src="../../../docs_assets/images/ModulesConf/funnelConf.png" title="Image 14. Funnel Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Funnel</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Connection string</td>
+<td>To identify from wich data model we obtain the data from</td>
+</tr>
+<tr>
+<td>SQL Sentence</td>
+<td>Here we introduce the necessary query that must have the following structure: SELECT Label AS label, Value AS value, Background AS background FROM Table</td>
+</tr>
+</tbody>
+</table>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="../Funnel/">Manual Funnel</a></p>
+</div>
+<h2 id="html-module">HTML Module<a class="headerlink" href="#html-module" title="Permanent link">¶</a></h2>
+<p>Just add a flx-html web component to your page and you will imediatly get its content displayed on the screen. You can include any other <strong>flexygo</strong> web component y your HTML module.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/html2.png" data-desc-position="bottom"><img alt="HTML Module" src="../../../docs_assets/images/ModulesConf/html2.png" title="Image 15. HTML Module"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/html.png" data-desc-position="bottom"><img alt="HTML Module Configuration" src="../../../docs_assets/images/ModulesConf/html.png" title="Image 16. HTML Module Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case HTML</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Html</td>
+<td>Insert your html code</td>
+</tr>
+</tbody>
+</table>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="https://youtu.be/CReFCxm3S44">HTML module with on-screen programming</a></p>
+</div>
+<h2 id="kanban">Kanban<a class="headerlink" href="#kanban" title="Permanent link">¶</a></h2>
+<p>Kanban is one of the simplest frameworks used as it allows project managers to efficiently manage and keep track of their projects. A distinguishing feature of the Kanban framework among different agile methodologies is its compatibility with the existing organizational setting. The Kanban module simulates a list of posits to organize your tasks:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/kanban.png" data-desc-position="bottom"><img alt="Kanban" src="../../../docs_assets/images/ModulesConf/kanban.png" title="Image 17. Kanban"></a></p>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="../Kanban/">Manual Kanban</a></p>
+<p><a href="https://youtu.be/AidJrIHQHZc">Video Kanban</a></p>
+</div>
+<h2 id="timeline">Timeline<a class="headerlink" href="#timeline" title="Permanent link">¶</a></h2>
+<p>Timeline module is a visual tool that outlines a sequence of events for a specific time period. It allows us to create planners based on an object in a simple and easy way.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Timeline/Timeline_AdvancedWithGroups_Result.png" data-desc-position="bottom"><img alt="Timeline" src="../../../docs_assets/images/Timeline/Timeline_AdvancedWithGroups_Result.png" title="Image 18. Timeline"></a></p>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="Timeline.md">Manual Timeline</a></p>
+<p><a href="https://youtu.be/_bVe_MLU5r0">Video Timeline</a></p>
+</div>
+<h2 id="list-filter">List Filter<a class="headerlink" href="#list-filter" title="Permanent link">¶</a></h2>
+<p>With this module you can add a search control to your forms and link them to module content.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ListFilter.png" data-desc-position="bottom"><img alt="List Filter" src="../../../docs_assets/images/ModulesConf/ListFilter.png" title="Image 19. List Filter"></a></p>
+<p>To add this module use the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ListFilterConf.png" data-desc-position="bottom"><img alt="List Filter Configuration" src="../../../docs_assets/images/ModulesConf/ListFilterConf.png" title="Image 20. List Filter Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case List Filter</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object that we want to relational with the manager</td>
+</tr>
+</tbody>
+</table>
+<h2 id="map">Map<a class="headerlink" href="#map" title="Permanent link">¶</a></h2>
+<p>With this module you can visualize a Google Map with the desired address:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/map.png" data-desc-position="bottom"><img alt="Map" src="../../../docs_assets/images/ModulesConf/map.png" title="Image 21. Map"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/mapConf.png" data-desc-position="bottom"><img alt="Map Configuration" src="../../../docs_assets/images/ModulesConf/mapConf.png" title="Image 22. Map Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case List Map</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Connection string</td>
+<td>To identify from wich data model we obtain the data from</td>
+</tr>
+<tr>
+<td>SQl Sentence</td>
+<td _cluster_:_true_color_:_retro_width_:_100_height_:_400_="&quot;Cluster&quot;:&quot;true&quot;,&quot;Color&quot;:&quot;retro&quot;,&quot;Width&quot;:&quot;100%&quot;,&quot;Height&quot;:&quot;400&quot;">Here we introduce the necessary query that must have the following structure. Select '60' as lat, '20' as lng, 'Noruega' as address, 'Titulo' as title, 'Content' as content, 'Icon' as icon, 'Label' as label, '1' as zIndex</td>
+</tr>
+</tbody>
+</table>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="../Maps/">Manual Maps</a></p>
+<p><a href="https://youtu.be/2CDScKLUVjw">Video Maps on dashboard</a></p>
+<p><a href="https://youtu.be/qV9uGvAL_5g">Video Maps in object view</a></p>
+</div>
+<h2 id="mail">Mail<a class="headerlink" href="#mail" title="Permanent link">¶</a></h2>
+<p>With this module you can visualize your emails from your mail server. you can also link mails to your aplication objects.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/Mail.PNG" data-desc-position="bottom"><img alt="Mail" src="../../../docs_assets/images/ModulesConf/Mail.PNG" title="Image 23. Mail"></a></p>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="Mail.md">Manual Mail</a></p>
+</div>
+<h2 id="nav-panel">Nav Panel<a class="headerlink" href="#nav-panel" title="Permanent link">¶</a></h2>
+<p>With the following module you can create cards with nodes as content:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/navPanel.png" data-desc-position="bottom"><img alt="Navigation Panel" src="../../../docs_assets/images/ModulesConf/navPanel.png" title="Image 24. Navigation Panel"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/navPanelConf.png" data-desc-position="bottom"><img alt="Navigation Panel Configuration" src="../../../docs_assets/images/ModulesConf/navPanelConf.png" title="Image 25. Navigation Panel Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case List Map</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Params</td>
+<td>There choose the nodeId and the mode to show. Params: initNode="10123EDB-C67D-4FFB-904D-639DBFD32301" mode="panel"</td>
+</tr>
+</tbody>
+</table>
+<h2 id="network-graphic">Network Graphic<a class="headerlink" href="#network-graphic" title="Permanent link">¶</a></h2>
+<p>With this module you can see a map of relations, processes, properties, templates, data views and security for an object.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/networkGraphic.png" data-desc-position="bottom"><img alt="Network Graphic" src="../../../docs_assets/images/ModulesConf/networkGraphic.png" title="Image 26. Network Graphic"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/networkGraphicConf.png" data-desc-position="bottom"><img alt="Network Graphic Configuration" src="../../../docs_assets/images/ModulesConf/networkGraphicConf.png" title="Image 27. Network Graphic Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Network Graphic</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object that we want to relational with the module</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>They have to select the where options for the object</td>
+</tr>
+</tbody>
+</table>
+<h2 id="object-edit">Object Edit<a class="headerlink" href="#object-edit" title="Permanent link">¶</a></h2>
+<p>With this module you can edit any object:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ObjectEdit.png" data-desc-position="bottom"><img alt="Object Edit" src="../../../docs_assets/images/ModulesConf/ObjectEdit.png" title="Image 28. Object Edit"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ObjectEditConf.png" data-desc-position="bottom"><img alt="Object Edit Configuration" src="../../../docs_assets/images/ModulesConf/ObjectEditConf.png" title="Image 29. Object Edit Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Object Edit</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object that we want to relational with the module</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>They have to select the where options for the object</td>
+</tr>
+<tr>
+<td>Module Class</td>
+<td>You can add size-xs, size-s, size-m or size-l to change font size or no-label to hide form all form labels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="object-list">Object List<a class="headerlink" href="#object-list" title="Permanent link">¶</a></h2>
+<p>With this module you can display a list of objects (collection):</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ObjectList.png" data-desc-position="bottom"><img alt="Object List" src="../../../docs_assets/images/ModulesConf/ObjectList.png" title="Image 30. Object List"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ObjectListConf.png" data-desc-position="bottom"><img alt="Object List Configuration" src="../../../docs_assets/images/ModulesConf/ObjectListConf.png" title="Image 31. Object List Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Object List</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object that we want to relational with the module</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>They have to select the where options for the object</td>
+</tr>
+</tbody>
+</table>
+<h2 id="object-processes">Object Processes<a class="headerlink" href="#object-processes" title="Permanent link">¶</a></h2>
+<p>With this module you can visualize the processes related to an object:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ObjectProcesses.png" data-desc-position="bottom"><img alt="Object Processes" src="../../../docs_assets/images/ModulesConf/ObjectProcesses.png" title="Image 32. Object Processes"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ObjectProcessesConf.png" data-desc-position="bottom"><img alt="Object Processes Configuration" src="../../../docs_assets/images/ModulesConf/ObjectProcessesConf.png" title="Image 33. Object Processes Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Object Process</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object that we want to relational with the module</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>They have to select the where options for the object</td>
+</tr>
+</tbody>
+</table>
+<div class="flx-info-card">
+<p>Check out additional help to see how to set it up:</p>
+<p><a href="../../Programming/UpdateTypes/">Update Types</a></p>
+</div>
+<h2 id="object-reports">Object Reports<a class="headerlink" href="#object-reports" title="Permanent link">¶</a></h2>
+<p>With this module you can visualize the reports related to any object:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ObjectReports.png" data-desc-position="bottom"><img alt="Object Reports" src="../../../docs_assets/images/ModulesConf/ObjectReports.png" title="Image 34. Object Reports"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ObjectProcessesConf.png" data-desc-position="bottom"><img alt="Object Reports Configuration" src="../../../docs_assets/images/ModulesConf/ObjectProcessesConf.png" title="Image 35. Object Reports Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Object Reports</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object that we want to relational with the module</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>They have to select the where options for the object</td>
+</tr>
+</tbody>
+</table>
+<h2 id="object-search">Object Search<a class="headerlink" href="#object-search" title="Permanent link">¶</a></h2>
+<p>With this module you can do searches for any object:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ObjectSearch.png" data-desc-position="bottom"><img alt="Object Search" src="../../../docs_assets/images/ModulesConf/ObjectSearch.png" title="Image 36. Object Search"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ObjectSearchConf.png" data-desc-position="bottom"><img alt="Object Search Configuration" src="../../../docs_assets/images/ModulesConf/ObjectSearchConf.png" title="Image 37. Object Search Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Object Search</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object that we want to relational with the module</td>
+</tr>
+</tbody>
+</table>
+<h2 id="object-view">Object View<a class="headerlink" href="#object-view" title="Permanent link">¶</a></h2>
+<p>With this module you can display and view any object:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ObjectView.png" data-desc-position="bottom"><img alt="Object View" src="../../../docs_assets/images/ModulesConf/ObjectView.png" title="Image 38. Object View"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/ObjectViewConf.png" data-desc-position="bottom"><img alt="Object View Configuration" src="../../../docs_assets/images/ModulesConf/ObjectViewConf.png" title="Image 39. Object View Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Object View</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object that we want to relational with the module</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>They have to select the where options for the object</td>
+</tr>
+</tbody>
+</table>
+<h2 id="organization-chart">Organization Chart<a class="headerlink" href="#organization-chart" title="Permanent link">¶</a></h2>
+<p>With this module you can see an organization hierarchical structure:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/Orgchart.PNG" data-desc-position="bottom"><img alt="Organization Chart" src="../../../docs_assets/images/ModulesConf/Orgchart.PNG" title="Image 40. Organization Chart"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/OrgChartConf.png" data-desc-position="bottom"><img alt="Organization Chart Configuration" src="../../../docs_assets/images/ModulesConf/OrgChartConf.png" title="Image 41. Organization Chart Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Org. Chart</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object that we want to relational with the module</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>They have to select the where options for the object</td>
+</tr>
+<tr>
+<td>Connection string</td>
+<td>To identify from wich data model we obtain the data from</td>
+</tr>
+<tr>
+<td>SQL Sentence</td>
+<td>Here we introduce the necessary query that must have at least the following fields:<br><br><em>   Id<br></em>   Parent<br>*   And any other field you need to use in the template<br><br>SELECT EmployeeId AS Id, Responsible AS Parent, Name, Area, Level, Img FROM Employees</td>
+</tr>
+<tr>
+<td>Html</td>
+<td>Insert your html code you want to use as a template for each node</td>
+</tr>
+<tr>
+<td>Header</td>
+<td>Insert your html code you want to use as the headder</td>
+</tr>
+<tr>
+<td>Footer</td>
+<td>Insert your html code you want to use as a the footer</td>
+</tr>
+<tr>
+<td>Options</td>
+<td>A Json string with treant orgchart options. for more info go <a href="http://fperucic.github.io/treant-js/">here</a>. Default options are: Options: { chart: { connectors: { type: 'step' }, node: { HTMLclass: 'orgchartnode' }, hideRootNode: true } }</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-objects">Related Objects<a class="headerlink" href="#related-objects" title="Permanent link">¶</a></h2>
+<p>With this module you can display relations between an object and its childs:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/RelatedObjectsHtml.png" data-desc-position="bottom"><img alt="Related Objects" src="../../../docs_assets/images/ModulesConf/RelatedObjectsHtml.png" title="Image 42. Related Objects"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/RelatedObjectsHtmlConf.png" data-desc-position="bottom"><img alt="Related Objects Configuration" src="../../../docs_assets/images/ModulesConf/RelatedObjectsHtmlConf.png" title="Image 43. Related Objects Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Object Html</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object that we want to relational with the module</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>They have to select the where options for the object</td>
+</tr>
+</tbody>
+</table>
+<h2 id="object-related-processes">Object Related Processes<a class="headerlink" href="#object-related-processes" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/RelatedProcessesHtml.png" data-desc-position="bottom"><img alt="Object Related Processes" src="../../../docs_assets/images/ModulesConf/RelatedProcessesHtml.png" title="Image 44. Object Related Processes"></a></p>
+<p>With this module you can see processes related to an object.</p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/RelatedProcessesHtmlConf.png" data-desc-position="bottom"><img alt="Related Objects Processes Configuration" src="../../../docs_assets/images/ModulesConf/RelatedProcessesHtmlConf.png" title="Image 45. Related Objects Processes Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Related Processes Html</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object that we want to relational with the module</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>They have to select the where options for the object</td>
+</tr>
+</tbody>
+</table>
+<h2 id="object-related-reports">Object Related Reports<a class="headerlink" href="#object-related-reports" title="Permanent link">¶</a></h2>
+<p>With this module you can see the related reports to an object.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/RelatedReportsHtml.png" data-desc-position="bottom"><img alt="Object Related Reports" src="../../../docs_assets/images/ModulesConf/RelatedReportsHtml.png" title="Image 46. Object Related Reports"></a></p>
+<p>To add this module we must fill in the following fields of the configuration form:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/ModulesConf/RelatedReportsHtmlConf.png" data-desc-position="bottom"><img alt="Object Related Reports Configuration" src="../../../docs_assets/images/ModulesConf/RelatedReportsHtmlConf.png" title="Image 47. Object Related Reports Configuration"></a></p>
+<p>For the correct configuration of this module it is necessary to fill in the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identify the module</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Module type, in this case Related Reports Html</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Brief description of the module</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Title that appears on the module</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Since it is not a default module it is always Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Module container type</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>They have to select the object that we want to relational with the module</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                  </article>
+                </div>
+              
+              
+                
+                <div class="fh-rightsidebar md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#button-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Button Tab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Tab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calendar-and-scheduller" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calendar and Scheduller
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-image-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Document &amp; Image Manager
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chatter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easy-pie-easy-info-easy-line-and-sparklines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Easy Pie, Easy Info, Easy Line and Sparklines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-object-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Object List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funnel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML Module
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kanban" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kanban
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Filter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mail
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nav-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nav Panel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-graphic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Graphic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Edit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object List
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Reports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Search
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object View
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organization-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organization Chart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Objects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-related-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Related Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-related-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Related Reports
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/utils.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/components/fh-modal.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/components/fh-copy.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/components/fh-popover.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/components/fh-namepropagator.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/components/fh-versions.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/components/flx-navbutton.js"></script>
+      
+        <script src="../../../javascripts/cultures/default_language.js"></script>
+      
+        <script src="../../../javascripts/cultures/es.js"></script>
+      
+        <script src="../../../javascripts/cultures/en.js"></script>
+      
+    
+    <dialog id="navigation-dialog" closedby="any">
+      <p class="input-group">
+        <label>Your flexys URL:</label>
+        <input type="text" id="navigation-dialog-flexy-url" value="https://">
+      </p>
+      <div class="button-container">
+        <button class="button" onclick="_nav(document.getElementById('navigation-dialog-flexy-url').value)">Confirm</button>
+      </div>
+    </dialog>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "zoom"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

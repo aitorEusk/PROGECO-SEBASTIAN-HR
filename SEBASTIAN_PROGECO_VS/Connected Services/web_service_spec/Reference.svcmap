@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="4b4c0aac-4dc4-4e3f-a8c2-19b78bb58b14" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://clientesa3equipo:8091/Webservice" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WebService.xsd" MetadataType="Schema" ID="1b1956eb-e15f-4125-a4b3-17f1688764fa" SourceId="1" SourceUrl="http://clientesa3equipo:8091/WebService?xsd=xsd3" />
+    <MetadataFile FileName="WebService.wsdl" MetadataType="Wsdl" ID="1f0a651b-0a4d-43af-94a6-a54f348011f9" SourceId="1" SourceUrl="http://clientesa3equipo:8091/Webservice" />
+    <MetadataFile FileName="WebService1.xsd" MetadataType="Schema" ID="b14558fd-69cf-4bb4-8141-717905d12618" SourceId="1" SourceUrl="http://clientesa3equipo:8091/WebService?xsd=xsd0" />
+    <MetadataFile FileName="WebService2.xsd" MetadataType="Schema" ID="5a2de3ae-16b2-4f09-bd96-7b9be7458182" SourceId="1" SourceUrl="http://clientesa3equipo:8091/WebService?xsd=xsd2" />
+    <MetadataFile FileName="WebService3.xsd" MetadataType="Schema" ID="8c2a551d-ceca-437d-a3f6-b4b811904879" SourceId="1" SourceUrl="http://clientesa3equipo:8091/WebService?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

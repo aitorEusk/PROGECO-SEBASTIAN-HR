@@ -1,0 +1,3817 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../OtherflexygoIntegration/">
+      
+      
+        <link rel="next" href="../PowerBI/">
+      
+      
+      <link rel="icon" href="../../docs_assets/images/logos/fl-favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Integración con Passbook - Flexygo Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom-colors.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/base.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/code-highlighting.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/css-class-components.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/404-error.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-modal.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-copy.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-namepropagator.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-versions.css">
+    
+      <link rel="stylesheet" href="../../docs_assets/fh-structural/fonts/flags/flags.css">
+    
+      <link rel="stylesheet" href="../../docs_assets/fh-structural/fonts/flexygo/utils.css">
+    
+      <link rel="stylesheet" href="../../docs_assets/fh-structural/fonts/flexygo/flexygo-icons.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/flexygo-styles/main-flexygo-styles.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/flexygo-styles/cols.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/flexygo-styles/list-groups.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#integracion-con-passbook" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Flexygo Docs" class="md-header__button md-logo" aria-label="Flexygo Docs" data-md-component="logo">
+      
+  <img src="../../docs_assets/images/logos/fl.svg" alt="logo">
+
+      Docs
+    </a>
+    <fh-versions></fh-versions>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+          </span>
+        </div>
+      </div>
+    </div>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <span onclick="changeLanguage('en')" class="md-select__link">
+              English
+            </span>
+          </li>
+        
+          <li class="md-select__item">
+            <span onclick="changeLanguage('es')" class="md-select__link">
+              Español
+            </span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="darkmode" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0M8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0M3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8m13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8m-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13m3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061M2.343 2.343a.75.75 0 0 1 1.061 0l1.06 1.061a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-1.06-1.06a.75.75 0 0 1 0-1.06Z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="fh-sidebar md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="fh-sidebarheader">
+                  <a href="../.." title="Flexygo Docs" class="md-header__button md-logo" aria-label="Flexygo Docs" data-md-component="logo">
+                    
+  <img src="../../docs_assets/images/logos/fl.svg" alt="logo">
+
+                    Docs
+                  </a>
+                  <fh-versions></fh-versions>
+                </div>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+    
+    <ul class="md-nav__list" data-md-scrollfix>
+        
+            
+            
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a Flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Formación
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Formación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1Training/Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cursos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1Training/VideoTutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VideoTutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Addons
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Addons/1Addons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Addons/WhatsApp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WhatsApp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ahora Business Hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ahora Business Hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhSign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Firma Abh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhSms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abh Sms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhTicket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ticket Abh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Conectores
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Conectores
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AhoraERP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Ahora ERP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AzureADIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Azure AD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AzureFormRecognizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure Form Recognizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClaveAuthentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Autenticación Cl@ve
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FaceRecognition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reconocimiento Facial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Google/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Google
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GoogleAPIKey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google API Key
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GooglePlaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Places
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MailChimp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con MailChimp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MailChimpProcesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Procesos de ejemplo de MailChimp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Office365/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Office 365
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con ChatGPT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OtherflexygoIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Integración con Passbook
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Passbook
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apple-wwdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apple WWDR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-pass-type-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear Pass Type ID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-una-peticion-de-certificado-csr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear una petición de certificado (CSR)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firmar-la-csr-y-crear-el-certificado-passbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firmar la CSR y crear el certificado Passbook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertir-el-certificado-passcer-a-pem-y-luego-a-pfx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convertir el certificado pass.cer a PEM y luego a PFX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-el-certificado-pfx-al-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir el certificado PFX al servidor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-en-flexygo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración en flexygo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-de-uso-desde-dll" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de uso desde DLL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-de-diseno-y-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de diseño y layout
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PowerBI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Power BI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PushNotifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notificaciones Push
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RedSys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RedSys
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Básculas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SendinBlue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con SendinBlue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WacomSignature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Wacom SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Información
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Información
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/FriendlyURLs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    URLs amigables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/GoodPractices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buenas prácticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/MFA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flexygo MFA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/MailAccountsSettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ajustes de cuenta de email
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/Navigator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modulo de navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/PageHierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Page Hierarchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/1HowToInstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingIntefaceTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agregar un test de interfaz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingNugetPackage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear paquete NuGet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingProduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear un producto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingUnitaryTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agregar un test unitario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingWebComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear un WebComponent propio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8">
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Chart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/ChartII/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chart II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Chatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chatter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/DocAndImageManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Manager And Image Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Funnel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funnel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Kanban/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kanban
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/ModuleManagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/ObjectFilters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Filtros de Objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/PlannerModule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planificador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Popover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Popover y Tooltip
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/SchedulerCalendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programador y Calendario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/TimelineModule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Línea de tiempo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/WebMail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Mail
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    App Offline
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            App Offline
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/AccessandDescription/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descripción de la App Offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/DesignEnvironment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entorno de diseño
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/DesigningApp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diseñar la App offline de flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/NavigationOptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Opciones de navegación offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IA offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineAndEmulatordifferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diferencias entre emulador y app
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineDatabase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base de datos offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/ReturnDataProcess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proceso de retorno de datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/Trackingconfiguration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuración del seguimiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/UsefulTokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_11">
+        
+          
+          <label class="md-nav__link" for="__nav_9_11" id="__nav_9_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Funciones JS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_11">
+            <span class="md-nav__icon md-icon"></span>
+            Funciones JS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Camera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cámara
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exportaciones (Exports)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formularios (Forms)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mensages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/NFC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NFC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Online-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navegación online
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Zebra-Printer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zebra Printer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10">
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programación
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Programación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/CommonFunctions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funciones Comunes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/ContextVariables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables de Contexto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controles de formulario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/CustomDLL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DLL Personalizada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/CustomStored/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Procedimiento Almacenado Personalizado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/DatabaseScriptJobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trabajo de script de base de datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eventos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/FormValidators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validadores de Formulario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Imports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Importaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/LinkedServers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Servidores Vinculados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/NoticesSentences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sentencia de Notificación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Automatización de tests
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/UpdateTypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de Actualización
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/WebAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/WebComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Componente Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11">
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Informes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Informes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reporting/Newsandversionnotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Noticias y notas de versión
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12">
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Estilos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Estilos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/CSSAndTypography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipografía y Estilos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/FlagIcons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Íconos de Banderas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/GridOptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Opciones de la cuadrícula
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/Icon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iconos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/Timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cronología
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13">
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Plantillas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Plantillas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formatos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/NavigationButton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Botón de navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/ObjectTemplates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plantillas de Objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Skeletons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esqueletos de carga
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Targets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Objetivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+    </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            <div class="fh-maincontainer">
+              
+                <div class="md-content" data-md-component="content">
+                  <article class="md-content__inner md-typeset">
+                    
+                      
+
+
+
+<h1 class="fh-title-with-image" id="integracion-con-passbook">Integración con Passbook<a class="headerlink" href="#integracion-con-passbook" title="Permanent link">¶</a></h1>
+<p><img alt="Passbook" class="fh-image-of-title" src="../../docs_assets/images/Passbook/WalletIcon.png"></p>
+<p>Passbook es el formato utilizado por tarjetas y cupones para integrarse en Apple Wallet.<br>
+<strong>flexygo</strong> permite ahora generar un passbook de forma sencilla.</p>
+<p>A continuación explicaremos cómo generar e instalar los certificados obligatorios para poder generar el passbook correctamente.<br>
+El primer requisito es disponer de una cuenta de desarrollador de Apple.</p>
+<h2 id="apple-wwdr">Apple WWDR<a class="headerlink" href="#apple-wwdr" title="Permanent link">¶</a></h2>
+<p>Para obtener el primer certificado solo tenemos que ir a <a href="https://www.apple.com/certificateauthority/">https://www.apple.com/certificateauthority/</a> y descargar <a href="https://www.apple.com/certificateauthority/AppleWWDRCAG4.cer">Worldwide Developer Relations - G4 (Expiring 12/10/2030 00:00:00 UTC)</a>, que es el que funciona actualmente.</p>
+<p>Instalamos el certificado y seleccionamos el almacén <strong>“Intermediate Certification Authorities”</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook1.png" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook1.png" title="Image 1. Certificate store"></a></p>
+<h2 id="crear-pass-type-id">Crear Pass Type ID<a class="headerlink" href="#crear-pass-type-id" title="Permanent link">¶</a></h2>
+<p>Accede a <a href="https://developer.apple.com/">https://developer.apple.com/</a> e inicia sesión con una cuenta de desarrollador.<br>
+Una vez dentro, entra en <strong>Account</strong> y accede al menú de la izquierda <strong>Certificates, IDs &amp; Profiles</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook2.png" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook2.png" title="Image 2. Developer panel"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook3.png" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook3.png" title="Image 2. Developer panel"></a></p>
+<p>Añadimos un nuevo <strong>Identifier</strong> y elegimos el tipo <strong>Pass Type IDs</strong>, rellenando la información.<br>
+Es recomendable que el identificador mantenga la estructura <code>pass.com.x</code>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook4.png" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook4.png" title="Image 3. Pass Type IDs"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook5.png" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook5.png" title="Image 3. Pass Type IDs"></a></p>
+<h2 id="crear-una-peticion-de-certificado-csr">Crear una petición de certificado (CSR)<a class="headerlink" href="#crear-una-peticion-de-certificado-csr" title="Permanent link">¶</a></h2>
+<p>Si no tenemos <strong>OpenSSL</strong> instalado, podemos descargarlo e instalarlo desde aquí: <a href="https://wiki.openssl.org/index.php/Binaries">OpenSSL</a>.</p>
+<p>Una vez instalado, abrimos la consola con permisos de administrador, nos situamos en la ruta donde queremos generar los ficheros y ejecutamos el comando:</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>openssl<span class="w"> </span>req<span class="w"> </span>-new<span class="w"> </span>-newkey<span class="w"> </span>rsa:2048<span class="w"> </span>-out<span class="w"> </span>passbook.csr<span class="w"> </span>-keyout<span class="w"> </span>passbook.key
+</span></code></pre></div>
+<p>Aparecerá una serie de datos a rellenar. El primero será la <strong>PEM pass phrase</strong>; es muy importante recordarla ya que la usaremos para generar el passbook y para firmar con la clave.</p>
+<p>Al terminar de rellenar la información, se habrán generado dos ficheros en la ruta indicada:</p>
+<ul>
+<li><code>passbook.key</code> (clave privada para firmar)</li>
+<li><code>passbook.csr</code> (petición de certificado)</li>
+</ul>
+<h2 id="firmar-la-csr-y-crear-el-certificado-passbook">Firmar la CSR y crear el certificado Passbook<a class="headerlink" href="#firmar-la-csr-y-crear-el-certificado-passbook" title="Permanent link">¶</a></h2>
+<p>Volvemos al portal de desarrolladores y, desde el menú de certificados, pulsamos <strong>+</strong> para crear un nuevo <strong>Pass Type Id Certificate</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook6.png" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook6.png" title="Image 4. Passbook certificate"></a></p>
+<p>A continuación, rellenamos el nombre del certificado y elegimos el identificador que hemos creado previamente; aparecerá como opción desplegable.
+Si nos fijamos en el valor del desplegable, coincide con <strong>TeamID.IdentifierPassTypeID</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook7.png" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook7.png" title="Image 5. Passbook certificate"></a></p>
+<p>En el siguiente paso debemos seleccionar el archivo CSR que generamos antes (<code>passbook.csr</code>), lo subimos y continuamos.
+Se mostrará una ventana de resumen con el certificado recién generado, su fecha de caducidad, nombre, tipo, etc.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook8.png" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook8.png" title="Image 6. Certificate request"></a></p>
+<h2 id="convertir-el-certificado-passcer-a-pem-y-luego-a-pfx">Convertir el certificado pass.cer a PEM y luego a PFX<a class="headerlink" href="#convertir-el-certificado-passcer-a-pem-y-luego-a-pfx" title="Permanent link">¶</a></h2>
+<p>Primero, colocamos el archivo <code>.cer</code> descargado desde la web de Apple en la misma carpeta que <code>passbook.key</code> y <code>passbook.csr</code>.</p>
+<p>Después abrimos la consola de OpenSSL, navegamos hasta esa carpeta y ejecutamos:</p>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>openssl<span class="w"> </span>x509<span class="w"> </span>-in<span class="w"> </span>pass.cer<span class="w"> </span>-inform<span class="w"> </span>der<span class="w"> </span>-out<span class="w"> </span>passbook.pem
+</span></code></pre></div>
+<div class="language-shell highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>openssl<span class="w"> </span>pkcs12<span class="w"> </span>-export<span class="w"> </span>-out<span class="w"> </span>passbook.pfx<span class="w"> </span>-inkey<span class="w"> </span>passbook.key<span class="w"> </span>-in<span class="w"> </span>passbook.pem
+</span></code></pre></div>
+<p>Con este último comando, nos pedirá la contraseña (pass phrase) asociada a la clave privada.
+Una vez introducida, se generará el archivo <code>passbook.pfx</code>, que debemos instalar en el equipo.</p>
+<h2 id="anadir-el-certificado-pfx-al-servidor">Añadir el certificado PFX al servidor<a class="headerlink" href="#anadir-el-certificado-pfx-al-servidor" title="Permanent link">¶</a></h2>
+<p>Vamos a la consola de certificados:
+<strong>Certificates (Local Computer) -&gt; Personal -&gt; Certificates</strong>.</p>
+<p>Botón derecho, <strong>All Tasks → Import</strong>, siguiente, y al examinar el archivo cambiamos el filtro de extensión para buscar <code>.pfx</code> y seleccionamos el fichero generado.</p>
+<p>En el siguiente paso introducimos la contraseña de la clave privada, marcamos la opción de exportable e incluimos todas las propiedades extendidas.
+Lo añadimos al almacén <strong>Personal</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook9.png" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook9.png" title="Image 7. Import PFX certificate"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook10.png" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook10.png" title="Image 7. Import PFX certificate"></a></p>
+<p>Con esto tendremos instalados los certificados necesarios para poder generar Passbook desde <strong>flexygo</strong>.
+Es importante que tanto el archivo <code>passbook.pfx</code> como <code>AppleWWDRCAG4.cer</code> estén en una carpeta accesible para la aplicación.</p>
+<p>También es importante que, desde la consola, una vez importado el certificado en el almacén Personal, hagamos:</p>
+<ul>
+<li>Botón derecho → All Tasks → Manage Private Keys</li>
+<li>Añadimos <strong>IIS_IUSRS</strong> y le damos permisos.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook11.png" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook11.png" title="Image 8. Certificate management"></a></p>
+<p>Es necesario también tener configurado el <strong>impersonate</strong>, ya que la generación del passbook hace uso de él.</p>
+<p>Si, aun habiendo dado permisos a <strong>IIS_IUSRS</strong> y usando un usuario de impersonation con permisos elevados, sigue dando error de permisos al generar el passbook, será necesario modificar la identidad del Application Pool a <strong>LocalSystem</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook12.PNG" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook12.PNG" title="Image 8. IIS configuration"></a></p>
+<h2 id="configuracion-en-flexygo">Configuración en flexygo<a class="headerlink" href="#configuracion-en-flexygo" title="Permanent link">¶</a></h2>
+<p>Una vez realizado todo lo anterior, podemos proceder a configurar los ajustes en <strong>flexygo</strong>:</p>
+<ul>
+<li><strong>Passbook_AppleWWDRCACertificatePath</strong>: Ruta absoluta al certificado de Apple.</li>
+<li><strong>Passbook_CertificatePath</strong>: Ruta absoluta a nuestro certificado.</li>
+<li><strong>Passbook_CertificatePassword</strong>: Contraseña (clave privada) de nuestro certificado.</li>
+<li><strong>Passbook_PassTypeIdentifier</strong>: Pass Type ID creado en Apple (por ejemplo, <code>pass.com.x</code>).</li>
+<li><strong>Passbook_TeamIdentifier</strong>: Valor Team ID, visible en el portal de desarrolladores de Apple en
+  <em>Membership → Team ID</em>.</li>
+</ul>
+<h2 id="ejemplo-de-uso-desde-dll">Ejemplo de uso desde DLL<a class="headerlink" href="#ejemplo-de-uso-desde-dll" title="Permanent link">¶</a></h2>
+<p><fh-modal class="button" modal_id="fhmodal_dll_example" modal_title="DLL function example">Ejemplo de DLL</fh-modal></p>
+<h2 id="ejemplo-de-diseno-y-layout">Ejemplo de diseño y layout<a class="headerlink" href="#ejemplo-de-diseno-y-layout" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook14.PNG" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook14.PNG" title="Image 10. Layout example"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Passbook/passbook13.PNG" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/Passbook/passbook13.PNG" title="Image 11. Passbook example"></a></p>
+<div id="fhmodal_dll_example" class="language-vbnet highlight"><span class="filename">VB.net</span><pre><span></span><code><span id="__span-fhmodal_dll_example-1"><a id="__codelineno-fhmodal_dll_example-1" name="__codelineno-fhmodal_dll_example-1" href="#__codelineno-fhmodal_dll_example-1"></a><span class="k">Public</span><span class="w"> </span><span class="k">Shared</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="nf">generatePassbook</span><span class="p">(</span><span class="k">ByVal</span><span class="w"> </span><span class="n">Entity</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">EntityObject</span><span class="p">,</span><span class="w"> </span><span class="k">ByRef</span><span class="w"> </span><span class="n">Ret</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ProcessHelper</span><span class="p">)</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Boolean</span>
+</span><span id="__span-fhmodal_dll_example-2"><a id="__codelineno-fhmodal_dll_example-2" name="__codelineno-fhmodal_dll_example-2" href="#__codelineno-fhmodal_dll_example-2"></a><span class="w">        </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_dll_example-3"><a id="__codelineno-fhmodal_dll_example-3" name="__codelineno-fhmodal_dll_example-3" href="#__codelineno-fhmodal_dll_example-3"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aPrimaryField</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">))</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">))</span>
+</span><span id="__span-fhmodal_dll_example-4"><a id="__codelineno-fhmodal_dll_example-4" name="__codelineno-fhmodal_dll_example-4" href="#__codelineno-fhmodal_dll_example-4"></a><span class="w">            </span><span class="n">aPrimaryField</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">New</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">)(</span><span class="s">"Nombre"</span><span class="p">,</span><span class="w"> </span><span class="s">"Aitor"</span><span class="p">))</span>
+</span><span id="__span-fhmodal_dll_example-5"><a id="__codelineno-fhmodal_dll_example-5" name="__codelineno-fhmodal_dll_example-5" href="#__codelineno-fhmodal_dll_example-5"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aSecondaryField</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">))</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">))</span>
+</span><span id="__span-fhmodal_dll_example-6"><a id="__codelineno-fhmodal_dll_example-6" name="__codelineno-fhmodal_dll_example-6" href="#__codelineno-fhmodal_dll_example-6"></a><span class="w">            </span><span class="n">aSecondaryField</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">New</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">)(</span><span class="s">"Apellido"</span><span class="p">,</span><span class="w"> </span><span class="s">"Torres"</span><span class="p">))</span>
+</span><span id="__span-fhmodal_dll_example-7"><a id="__codelineno-fhmodal_dll_example-7" name="__codelineno-fhmodal_dll_example-7" href="#__codelineno-fhmodal_dll_example-7"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aAuxiliaryField</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">))</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">))</span>
+</span><span id="__span-fhmodal_dll_example-8"><a id="__codelineno-fhmodal_dll_example-8" name="__codelineno-fhmodal_dll_example-8" href="#__codelineno-fhmodal_dll_example-8"></a><span class="w">            </span><span class="n">aAuxiliaryField</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">New</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">)(</span><span class="s">"Movil"</span><span class="p">,</span><span class="w"> </span><span class="s">"123456"</span><span class="p">))</span>
+</span><span id="__span-fhmodal_dll_example-9"><a id="__codelineno-fhmodal_dll_example-9" name="__codelineno-fhmodal_dll_example-9" href="#__codelineno-fhmodal_dll_example-9"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aBackField</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">))</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">))</span>
+</span><span id="__span-fhmodal_dll_example-10"><a id="__codelineno-fhmodal_dll_example-10" name="__codelineno-fhmodal_dll_example-10" href="#__codelineno-fhmodal_dll_example-10"></a><span class="w">            </span><span class="n">aBackField</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">New</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">)(</span><span class="s">"Otros"</span><span class="p">,</span><span class="w"> </span><span class="s">"Loren ipsum"</span><span class="p">))</span>
+</span><span id="__span-fhmodal_dll_example-11"><a id="__codelineno-fhmodal_dll_example-11" name="__codelineno-fhmodal_dll_example-11" href="#__codelineno-fhmodal_dll_example-11"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aBackgroundColor</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"#000000"</span>
+</span><span id="__span-fhmodal_dll_example-12"><a id="__codelineno-fhmodal_dll_example-12" name="__codelineno-fhmodal_dll_example-12" href="#__codelineno-fhmodal_dll_example-12"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aForegroundColor</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"#FFFFFF"</span>
+</span><span id="__span-fhmodal_dll_example-13"><a id="__codelineno-fhmodal_dll_example-13" name="__codelineno-fhmodal_dll_example-13" href="#__codelineno-fhmodal_dll_example-13"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aLabelColor</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"#FFFFFF"</span>
+</span><span id="__span-fhmodal_dll_example-14"><a id="__codelineno-fhmodal_dll_example-14" name="__codelineno-fhmodal_dll_example-14" href="#__codelineno-fhmodal_dll_example-14"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aIcon</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Byte</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllBytes</span><span class="p">(</span><span class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Server</span><span class="p">.</span><span class="n">MapPath</span><span class="p">(</span><span class="s">"~\img\icons\icon-256x256.png"</span><span class="p">))</span>
+</span><span id="__span-fhmodal_dll_example-15"><a id="__codelineno-fhmodal_dll_example-15" name="__codelineno-fhmodal_dll_example-15" href="#__codelineno-fhmodal_dll_example-15"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aLogo</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Byte</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllBytes</span><span class="p">(</span><span class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Server</span><span class="p">.</span><span class="n">MapPath</span><span class="p">(</span><span class="s">"~\img\icons\icon-256x256.png"</span><span class="p">))</span>
+</span><span id="__span-fhmodal_dll_example-16"><a id="__codelineno-fhmodal_dll_example-16" name="__codelineno-fhmodal_dll_example-16" href="#__codelineno-fhmodal_dll_example-16"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aDescription</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Passbook flexygo"</span>
+</span><span id="__span-fhmodal_dll_example-17"><a id="__codelineno-fhmodal_dll_example-17" name="__codelineno-fhmodal_dll_example-17" href="#__codelineno-fhmodal_dll_example-17"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aOrganizationName</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Flexygo"</span>
+</span><span id="__span-fhmodal_dll_example-18"><a id="__codelineno-fhmodal_dll_example-18" name="__codelineno-fhmodal_dll_example-18" href="#__codelineno-fhmodal_dll_example-18"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aLogoText</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Logo text"</span>
+</span><span id="__span-fhmodal_dll_example-19"><a id="__codelineno-fhmodal_dll_example-19" name="__codelineno-fhmodal_dll_example-19" href="#__codelineno-fhmodal_dll_example-19"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aThumbnail</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Byte</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllBytes</span><span class="p">(</span><span class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Server</span><span class="p">.</span><span class="n">MapPath</span><span class="p">(</span><span class="s">"~\img\Avatars\avatar_blank.png"</span><span class="p">))</span>
+</span><span id="__span-fhmodal_dll_example-20"><a id="__codelineno-fhmodal_dll_example-20" name="__codelineno-fhmodal_dll_example-20" href="#__codelineno-fhmodal_dll_example-20"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aHeaderField</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">KeyValuePair</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="s">"Cabecera"</span><span class="p">,</span><span class="s">"Business card"</span><span class="p">)</span>
+</span><span id="__span-fhmodal_dll_example-21"><a id="__codelineno-fhmodal_dll_example-21" name="__codelineno-fhmodal_dll_example-21" href="#__codelineno-fhmodal_dll_example-21"></a>
+</span><span id="__span-fhmodal_dll_example-22"><a id="__codelineno-fhmodal_dll_example-22" name="__codelineno-fhmodal_dll_example-22" href="#__codelineno-fhmodal_dll_example-22"></a><span class="w">            </span><span class="c">'vCard info for qr barcode</span>
+</span><span id="__span-fhmodal_dll_example-23"><a id="__codelineno-fhmodal_dll_example-23" name="__codelineno-fhmodal_dll_example-23" href="#__codelineno-fhmodal_dll_example-23"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">FirstName</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Aitor"</span>
+</span><span id="__span-fhmodal_dll_example-24"><a id="__codelineno-fhmodal_dll_example-24" name="__codelineno-fhmodal_dll_example-24" href="#__codelineno-fhmodal_dll_example-24"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">LastName</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Torres"</span>
+</span><span id="__span-fhmodal_dll_example-25"><a id="__codelineno-fhmodal_dll_example-25" name="__codelineno-fhmodal_dll_example-25" href="#__codelineno-fhmodal_dll_example-25"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">CompanyName</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Flexygo"</span>
+</span><span id="__span-fhmodal_dll_example-26"><a id="__codelineno-fhmodal_dll_example-26" name="__codelineno-fhmodal_dll_example-26" href="#__codelineno-fhmodal_dll_example-26"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">JobTitle</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Programador"</span>
+</span><span id="__span-fhmodal_dll_example-27"><a id="__codelineno-fhmodal_dll_example-27" name="__codelineno-fhmodal_dll_example-27" href="#__codelineno-fhmodal_dll_example-27"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">StreetAddress</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Carrer dels Ceramistes 19"</span>
+</span><span id="__span-fhmodal_dll_example-28"><a id="__codelineno-fhmodal_dll_example-28" name="__codelineno-fhmodal_dll_example-28" href="#__codelineno-fhmodal_dll_example-28"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">Zip</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"46900"</span>
+</span><span id="__span-fhmodal_dll_example-29"><a id="__codelineno-fhmodal_dll_example-29" name="__codelineno-fhmodal_dll_example-29" href="#__codelineno-fhmodal_dll_example-29"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">City</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Valencia"</span>
+</span><span id="__span-fhmodal_dll_example-30"><a id="__codelineno-fhmodal_dll_example-30" name="__codelineno-fhmodal_dll_example-30" href="#__codelineno-fhmodal_dll_example-30"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">CountryName</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"España"</span>
+</span><span id="__span-fhmodal_dll_example-31"><a id="__codelineno-fhmodal_dll_example-31" name="__codelineno-fhmodal_dll_example-31" href="#__codelineno-fhmodal_dll_example-31"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">Phone</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"123456"</span>
+</span><span id="__span-fhmodal_dll_example-32"><a id="__codelineno-fhmodal_dll_example-32" name="__codelineno-fhmodal_dll_example-32" href="#__codelineno-fhmodal_dll_example-32"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">Mobile</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"987654"</span>
+</span><span id="__span-fhmodal_dll_example-33"><a id="__codelineno-fhmodal_dll_example-33" name="__codelineno-fhmodal_dll_example-33" href="#__codelineno-fhmodal_dll_example-33"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">Fax</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span>
+</span><span id="__span-fhmodal_dll_example-34"><a id="__codelineno-fhmodal_dll_example-34" name="__codelineno-fhmodal_dll_example-34" href="#__codelineno-fhmodal_dll_example-34"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">Email</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"aitor@ahora.es"</span>
+</span><span id="__span-fhmodal_dll_example-35"><a id="__codelineno-fhmodal_dll_example-35" name="__codelineno-fhmodal_dll_example-35" href="#__codelineno-fhmodal_dll_example-35"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">HomePage</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"www.flexygo.com"</span>
+</span><span id="__span-fhmodal_dll_example-36"><a id="__codelineno-fhmodal_dll_example-36" name="__codelineno-fhmodal_dll_example-36" href="#__codelineno-fhmodal_dll_example-36"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">loUid</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Guid</span><span class="p">.</span><span class="n">NewGuid</span><span class="p">().</span><span class="n">ToString</span><span class="p">()</span>
+</span><span id="__span-fhmodal_dll_example-37"><a id="__codelineno-fhmodal_dll_example-37" name="__codelineno-fhmodal_dll_example-37" href="#__codelineno-fhmodal_dll_example-37"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">vCard</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">VCard</span><span class="p">(</span><span class="n">FirstName</span><span class="p">,</span><span class="w"> </span><span class="n">LastName</span><span class="p">,</span><span class="w"> </span><span class="n">CompanyName</span><span class="p">,</span><span class="w"> </span><span class="n">JobTitle</span><span class="p">,</span><span class="w"> </span><span class="n">StreetAddress</span><span class="p">,</span><span class="w"> </span><span class="n">Zip</span><span class="p">,</span><span class="w"> </span><span class="n">City</span><span class="p">,</span><span class="w"> </span><span class="n">CountryName</span><span class="p">,</span><span class="w"> </span><span class="n">Phone</span><span class="p">,</span><span class="w"> </span><span class="n">Mobile</span><span class="p">,</span><span class="w"> </span><span class="n">Fax</span><span class="p">,</span><span class="w"> </span><span class="n">Email</span><span class="p">,</span><span class="w"> </span><span class="n">HomePage</span><span class="p">,</span><span class="w"> </span><span class="n">loUid</span><span class="p">)</span>
+</span><span id="__span-fhmodal_dll_example-38"><a id="__codelineno-fhmodal_dll_example-38" name="__codelineno-fhmodal_dll_example-38" href="#__codelineno-fhmodal_dll_example-38"></a>
+</span><span id="__span-fhmodal_dll_example-39"><a id="__codelineno-fhmodal_dll_example-39" name="__codelineno-fhmodal_dll_example-39" href="#__codelineno-fhmodal_dll_example-39"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">aBarcode</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vCard</span><span class="p">.</span><span class="n">VCardBody</span><span class="p">()</span>
+</span><span id="__span-fhmodal_dll_example-40"><a id="__codelineno-fhmodal_dll_example-40" name="__codelineno-fhmodal_dll_example-40" href="#__codelineno-fhmodal_dll_example-40"></a>
+</span><span id="__span-fhmodal_dll_example-41"><a id="__codelineno-fhmodal_dll_example-41" name="__codelineno-fhmodal_dll_example-41" href="#__codelineno-fhmodal_dll_example-41"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">passbook</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">Passbook</span><span class="p">(</span><span class="n">aPrimaryField</span><span class="p">,</span><span class="w"> </span><span class="n">aBackgroundColor</span><span class="p">,</span><span class="w"> </span><span class="n">aForegroundColor</span><span class="p">,</span><span class="w"> </span><span class="n">aLabelColor</span><span class="p">,</span><span class="w"> </span><span class="n">aIcon</span><span class="p">,</span><span class="w"> </span><span class="n">aDescription</span><span class="p">,</span><span class="w"> </span><span class="n">aOrganizationName</span><span class="p">,</span><span class="w"> </span><span class="n">aLogoText</span><span class="p">,</span><span class="w"> </span><span class="n">aBarcode</span><span class="p">,</span><span class="w"> </span><span class="n">aHeaderField</span><span class="p">,</span><span class="w"> </span><span class="n">aLogo</span><span class="p">,</span><span class="w"> </span><span class="n">aSecondaryField</span><span class="p">,</span><span class="w"> </span><span class="n">aAuxiliaryField</span><span class="p">,</span><span class="w"> </span><span class="n">aBackField</span><span class="p">,</span><span class="w"> </span><span class="n">aThumbnail</span><span class="p">)</span>
+</span><span id="__span-fhmodal_dll_example-42"><a id="__codelineno-fhmodal_dll_example-42" name="__codelineno-fhmodal_dll_example-42" href="#__codelineno-fhmodal_dll_example-42"></a><span class="w">            </span><span class="c">'We can write on disk, download it, send by mail, etc...</span>
+</span><span id="__span-fhmodal_dll_example-43"><a id="__codelineno-fhmodal_dll_example-43" name="__codelineno-fhmodal_dll_example-43" href="#__codelineno-fhmodal_dll_example-43"></a><span class="w">            </span><span class="n">File</span><span class="p">.</span><span class="n">WriteAllBytes</span><span class="p">(</span><span class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Server</span><span class="p">.</span><span class="n">MapPath</span><span class="p">(</span><span class="s">"~\Custom\passbook\prueba.pkpass"</span><span class="p">),</span><span class="w"> </span><span class="n">passbook</span><span class="p">.</span><span class="n">generatePassbook</span><span class="p">())</span>
+</span><span id="__span-fhmodal_dll_example-44"><a id="__codelineno-fhmodal_dll_example-44" name="__codelineno-fhmodal_dll_example-44" href="#__codelineno-fhmodal_dll_example-44"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Server</span><span class="p">.</span><span class="n">MapPath</span><span class="p">(</span><span class="s">"~\Custom\passbook\prueba.pkpass"</span><span class="p">)</span>
+</span><span id="__span-fhmodal_dll_example-45"><a id="__codelineno-fhmodal_dll_example-45" name="__codelineno-fhmodal_dll_example-45" href="#__codelineno-fhmodal_dll_example-45"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">dw</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">Utilities</span><span class="p">.</span><span class="n">Download</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_dll_example-46"><a id="__codelineno-fhmodal_dll_example-46" name="__codelineno-fhmodal_dll_example-46" href="#__codelineno-fhmodal_dll_example-46"></a><span class="w">                    </span><span class="p">.</span><span class="n">Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="p">,</span>
+</span><span id="__span-fhmodal_dll_example-47"><a id="__codelineno-fhmodal_dll_example-47" name="__codelineno-fhmodal_dll_example-47" href="#__codelineno-fhmodal_dll_example-47"></a><span class="w">                    </span><span class="p">.</span><span class="n">DeleteAfterDownload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_dll_example-48"><a id="__codelineno-fhmodal_dll_example-48" name="__codelineno-fhmodal_dll_example-48" href="#__codelineno-fhmodal_dll_example-48"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-fhmodal_dll_example-49"><a id="__codelineno-fhmodal_dll_example-49" name="__codelineno-fhmodal_dll_example-49" href="#__codelineno-fhmodal_dll_example-49"></a>
+</span><span id="__span-fhmodal_dll_example-50"><a id="__codelineno-fhmodal_dll_example-50" name="__codelineno-fhmodal_dll_example-50" href="#__codelineno-fhmodal_dll_example-50"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">JSCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">String</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="s">"window.open('{0}')"</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">ConfToken</span><span class="p">.</span><span class="n">ResolveUrl</span><span class="p">(</span><span class="n">dw</span><span class="p">.</span><span class="n">GetLink</span><span class="p">))</span>
+</span><span id="__span-fhmodal_dll_example-51"><a id="__codelineno-fhmodal_dll_example-51" name="__codelineno-fhmodal_dll_example-51" href="#__codelineno-fhmodal_dll_example-51"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_dll_example-52"><a id="__codelineno-fhmodal_dll_example-52" name="__codelineno-fhmodal_dll_example-52" href="#__codelineno-fhmodal_dll_example-52"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">SuccessMessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Passbook generated"</span>
+</span><span id="__span-fhmodal_dll_example-53"><a id="__codelineno-fhmodal_dll_example-53" name="__codelineno-fhmodal_dll_example-53" href="#__codelineno-fhmodal_dll_example-53"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span>
+</span><span id="__span-fhmodal_dll_example-54"><a id="__codelineno-fhmodal_dll_example-54" name="__codelineno-fhmodal_dll_example-54" href="#__codelineno-fhmodal_dll_example-54"></a>
+</span><span id="__span-fhmodal_dll_example-55"><a id="__codelineno-fhmodal_dll_example-55" name="__codelineno-fhmodal_dll_example-55" href="#__codelineno-fhmodal_dll_example-55"></a><span class="w">        </span><span class="k">Catch</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">Exception</span>
+</span><span id="__span-fhmodal_dll_example-56"><a id="__codelineno-fhmodal_dll_example-56" name="__codelineno-fhmodal_dll_example-56" href="#__codelineno-fhmodal_dll_example-56"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_dll_example-57"><a id="__codelineno-fhmodal_dll_example-57" name="__codelineno-fhmodal_dll_example-57" href="#__codelineno-fhmodal_dll_example-57"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ex</span>
+</span><span id="__span-fhmodal_dll_example-58"><a id="__codelineno-fhmodal_dll_example-58" name="__codelineno-fhmodal_dll_example-58" href="#__codelineno-fhmodal_dll_example-58"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span>
+</span><span id="__span-fhmodal_dll_example-59"><a id="__codelineno-fhmodal_dll_example-59" name="__codelineno-fhmodal_dll_example-59" href="#__codelineno-fhmodal_dll_example-59"></a><span class="w">        </span><span class="k">End</span><span class="w"> </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_dll_example-60"><a id="__codelineno-fhmodal_dll_example-60" name="__codelineno-fhmodal_dll_example-60" href="#__codelineno-fhmodal_dll_example-60"></a><span class="w">    </span><span class="k">End</span><span class="w"> </span><span class="k">Function</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                  </article>
+                </div>
+              
+              
+                
+                <div class="fh-rightsidebar md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apple-wwdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apple WWDR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-pass-type-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear Pass Type ID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-una-peticion-de-certificado-csr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear una petición de certificado (CSR)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firmar-la-csr-y-crear-el-certificado-passbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firmar la CSR y crear el certificado Passbook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertir-el-certificado-passcer-a-pem-y-luego-a-pfx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convertir el certificado pass.cer a PEM y luego a PFX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anadir-el-certificado-pfx-al-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Añadir el certificado PFX al servidor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-en-flexygo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración en flexygo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-de-uso-desde-dll" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de uso desde DLL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-de-diseno-y-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de diseño y layout
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+        
+      </main>
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/fh-structural/utils.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-modal.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-copy.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-popover.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-namepropagator.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-versions.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/flx-navbutton.js"></script>
+      
+        <script src="../../javascripts/cultures/default_language.js"></script>
+      
+        <script src="../../javascripts/cultures/es.js"></script>
+      
+        <script src="../../javascripts/cultures/en.js"></script>
+      
+    
+    <dialog id="navigation-dialog" closedby="any">
+      <p class="input-group">
+        <label>Your flexys URL:</label>
+        <input type="text" id="navigation-dialog-flexy-url" value="https://">
+      </p>
+      <div class="button-container">
+        <button class="button" onclick="_nav(document.getElementById('navigation-dialog-flexy-url').value)">Confirm</button>
+      </div>
+    </dialog>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "zoom"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

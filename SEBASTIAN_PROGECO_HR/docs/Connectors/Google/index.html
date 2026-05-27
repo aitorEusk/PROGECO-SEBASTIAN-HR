@@ -1,0 +1,3847 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../FaceRecognition/">
+      
+      
+        <link rel="next" href="../GoogleAPIKey/">
+      
+      
+      <link rel="icon" href="../../docs_assets/images/logos/fl-favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Integración con Google - Flexygo Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom-colors.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/base.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/code-highlighting.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/css-class-components.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/404-error.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-modal.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-copy.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-namepropagator.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-versions.css">
+    
+      <link rel="stylesheet" href="../../docs_assets/fh-structural/fonts/flags/flags.css">
+    
+      <link rel="stylesheet" href="../../docs_assets/fh-structural/fonts/flexygo/utils.css">
+    
+      <link rel="stylesheet" href="../../docs_assets/fh-structural/fonts/flexygo/flexygo-icons.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/flexygo-styles/main-flexygo-styles.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/flexygo-styles/cols.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/flexygo-styles/list-groups.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#integracion-con-google" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Flexygo Docs" class="md-header__button md-logo" aria-label="Flexygo Docs" data-md-component="logo">
+      
+  <img src="../../docs_assets/images/logos/fl.svg" alt="logo">
+
+      Docs
+    </a>
+    <fh-versions></fh-versions>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+          </span>
+        </div>
+      </div>
+    </div>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <span onclick="changeLanguage('en')" class="md-select__link">
+              English
+            </span>
+          </li>
+        
+          <li class="md-select__item">
+            <span onclick="changeLanguage('es')" class="md-select__link">
+              Español
+            </span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="darkmode" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0M8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0M3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8m13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8m-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13m3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061M2.343 2.343a.75.75 0 0 1 1.061 0l1.06 1.061a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-1.06-1.06a.75.75 0 0 1 0-1.06Z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="fh-sidebar md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="fh-sidebarheader">
+                  <a href="../.." title="Flexygo Docs" class="md-header__button md-logo" aria-label="Flexygo Docs" data-md-component="logo">
+                    
+  <img src="../../docs_assets/images/logos/fl.svg" alt="logo">
+
+                    Docs
+                  </a>
+                  <fh-versions></fh-versions>
+                </div>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+    
+    <ul class="md-nav__list" data-md-scrollfix>
+        
+            
+            
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a Flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Formación
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Formación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1Training/Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cursos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1Training/VideoTutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VideoTutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Addons
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Addons/1Addons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Addons/WhatsApp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WhatsApp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ahora Business Hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ahora Business Hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhSign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Firma Abh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhSms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abh Sms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhTicket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ticket Abh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Conectores
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Conectores
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AhoraERP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Ahora ERP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AzureADIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Azure AD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AzureFormRecognizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure Form Recognizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ClaveAuthentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Autenticación Cl@ve
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FaceRecognition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reconocimiento Facial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Integración con Google
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Google
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-de-recuperacion-de-contactos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de recuperación de contactos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-de-recuperacion-de-eventos-de-calendario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de recuperación de eventos de calendario
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GoogleAPIKey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google API Key
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GooglePlaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Places
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MailChimp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con MailChimp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MailChimpProcesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Procesos de ejemplo de MailChimp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Office365/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Office 365
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con ChatGPT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OtherflexygoIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Passbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Passbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PowerBI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Power BI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PushNotifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notificaciones Push
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RedSys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RedSys
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Básculas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SendinBlue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con SendinBlue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WacomSignature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Wacom SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Información
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Información
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/FriendlyURLs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    URLs amigables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/GoodPractices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buenas prácticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/MFA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flexygo MFA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/MailAccountsSettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ajustes de cuenta de email
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/Navigator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modulo de navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/PageHierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Page Hierarchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/1HowToInstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingIntefaceTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agregar un test de interfaz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingNugetPackage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear paquete NuGet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingProduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear un producto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingUnitaryTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agregar un test unitario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingWebComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear un WebComponent propio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8">
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Chart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/ChartII/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chart II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Chatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chatter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/DocAndImageManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Manager And Image Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Funnel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funnel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Kanban/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kanban
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/ModuleManagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/ObjectFilters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Filtros de Objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/PlannerModule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planificador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Popover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Popover y Tooltip
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/SchedulerCalendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programador y Calendario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/TimelineModule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Línea de tiempo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/WebMail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Mail
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    App Offline
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            App Offline
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/AccessandDescription/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descripción de la App Offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/DesignEnvironment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entorno de diseño
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/DesigningApp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diseñar la App offline de flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/NavigationOptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Opciones de navegación offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IA offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineAndEmulatordifferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diferencias entre emulador y app
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineDatabase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base de datos offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/ReturnDataProcess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proceso de retorno de datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/Trackingconfiguration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuración del seguimiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/UsefulTokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_11">
+        
+          
+          <label class="md-nav__link" for="__nav_9_11" id="__nav_9_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Funciones JS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_11">
+            <span class="md-nav__icon md-icon"></span>
+            Funciones JS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Camera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cámara
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exportaciones (Exports)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formularios (Forms)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mensages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/NFC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NFC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Online-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navegación online
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Zebra-Printer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zebra Printer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10">
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programación
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Programación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/CommonFunctions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funciones Comunes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/ContextVariables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables de Contexto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controles de formulario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/CustomDLL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DLL Personalizada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/CustomStored/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Procedimiento Almacenado Personalizado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/DatabaseScriptJobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trabajo de script de base de datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eventos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/FormValidators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validadores de Formulario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Imports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Importaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/LinkedServers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Servidores Vinculados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/NoticesSentences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sentencia de Notificación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Automatización de tests
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/UpdateTypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de Actualización
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/WebAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/WebComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Componente Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11">
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Informes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Informes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reporting/Newsandversionnotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Noticias y notas de versión
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12">
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Estilos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Estilos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/CSSAndTypography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipografía y Estilos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/FlagIcons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Íconos de Banderas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/GridOptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Opciones de la cuadrícula
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/Icon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iconos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/Timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cronología
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13">
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Plantillas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Plantillas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formatos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/NavigationButton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Botón de navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/ObjectTemplates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plantillas de Objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Skeletons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esqueletos de carga
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Targets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Objetivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+    </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            <div class="fh-maincontainer">
+              
+                <div class="md-content" data-md-component="content">
+                  <article class="md-content__inner md-typeset">
+                    
+                      
+
+
+
+<h1 class="fh-title-with-image" id="integracion-con-google">Integración con Google<a class="headerlink" href="#integracion-con-google" title="Permanent link">¶</a></h1>
+<p><img alt="Google" class="fh-image-of-title" src="../../docs_assets/images/GoogleAPIKey/GoogleLogo.png"></p>
+<p>Para realizar llamadas a la API de Google, que es una API RESTful, que te permite acceder a los recursos de servicio de Google Cloud, es necesario registrar tu aplicación y obtener tokens de autenticación para un usuario o servicio.</p>
+<p>Crea y configura el proyecto en <a href="https://console.cloud.google.com/">console de Google</a>.</p>
+<h2 id="ejemplo-de-recuperacion-de-contactos">Ejemplo de recuperación de contactos<a class="headerlink" href="#ejemplo-de-recuperacion-de-contactos" title="Permanent link">¶</a></h2>
+<p>En el siguiente ejemplo puedes obtener una colección de contactos de la carpeta de contactos predeterminada del usuario que ha iniciado sesión.</p>
+<ol>
+<li>Primero, obtén y almacena el proceso de token requerido <flx-navbutton class="link" type="execprocess" processname="GetGoogleToken" defaults="{'service':'contacts'}" showprogress="false">obten el token de Google</flx-navbutton>.</li>
+<li>Luego, obtén tus contactos con <flx-navbutton class="link" type="execprocess" processname="GetGoogleContacts" showprogress="false">obten los contactos de Google</flx-navbutton></li>
+</ol>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Response:
+</span></code></pre></div>
+<p><fh-modal class="button" modal_id="fhmodal_google_contacts" modal_title="Google Contacts">Insertar, Actualizar y Eliminar contacto<fh-modal></fh-modal></fh-modal></p>
+<h2 id="ejemplo-de-recuperacion-de-eventos-de-calendario">Ejemplo de recuperación de eventos de calendario<a class="headerlink" href="#ejemplo-de-recuperacion-de-eventos-de-calendario" title="Permanent link">¶</a></h2>
+<p>En el ejemplo a continuación recuperaremos una lista de eventos de calendario del usuario que ha iniciado sesión.</p>
+<ol>
+<li>Primero, obtén y almacena el proceso de token requerido <flx-navbutton class="link" type="execprocess" processname="GetGoogleToken" defaults="{'service':'calendar'}" showprogress="false"> obten el token de Google </flx-navbutton></li>
+<li>Luego, obtén tus eventos con <flx-navbutton class="link" type="execprocess" processname="GetGoogleCalendar" showprogress="false">obten el calendario de Google</flx-navbutton></li>
+</ol>
+<div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Response:
+</span></code></pre></div>
+<p><fh-modal class="button" modal_id="fhmodal_google_events" modal_title="Google Events">Insertar, Actualizar y Eliminar evento<fh-modal></fh-modal></fh-modal></p>
+<div id="fhmodal_google_contacts" class="language-vbnet highlight"><span class="filename">VB.net</span><pre><span></span><code><span id="__span-fhmodal_google_contacts-1"><a id="__codelineno-fhmodal_google_contacts-1" name="__codelineno-fhmodal_google_contacts-1" href="#__codelineno-fhmodal_google_contacts-1"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.GoogleResourceTypes</span>
+</span><span id="__span-fhmodal_google_contacts-2"><a id="__codelineno-fhmodal_google_contacts-2" name="__codelineno-fhmodal_google_contacts-2" href="#__codelineno-fhmodal_google_contacts-2"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Objects</span>
+</span><span id="__span-fhmodal_google_contacts-3"><a id="__codelineno-fhmodal_google_contacts-3" name="__codelineno-fhmodal_google_contacts-3" href="#__codelineno-fhmodal_google_contacts-3"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Processing.ProcessManager</span>
+</span><span id="__span-fhmodal_google_contacts-4"><a id="__codelineno-fhmodal_google_contacts-4" name="__codelineno-fhmodal_google_contacts-4" href="#__codelineno-fhmodal_google_contacts-4"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">Newtonsoft.Json</span>
+</span><span id="__span-fhmodal_google_contacts-5"><a id="__codelineno-fhmodal_google_contacts-5" name="__codelineno-fhmodal_google_contacts-5" href="#__codelineno-fhmodal_google_contacts-5"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">RestSharp</span>
+</span><span id="__span-fhmodal_google_contacts-6"><a id="__codelineno-fhmodal_google_contacts-6" name="__codelineno-fhmodal_google_contacts-6" href="#__codelineno-fhmodal_google_contacts-6"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Google</span>
+</span><span id="__span-fhmodal_google_contacts-7"><a id="__codelineno-fhmodal_google_contacts-7" name="__codelineno-fhmodal_google_contacts-7" href="#__codelineno-fhmodal_google_contacts-7"></a>
+</span><span id="__span-fhmodal_google_contacts-8"><a id="__codelineno-fhmodal_google_contacts-8" name="__codelineno-fhmodal_google_contacts-8" href="#__codelineno-fhmodal_google_contacts-8"></a><span class="k">Public</span><span class="w"> </span><span class="k">Class</span><span class="w"> </span><span class="nc">SampleGoogle</span>
+</span><span id="__span-fhmodal_google_contacts-9"><a id="__codelineno-fhmodal_google_contacts-9" name="__codelineno-fhmodal_google_contacts-9" href="#__codelineno-fhmodal_google_contacts-9"></a><span class="w">    </span><span class="k">Public</span><span class="w"> </span><span class="k">Shared</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="nf">SampleContactsGoogle</span><span class="p">(</span><span class="k">ByVal</span><span class="w"> </span><span class="n">Entity</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">EntityObject</span><span class="p">,</span><span class="w"> </span><span class="k">ByRef</span><span class="w"> </span><span class="n">Ret</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ProcessHelper</span><span class="p">)</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Boolean</span>
+</span><span id="__span-fhmodal_google_contacts-10"><a id="__codelineno-fhmodal_google_contacts-10" name="__codelineno-fhmodal_google_contacts-10" href="#__codelineno-fhmodal_google_contacts-10"></a>
+</span><span id="__span-fhmodal_google_contacts-11"><a id="__codelineno-fhmodal_google_contacts-11" name="__codelineno-fhmodal_google_contacts-11" href="#__codelineno-fhmodal_google_contacts-11"></a><span class="w">        </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_google_contacts-12"><a id="__codelineno-fhmodal_google_contacts-12" name="__codelineno-fhmodal_google_contacts-12" href="#__codelineno-fhmodal_google_contacts-12"></a>
+</span><span id="__span-fhmodal_google_contacts-13"><a id="__codelineno-fhmodal_google_contacts-13" name="__codelineno-fhmodal_google_contacts-13" href="#__codelineno-fhmodal_google_contacts-13"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">readFields</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"metadata,addresses,biographies,birthdays,emailAddresses,genders,names,nicknames,occupations,organizations,phoneNumbers"</span>
+</span><span id="__span-fhmodal_google_contacts-14"><a id="__codelineno-fhmodal_google_contacts-14" name="__codelineno-fhmodal_google_contacts-14" href="#__codelineno-fhmodal_google_contacts-14"></a>
+</span><span id="__span-fhmodal_google_contacts-15"><a id="__codelineno-fhmodal_google_contacts-15" name="__codelineno-fhmodal_google_contacts-15" href="#__codelineno-fhmodal_google_contacts-15"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">contactCreate</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">GoogleContactCreateRequest</span>
+</span><span id="__span-fhmodal_google_contacts-16"><a id="__codelineno-fhmodal_google_contacts-16" name="__codelineno-fhmodal_google_contacts-16" href="#__codelineno-fhmodal_google_contacts-16"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">contactsGoogle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">ContactPerson</span><span class="p">)</span>
+</span><span id="__span-fhmodal_google_contacts-17"><a id="__codelineno-fhmodal_google_contacts-17" name="__codelineno-fhmodal_google_contacts-17" href="#__codelineno-fhmodal_google_contacts-17"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">contactGoogle</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">GoogleContact</span>
+</span><span id="__span-fhmodal_google_contacts-18"><a id="__codelineno-fhmodal_google_contacts-18" name="__codelineno-fhmodal_google_contacts-18" href="#__codelineno-fhmodal_google_contacts-18"></a>
+</span><span id="__span-fhmodal_google_contacts-19"><a id="__codelineno-fhmodal_google_contacts-19" name="__codelineno-fhmodal_google_contacts-19" href="#__codelineno-fhmodal_google_contacts-19"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">contactUpdate</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">GoogleContactUpdateRequest</span>
+</span><span id="__span-fhmodal_google_contacts-20"><a id="__codelineno-fhmodal_google_contacts-20" name="__codelineno-fhmodal_google_contacts-20" href="#__codelineno-fhmodal_google_contacts-20"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">contactGoogleupdate</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">GoogleContact</span>
+</span><span id="__span-fhmodal_google_contacts-21"><a id="__codelineno-fhmodal_google_contacts-21" name="__codelineno-fhmodal_google_contacts-21" href="#__codelineno-fhmodal_google_contacts-21"></a>
+</span><span id="__span-fhmodal_google_contacts-22"><a id="__codelineno-fhmodal_google_contacts-22" name="__codelineno-fhmodal_google_contacts-22" href="#__codelineno-fhmodal_google_contacts-22"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">IRestResponse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Nothing</span>
+</span><span id="__span-fhmodal_google_contacts-23"><a id="__codelineno-fhmodal_google_contacts-23" name="__codelineno-fhmodal_google_contacts-23" href="#__codelineno-fhmodal_google_contacts-23"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">infoJson</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">Newtonsoft</span><span class="p">.</span><span class="n">Json</span><span class="p">.</span><span class="n">Linq</span><span class="p">.</span><span class="n">JArray</span>
+</span><span id="__span-fhmodal_google_contacts-24"><a id="__codelineno-fhmodal_google_contacts-24" name="__codelineno-fhmodal_google_contacts-24" href="#__codelineno-fhmodal_google_contacts-24"></a>
+</span><span id="__span-fhmodal_google_contacts-25"><a id="__codelineno-fhmodal_google_contacts-25" name="__codelineno-fhmodal_google_contacts-25" href="#__codelineno-fhmodal_google_contacts-25"></a><span class="w">            </span><span class="c">'1) Creamos el objeto contact con los datos necesarios.</span>
+</span><span id="__span-fhmodal_google_contacts-26"><a id="__codelineno-fhmodal_google_contacts-26" name="__codelineno-fhmodal_google_contacts-26" href="#__codelineno-fhmodal_google_contacts-26"></a><span class="w">            </span><span class="n">contactGoogle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">GoogleContact</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-27"><a id="__codelineno-fhmodal_google_contacts-27" name="__codelineno-fhmodal_google_contacts-27" href="#__codelineno-fhmodal_google_contacts-27"></a><span class="w">                </span><span class="p">.</span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">ContactName</span><span class="p">)</span><span class="w"> </span><span class="n">From</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-28"><a id="__codelineno-fhmodal_google_contacts-28" name="__codelineno-fhmodal_google_contacts-28" href="#__codelineno-fhmodal_google_contacts-28"></a><span class="w">                    </span><span class="k">New</span><span class="w"> </span><span class="n">ContactName</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-29"><a id="__codelineno-fhmodal_google_contacts-29" name="__codelineno-fhmodal_google_contacts-29" href="#__codelineno-fhmodal_google_contacts-29"></a><span class="w">                        </span><span class="p">.</span><span class="n">givenName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Contacto prueba"</span>
+</span><span id="__span-fhmodal_google_contacts-30"><a id="__codelineno-fhmodal_google_contacts-30" name="__codelineno-fhmodal_google_contacts-30" href="#__codelineno-fhmodal_google_contacts-30"></a><span class="w">                    </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-31"><a id="__codelineno-fhmodal_google_contacts-31" name="__codelineno-fhmodal_google_contacts-31" href="#__codelineno-fhmodal_google_contacts-31"></a><span class="w">                </span><span class="p">},</span>
+</span><span id="__span-fhmodal_google_contacts-32"><a id="__codelineno-fhmodal_google_contacts-32" name="__codelineno-fhmodal_google_contacts-32" href="#__codelineno-fhmodal_google_contacts-32"></a><span class="w">                </span><span class="p">.</span><span class="n">addresses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">Addresses</span><span class="p">)</span><span class="w"> </span><span class="n">From</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-33"><a id="__codelineno-fhmodal_google_contacts-33" name="__codelineno-fhmodal_google_contacts-33" href="#__codelineno-fhmodal_google_contacts-33"></a><span class="w">                    </span><span class="k">New</span><span class="w"> </span><span class="n">Addresses</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-34"><a id="__codelineno-fhmodal_google_contacts-34" name="__codelineno-fhmodal_google_contacts-34" href="#__codelineno-fhmodal_google_contacts-34"></a><span class="w">                        </span><span class="p">.</span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Valencia"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-35"><a id="__codelineno-fhmodal_google_contacts-35" name="__codelineno-fhmodal_google_contacts-35" href="#__codelineno-fhmodal_google_contacts-35"></a><span class="w">                        </span><span class="p">.</span><span class="n">streetAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Cami del Mar"</span>
+</span><span id="__span-fhmodal_google_contacts-36"><a id="__codelineno-fhmodal_google_contacts-36" name="__codelineno-fhmodal_google_contacts-36" href="#__codelineno-fhmodal_google_contacts-36"></a><span class="w">                    </span><span class="p">},</span>
+</span><span id="__span-fhmodal_google_contacts-37"><a id="__codelineno-fhmodal_google_contacts-37" name="__codelineno-fhmodal_google_contacts-37" href="#__codelineno-fhmodal_google_contacts-37"></a><span class="w">                    </span><span class="k">New</span><span class="w"> </span><span class="n">Addresses</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-38"><a id="__codelineno-fhmodal_google_contacts-38" name="__codelineno-fhmodal_google_contacts-38" href="#__codelineno-fhmodal_google_contacts-38"></a><span class="w">                        </span><span class="p">.</span><span class="n">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Valencia"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-39"><a id="__codelineno-fhmodal_google_contacts-39" name="__codelineno-fhmodal_google_contacts-39" href="#__codelineno-fhmodal_google_contacts-39"></a><span class="w">                        </span><span class="p">.</span><span class="n">streetAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Cami del Mar 2"</span>
+</span><span id="__span-fhmodal_google_contacts-40"><a id="__codelineno-fhmodal_google_contacts-40" name="__codelineno-fhmodal_google_contacts-40" href="#__codelineno-fhmodal_google_contacts-40"></a><span class="w">                    </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-41"><a id="__codelineno-fhmodal_google_contacts-41" name="__codelineno-fhmodal_google_contacts-41" href="#__codelineno-fhmodal_google_contacts-41"></a><span class="w">                </span><span class="p">},</span>
+</span><span id="__span-fhmodal_google_contacts-42"><a id="__codelineno-fhmodal_google_contacts-42" name="__codelineno-fhmodal_google_contacts-42" href="#__codelineno-fhmodal_google_contacts-42"></a><span class="w">                </span><span class="p">.</span><span class="n">phoneNumbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">PhoneNumber</span><span class="p">)</span><span class="w"> </span><span class="n">From</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-43"><a id="__codelineno-fhmodal_google_contacts-43" name="__codelineno-fhmodal_google_contacts-43" href="#__codelineno-fhmodal_google_contacts-43"></a><span class="w">                    </span><span class="k">New</span><span class="w"> </span><span class="n">PhoneNumber</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-44"><a id="__codelineno-fhmodal_google_contacts-44" name="__codelineno-fhmodal_google_contacts-44" href="#__codelineno-fhmodal_google_contacts-44"></a><span class="w">                        </span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"work"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-45"><a id="__codelineno-fhmodal_google_contacts-45" name="__codelineno-fhmodal_google_contacts-45" href="#__codelineno-fhmodal_google_contacts-45"></a><span class="w">                        </span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"600000000"</span>
+</span><span id="__span-fhmodal_google_contacts-46"><a id="__codelineno-fhmodal_google_contacts-46" name="__codelineno-fhmodal_google_contacts-46" href="#__codelineno-fhmodal_google_contacts-46"></a><span class="w">                    </span><span class="p">},</span>
+</span><span id="__span-fhmodal_google_contacts-47"><a id="__codelineno-fhmodal_google_contacts-47" name="__codelineno-fhmodal_google_contacts-47" href="#__codelineno-fhmodal_google_contacts-47"></a><span class="w">                    </span><span class="k">New</span><span class="w"> </span><span class="n">PhoneNumber</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-48"><a id="__codelineno-fhmodal_google_contacts-48" name="__codelineno-fhmodal_google_contacts-48" href="#__codelineno-fhmodal_google_contacts-48"></a><span class="w">                        </span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"home"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-49"><a id="__codelineno-fhmodal_google_contacts-49" name="__codelineno-fhmodal_google_contacts-49" href="#__codelineno-fhmodal_google_contacts-49"></a><span class="w">                        </span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"700000000"</span>
+</span><span id="__span-fhmodal_google_contacts-50"><a id="__codelineno-fhmodal_google_contacts-50" name="__codelineno-fhmodal_google_contacts-50" href="#__codelineno-fhmodal_google_contacts-50"></a><span class="w">                    </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-51"><a id="__codelineno-fhmodal_google_contacts-51" name="__codelineno-fhmodal_google_contacts-51" href="#__codelineno-fhmodal_google_contacts-51"></a><span class="w">                </span><span class="p">},</span>
+</span><span id="__span-fhmodal_google_contacts-52"><a id="__codelineno-fhmodal_google_contacts-52" name="__codelineno-fhmodal_google_contacts-52" href="#__codelineno-fhmodal_google_contacts-52"></a><span class="w">                </span><span class="p">.</span><span class="n">emailAddresses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">EmailAddress</span><span class="p">)</span><span class="w"> </span><span class="n">From</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-53"><a id="__codelineno-fhmodal_google_contacts-53" name="__codelineno-fhmodal_google_contacts-53" href="#__codelineno-fhmodal_google_contacts-53"></a><span class="w">                    </span><span class="k">New</span><span class="w"> </span><span class="n">EmailAddress</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-54"><a id="__codelineno-fhmodal_google_contacts-54" name="__codelineno-fhmodal_google_contacts-54" href="#__codelineno-fhmodal_google_contacts-54"></a><span class="w">                        </span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"work"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-55"><a id="__codelineno-fhmodal_google_contacts-55" name="__codelineno-fhmodal_google_contacts-55" href="#__codelineno-fhmodal_google_contacts-55"></a><span class="w">                        </span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"micontacto@gmail.com"</span>
+</span><span id="__span-fhmodal_google_contacts-56"><a id="__codelineno-fhmodal_google_contacts-56" name="__codelineno-fhmodal_google_contacts-56" href="#__codelineno-fhmodal_google_contacts-56"></a><span class="w">                    </span><span class="p">},</span>
+</span><span id="__span-fhmodal_google_contacts-57"><a id="__codelineno-fhmodal_google_contacts-57" name="__codelineno-fhmodal_google_contacts-57" href="#__codelineno-fhmodal_google_contacts-57"></a><span class="w">                    </span><span class="k">New</span><span class="w"> </span><span class="n">EmailAddress</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-58"><a id="__codelineno-fhmodal_google_contacts-58" name="__codelineno-fhmodal_google_contacts-58" href="#__codelineno-fhmodal_google_contacts-58"></a><span class="w">                        </span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"home"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-59"><a id="__codelineno-fhmodal_google_contacts-59" name="__codelineno-fhmodal_google_contacts-59" href="#__codelineno-fhmodal_google_contacts-59"></a><span class="w">                        </span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"micontacto2@gmail.com"</span>
+</span><span id="__span-fhmodal_google_contacts-60"><a id="__codelineno-fhmodal_google_contacts-60" name="__codelineno-fhmodal_google_contacts-60" href="#__codelineno-fhmodal_google_contacts-60"></a><span class="w">                    </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-61"><a id="__codelineno-fhmodal_google_contacts-61" name="__codelineno-fhmodal_google_contacts-61" href="#__codelineno-fhmodal_google_contacts-61"></a><span class="w">                </span><span class="p">},</span>
+</span><span id="__span-fhmodal_google_contacts-62"><a id="__codelineno-fhmodal_google_contacts-62" name="__codelineno-fhmodal_google_contacts-62" href="#__codelineno-fhmodal_google_contacts-62"></a><span class="w">                </span><span class="p">.</span><span class="n">birthdays</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">Birthday</span><span class="p">)</span><span class="w"> </span><span class="n">From</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-63"><a id="__codelineno-fhmodal_google_contacts-63" name="__codelineno-fhmodal_google_contacts-63" href="#__codelineno-fhmodal_google_contacts-63"></a><span class="w">                    </span><span class="k">New</span><span class="w"> </span><span class="n">Birthday</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-64"><a id="__codelineno-fhmodal_google_contacts-64" name="__codelineno-fhmodal_google_contacts-64" href="#__codelineno-fhmodal_google_contacts-64"></a><span class="w">                        </span><span class="p">.</span><span class="o">[</span><span class="kt">date</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">ContactDate</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-65"><a id="__codelineno-fhmodal_google_contacts-65" name="__codelineno-fhmodal_google_contacts-65" href="#__codelineno-fhmodal_google_contacts-65"></a><span class="w">                            </span><span class="p">.</span><span class="n">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-66"><a id="__codelineno-fhmodal_google_contacts-66" name="__codelineno-fhmodal_google_contacts-66" href="#__codelineno-fhmodal_google_contacts-66"></a><span class="w">                            </span><span class="p">.</span><span class="n">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-67"><a id="__codelineno-fhmodal_google_contacts-67" name="__codelineno-fhmodal_google_contacts-67" href="#__codelineno-fhmodal_google_contacts-67"></a><span class="w">                            </span><span class="p">.</span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1900</span>
+</span><span id="__span-fhmodal_google_contacts-68"><a id="__codelineno-fhmodal_google_contacts-68" name="__codelineno-fhmodal_google_contacts-68" href="#__codelineno-fhmodal_google_contacts-68"></a><span class="w">                        </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-69"><a id="__codelineno-fhmodal_google_contacts-69" name="__codelineno-fhmodal_google_contacts-69" href="#__codelineno-fhmodal_google_contacts-69"></a><span class="w">                    </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-70"><a id="__codelineno-fhmodal_google_contacts-70" name="__codelineno-fhmodal_google_contacts-70" href="#__codelineno-fhmodal_google_contacts-70"></a><span class="w">                </span><span class="p">},</span>
+</span><span id="__span-fhmodal_google_contacts-71"><a id="__codelineno-fhmodal_google_contacts-71" name="__codelineno-fhmodal_google_contacts-71" href="#__codelineno-fhmodal_google_contacts-71"></a><span class="w">                </span><span class="p">.</span><span class="n">occupations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">Occupation</span><span class="p">)</span><span class="w"> </span><span class="n">From</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-72"><a id="__codelineno-fhmodal_google_contacts-72" name="__codelineno-fhmodal_google_contacts-72" href="#__codelineno-fhmodal_google_contacts-72"></a><span class="w">                    </span><span class="k">New</span><span class="w"> </span><span class="n">Occupation</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-73"><a id="__codelineno-fhmodal_google_contacts-73" name="__codelineno-fhmodal_google_contacts-73" href="#__codelineno-fhmodal_google_contacts-73"></a><span class="w">                        </span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Programador"</span>
+</span><span id="__span-fhmodal_google_contacts-74"><a id="__codelineno-fhmodal_google_contacts-74" name="__codelineno-fhmodal_google_contacts-74" href="#__codelineno-fhmodal_google_contacts-74"></a><span class="w">                    </span><span class="p">},</span>
+</span><span id="__span-fhmodal_google_contacts-75"><a id="__codelineno-fhmodal_google_contacts-75" name="__codelineno-fhmodal_google_contacts-75" href="#__codelineno-fhmodal_google_contacts-75"></a><span class="w">                    </span><span class="k">New</span><span class="w"> </span><span class="n">Occupation</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-76"><a id="__codelineno-fhmodal_google_contacts-76" name="__codelineno-fhmodal_google_contacts-76" href="#__codelineno-fhmodal_google_contacts-76"></a><span class="w">                        </span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Implantador"</span>
+</span><span id="__span-fhmodal_google_contacts-77"><a id="__codelineno-fhmodal_google_contacts-77" name="__codelineno-fhmodal_google_contacts-77" href="#__codelineno-fhmodal_google_contacts-77"></a><span class="w">                    </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-78"><a id="__codelineno-fhmodal_google_contacts-78" name="__codelineno-fhmodal_google_contacts-78" href="#__codelineno-fhmodal_google_contacts-78"></a><span class="w">                </span><span class="p">},</span>
+</span><span id="__span-fhmodal_google_contacts-79"><a id="__codelineno-fhmodal_google_contacts-79" name="__codelineno-fhmodal_google_contacts-79" href="#__codelineno-fhmodal_google_contacts-79"></a><span class="w">                </span><span class="p">.</span><span class="n">genders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">Gender</span><span class="p">)</span><span class="w"> </span><span class="n">From</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-80"><a id="__codelineno-fhmodal_google_contacts-80" name="__codelineno-fhmodal_google_contacts-80" href="#__codelineno-fhmodal_google_contacts-80"></a><span class="w">                    </span><span class="k">New</span><span class="w"> </span><span class="n">Gender</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-81"><a id="__codelineno-fhmodal_google_contacts-81" name="__codelineno-fhmodal_google_contacts-81" href="#__codelineno-fhmodal_google_contacts-81"></a><span class="w">                        </span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"male"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-82"><a id="__codelineno-fhmodal_google_contacts-82" name="__codelineno-fhmodal_google_contacts-82" href="#__codelineno-fhmodal_google_contacts-82"></a><span class="w">                        </span><span class="p">.</span><span class="n">addressMeAs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"he"</span>
+</span><span id="__span-fhmodal_google_contacts-83"><a id="__codelineno-fhmodal_google_contacts-83" name="__codelineno-fhmodal_google_contacts-83" href="#__codelineno-fhmodal_google_contacts-83"></a><span class="w">                    </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-84"><a id="__codelineno-fhmodal_google_contacts-84" name="__codelineno-fhmodal_google_contacts-84" href="#__codelineno-fhmodal_google_contacts-84"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-85"><a id="__codelineno-fhmodal_google_contacts-85" name="__codelineno-fhmodal_google_contacts-85" href="#__codelineno-fhmodal_google_contacts-85"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-86"><a id="__codelineno-fhmodal_google_contacts-86" name="__codelineno-fhmodal_google_contacts-86" href="#__codelineno-fhmodal_google_contacts-86"></a>
+</span><span id="__span-fhmodal_google_contacts-87"><a id="__codelineno-fhmodal_google_contacts-87" name="__codelineno-fhmodal_google_contacts-87" href="#__codelineno-fhmodal_google_contacts-87"></a><span class="w">            </span><span class="c">'2) Lo añadimos a la lista de contactos, máximo 4 por envio.</span>
+</span><span id="__span-fhmodal_google_contacts-88"><a id="__codelineno-fhmodal_google_contacts-88" name="__codelineno-fhmodal_google_contacts-88" href="#__codelineno-fhmodal_google_contacts-88"></a><span class="w">            </span><span class="n">contactsGoogle</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">New</span><span class="w"> </span><span class="n">ContactPerson</span><span class="p">()</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{.</span><span class="n">contactPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contactGoogle</span><span class="p">})</span>
+</span><span id="__span-fhmodal_google_contacts-89"><a id="__codelineno-fhmodal_google_contacts-89" name="__codelineno-fhmodal_google_contacts-89" href="#__codelineno-fhmodal_google_contacts-89"></a>
+</span><span id="__span-fhmodal_google_contacts-90"><a id="__codelineno-fhmodal_google_contacts-90" name="__codelineno-fhmodal_google_contacts-90" href="#__codelineno-fhmodal_google_contacts-90"></a><span class="w">            </span><span class="n">contactCreate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">GoogleContactCreateRequest</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-91"><a id="__codelineno-fhmodal_google_contacts-91" name="__codelineno-fhmodal_google_contacts-91" href="#__codelineno-fhmodal_google_contacts-91"></a><span class="w">                </span><span class="p">.</span><span class="n">contacts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contactsGoogle</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-92"><a id="__codelineno-fhmodal_google_contacts-92" name="__codelineno-fhmodal_google_contacts-92" href="#__codelineno-fhmodal_google_contacts-92"></a><span class="w">                </span><span class="p">.</span><span class="n">readMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readFields</span><span class="w"> </span><span class="c">'Propiedades que se recibiran como respuesta.</span>
+</span><span id="__span-fhmodal_google_contacts-93"><a id="__codelineno-fhmodal_google_contacts-93" name="__codelineno-fhmodal_google_contacts-93" href="#__codelineno-fhmodal_google_contacts-93"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-94"><a id="__codelineno-fhmodal_google_contacts-94" name="__codelineno-fhmodal_google_contacts-94" href="#__codelineno-fhmodal_google_contacts-94"></a>
+</span><span id="__span-fhmodal_google_contacts-95"><a id="__codelineno-fhmodal_google_contacts-95" name="__codelineno-fhmodal_google_contacts-95" href="#__codelineno-fhmodal_google_contacts-95"></a><span class="w">            </span><span class="c">'3) Envio de contactos a cuentA de google del usuario, antes debe haber sido identificado en google mediante el proceso: FLEXYGO.Google.GetConsent(Entity, Ret, "contacts")</span>
+</span><span id="__span-fhmodal_google_contacts-96"><a id="__codelineno-fhmodal_google_contacts-96" name="__codelineno-fhmodal_google_contacts-96" href="#__codelineno-fhmodal_google_contacts-96"></a><span class="w">            </span><span class="k">If</span><span class="w"> </span><span class="n">CreateContactsToGoogleApi</span><span class="p">(</span><span class="n">contactCreate</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">ConfToken</span><span class="p">.</span><span class="n">UserSecurity</span><span class="p">.</span><span class="n">UserId</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_google_contacts-97"><a id="__codelineno-fhmodal_google_contacts-97" name="__codelineno-fhmodal_google_contacts-97" href="#__codelineno-fhmodal_google_contacts-97"></a><span class="w">                </span><span class="c">'4) Recogemos la respuesta.</span>
+</span><span id="__span-fhmodal_google_contacts-98"><a id="__codelineno-fhmodal_google_contacts-98" name="__codelineno-fhmodal_google_contacts-98" href="#__codelineno-fhmodal_google_contacts-98"></a><span class="w">                </span><span class="n">infoJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JsonConvert</span><span class="p">.</span><span class="n">DeserializeObject</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">Dictionary</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">Object</span><span class="p">))(</span><span class="n">response</span><span class="p">.</span><span class="n">Content</span><span class="p">)(</span><span class="s">"createdPeople"</span><span class="p">)</span>
+</span><span id="__span-fhmodal_google_contacts-99"><a id="__codelineno-fhmodal_google_contacts-99" name="__codelineno-fhmodal_google_contacts-99" href="#__codelineno-fhmodal_google_contacts-99"></a>
+</span><span id="__span-fhmodal_google_contacts-100"><a id="__codelineno-fhmodal_google_contacts-100" name="__codelineno-fhmodal_google_contacts-100" href="#__codelineno-fhmodal_google_contacts-100"></a><span class="w">                </span><span class="k">For</span><span class="w"> </span><span class="k">Each</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="ow">In</span><span class="w"> </span><span class="n">infoJson</span>
+</span><span id="__span-fhmodal_google_contacts-101"><a id="__codelineno-fhmodal_google_contacts-101" name="__codelineno-fhmodal_google_contacts-101" href="#__codelineno-fhmodal_google_contacts-101"></a><span class="w">                    </span><span class="k">If</span><span class="w"> </span><span class="n">info</span><span class="p">(</span><span class="s">"httpStatusCode"</span><span class="p">).</span><span class="n">ToString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"201"</span><span class="w"> </span><span class="ow">OrElse</span><span class="w"> </span><span class="n">info</span><span class="p">(</span><span class="s">"httpStatusCode"</span><span class="p">).</span><span class="n">ToString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"200"</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_google_contacts-102"><a id="__codelineno-fhmodal_google_contacts-102" name="__codelineno-fhmodal_google_contacts-102" href="#__codelineno-fhmodal_google_contacts-102"></a><span class="w">                        </span><span class="c">'5) Codigo del contacto en google para poder borrarlo. Guardarlo en la ficha del contacto para actualizar o borrar.</span>
+</span><span id="__span-fhmodal_google_contacts-103"><a id="__codelineno-fhmodal_google_contacts-103" name="__codelineno-fhmodal_google_contacts-103" href="#__codelineno-fhmodal_google_contacts-103"></a><span class="w">                        </span><span class="k">Dim</span><span class="w"> </span><span class="n">googleResourceName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">info</span><span class="p">(</span><span class="s">"person"</span><span class="p">)(</span><span class="s">"resourceName"</span><span class="p">).</span><span class="n">ToString</span><span class="p">()</span>
+</span><span id="__span-fhmodal_google_contacts-104"><a id="__codelineno-fhmodal_google_contacts-104" name="__codelineno-fhmodal_google_contacts-104" href="#__codelineno-fhmodal_google_contacts-104"></a><span class="w">                        </span><span class="c">'6) Propiedad necesaria para realizar la actualización de contactos.</span>
+</span><span id="__span-fhmodal_google_contacts-105"><a id="__codelineno-fhmodal_google_contacts-105" name="__codelineno-fhmodal_google_contacts-105" href="#__codelineno-fhmodal_google_contacts-105"></a><span class="w">                        </span><span class="k">Dim</span><span class="w"> </span><span class="n">googleEtag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">info</span><span class="p">(</span><span class="s">"person"</span><span class="p">)(</span><span class="s">"etag"</span><span class="p">).</span><span class="n">ToString</span><span class="p">()</span>
+</span><span id="__span-fhmodal_google_contacts-106"><a id="__codelineno-fhmodal_google_contacts-106" name="__codelineno-fhmodal_google_contacts-106" href="#__codelineno-fhmodal_google_contacts-106"></a>
+</span><span id="__span-fhmodal_google_contacts-107"><a id="__codelineno-fhmodal_google_contacts-107" name="__codelineno-fhmodal_google_contacts-107" href="#__codelineno-fhmodal_google_contacts-107"></a><span class="w">                        </span><span class="k">Dim</span><span class="w"> </span><span class="n">contactsListUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">Dictionary</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="n">GoogleContact</span><span class="p">)</span>
+</span><span id="__span-fhmodal_google_contacts-108"><a id="__codelineno-fhmodal_google_contacts-108" name="__codelineno-fhmodal_google_contacts-108" href="#__codelineno-fhmodal_google_contacts-108"></a>
+</span><span id="__span-fhmodal_google_contacts-109"><a id="__codelineno-fhmodal_google_contacts-109" name="__codelineno-fhmodal_google_contacts-109" href="#__codelineno-fhmodal_google_contacts-109"></a><span class="w">                        </span><span class="n">contactGoogleupdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">GoogleContact</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-110"><a id="__codelineno-fhmodal_google_contacts-110" name="__codelineno-fhmodal_google_contacts-110" href="#__codelineno-fhmodal_google_contacts-110"></a><span class="w">                            </span><span class="p">.</span><span class="n">etag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">googleEtag</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-111"><a id="__codelineno-fhmodal_google_contacts-111" name="__codelineno-fhmodal_google_contacts-111" href="#__codelineno-fhmodal_google_contacts-111"></a><span class="w">                            </span><span class="p">.</span><span class="n">phoneNumbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">PhoneNumber</span><span class="p">)</span><span class="w"> </span><span class="n">From</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-112"><a id="__codelineno-fhmodal_google_contacts-112" name="__codelineno-fhmodal_google_contacts-112" href="#__codelineno-fhmodal_google_contacts-112"></a><span class="w">                                </span><span class="k">New</span><span class="w"> </span><span class="n">PhoneNumber</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-113"><a id="__codelineno-fhmodal_google_contacts-113" name="__codelineno-fhmodal_google_contacts-113" href="#__codelineno-fhmodal_google_contacts-113"></a><span class="w">                                    </span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"mobile"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-114"><a id="__codelineno-fhmodal_google_contacts-114" name="__codelineno-fhmodal_google_contacts-114" href="#__codelineno-fhmodal_google_contacts-114"></a><span class="w">                                    </span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"612345678"</span>
+</span><span id="__span-fhmodal_google_contacts-115"><a id="__codelineno-fhmodal_google_contacts-115" name="__codelineno-fhmodal_google_contacts-115" href="#__codelineno-fhmodal_google_contacts-115"></a><span class="w">                                </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-116"><a id="__codelineno-fhmodal_google_contacts-116" name="__codelineno-fhmodal_google_contacts-116" href="#__codelineno-fhmodal_google_contacts-116"></a><span class="w">                            </span><span class="p">},</span>
+</span><span id="__span-fhmodal_google_contacts-117"><a id="__codelineno-fhmodal_google_contacts-117" name="__codelineno-fhmodal_google_contacts-117" href="#__codelineno-fhmodal_google_contacts-117"></a><span class="w">                            </span><span class="p">.</span><span class="n">birthdays</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">Birthday</span><span class="p">)</span><span class="w"> </span><span class="n">From</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-118"><a id="__codelineno-fhmodal_google_contacts-118" name="__codelineno-fhmodal_google_contacts-118" href="#__codelineno-fhmodal_google_contacts-118"></a><span class="w">                                </span><span class="k">New</span><span class="w"> </span><span class="n">Birthday</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-119"><a id="__codelineno-fhmodal_google_contacts-119" name="__codelineno-fhmodal_google_contacts-119" href="#__codelineno-fhmodal_google_contacts-119"></a><span class="w">                                    </span><span class="p">.</span><span class="o">[</span><span class="kt">date</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">ContactDate</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-120"><a id="__codelineno-fhmodal_google_contacts-120" name="__codelineno-fhmodal_google_contacts-120" href="#__codelineno-fhmodal_google_contacts-120"></a><span class="w">                                        </span><span class="p">.</span><span class="n">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-121"><a id="__codelineno-fhmodal_google_contacts-121" name="__codelineno-fhmodal_google_contacts-121" href="#__codelineno-fhmodal_google_contacts-121"></a><span class="w">                                        </span><span class="p">.</span><span class="n">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-122"><a id="__codelineno-fhmodal_google_contacts-122" name="__codelineno-fhmodal_google_contacts-122" href="#__codelineno-fhmodal_google_contacts-122"></a><span class="w">                                        </span><span class="p">.</span><span class="n">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1995</span>
+</span><span id="__span-fhmodal_google_contacts-123"><a id="__codelineno-fhmodal_google_contacts-123" name="__codelineno-fhmodal_google_contacts-123" href="#__codelineno-fhmodal_google_contacts-123"></a><span class="w">                                    </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-124"><a id="__codelineno-fhmodal_google_contacts-124" name="__codelineno-fhmodal_google_contacts-124" href="#__codelineno-fhmodal_google_contacts-124"></a><span class="w">                                </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-125"><a id="__codelineno-fhmodal_google_contacts-125" name="__codelineno-fhmodal_google_contacts-125" href="#__codelineno-fhmodal_google_contacts-125"></a><span class="w">                            </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-126"><a id="__codelineno-fhmodal_google_contacts-126" name="__codelineno-fhmodal_google_contacts-126" href="#__codelineno-fhmodal_google_contacts-126"></a><span class="w">                        </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-127"><a id="__codelineno-fhmodal_google_contacts-127" name="__codelineno-fhmodal_google_contacts-127" href="#__codelineno-fhmodal_google_contacts-127"></a>
+</span><span id="__span-fhmodal_google_contacts-128"><a id="__codelineno-fhmodal_google_contacts-128" name="__codelineno-fhmodal_google_contacts-128" href="#__codelineno-fhmodal_google_contacts-128"></a><span class="w">                        </span><span class="n">contactsListUpdate</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">googleResourceName</span><span class="p">,</span><span class="w"> </span><span class="n">contactGoogleupdate</span><span class="p">)</span>
+</span><span id="__span-fhmodal_google_contacts-129"><a id="__codelineno-fhmodal_google_contacts-129" name="__codelineno-fhmodal_google_contacts-129" href="#__codelineno-fhmodal_google_contacts-129"></a><span class="w">                        </span><span class="n">contactUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">GoogleContactUpdateRequest</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-130"><a id="__codelineno-fhmodal_google_contacts-130" name="__codelineno-fhmodal_google_contacts-130" href="#__codelineno-fhmodal_google_contacts-130"></a><span class="w">                            </span><span class="p">.</span><span class="n">contacts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contactsListUpdate</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_contacts-131"><a id="__codelineno-fhmodal_google_contacts-131" name="__codelineno-fhmodal_google_contacts-131" href="#__codelineno-fhmodal_google_contacts-131"></a><span class="w">                            </span><span class="p">.</span><span class="n">readMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readFields</span><span class="p">,</span><span class="w"> </span><span class="c">'Propiedades que se recibiran como respuesta.</span>
+</span><span id="__span-fhmodal_google_contacts-132"><a id="__codelineno-fhmodal_google_contacts-132" name="__codelineno-fhmodal_google_contacts-132" href="#__codelineno-fhmodal_google_contacts-132"></a><span class="w">                            </span><span class="p">.</span><span class="n">updateMask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"phoneNumbers,birthdays"</span><span class="w"> </span><span class="c">'Propiedades que ve van a actualizar.</span>
+</span><span id="__span-fhmodal_google_contacts-133"><a id="__codelineno-fhmodal_google_contacts-133" name="__codelineno-fhmodal_google_contacts-133" href="#__codelineno-fhmodal_google_contacts-133"></a><span class="w">                        </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-134"><a id="__codelineno-fhmodal_google_contacts-134" name="__codelineno-fhmodal_google_contacts-134" href="#__codelineno-fhmodal_google_contacts-134"></a><span class="w">                        </span><span class="c">'7) Actualizamos el contacto.</span>
+</span><span id="__span-fhmodal_google_contacts-135"><a id="__codelineno-fhmodal_google_contacts-135" name="__codelineno-fhmodal_google_contacts-135" href="#__codelineno-fhmodal_google_contacts-135"></a><span class="w">                        </span><span class="k">If</span><span class="w"> </span><span class="k">Not</span><span class="w"> </span><span class="n">UpdateContactsToGoogleApi</span><span class="p">(</span><span class="n">contactUpdate</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">ConfToken</span><span class="p">.</span><span class="n">UserSecurity</span><span class="p">.</span><span class="n">UserId</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_google_contacts-136"><a id="__codelineno-fhmodal_google_contacts-136" name="__codelineno-fhmodal_google_contacts-136" href="#__codelineno-fhmodal_google_contacts-136"></a><span class="w">                            </span><span class="k">Throw</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span>
+</span><span id="__span-fhmodal_google_contacts-137"><a id="__codelineno-fhmodal_google_contacts-137" name="__codelineno-fhmodal_google_contacts-137" href="#__codelineno-fhmodal_google_contacts-137"></a><span class="w">                        </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_google_contacts-138"><a id="__codelineno-fhmodal_google_contacts-138" name="__codelineno-fhmodal_google_contacts-138" href="#__codelineno-fhmodal_google_contacts-138"></a>
+</span><span id="__span-fhmodal_google_contacts-139"><a id="__codelineno-fhmodal_google_contacts-139" name="__codelineno-fhmodal_google_contacts-139" href="#__codelineno-fhmodal_google_contacts-139"></a><span class="w">                        </span><span class="c">'8) Cargamos el contacto en la lista de contactos a borrar.</span>
+</span><span id="__span-fhmodal_google_contacts-140"><a id="__codelineno-fhmodal_google_contacts-140" name="__codelineno-fhmodal_google_contacts-140" href="#__codelineno-fhmodal_google_contacts-140"></a><span class="w">                        </span><span class="k">Dim</span><span class="w"> </span><span class="n">ContactsToDelete</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ContactsResource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">ContactsResource</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-141"><a id="__codelineno-fhmodal_google_contacts-141" name="__codelineno-fhmodal_google_contacts-141" href="#__codelineno-fhmodal_google_contacts-141"></a><span class="w">                            </span><span class="p">.</span><span class="n">resourceNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="kt">String</span><span class="p">)</span><span class="w"> </span><span class="n">From</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_contacts-142"><a id="__codelineno-fhmodal_google_contacts-142" name="__codelineno-fhmodal_google_contacts-142" href="#__codelineno-fhmodal_google_contacts-142"></a><span class="w">                                </span><span class="n">googleResourceName</span>
+</span><span id="__span-fhmodal_google_contacts-143"><a id="__codelineno-fhmodal_google_contacts-143" name="__codelineno-fhmodal_google_contacts-143" href="#__codelineno-fhmodal_google_contacts-143"></a><span class="w">                            </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-144"><a id="__codelineno-fhmodal_google_contacts-144" name="__codelineno-fhmodal_google_contacts-144" href="#__codelineno-fhmodal_google_contacts-144"></a><span class="w">                        </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_contacts-145"><a id="__codelineno-fhmodal_google_contacts-145" name="__codelineno-fhmodal_google_contacts-145" href="#__codelineno-fhmodal_google_contacts-145"></a><span class="w">                        </span><span class="c">'9) Borrado de contactos de google del usuario.</span>
+</span><span id="__span-fhmodal_google_contacts-146"><a id="__codelineno-fhmodal_google_contacts-146" name="__codelineno-fhmodal_google_contacts-146" href="#__codelineno-fhmodal_google_contacts-146"></a><span class="w">                        </span><span class="k">If</span><span class="w"> </span><span class="k">Not</span><span class="w"> </span><span class="n">DeleteContactsToGoogleApi</span><span class="p">(</span><span class="n">ContactsToDelete</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">ConfToken</span><span class="p">.</span><span class="n">UserSecurity</span><span class="p">.</span><span class="n">UserId</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_google_contacts-147"><a id="__codelineno-fhmodal_google_contacts-147" name="__codelineno-fhmodal_google_contacts-147" href="#__codelineno-fhmodal_google_contacts-147"></a><span class="w">                            </span><span class="k">Throw</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span>
+</span><span id="__span-fhmodal_google_contacts-148"><a id="__codelineno-fhmodal_google_contacts-148" name="__codelineno-fhmodal_google_contacts-148" href="#__codelineno-fhmodal_google_contacts-148"></a><span class="w">                        </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_google_contacts-149"><a id="__codelineno-fhmodal_google_contacts-149" name="__codelineno-fhmodal_google_contacts-149" href="#__codelineno-fhmodal_google_contacts-149"></a>
+</span><span id="__span-fhmodal_google_contacts-150"><a id="__codelineno-fhmodal_google_contacts-150" name="__codelineno-fhmodal_google_contacts-150" href="#__codelineno-fhmodal_google_contacts-150"></a><span class="w">                    </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_google_contacts-151"><a id="__codelineno-fhmodal_google_contacts-151" name="__codelineno-fhmodal_google_contacts-151" href="#__codelineno-fhmodal_google_contacts-151"></a>
+</span><span id="__span-fhmodal_google_contacts-152"><a id="__codelineno-fhmodal_google_contacts-152" name="__codelineno-fhmodal_google_contacts-152" href="#__codelineno-fhmodal_google_contacts-152"></a><span class="w">                </span><span class="k">Next</span>
+</span><span id="__span-fhmodal_google_contacts-153"><a id="__codelineno-fhmodal_google_contacts-153" name="__codelineno-fhmodal_google_contacts-153" href="#__codelineno-fhmodal_google_contacts-153"></a>
+</span><span id="__span-fhmodal_google_contacts-154"><a id="__codelineno-fhmodal_google_contacts-154" name="__codelineno-fhmodal_google_contacts-154" href="#__codelineno-fhmodal_google_contacts-154"></a><span class="w">            </span><span class="k">Else</span>
+</span><span id="__span-fhmodal_google_contacts-155"><a id="__codelineno-fhmodal_google_contacts-155" name="__codelineno-fhmodal_google_contacts-155" href="#__codelineno-fhmodal_google_contacts-155"></a><span class="w">                </span><span class="k">Throw</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span>
+</span><span id="__span-fhmodal_google_contacts-156"><a id="__codelineno-fhmodal_google_contacts-156" name="__codelineno-fhmodal_google_contacts-156" href="#__codelineno-fhmodal_google_contacts-156"></a><span class="w">            </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_google_contacts-157"><a id="__codelineno-fhmodal_google_contacts-157" name="__codelineno-fhmodal_google_contacts-157" href="#__codelineno-fhmodal_google_contacts-157"></a>
+</span><span id="__span-fhmodal_google_contacts-158"><a id="__codelineno-fhmodal_google_contacts-158" name="__codelineno-fhmodal_google_contacts-158" href="#__codelineno-fhmodal_google_contacts-158"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_google_contacts-159"><a id="__codelineno-fhmodal_google_contacts-159" name="__codelineno-fhmodal_google_contacts-159" href="#__codelineno-fhmodal_google_contacts-159"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_google_contacts-160"><a id="__codelineno-fhmodal_google_contacts-160" name="__codelineno-fhmodal_google_contacts-160" href="#__codelineno-fhmodal_google_contacts-160"></a>
+</span><span id="__span-fhmodal_google_contacts-161"><a id="__codelineno-fhmodal_google_contacts-161" name="__codelineno-fhmodal_google_contacts-161" href="#__codelineno-fhmodal_google_contacts-161"></a><span class="w">        </span><span class="k">Catch</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">Exception</span>
+</span><span id="__span-fhmodal_google_contacts-162"><a id="__codelineno-fhmodal_google_contacts-162" name="__codelineno-fhmodal_google_contacts-162" href="#__codelineno-fhmodal_google_contacts-162"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_google_contacts-163"><a id="__codelineno-fhmodal_google_contacts-163" name="__codelineno-fhmodal_google_contacts-163" href="#__codelineno-fhmodal_google_contacts-163"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ex</span>
+</span><span id="__span-fhmodal_google_contacts-164"><a id="__codelineno-fhmodal_google_contacts-164" name="__codelineno-fhmodal_google_contacts-164" href="#__codelineno-fhmodal_google_contacts-164"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_google_contacts-165"><a id="__codelineno-fhmodal_google_contacts-165" name="__codelineno-fhmodal_google_contacts-165" href="#__codelineno-fhmodal_google_contacts-165"></a><span class="w">        </span><span class="k">End</span><span class="w"> </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_google_contacts-166"><a id="__codelineno-fhmodal_google_contacts-166" name="__codelineno-fhmodal_google_contacts-166" href="#__codelineno-fhmodal_google_contacts-166"></a><span class="w">    </span><span class="k">End</span><span class="w"> </span><span class="k">Function</span>
+</span><span id="__span-fhmodal_google_contacts-167"><a id="__codelineno-fhmodal_google_contacts-167" name="__codelineno-fhmodal_google_contacts-167" href="#__codelineno-fhmodal_google_contacts-167"></a><span class="k">End</span><span class="w"> </span><span class="k">Class</span>
+</span></code></pre></div>
+<div id="fhmodal_google_events" class="language-vbnet highlight"><span class="filename">VB.net</span><pre><span></span><code><span id="__span-fhmodal_google_events-1"><a id="__codelineno-fhmodal_google_events-1" name="__codelineno-fhmodal_google_events-1" href="#__codelineno-fhmodal_google_events-1"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.GoogleResourceTypes</span>
+</span><span id="__span-fhmodal_google_events-2"><a id="__codelineno-fhmodal_google_events-2" name="__codelineno-fhmodal_google_events-2" href="#__codelineno-fhmodal_google_events-2"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Objects</span>
+</span><span id="__span-fhmodal_google_events-3"><a id="__codelineno-fhmodal_google_events-3" name="__codelineno-fhmodal_google_events-3" href="#__codelineno-fhmodal_google_events-3"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Processing.ProcessManager</span>
+</span><span id="__span-fhmodal_google_events-4"><a id="__codelineno-fhmodal_google_events-4" name="__codelineno-fhmodal_google_events-4" href="#__codelineno-fhmodal_google_events-4"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">Newtonsoft.Json</span>
+</span><span id="__span-fhmodal_google_events-5"><a id="__codelineno-fhmodal_google_events-5" name="__codelineno-fhmodal_google_events-5" href="#__codelineno-fhmodal_google_events-5"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">RestSharp</span>
+</span><span id="__span-fhmodal_google_events-6"><a id="__codelineno-fhmodal_google_events-6" name="__codelineno-fhmodal_google_events-6" href="#__codelineno-fhmodal_google_events-6"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Google</span>
+</span><span id="__span-fhmodal_google_events-7"><a id="__codelineno-fhmodal_google_events-7" name="__codelineno-fhmodal_google_events-7" href="#__codelineno-fhmodal_google_events-7"></a><span class="k">Imports</span><span class="w"> </span><span class="nn">FLEXYGO.Utilities.General.Util</span>
+</span><span id="__span-fhmodal_google_events-8"><a id="__codelineno-fhmodal_google_events-8" name="__codelineno-fhmodal_google_events-8" href="#__codelineno-fhmodal_google_events-8"></a>
+</span><span id="__span-fhmodal_google_events-9"><a id="__codelineno-fhmodal_google_events-9" name="__codelineno-fhmodal_google_events-9" href="#__codelineno-fhmodal_google_events-9"></a><span class="k">Public</span><span class="w"> </span><span class="k">Class</span><span class="w"> </span><span class="nc">SampleGoogle</span>
+</span><span id="__span-fhmodal_google_events-10"><a id="__codelineno-fhmodal_google_events-10" name="__codelineno-fhmodal_google_events-10" href="#__codelineno-fhmodal_google_events-10"></a><span class="w">    </span><span class="k">Public</span><span class="w"> </span><span class="k">Shared</span><span class="w"> </span><span class="k">Function</span><span class="w"> </span><span class="nf">SampleEventsGoogle</span><span class="p">(</span><span class="k">ByVal</span><span class="w"> </span><span class="n">Entity</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">EntityObject</span><span class="p">,</span><span class="w"> </span><span class="k">ByRef</span><span class="w"> </span><span class="n">Ret</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">ProcessHelper</span><span class="p">)</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Boolean</span>
+</span><span id="__span-fhmodal_google_events-11"><a id="__codelineno-fhmodal_google_events-11" name="__codelineno-fhmodal_google_events-11" href="#__codelineno-fhmodal_google_events-11"></a>
+</span><span id="__span-fhmodal_google_events-12"><a id="__codelineno-fhmodal_google_events-12" name="__codelineno-fhmodal_google_events-12" href="#__codelineno-fhmodal_google_events-12"></a><span class="w">        </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_google_events-13"><a id="__codelineno-fhmodal_google_events-13" name="__codelineno-fhmodal_google_events-13" href="#__codelineno-fhmodal_google_events-13"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">userId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">ConfToken</span><span class="p">.</span><span class="n">UserSecurity</span><span class="p">.</span><span class="n">UserId</span>
+</span><span id="__span-fhmodal_google_events-14"><a id="__codelineno-fhmodal_google_events-14" name="__codelineno-fhmodal_google_events-14" href="#__codelineno-fhmodal_google_events-14"></a>
+</span><span id="__span-fhmodal_google_events-15"><a id="__codelineno-fhmodal_google_events-15" name="__codelineno-fhmodal_google_events-15" href="#__codelineno-fhmodal_google_events-15"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">eventsGoogle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">GoogleEvent</span><span class="p">)</span>
+</span><span id="__span-fhmodal_google_events-16"><a id="__codelineno-fhmodal_google_events-16" name="__codelineno-fhmodal_google_events-16" href="#__codelineno-fhmodal_google_events-16"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">eventsGoogleDelete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">List</span><span class="p">(</span><span class="k">Of</span><span class="w"> </span><span class="n">GoogleEvent</span><span class="p">)</span>
+</span><span id="__span-fhmodal_google_events-17"><a id="__codelineno-fhmodal_google_events-17" name="__codelineno-fhmodal_google_events-17" href="#__codelineno-fhmodal_google_events-17"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">eventGoogle</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">GoogleEvent</span>
+</span><span id="__span-fhmodal_google_events-18"><a id="__codelineno-fhmodal_google_events-18" name="__codelineno-fhmodal_google_events-18" href="#__codelineno-fhmodal_google_events-18"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">eventGoogleDelete</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">GoogleEvent</span>
+</span><span id="__span-fhmodal_google_events-19"><a id="__codelineno-fhmodal_google_events-19" name="__codelineno-fhmodal_google_events-19" href="#__codelineno-fhmodal_google_events-19"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">Object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="kt">Object</span>
+</span><span id="__span-fhmodal_google_events-20"><a id="__codelineno-fhmodal_google_events-20" name="__codelineno-fhmodal_google_events-20" href="#__codelineno-fhmodal_google_events-20"></a>
+</span><span id="__span-fhmodal_google_events-21"><a id="__codelineno-fhmodal_google_events-21" name="__codelineno-fhmodal_google_events-21" href="#__codelineno-fhmodal_google_events-21"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">calendarId</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="kt">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span>
+</span><span id="__span-fhmodal_google_events-22"><a id="__codelineno-fhmodal_google_events-22" name="__codelineno-fhmodal_google_events-22" href="#__codelineno-fhmodal_google_events-22"></a>
+</span><span id="__span-fhmodal_google_events-23"><a id="__codelineno-fhmodal_google_events-23" name="__codelineno-fhmodal_google_events-23" href="#__codelineno-fhmodal_google_events-23"></a><span class="w">            </span><span class="c">'1) Creamos el objeto event con los datos necesarios.</span>
+</span><span id="__span-fhmodal_google_events-24"><a id="__codelineno-fhmodal_google_events-24" name="__codelineno-fhmodal_google_events-24" href="#__codelineno-fhmodal_google_events-24"></a><span class="w">            </span><span class="n">eventGoogle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">GoogleEvent</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_events-25"><a id="__codelineno-fhmodal_google_events-25" name="__codelineno-fhmodal_google_events-25" href="#__codelineno-fhmodal_google_events-25"></a><span class="w">                </span><span class="p">.</span><span class="n">summary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Flexygo : Evento de prueba"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_events-26"><a id="__codelineno-fhmodal_google_events-26" name="__codelineno-fhmodal_google_events-26" href="#__codelineno-fhmodal_google_events-26"></a><span class="w">                </span><span class="p">.</span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"&lt;h1 style=""color: #1a73e8;""&gt;Evento de prueba&lt;/h1&gt;&lt;p style='margin-top:10px'&gt;Descripción de prueba&lt;/p&gt;"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_events-27"><a id="__codelineno-fhmodal_google_events-27" name="__codelineno-fhmodal_google_events-27" href="#__codelineno-fhmodal_google_events-27"></a><span class="w">                </span><span class="p">.</span><span class="n">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Cami del Mar"</span>
+</span><span id="__span-fhmodal_google_events-28"><a id="__codelineno-fhmodal_google_events-28" name="__codelineno-fhmodal_google_events-28" href="#__codelineno-fhmodal_google_events-28"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_events-29"><a id="__codelineno-fhmodal_google_events-29" name="__codelineno-fhmodal_google_events-29" href="#__codelineno-fhmodal_google_events-29"></a>
+</span><span id="__span-fhmodal_google_events-30"><a id="__codelineno-fhmodal_google_events-30" name="__codelineno-fhmodal_google_events-30" href="#__codelineno-fhmodal_google_events-30"></a><span class="w">            </span><span class="k">Dim</span><span class="w"> </span><span class="n">dateEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Date</span><span class="p">.</span><span class="n">Now</span>
+</span><span id="__span-fhmodal_google_events-31"><a id="__codelineno-fhmodal_google_events-31" name="__codelineno-fhmodal_google_events-31" href="#__codelineno-fhmodal_google_events-31"></a><span class="w">            </span><span class="n">eventGoogle</span><span class="p">.</span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">StartEvent</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{.</span><span class="n">dateTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">dateEvent</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">"dd/MM/yyyy"</span><span class="p">)).</span><span class="n">Add</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="s">"14:00"</span><span class="p">)).</span><span class="n">ToString</span><span class="p">(</span><span class="s">"s"</span><span class="p">)}</span>
+</span><span id="__span-fhmodal_google_events-32"><a id="__codelineno-fhmodal_google_events-32" name="__codelineno-fhmodal_google_events-32" href="#__codelineno-fhmodal_google_events-32"></a><span class="w">            </span><span class="n">eventGoogle</span><span class="p">.</span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">EndEvent</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{.</span><span class="n">dateTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">eventGoogle</span><span class="p">.</span><span class="n">start</span><span class="p">.</span><span class="n">dateTime</span><span class="p">).</span><span class="n">AddMinutes</span><span class="p">(</span><span class="mi">45</span><span class="p">).</span><span class="n">ToString</span><span class="p">(</span><span class="s">"s"</span><span class="p">)}</span>
+</span><span id="__span-fhmodal_google_events-33"><a id="__codelineno-fhmodal_google_events-33" name="__codelineno-fhmodal_google_events-33" href="#__codelineno-fhmodal_google_events-33"></a>
+</span><span id="__span-fhmodal_google_events-34"><a id="__codelineno-fhmodal_google_events-34" name="__codelineno-fhmodal_google_events-34" href="#__codelineno-fhmodal_google_events-34"></a><span class="w">            </span><span class="c">'2) Obtenedor el Id del calendario donde vamos a crear el evento</span>
+</span><span id="__span-fhmodal_google_events-35"><a id="__codelineno-fhmodal_google_events-35" name="__codelineno-fhmodal_google_events-35" href="#__codelineno-fhmodal_google_events-35"></a><span class="w">            </span><span class="n">GetCalendarId</span><span class="p">(</span><span class="n">userId</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="p">,</span><span class="w"> </span><span class="n">calendarId</span><span class="p">)</span>
+</span><span id="__span-fhmodal_google_events-36"><a id="__codelineno-fhmodal_google_events-36" name="__codelineno-fhmodal_google_events-36" href="#__codelineno-fhmodal_google_events-36"></a><span class="w">            </span><span class="n">eventGoogle</span><span class="p">.</span><span class="n">organizer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">Organizer</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_events-37"><a id="__codelineno-fhmodal_google_events-37" name="__codelineno-fhmodal_google_events-37" href="#__codelineno-fhmodal_google_events-37"></a><span class="w">                </span><span class="p">.</span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"micorreo@gmail.com"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_events-38"><a id="__codelineno-fhmodal_google_events-38" name="__codelineno-fhmodal_google_events-38" href="#__codelineno-fhmodal_google_events-38"></a><span class="w">                </span><span class="p">.</span><span class="n">displayName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Flexygo"</span>
+</span><span id="__span-fhmodal_google_events-39"><a id="__codelineno-fhmodal_google_events-39" name="__codelineno-fhmodal_google_events-39" href="#__codelineno-fhmodal_google_events-39"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_events-40"><a id="__codelineno-fhmodal_google_events-40" name="__codelineno-fhmodal_google_events-40" href="#__codelineno-fhmodal_google_events-40"></a>
+</span><span id="__span-fhmodal_google_events-41"><a id="__codelineno-fhmodal_google_events-41" name="__codelineno-fhmodal_google_events-41" href="#__codelineno-fhmodal_google_events-41"></a><span class="w">            </span><span class="c">'3) Lo añadimos a la lista de eventos, máximo 4 por envio.</span>
+</span><span id="__span-fhmodal_google_events-42"><a id="__codelineno-fhmodal_google_events-42" name="__codelineno-fhmodal_google_events-42" href="#__codelineno-fhmodal_google_events-42"></a><span class="w">            </span><span class="n">eventsGoogle</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">eventGoogle</span><span class="p">)</span>
+</span><span id="__span-fhmodal_google_events-43"><a id="__codelineno-fhmodal_google_events-43" name="__codelineno-fhmodal_google_events-43" href="#__codelineno-fhmodal_google_events-43"></a>
+</span><span id="__span-fhmodal_google_events-44"><a id="__codelineno-fhmodal_google_events-44" name="__codelineno-fhmodal_google_events-44" href="#__codelineno-fhmodal_google_events-44"></a><span class="w">            </span><span class="c">'4) Envio de eventos a la cuentga de google del usuario, antes debe haber sido identificado en google mediante el proceso: FLEXYGO.Google.GetConsent(Entity, Ret, "calendar")</span>
+</span><span id="__span-fhmodal_google_events-45"><a id="__codelineno-fhmodal_google_events-45" name="__codelineno-fhmodal_google_events-45" href="#__codelineno-fhmodal_google_events-45"></a><span class="w">            </span><span class="k">If</span><span class="w"> </span><span class="n">FLEXYGO</span><span class="p">.</span><span class="n">Google</span><span class="p">.</span><span class="n">SendEventsToGoogleApi</span><span class="p">(</span><span class="n">eventsGoogle</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="p">,</span><span class="w"> </span><span class="n">userId</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_google_events-46"><a id="__codelineno-fhmodal_google_events-46" name="__codelineno-fhmodal_google_events-46" href="#__codelineno-fhmodal_google_events-46"></a><span class="w">                </span><span class="c">'5) Recogemos la respuesta</span>
+</span><span id="__span-fhmodal_google_events-47"><a id="__codelineno-fhmodal_google_events-47" name="__codelineno-fhmodal_google_events-47" href="#__codelineno-fhmodal_google_events-47"></a><span class="w">                </span><span class="k">Dim</span><span class="w"> </span><span class="n">infoSplit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">response</span><span class="p">.</span><span class="n">ToString</span><span class="p">().</span><span class="n">Split</span><span class="p">(</span><span class="s">"&lt;response-item"</span><span class="p">).</span><span class="n">ToList</span>
+</span><span id="__span-fhmodal_google_events-48"><a id="__codelineno-fhmodal_google_events-48" name="__codelineno-fhmodal_google_events-48" href="#__codelineno-fhmodal_google_events-48"></a><span class="w">                </span><span class="c">'6) Quitamos el primer elemento que no contiene información de los elementos</span>
+</span><span id="__span-fhmodal_google_events-49"><a id="__codelineno-fhmodal_google_events-49" name="__codelineno-fhmodal_google_events-49" href="#__codelineno-fhmodal_google_events-49"></a><span class="w">                </span><span class="n">infoSplit</span><span class="p">.</span><span class="n">RemoveAt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-fhmodal_google_events-50"><a id="__codelineno-fhmodal_google_events-50" name="__codelineno-fhmodal_google_events-50" href="#__codelineno-fhmodal_google_events-50"></a><span class="w">                </span><span class="k">For</span><span class="w"> </span><span class="k">Each</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="ow">In</span><span class="w"> </span><span class="n">infoSplit</span>
+</span><span id="__span-fhmodal_google_events-51"><a id="__codelineno-fhmodal_google_events-51" name="__codelineno-fhmodal_google_events-51" href="#__codelineno-fhmodal_google_events-51"></a><span class="w">                    </span><span class="k">If</span><span class="w"> </span><span class="n">info</span><span class="p">.</span><span class="n">ToString</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="s">"HTTP/1.1 200 OK"</span><span class="p">)</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_google_events-52"><a id="__codelineno-fhmodal_google_events-52" name="__codelineno-fhmodal_google_events-52" href="#__codelineno-fhmodal_google_events-52"></a><span class="w">                        </span><span class="k">Dim</span><span class="w"> </span><span class="n">infoJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetJsonResponseEvent</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+</span><span id="__span-fhmodal_google_events-53"><a id="__codelineno-fhmodal_google_events-53" name="__codelineno-fhmodal_google_events-53" href="#__codelineno-fhmodal_google_events-53"></a><span class="w">                        </span><span class="c">'7) Codigo del evento en google para poder borrarlo. Guardarlo en la ficha del evento para actualizar o borrar.</span>
+</span><span id="__span-fhmodal_google_events-54"><a id="__codelineno-fhmodal_google_events-54" name="__codelineno-fhmodal_google_events-54" href="#__codelineno-fhmodal_google_events-54"></a><span class="w">                        </span><span class="k">Dim</span><span class="w"> </span><span class="n">googleId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">infoJson</span><span class="p">(</span><span class="s">"id"</span><span class="p">).</span><span class="n">ToString</span>
+</span><span id="__span-fhmodal_google_events-55"><a id="__codelineno-fhmodal_google_events-55" name="__codelineno-fhmodal_google_events-55" href="#__codelineno-fhmodal_google_events-55"></a>
+</span><span id="__span-fhmodal_google_events-56"><a id="__codelineno-fhmodal_google_events-56" name="__codelineno-fhmodal_google_events-56" href="#__codelineno-fhmodal_google_events-56"></a><span class="w">                        </span><span class="n">eventGoogle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Nothing</span>
+</span><span id="__span-fhmodal_google_events-57"><a id="__codelineno-fhmodal_google_events-57" name="__codelineno-fhmodal_google_events-57" href="#__codelineno-fhmodal_google_events-57"></a><span class="w">                        </span><span class="n">eventsGoogle</span><span class="p">.</span><span class="n">Clear</span><span class="p">()</span>
+</span><span id="__span-fhmodal_google_events-58"><a id="__codelineno-fhmodal_google_events-58" name="__codelineno-fhmodal_google_events-58" href="#__codelineno-fhmodal_google_events-58"></a>
+</span><span id="__span-fhmodal_google_events-59"><a id="__codelineno-fhmodal_google_events-59" name="__codelineno-fhmodal_google_events-59" href="#__codelineno-fhmodal_google_events-59"></a><span class="w">                        </span><span class="k">Dim</span><span class="w"> </span><span class="n">startDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">infoJson</span><span class="p">(</span><span class="s">"start"</span><span class="p">)(</span><span class="s">"dateTime"</span><span class="p">).</span><span class="n">ToString</span>
+</span><span id="__span-fhmodal_google_events-60"><a id="__codelineno-fhmodal_google_events-60" name="__codelineno-fhmodal_google_events-60" href="#__codelineno-fhmodal_google_events-60"></a><span class="w">                        </span><span class="k">Dim</span><span class="w"> </span><span class="n">endDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">infoJson</span><span class="p">(</span><span class="s">"end"</span><span class="p">)(</span><span class="s">"dateTime"</span><span class="p">).</span><span class="n">ToString</span>
+</span><span id="__span-fhmodal_google_events-61"><a id="__codelineno-fhmodal_google_events-61" name="__codelineno-fhmodal_google_events-61" href="#__codelineno-fhmodal_google_events-61"></a><span class="w">                        </span><span class="n">eventGoogle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">GoogleEvent</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_events-62"><a id="__codelineno-fhmodal_google_events-62" name="__codelineno-fhmodal_google_events-62" href="#__codelineno-fhmodal_google_events-62"></a><span class="w">                            </span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">googleId</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_events-63"><a id="__codelineno-fhmodal_google_events-63" name="__codelineno-fhmodal_google_events-63" href="#__codelineno-fhmodal_google_events-63"></a><span class="w">                            </span><span class="p">.</span><span class="n">summary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Flexygo : Evento de prueba actualizado"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_events-64"><a id="__codelineno-fhmodal_google_events-64" name="__codelineno-fhmodal_google_events-64" href="#__codelineno-fhmodal_google_events-64"></a><span class="w">                            </span><span class="p">.</span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"&lt;h1 style=""color: #1a73e8;""&gt;Evento de prueba actualizado&lt;/h1&gt;&lt;p style='margin-top:10px'&gt;Descripción de prueba actualizado&lt;/p&gt;"</span><span class="p">,</span>
+</span><span id="__span-fhmodal_google_events-65"><a id="__codelineno-fhmodal_google_events-65" name="__codelineno-fhmodal_google_events-65" href="#__codelineno-fhmodal_google_events-65"></a><span class="w">                            </span><span class="p">.</span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">StartEvent</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{.</span><span class="n">dateTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">startDate</span><span class="p">},</span>
+</span><span id="__span-fhmodal_google_events-66"><a id="__codelineno-fhmodal_google_events-66" name="__codelineno-fhmodal_google_events-66" href="#__codelineno-fhmodal_google_events-66"></a><span class="w">                            </span><span class="p">.</span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">EndEvent</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{.</span><span class="n">dateTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">endDate</span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_events-67"><a id="__codelineno-fhmodal_google_events-67" name="__codelineno-fhmodal_google_events-67" href="#__codelineno-fhmodal_google_events-67"></a><span class="w">                        </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_events-68"><a id="__codelineno-fhmodal_google_events-68" name="__codelineno-fhmodal_google_events-68" href="#__codelineno-fhmodal_google_events-68"></a>
+</span><span id="__span-fhmodal_google_events-69"><a id="__codelineno-fhmodal_google_events-69" name="__codelineno-fhmodal_google_events-69" href="#__codelineno-fhmodal_google_events-69"></a><span class="w">                        </span><span class="n">eventsGoogle</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">eventGoogle</span><span class="p">)</span>
+</span><span id="__span-fhmodal_google_events-70"><a id="__codelineno-fhmodal_google_events-70" name="__codelineno-fhmodal_google_events-70" href="#__codelineno-fhmodal_google_events-70"></a>
+</span><span id="__span-fhmodal_google_events-71"><a id="__codelineno-fhmodal_google_events-71" name="__codelineno-fhmodal_google_events-71" href="#__codelineno-fhmodal_google_events-71"></a><span class="w">                        </span><span class="c">'8) Actualizamos el evento.</span>
+</span><span id="__span-fhmodal_google_events-72"><a id="__codelineno-fhmodal_google_events-72" name="__codelineno-fhmodal_google_events-72" href="#__codelineno-fhmodal_google_events-72"></a><span class="w">                        </span><span class="k">If</span><span class="w"> </span><span class="n">FLEXYGO</span><span class="p">.</span><span class="n">Google</span><span class="p">.</span><span class="n">SendEventsToGoogleApi</span><span class="p">(</span><span class="n">eventsGoogle</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="p">,</span><span class="w"> </span><span class="n">userId</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="k">Then</span>
+</span><span id="__span-fhmodal_google_events-73"><a id="__codelineno-fhmodal_google_events-73" name="__codelineno-fhmodal_google_events-73" href="#__codelineno-fhmodal_google_events-73"></a><span class="w">                            </span><span class="n">eventsGoogle</span><span class="p">.</span><span class="n">Clear</span><span class="p">()</span>
+</span><span id="__span-fhmodal_google_events-74"><a id="__codelineno-fhmodal_google_events-74" name="__codelineno-fhmodal_google_events-74" href="#__codelineno-fhmodal_google_events-74"></a><span class="w">                        </span><span class="k">Else</span>
+</span><span id="__span-fhmodal_google_events-75"><a id="__codelineno-fhmodal_google_events-75" name="__codelineno-fhmodal_google_events-75" href="#__codelineno-fhmodal_google_events-75"></a><span class="w">                            </span><span class="k">Throw</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span>
+</span><span id="__span-fhmodal_google_events-76"><a id="__codelineno-fhmodal_google_events-76" name="__codelineno-fhmodal_google_events-76" href="#__codelineno-fhmodal_google_events-76"></a><span class="w">                        </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_google_events-77"><a id="__codelineno-fhmodal_google_events-77" name="__codelineno-fhmodal_google_events-77" href="#__codelineno-fhmodal_google_events-77"></a>
+</span><span id="__span-fhmodal_google_events-78"><a id="__codelineno-fhmodal_google_events-78" name="__codelineno-fhmodal_google_events-78" href="#__codelineno-fhmodal_google_events-78"></a><span class="w">                        </span><span class="c">'9) Cargamos el evento en la lista de eventos a borrar.</span>
+</span><span id="__span-fhmodal_google_events-79"><a id="__codelineno-fhmodal_google_events-79" name="__codelineno-fhmodal_google_events-79" href="#__codelineno-fhmodal_google_events-79"></a><span class="w">                        </span><span class="n">eventGoogleDelete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">GoogleEvent</span><span class="w"> </span><span class="k">With</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-fhmodal_google_events-80"><a id="__codelineno-fhmodal_google_events-80" name="__codelineno-fhmodal_google_events-80" href="#__codelineno-fhmodal_google_events-80"></a><span class="w">                            </span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">googleId</span>
+</span><span id="__span-fhmodal_google_events-81"><a id="__codelineno-fhmodal_google_events-81" name="__codelineno-fhmodal_google_events-81" href="#__codelineno-fhmodal_google_events-81"></a><span class="w">                        </span><span class="p">}</span>
+</span><span id="__span-fhmodal_google_events-82"><a id="__codelineno-fhmodal_google_events-82" name="__codelineno-fhmodal_google_events-82" href="#__codelineno-fhmodal_google_events-82"></a><span class="w">                        </span><span class="n">eventsGoogleDelete</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">eventGoogleDelete</span><span class="p">)</span>
+</span><span id="__span-fhmodal_google_events-83"><a id="__codelineno-fhmodal_google_events-83" name="__codelineno-fhmodal_google_events-83" href="#__codelineno-fhmodal_google_events-83"></a>
+</span><span id="__span-fhmodal_google_events-84"><a id="__codelineno-fhmodal_google_events-84" name="__codelineno-fhmodal_google_events-84" href="#__codelineno-fhmodal_google_events-84"></a><span class="w">                        </span><span class="c">'10) Borrado de eventos de google del usuario.</span>
+</span><span id="__span-fhmodal_google_events-85"><a id="__codelineno-fhmodal_google_events-85" name="__codelineno-fhmodal_google_events-85" href="#__codelineno-fhmodal_google_events-85"></a><span class="w">                        </span><span class="k">If</span><span class="w"> </span><span class="n">FLEXYGO</span><span class="p">.</span><span class="n">Google</span><span class="p">.</span><span class="n">SendEventsToGoogleApi</span><span class="p">(</span><span class="n">eventsGoogleDelete</span><span class="p">,</span><span class="w"> </span><span class="n">Ret</span><span class="p">,</span><span class="w"> </span><span class="n">userId</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="k">True</span><span class="p">)</span><span class="w"> </span><span class="k">Then</span><span class="w"> </span><span class="c">''Si el parametro IsDeleted = True -&gt; Elimina los contactos de Google</span>
+</span><span id="__span-fhmodal_google_events-86"><a id="__codelineno-fhmodal_google_events-86" name="__codelineno-fhmodal_google_events-86" href="#__codelineno-fhmodal_google_events-86"></a><span class="w">                            </span><span class="n">eventsGoogleDelete</span><span class="p">.</span><span class="n">Clear</span><span class="p">()</span>
+</span><span id="__span-fhmodal_google_events-87"><a id="__codelineno-fhmodal_google_events-87" name="__codelineno-fhmodal_google_events-87" href="#__codelineno-fhmodal_google_events-87"></a><span class="w">                        </span><span class="k">Else</span>
+</span><span id="__span-fhmodal_google_events-88"><a id="__codelineno-fhmodal_google_events-88" name="__codelineno-fhmodal_google_events-88" href="#__codelineno-fhmodal_google_events-88"></a><span class="w">                            </span><span class="k">Throw</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span>
+</span><span id="__span-fhmodal_google_events-89"><a id="__codelineno-fhmodal_google_events-89" name="__codelineno-fhmodal_google_events-89" href="#__codelineno-fhmodal_google_events-89"></a><span class="w">                        </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_google_events-90"><a id="__codelineno-fhmodal_google_events-90" name="__codelineno-fhmodal_google_events-90" href="#__codelineno-fhmodal_google_events-90"></a>
+</span><span id="__span-fhmodal_google_events-91"><a id="__codelineno-fhmodal_google_events-91" name="__codelineno-fhmodal_google_events-91" href="#__codelineno-fhmodal_google_events-91"></a><span class="w">                    </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_google_events-92"><a id="__codelineno-fhmodal_google_events-92" name="__codelineno-fhmodal_google_events-92" href="#__codelineno-fhmodal_google_events-92"></a><span class="w">                </span><span class="k">Next</span>
+</span><span id="__span-fhmodal_google_events-93"><a id="__codelineno-fhmodal_google_events-93" name="__codelineno-fhmodal_google_events-93" href="#__codelineno-fhmodal_google_events-93"></a><span class="w">            </span><span class="k">Else</span>
+</span><span id="__span-fhmodal_google_events-94"><a id="__codelineno-fhmodal_google_events-94" name="__codelineno-fhmodal_google_events-94" href="#__codelineno-fhmodal_google_events-94"></a><span class="w">                </span><span class="k">Throw</span><span class="w"> </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span>
+</span><span id="__span-fhmodal_google_events-95"><a id="__codelineno-fhmodal_google_events-95" name="__codelineno-fhmodal_google_events-95" href="#__codelineno-fhmodal_google_events-95"></a><span class="w">            </span><span class="k">End</span><span class="w"> </span><span class="k">If</span>
+</span><span id="__span-fhmodal_google_events-96"><a id="__codelineno-fhmodal_google_events-96" name="__codelineno-fhmodal_google_events-96" href="#__codelineno-fhmodal_google_events-96"></a>
+</span><span id="__span-fhmodal_google_events-97"><a id="__codelineno-fhmodal_google_events-97" name="__codelineno-fhmodal_google_events-97" href="#__codelineno-fhmodal_google_events-97"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_google_events-98"><a id="__codelineno-fhmodal_google_events-98" name="__codelineno-fhmodal_google_events-98" href="#__codelineno-fhmodal_google_events-98"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">True</span>
+</span><span id="__span-fhmodal_google_events-99"><a id="__codelineno-fhmodal_google_events-99" name="__codelineno-fhmodal_google_events-99" href="#__codelineno-fhmodal_google_events-99"></a>
+</span><span id="__span-fhmodal_google_events-100"><a id="__codelineno-fhmodal_google_events-100" name="__codelineno-fhmodal_google_events-100" href="#__codelineno-fhmodal_google_events-100"></a><span class="w">        </span><span class="k">Catch</span><span class="w"> </span><span class="n">ex</span><span class="w"> </span><span class="ow">As</span><span class="w"> </span><span class="n">Exception</span>
+</span><span id="__span-fhmodal_google_events-101"><a id="__codelineno-fhmodal_google_events-101" name="__codelineno-fhmodal_google_events-101" href="#__codelineno-fhmodal_google_events-101"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">Success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_google_events-102"><a id="__codelineno-fhmodal_google_events-102" name="__codelineno-fhmodal_google_events-102" href="#__codelineno-fhmodal_google_events-102"></a><span class="w">            </span><span class="n">Ret</span><span class="p">.</span><span class="n">LastException</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ex</span>
+</span><span id="__span-fhmodal_google_events-103"><a id="__codelineno-fhmodal_google_events-103" name="__codelineno-fhmodal_google_events-103" href="#__codelineno-fhmodal_google_events-103"></a><span class="w">            </span><span class="k">Return</span><span class="w"> </span><span class="k">False</span>
+</span><span id="__span-fhmodal_google_events-104"><a id="__codelineno-fhmodal_google_events-104" name="__codelineno-fhmodal_google_events-104" href="#__codelineno-fhmodal_google_events-104"></a><span class="w">        </span><span class="k">End</span><span class="w"> </span><span class="k">Try</span>
+</span><span id="__span-fhmodal_google_events-105"><a id="__codelineno-fhmodal_google_events-105" name="__codelineno-fhmodal_google_events-105" href="#__codelineno-fhmodal_google_events-105"></a>
+</span><span id="__span-fhmodal_google_events-106"><a id="__codelineno-fhmodal_google_events-106" name="__codelineno-fhmodal_google_events-106" href="#__codelineno-fhmodal_google_events-106"></a><span class="w">    </span><span class="k">End</span><span class="w"> </span><span class="k">Function</span>
+</span><span id="__span-fhmodal_google_events-107"><a id="__codelineno-fhmodal_google_events-107" name="__codelineno-fhmodal_google_events-107" href="#__codelineno-fhmodal_google_events-107"></a>
+</span><span id="__span-fhmodal_google_events-108"><a id="__codelineno-fhmodal_google_events-108" name="__codelineno-fhmodal_google_events-108" href="#__codelineno-fhmodal_google_events-108"></a><span class="k">End</span><span class="w"> </span><span class="k">Class</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                  </article>
+                </div>
+              
+              
+                
+                <div class="fh-rightsidebar md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-de-recuperacion-de-contactos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de recuperación de contactos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-de-recuperacion-de-eventos-de-calendario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo de recuperación de eventos de calendario
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+        
+      </main>
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/fh-structural/utils.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-modal.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-copy.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-popover.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-namepropagator.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-versions.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/flx-navbutton.js"></script>
+      
+        <script src="../../javascripts/cultures/default_language.js"></script>
+      
+        <script src="../../javascripts/cultures/es.js"></script>
+      
+        <script src="../../javascripts/cultures/en.js"></script>
+      
+    
+    <dialog id="navigation-dialog" closedby="any">
+      <p class="input-group">
+        <label>Your flexys URL:</label>
+        <input type="text" id="navigation-dialog-flexy-url" value="https://">
+      </p>
+      <div class="button-container">
+        <button class="button" onclick="_nav(document.getElementById('navigation-dialog-flexy-url').value)">Confirm</button>
+      </div>
+    </dialog>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "zoom"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

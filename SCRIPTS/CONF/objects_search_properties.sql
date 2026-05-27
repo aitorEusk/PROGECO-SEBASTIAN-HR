@@ -4,6 +4,36 @@ BEGIN TRY
 
 DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar(max),''),N'
 [{
+	"SearchId":"D402835A-7D55-47A1-90D6-A1438426FE8D",
+	"ObjectName":"PERS_Notificacion",
+	"PropertyName":"Inserted",
+	"ObjectPath":"PERS_Notificacion",
+	"Size":2,
+	"Order":1,
+	"Label":"Fecha",
+	"PropertySearchType":"date",
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-05-27T10:36:00",
+	"flxUpdatedDate":"2026-05-27T10:36:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"SearchId":"D402835A-7D55-47A1-90D6-A1438426FE8D",
+	"ObjectName":"PERS_Notificacion",
+	"PropertyName":"Titulo",
+	"ObjectPath":"PERS_Notificacion",
+	"Size":2,
+	"Order":0,
+	"Label":"Titulo",
+	"PropertySearchType":"text",
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-05-27T10:36:00",
+	"flxUpdatedDate":"2026-05-27T10:36:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"SearchId":"19EFADCE-C9B4-4A0D-AF50-AF6869A3E161",
 	"ObjectName":"Pers_Marcaje",
 	"PropertyName":"DateTime",

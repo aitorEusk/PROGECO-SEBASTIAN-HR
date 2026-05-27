@@ -1,0 +1,374 @@
+/* ═══════════════════════════════════════════════════
+   Climate Pulse — Portal & Access Point Styles
+   ═══════════════════════════════════════════════════ */
+
+/* ── Overlay ── */
+.climate-pulse-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10500;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+.climate-pulse-overlay.climate-pulse-visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ── Card ── */
+.climate-pulse-card,
+.climate-pulse-thanks {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.04);
+    padding: 32px 36px;
+    max-width: 420px;
+    width: 90vw;
+    transform: translateY(30px) scale(0.95);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease;
+}
+.climate-pulse-card-visible {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+/* ── Header ── */
+.climate-pulse-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.climate-pulse-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.4;
+    flex: 1;
+    padding-right: 12px;
+}
+.climate-pulse-privacy {
+    font-size: 11.5px;
+    color: #888;
+    margin-top: 16px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    letter-spacing: 0.2px;
+}
+.climate-pulse-dismiss {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #999;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+    transition: color 0.2s;
+    flex-shrink: 0;
+}
+.climate-pulse-dismiss:hover {
+    color: #333;
+}
+
+/* ── Response Buttons (Step 1) ── */
+.climate-pulse-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+.climate-pulse-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: #f8f9fa;
+    border: 2px solid #eee;
+    border-radius: 16px;
+    padding: 20px 28px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    min-width: 100px;
+}
+.climate-pulse-btn:hover {
+    border-color: var(--pulse-color, #999);
+    background: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.climate-pulse-btn:active {
+    transform: translateY(-1px) scale(0.97);
+}
+.climate-pulse-emoji {
+    font-size: 36px;
+    line-height: 1;
+}
+.climate-pulse-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* ── Secondary Step (Step 2) ── */
+.climate-pulse-secondary {
+    animation: climatePulseFadeIn 0.3s ease;
+}
+.climate-pulse-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 16px 0;
+    font-weight: 500;
+}
+
+/* Factor buttons */
+.climate-pulse-factors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.climate-pulse-factor {
+    background: #f0f2f5;
+    border: 1.5px solid transparent;
+    border-radius: 20px;
+    padding: 7px 14px;
+    font-size: 12.5px;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.climate-pulse-factor i {
+    font-size: 13px;
+    opacity: 0.7;
+}
+.climate-pulse-factor:hover {
+    background: #e8eaf0;
+    border-color: #c0c4cc;
+}
+.climate-pulse-factor.selected {
+    background: #e3f2fd;
+    border-color: #2196f3;
+    color: #1565c0;
+    font-weight: 500;
+}
+
+/* Comment */
+.climate-pulse-comment-area {
+    margin-bottom: 16px;
+}
+.climate-pulse-comment {
+    width: 100%;
+    min-height: 56px;
+    max-height: 100px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+.climate-pulse-comment:focus {
+    outline: none;
+    border-color: #2196f3;
+    box-shadow: 0 0 0 3px rgba(33,150,243,0.1);
+}
+.climate-pulse-comment::placeholder {
+    color: #aaa;
+}
+
+/* Actions */
+.climate-pulse-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.climate-pulse-back {
+    background: none;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.climate-pulse-back:hover {
+    border-color: #999;
+    color: #333;
+}
+.climate-pulse-submit {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 9px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.3);
+}
+.climate-pulse-submit:hover {
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
+    box-shadow: 0 4px 16px rgba(33,150,243,0.4);
+    transform: translateY(-1px);
+}
+
+/* ── Thanks ── */
+.climate-pulse-thanks {
+    text-align: center;
+    padding: 40px;
+}
+.climate-pulse-thanks-emoji {
+    font-size: 48px;
+    margin-bottom: 12px;
+    animation: climatePulseBounce 0.6s ease;
+}
+.climate-pulse-thanks p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin: 0;
+}
+
+/* ── Access Point Mode ── */
+.climate-pulse-ap .climate-pulse-card {
+    max-width: 520px;
+    padding: 40px 48px;
+}
+.climate-pulse-ap .climate-pulse-title {
+    font-size: 22px;
+    text-align: center;
+    padding-right: 0;
+}
+.climate-pulse-ap .climate-pulse-header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.climate-pulse-ap .climate-pulse-privacy {
+    justify-content: center;
+    font-size: 13px;
+}
+.climate-pulse-ap .climate-pulse-emoji {
+    font-size: 56px;
+}
+.climate-pulse-ap .climate-pulse-btn {
+    padding: 28px 36px;
+    min-width: 130px;
+}
+.climate-pulse-ap .climate-pulse-label {
+    font-size: 16px;
+}
+.climate-pulse-ap .climate-pulse-factor {
+    padding: 12px 20px;
+    font-size: 15px;
+}
+.climate-pulse-ap .climate-pulse-comment-area {
+    display: none;
+}
+.climate-pulse-ap .climate-pulse-submit {
+    padding: 14px 36px;
+    font-size: 16px;
+}
+
+/* ── Animations ── */
+@keyframes climatePulseFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes climatePulseBounce {
+    0% { transform: scale(0.3); }
+    50% { transform: scale(1.15); }
+    75% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+/* ── Timer Bar (Access Point) ── */
+.climate-pulse-timer {
+    margin-top: 20px;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.climate-pulse-timer-bar {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #2196f3, #42a5f5);
+    border-radius: 2px;
+}
+
+/* ── Dark Mode Support ── */
+.dark-mode .climate-pulse-card,
+.dark-mode .climate-pulse-thanks {
+    background: #1e1e2e;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.dark-mode .climate-pulse-title {
+    color: #e0e0e0;
+}
+.dark-mode .climate-pulse-btn {
+    background: #2a2a3e;
+    border-color: #3a3a4e;
+}
+.dark-mode .climate-pulse-btn:hover {
+    background: #33334a;
+}
+.dark-mode .climate-pulse-label {
+    color: #bbb;
+}
+.dark-mode .climate-pulse-factor {
+    background: #2a2a3e;
+    color: #ccc;
+}
+.dark-mode .climate-pulse-factor.selected {
+    background: #1a3a5c;
+    border-color: #2196f3;
+    color: #90caf9;
+}
+.dark-mode .climate-pulse-comment {
+    background: #2a2a3e;
+    border-color: #3a3a4e;
+    color: #e0e0e0;
+}
+.dark-mode .climate-pulse-thanks p {
+    color: #e0e0e0;
+}
+.dark-mode .climate-pulse-subtitle {
+    color: #aaa;
+}
+.dark-mode .climate-pulse-privacy {
+    color: #888;
+}
+
+/* ── PDF Report Toolbar Button ── */
+.btn-climate-pulse-pdf {
+    background: #1E293B !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 8px 18px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: background 0.2s ease !important;
+}
+.btn-climate-pulse-pdf:hover {
+    background: #334155 !important;
+}

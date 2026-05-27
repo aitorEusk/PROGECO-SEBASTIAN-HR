@@ -1,0 +1,4961 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ModuleManagement/">
+      
+      
+        <link rel="next" href="../ObjectFilters/">
+      
+      
+      <link rel="icon" href="../../docs_assets/images/logos/fl-favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Módulos - Flexygo Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom-colors.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/base.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/code-highlighting.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/css-class-components.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/404-error.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-modal.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-copy.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-namepropagator.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/fh-structural/components/fh-versions.css">
+    
+      <link rel="stylesheet" href="../../docs_assets/fh-structural/fonts/flags/flags.css">
+    
+      <link rel="stylesheet" href="../../docs_assets/fh-structural/fonts/flexygo/utils.css">
+    
+      <link rel="stylesheet" href="../../docs_assets/fh-structural/fonts/flexygo/flexygo-icons.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/flexygo-styles/main-flexygo-styles.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/flexygo-styles/cols.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/flexygo-styles/list-groups.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modulos" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Flexygo Docs" class="md-header__button md-logo" aria-label="Flexygo Docs" data-md-component="logo">
+      
+  <img src="../../docs_assets/images/logos/fl.svg" alt="logo">
+
+      Docs
+    </a>
+    <fh-versions></fh-versions>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+          </span>
+        </div>
+      </div>
+    </div>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <span onclick="changeLanguage('en')" class="md-select__link">
+              English
+            </span>
+          </li>
+        
+          <li class="md-select__item">
+            <span onclick="changeLanguage('es')" class="md-select__link">
+              Español
+            </span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="darkmode" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0M8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0M3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8m13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8m-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13m3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061M2.343 2.343a.75.75 0 0 1 1.061 0l1.06 1.061a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-1.06-1.06a.75.75 0 0 1 0-1.06Z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="fh-sidebar md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="fh-sidebarheader">
+                  <a href="../.." title="Flexygo Docs" class="md-header__button md-logo" aria-label="Flexygo Docs" data-md-component="logo">
+                    
+  <img src="../../docs_assets/images/logos/fl.svg" alt="logo">
+
+                    Docs
+                  </a>
+                  <fh-versions></fh-versions>
+                </div>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+    
+    <ul class="md-nav__list" data-md-scrollfix>
+        
+            
+            
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción a Flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Formación
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Formación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1Training/Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cursos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1Training/VideoTutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VideoTutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Addons
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Addons/1Addons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Información
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Addons/WhatsApp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WhatsApp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ahora Business Hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ahora Business Hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhSign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Firma Abh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhSms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abh Sms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhTicket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ticket Abh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Conectores
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Conectores
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/AhoraERP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Ahora ERP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/AzureADIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Azure AD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/AzureFormRecognizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure Form Recognizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/ClaveAuthentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Autenticación Cl@ve
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/FaceRecognition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reconocimiento Facial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Google/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Google
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/GoogleAPIKey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google API Key
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/GooglePlaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Places
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/MailChimp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con MailChimp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/MailChimpProcesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Procesos de ejemplo de MailChimp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Office365/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Office 365
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/OpenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con ChatGPT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/OtherflexygoIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Passbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Passbook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/PowerBI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Power BI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/PushNotifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notificaciones Push
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/RedSys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RedSys
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Scales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Básculas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/SendinBlue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con SendinBlue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/WacomSignature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integración con Wacom SDK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Información
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Información
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/FriendlyURLs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    URLs amigables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/GoodPractices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buenas prácticas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/MFA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flexygo MFA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/MailAccountsSettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ajustes de cuenta de email
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/Navigator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modulo de navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/PageHierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Page Hierarchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/1HowToInstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingIntefaceTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agregar un test de interfaz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingNugetPackage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear paquete NuGet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingProduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear un producto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingUnitaryTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agregar un test unitario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingWebComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear un WebComponent propio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ChartII/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chart II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chatter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DocAndImageManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Manager And Image Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Funnel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funnel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kanban/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kanban
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ModuleManagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#boton-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Botón Tab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulo-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulo Tab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calendario-y-planificador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calendario y planificador
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gráfica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizador-de-documentos-e-imagenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organizador de documentos e imágenes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chatter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easy-pie-easy-info-easy-line-y-sparklines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Easy Pie, Easy Info, Easy Line y Sparklines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-de-objetos-editable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lista de objetos editable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embudo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulo-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo HTML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kanban" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kanban
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linea-de-tiempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Línea de tiempo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtro-de-listado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtro de listado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#panel-de-navegacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Panel de navegación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafico-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gráfico de red
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edicion-de-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edición de objeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listado-de-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado de objeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procesos-de-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procesos de objeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informes-de-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Informes de objeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#busqueda-de-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Busqueda de objetos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vista-de-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista de objetos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organigrama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organigrama
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetos relacionados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procesos-relacionados-con-el-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procesos Relacionados con el Objeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informes-relacionados-con-el-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Informes Relacionados con el Objeto
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ObjectFilters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Filtros de Objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PlannerModule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planificador
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Popover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Popover y Tooltip
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SchedulerCalendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programador y Calendario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TimelineModule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Línea de tiempo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebMail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Mail
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    App Offline
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            App Offline
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/AccessandDescription/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Descripción de la App Offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/DesignEnvironment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entorno de diseño
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/DesigningApp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diseñar la App offline de flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/NavigationOptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Opciones de navegación offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IA offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineAndEmulatordifferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diferencias entre emulador y app
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineDatabase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base de datos offline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/ReturnDataProcess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proceso de retorno de datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/Trackingconfiguration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuración del seguimiento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/UsefulTokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_11">
+        
+          
+          <label class="md-nav__link" for="__nav_9_11" id="__nav_9_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Funciones JS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_11">
+            <span class="md-nav__icon md-icon"></span>
+            Funciones JS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Camera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cámara
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exportaciones (Exports)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formularios (Forms)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mensages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/NFC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NFC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Online-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navegación online
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Zebra-Printer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zebra Printer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10">
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programación
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Programación
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/CommonFunctions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funciones Comunes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/ContextVariables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables de Contexto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controles de formulario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/CustomDLL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DLL Personalizada
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/CustomStored/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Procedimiento Almacenado Personalizado
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/DatabaseScriptJobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Trabajo de script de base de datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Eventos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/FormValidators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validadores de Formulario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Imports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Importaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/LinkedServers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Servidores Vinculados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/NoticesSentences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sentencia de Notificación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/Testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Automatización de tests
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/UpdateTypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de Actualización
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/WebAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/WebComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Componente Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11">
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Informes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Informes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reporting/Newsandversionnotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Noticias y notas de versión
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12">
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Estilos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Estilos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/CSSAndTypography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipografía y Estilos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/FlagIcons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Íconos de Banderas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/GridOptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Opciones de la cuadrícula
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/Icon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Iconos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/Timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cronología
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13">
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Plantillas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Plantillas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formatos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/NavigationButton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Botón de navegación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/ObjectTemplates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Plantillas de Objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Skeletons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Esqueletos de carga
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Targets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Objetivos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+    </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            <div class="fh-maincontainer">
+              
+                <div class="md-content" data-md-component="content">
+                  <article class="md-content__inner md-typeset">
+                    
+                      
+
+
+
+<h1 id="modulos">Módulos<a class="headerlink" href="#modulos" title="Permanent link">¶</a></h1>
+<p>Los módulos de <strong>flexygo</strong> han sido diseñados específicamente para facilitar la creación de diversas utilidades que serán útiles para tu proyecto. Los módulos pueden ayudarnos a añadir información adicional a páginas existentes; por ejemplo, usando Popover puedes mostrar información adicional, organizar el trabajo en equipo con el módulo Kanban o representar ubicaciones con Maps.</p>
+<p class="flx-warning-card">Antes de empezar a configurar los módulos seleccionados, es esencial leer el artículo sobre <a href="../ModuleManagement/">Gestión de Módulos</a></p>
+<p>En este capítulo explicaremos brevemente todos los módulos de <strong>flexygo</strong>; para obtener más información, podrás dirigirte a los artículos específicos con información detallada de cada módulo.</p>
+<h2 id="boton-tab">Botón Tab<a class="headerlink" href="#boton-tab" title="Permanent link">¶</a></h2>
+<p>Un botón de pestaña es un componente de UI que se coloca dentro de una barra de pestañas. Este módulo funciona como una pestaña, pero con la apariencia de un botón desplegable. Es útil cuando necesitas ahorrar espacio en tu página.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/buttonTab.png" data-desc-position="bottom"><img alt="" src="../../docs_assets/images/ModulesConf/buttonTab.png" title="Imagen 1. Button Tab"></a></p>
+<p>Para añadir este módulo debemos rellenar los siguientes campos del formulario de configuración:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/buttonTabConf.png" data-desc-position="bottom"><img alt="Button Tab" src="../../docs_assets/images/ModulesConf/buttonTabConf.png" title="Imagen 2. Configuración Button Tab"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica el módulo</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Tipo de módulo, en este caso Button Tab</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción del módulo</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título que aparece en el módulo</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Al no ser un módulo por defecto, siempre es Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo de contenedor del módulo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modulo-tab">Modulo Tab<a class="headerlink" href="#modulo-tab" title="Permanent link">¶</a></h2>
+<p>Un Module Tab es un patrón de diseño donde el contenido se separa en paneles distintos, cada uno visible individualmente. El usuario selecciona qué contenido mostrar al hacer clic en la pestaña correspondiente. Este módulo funciona como un tabulador con distintos módulos en su interior; puede usarse como pestaña tradicional o como menú desplegable.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/moduletab.png" data-desc-position="bottom"><img alt="Module Tab" src="../../docs_assets/images/ModulesConf/moduletab.png" title="Imagen 3. Module Tab"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/moduletabConf.png" data-desc-position="bottom"><img alt="Module Tab Configuration" src="../../docs_assets/images/ModulesConf/moduletabConf.png" title="Imagen 4. Configuración Module Tab"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica el módulo</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Tipo de módulo, Module Tab o Module dropdown buttons</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción del módulo</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título que aparece en el módulo</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Siempre Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo de contenedor del módulo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="calendario-y-planificador">Calendario y planificador<a class="headerlink" href="#calendario-y-planificador" title="Permanent link">¶</a></h2>
+<p>Este módulo permite mostrar un calendario. Facilita al usuario la planificación de eventos y tareas, permitiendo además informar tiempos y analizar la asignación temporal a distintos sectores.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/CalendarMonth.png" data-desc-position="bottom"><img alt="Calendar" src="../../docs_assets/images/ModulesConf/CalendarMonth.png" title="Imagen 5. Calendar"></a></p>
+<div class="flx-info-card">
+<p>Consulta ayuda adicional para configurar el módulo:</p>
+<p><a href="Scheduler&amp;Calendar.md">Manual Calendar and Scheduler</a></p>
+<p><a href="https://youtu.be/lKKMce5PsrA">Vídeo Scheduler</a></p>
+</div>
+<h2 id="grafica">Gráfica<a class="headerlink" href="#grafica" title="Permanent link">¶</a></h2>
+<p>Un gráfico es una representación visual de datos, donde la información se muestra mediante símbolos como barras, líneas o sectores circulares. Este módulo permite mostrar distintos tipos de gráficos.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/Chart.png" data-desc-position="bottom"><img alt="Chart" src="../../docs_assets/images/ModulesConf/Chart.png" title="Imagen 6. Chart"></a></p>
+<div class="flx-info-card">
+<p>Revisa las siguientes ayudas para aprender a como conigurarlo:</p>
+<p><a href="../Chart/">Manual Chart</a></p>
+<p><a href="../ChartII/">Manual Chart II</a></p>
+<p><a href="https://youtu.be/Nj8si7aUPe4">Vídeo Chart</a></p>
+</div>
+<h2 id="organizador-de-documentos-e-imagenes">Organizador de documentos e imágenes<a class="headerlink" href="#organizador-de-documentos-e-imagenes" title="Permanent link">¶</a></h2>
+<p>Este módulo permite subir documentos e imágenes vinculados a un objeto. Posteriormente pueden editarse o eliminarse.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/DocumentManager.png" data-desc-position="bottom"><img alt="Document Manager" src="../../docs_assets/images/ModulesConf/DocumentManager.png" title="Imagen 7. Document Manager"></a></p>
+<div class="flx-info-card">
+<p>Revisa las siguientes ayudas para aprender a como conigurarlo:</p>
+<p><a href="../Chart/">Manual Document &amp; Image Manager</a></p>
+<p><a href="https://youtu.be/qNQOoO1TcyA">Vídeo Document and Image Manager</a></p>
+<p><a href="https://youtu.be/ktET_gXxdl0">Vídeo Document Manager</a></p>
+<p><a href="https://youtu.be/apdpn_i0t4A">Vídeo Image Manager</a></p>
+</div>
+<h2 id="chatter">Chatter<a class="headerlink" href="#chatter" title="Permanent link">¶</a></h2>
+<p>Chatter es un módulo que permite crear conversaciones relacionadas con un objeto.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Chatter/chatter-example.png" data-desc-position="bottom"><img alt="Chatter" src="../../docs_assets/images/Chatter/chatter-example.png" title="Imagen 8. Chatter"></a></p>
+<div class="flx-info-card">
+<p>Revisa las siguientes ayudas para aprender a como conigurarlo:</p>
+<p><a href="../Chatter/">Manual Chatter</a></p>
+</div>
+<h2 id="easy-pie-easy-info-easy-line-y-sparklines">Easy Pie, Easy Info, Easy Line y Sparklines<a class="headerlink" href="#easy-pie-easy-info-easy-line-y-sparklines" title="Permanent link">¶</a></h2>
+<p>Estos componentes permiten realizar gráficos sencillos. Combinados en un módulo HTML pueden crear visualizaciones rápidas y compactas.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/EasyInfoExamples.png" data-desc-position="bottom"><img alt="Easy Pie" src="../../docs_assets/images/ModulesConf/EasyInfoExamples.png" title="Imagen 9. Easy Pie"></a></p>
+<div class="flx-info-card">
+<p>Revisa las siguientes ayudas para aprender a como conigurarlo:</p>
+<p><a href="../ChartII/">Manual Easy Pie/Line/Info</a></p>
+</div>
+<h2 id="lista-de-objetos-editable">Lista de objetos editable<a class="headerlink" href="#lista-de-objetos-editable" title="Permanent link">¶</a></h2>
+<p>Permite editar el contenido de una colección sin abrir una nueva ventana.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/EditObjectList.png" data-desc-position="bottom"><img alt="Edit Object List" src="../../docs_assets/images/ModulesConf/EditObjectList.png" title="Imagen 10. Edit Object List"></a></p>
+<p>Para añadir este módulo debemos rellenar los sigientes campos.</p>
+<ol>
+<li>
+<p>Usar el asistente del objeto para configurar las propiedades de edición:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/PrevEditObjectList.png" data-desc-position="bottom"><img alt="Edit Grid Properties" src="../../docs_assets/images/ModulesConf/PrevEditObjectList.png" title="Imagen 11. Edit Grid Properties"></a></p>
+</li>
+<li>
+<p>Después configurar el módulo:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/EditObjectListConf.png" data-desc-position="bottom"><img alt="Edit Grid Configuration" src="../../docs_assets/images/ModulesConf/EditObjectListConf.png" title="Imagen 12. Edit Grid Configuration"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica el módulo</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Tipo de módulo, Edit Object List</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Siempre Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo de contenedor</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Seleccionar la colección a editar</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<div class="flx-info-card">
+<p>Revisa las siguientes ayudas para aprender a como conigurarlo:</p>
+<p><a href="https://youtu.be/UH-WqcCFWJI">Vídeo Edit Object List</a></p>
+</div>
+<h2 id="embudo">Embudo<a class="headerlink" href="#embudo" title="Permanent link">¶</a></h2>
+<p>El embudo se usa comúnmente en marketing para mostrar el recorrido del cliente desde el conocimiento del producto hasta la compra.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/funnel.png" data-desc-position="bottom"><img alt="Funnel" src="../../docs_assets/images/ModulesConf/funnel.png" title="Imagen 13. Funnel"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/funnelConf.png" data-desc-position="bottom"><img alt="Funnel Configuration" src="../../docs_assets/images/ModulesConf/funnelConf.png" title="Imagen 14. Configuración Funnel"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica el módulo</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Funnel</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo de contenedor</td>
+</tr>
+<tr>
+<td>Connection string</td>
+<td>Identifica el modelo de datos</td>
+</tr>
+<tr>
+<td>SQL Sentence</td>
+<td>Consulta SQL con estructura: SELECT Label AS label, Value AS value, Background AS background FROM Table</td>
+</tr>
+</tbody>
+</table>
+<div class="flx-info-card">
+<p>Revisa las siguientes ayudas para aprender a como conigurarlo:<br>
+<a href="../Funnel/">Manual Funnel</a></p>
+</div>
+<h2 id="modulo-html">Módulo HTML<a class="headerlink" href="#modulo-html" title="Permanent link">¶</a></h2>
+<p>Incluye un componente <em>flx-html</em> en tu página y su contenido se mostrará inmediatamente. Puede contener cualquier otro componente de <strong>flexygo</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/html2.png" data-desc-position="bottom"><img alt="HTML Module" src="../../docs_assets/images/ModulesConf/html2.png" title="Imagen 15. HTML Module"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/html.png" data-desc-position="bottom"><img alt="HTML Module Configuration" src="../../docs_assets/images/ModulesConf/html.png" title="Imagen 16. Configuración HTML Module"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica el módulo</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>HTML</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo de contenedor</td>
+</tr>
+<tr>
+<td>Html</td>
+<td>Código HTML</td>
+</tr>
+</tbody>
+</table>
+<h2 id="kanban">Kanban<a class="headerlink" href="#kanban" title="Permanent link">¶</a></h2>
+<p>Kanban es un framework visual que permite gestionar tareas eficientemente mediante tarjetas organizadas en columnas.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/kanban.png" data-desc-position="bottom"><img alt="Kanban" src="../../docs_assets/images/ModulesConf/kanban.png" title="Imagen 17. Kanban"></a></p>
+<div class="flx-info-card">
+<p>Revisa las siguientes ayudas para aprender a como conigurarlo:</p>
+<p><a href="../Kanban/">Manual Kanban</a></p>
+<p><a href="https://youtu.be/AidJrIHQHZc">Vídeo Kanban</a></p>
+</div>
+<h2 id="linea-de-tiempo">Línea de tiempo<a class="headerlink" href="#linea-de-tiempo" title="Permanent link">¶</a></h2>
+<p>El módulo Timeline es una herramienta visual que representa una secuencia de eventos en un periodo determinado.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/Timeline/Timeline_AdvancedWithGroups_Result.png" data-desc-position="bottom"><img alt="Timeline" src="../../docs_assets/images/Timeline/Timeline_AdvancedWithGroups_Result.png" title="Imagen 18. Timeline"></a></p>
+<div class="flx-info-card">
+<p>Revisa las siguientes ayudas para aprender a como conigurarlo:</p>
+<p><a href="Timeline.md">Manual Timeline</a></p>
+<p><a href="https://youtu.be/_bVe_MLU5r0">Vídeo Timeline</a></p>
+</div>
+<h2 id="filtro-de-listado">Filtro de listado<a class="headerlink" href="#filtro-de-listado" title="Permanent link">¶</a></h2>
+<p>Permite añadir un control de búsqueda a tus formularios y vincularlo al contenido del módulo.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ListFilter.png" data-desc-position="bottom"><img alt="List Filter" src="../../docs_assets/images/ModulesConf/ListFilter.png" title="Imagen 19. List Filter"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ListFilterConf.png" data-desc-position="bottom"><img alt="List Filter Configuration" src="../../docs_assets/images/ModulesConf/ListFilterConf.png" title="Imagen 20. Configuración List Filter"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica el módulo</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>List Filter</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo de contenedor</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Objeto vinculado</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mapa">Mapa<a class="headerlink" href="#mapa" title="Permanent link">¶</a></h2>
+<p>Permite visualizar un mapa de Google con la dirección deseada.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/map.png" data-desc-position="bottom"><img alt="Map" src="../../docs_assets/images/ModulesConf/map.png" title="Imagen 21. Map"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/mapConf.png" data-desc-position="bottom"><img alt="Map Configuration" src="../../docs_assets/images/ModulesConf/mapConf.png" title="Imagen 22. Configuración Map"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica el módulo</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>List Map</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo de contenedor</td>
+</tr>
+<tr>
+<td>Connection string</td>
+<td>Modelo de datos</td>
+</tr>
+<tr>
+<td>SQL Sentence</td>
+<td _cluster_:_true_color_:_retro_width_:_100_height_:_400_="&quot;Cluster&quot;:&quot;true&quot;,&quot;Color&quot;:&quot;retro&quot;,&quot;Width&quot;:&quot;100%&quot;,&quot;Height&quot;:&quot;400&quot;">Consulta SQL mínima: Select '60' as lat, '20' as lng...</td>
+</tr>
+</tbody>
+</table>
+<div class="flx-info-card">
+<p>Revisa las siguientes ayudas para aprender a como conigurarlo:</p>
+<p><a href="../Maps/">Manual Maps</a></p>
+<p><a href="https://youtu.be/2CDScKLUVjw">Video Maps on dashboard</a></p>
+<p><a href="https://youtu.be/qV9uGvAL_5g">Video Maps in object view</a></p>
+</div>
+<h2 id="correo">Correo<a class="headerlink" href="#correo" title="Permanent link">¶</a></h2>
+<p>Permite visualizar tus correos del servidor de correo y vincularlos a objetos.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/Mail.PNG" data-desc-position="bottom"><img alt="Mail" src="../../docs_assets/images/ModulesConf/Mail.PNG" title="Imagen 23. Mail"></a></p>
+<div class="flx-info-card">
+<p>Revisa las siguientes ayudas para aprender a como conigurarlo:</p>
+<p><a href="Mail.md">Manual Mail</a></p>
+</div>
+<h2 id="panel-de-navegacion">Panel de navegación<a class="headerlink" href="#panel-de-navegacion" title="Permanent link">¶</a></h2>
+<p>Permite crear tarjetas con nodos como contenido.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/navPanel.png" data-desc-position="bottom"><img alt="Navigation Panel" src="../../docs_assets/images/ModulesConf/navPanel.png" title="Imagen 24. Navigation Panel"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/navPanelConf.png" data-desc-position="bottom"><img alt="Navigation Panel Configuration" src="../../docs_assets/images/ModulesConf/navPanelConf.png" title="Imagen 25. NavPanel Config"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica el módulo</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>List Map</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo de contenedor</td>
+</tr>
+<tr>
+<td>Params</td>
+<td>Ej.: initNode="10123EDB..." mode="panel"</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grafico-de-red">Gráfico de red<a class="headerlink" href="#grafico-de-red" title="Permanent link">¶</a></h2>
+<p>Muestra un mapa de relaciones entre procesos, propiedades, plantillas, vistas y seguridad de un objeto.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/networkGraphic.png" data-desc-position="bottom"><img alt="Network Graphic" src="../../docs_assets/images/ModulesConf/networkGraphic.png" title="Imagen 26. Network Graphic"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/networkGraphicConf.png" data-desc-position="bottom"><img alt="Network Graphic Configuration" src="../../docs_assets/images/ModulesConf/networkGraphicConf.png" title="Imagen 27. Configuración Network Graphic"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Network Graphic</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Objeto relacionado</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>Filtro del objeto</td>
+</tr>
+</tbody>
+</table>
+<h2 id="edicion-de-objeto">Edición de objeto<a class="headerlink" href="#edicion-de-objeto" title="Permanent link">¶</a></h2>
+<p>Permite editar cualquier objeto.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ObjectEdit.png" data-desc-position="bottom"><img alt="Object Edit" src="../../docs_assets/images/ModulesConf/ObjectEdit.png" title="Imagen 28. Object Edit"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ObjectEditConf.png" data-desc-position="bottom"><img alt="Object Edit Configuration" src="../../docs_assets/images/ModulesConf/ObjectEditConf.png" title="Imagen 29. Configuración Object Edit"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Object Edit</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Objeto</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>Filtro</td>
+</tr>
+<tr>
+<td>Module Class</td>
+<td>size-xs, size-s, size-m, size-l, no-label</td>
+</tr>
+</tbody>
+</table>
+<h2 id="listado-de-objeto">Listado de objeto<a class="headerlink" href="#listado-de-objeto" title="Permanent link">¶</a></h2>
+<p>Permite mostrar una lista de objetos.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ObjectList.png" data-desc-position="bottom"><img alt="Object List" src="../../docs_assets/images/ModulesConf/ObjectList.png" title="Imagen 30. Object List"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ObjectListConf.png" data-desc-position="bottom"><img alt="Object List Configuration" src="../../docs_assets/images/ModulesConf/ObjectListConf.png" title="Imagen 31. Configuración Object List"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Object List</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Objeto</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>Filtro</td>
+</tr>
+</tbody>
+</table>
+<h2 id="procesos-de-objeto">Procesos de objeto<a class="headerlink" href="#procesos-de-objeto" title="Permanent link">¶</a></h2>
+<p>Permite visualizar los procesos relacionados a un objeto.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ObjectProcesses.png" data-desc-position="bottom"><img alt="Object Processes" src="../../docs_assets/images/ModulesConf/ObjectProcesses.png" title="Imagen 32. Object Processes"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ObjectProcessesConf.png" data-desc-position="bottom"><img alt="Object Processes Configuration" src="../../docs_assets/images/ModulesConf/ObjectProcessesConf.png" title="Imagen 33. Configuración Object Processes"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Object Process</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Objeto</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>Filtro</td>
+</tr>
+</tbody>
+</table>
+<div class="flx-info-card">
+<p>Revisa las siguientes ayudas para aprender a como conigurarlo:</p>
+<p><a href="../../Programming/UpdateTypes/">Update Types</a></p>
+</div>
+<h2 id="informes-de-objeto">Informes de objeto<a class="headerlink" href="#informes-de-objeto" title="Permanent link">¶</a></h2>
+<p>Permite visualizar los informes relacionados con un objeto.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ObjectReports.png" data-desc-position="bottom"><img alt="Object Reports" src="../../docs_assets/images/ModulesConf/ObjectReports.png" title="Imagen 34. Object Reports"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ObjectProcessesConf.png" data-desc-position="bottom"><img alt="Object Reports Configuration" src="../../docs_assets/images/ModulesConf/ObjectProcessesConf.png" title="Imagen 35. Configuración Object Reports"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Object Reports</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Objeto</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>Filtro</td>
+</tr>
+</tbody>
+</table>
+<h2 id="busqueda-de-objetos">Busqueda de objetos<a class="headerlink" href="#busqueda-de-objetos" title="Permanent link">¶</a></h2>
+<p>Permite realizar búsquedas de cualquier objeto.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ObjectSearch.png" data-desc-position="bottom"><img alt="Object Search" src="../../docs_assets/images/ModulesConf/ObjectSearch.png" title="Imagen 36. Object Search"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ObjectSearchConf.png" data-desc-position="bottom"><img alt="Object Search Configuration" src="../../docs_assets/images/ModulesConf/ObjectSearchConf.png" title="Imagen 37. Configuración Object Search"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Object Search</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Objeto</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vista-de-objetos">Vista de objetos<a class="headerlink" href="#vista-de-objetos" title="Permanent link">¶</a></h2>
+<p>Permite visualizar cualquier objeto.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ObjectView.png" data-desc-position="bottom"><img alt="Object View" src="../../docs_assets/images/ModulesConf/ObjectView.png" title="Imagen 38. Object View"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/ObjectViewConf.png" data-desc-position="bottom"><img alt="Object View Configuration" src="../../docs_assets/images/ModulesConf/ObjectViewConf.png" title="Imagen 39. Configuración Object View"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Object View</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Objeto</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>Filtro</td>
+</tr>
+</tbody>
+</table>
+<h2 id="organigrama">Organigrama<a class="headerlink" href="#organigrama" title="Permanent link">¶</a></h2>
+<p>Muestra una estructura jerárquica organizativa.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/Orgchart.PNG" data-desc-position="bottom"><img alt="Organization Chart" src="../../docs_assets/images/ModulesConf/Orgchart.PNG" title="Imagen 40. Organization Chart"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/OrgChartConf.png" data-desc-position="bottom"><img alt="Organization Chart Configuration" src="../../docs_assets/images/ModulesConf/OrgChartConf.png" title="Imagen 41. Configuración OrgChart"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Org. Chart</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Objeto</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>Filtro</td>
+</tr>
+<tr>
+<td>Connection string</td>
+<td>Modelo de datos</td>
+</tr>
+<tr>
+<td>SQL Sentence</td>
+<td>Consulta mínima con campos: Id, Parent, etc. Ejemplo: SELECT EmployeeId AS Id, Responsible AS Parent, Name, Area, Level, Img FROM Employees</td>
+</tr>
+<tr>
+<td>Html</td>
+<td>Template HTML por nodo</td>
+</tr>
+<tr>
+<td>Header</td>
+<td>HTML del encabezado</td>
+</tr>
+<tr>
+<td>Footer</td>
+<td>HTML del pie</td>
+</tr>
+<tr>
+<td>Options</td>
+<td>Cadena JSON con opciones de Treant. Opciones por defecto incluidas</td>
+</tr>
+</tbody>
+</table>
+<h2 id="objetos-relacionados">Objetos relacionados<a class="headerlink" href="#objetos-relacionados" title="Permanent link">¶</a></h2>
+<p>Permite mostrar relaciones entre un objeto y sus hijos.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/RelatedObjectsHtml.png" data-desc-position="bottom"><img alt="Related Objects" src="../../docs_assets/images/ModulesConf/RelatedObjectsHtml.png" title="Imagen 42. Related Objects"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/RelatedObjectsHtmlConf.png" data-desc-position="bottom"><img alt="Related Objects Configuration" src="../../docs_assets/images/ModulesConf/RelatedObjectsHtmlConf.png" title="Imagen 43. Configuración Related Objects"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Object Html</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Objeto</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>Filtro</td>
+</tr>
+</tbody>
+</table>
+<h2 id="procesos-relacionados-con-el-objeto">Procesos Relacionados con el Objeto<a class="headerlink" href="#procesos-relacionados-con-el-objeto" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/RelatedProcessesHtml.png" data-desc-position="bottom"><img alt="Object Related Processes" src="../../docs_assets/images/ModulesConf/RelatedProcessesHtml.png" title="Imagen 44. Object Related Processes"></a></p>
+<p>Permite ver procesos relacionados con un objeto.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/RelatedProcessesHtmlConf.png" data-desc-position="bottom"><img alt="Related Processes Configuration" src="../../docs_assets/images/ModulesConf/RelatedProcessesHtmlConf.png" title="Imagen 45. Configuración Related Processes"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Related Processes Html</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Objeto</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>Filtro</td>
+</tr>
+</tbody>
+</table>
+<h2 id="informes-relacionados-con-el-objeto">Informes Relacionados con el Objeto<a class="headerlink" href="#informes-relacionados-con-el-objeto" title="Permanent link">¶</a></h2>
+<p>Permite ver los informes relacionados con un objeto.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/RelatedReportsHtml.png" data-desc-position="bottom"><img alt="Object Related Reports" src="../../docs_assets/images/ModulesConf/RelatedReportsHtml.png" title="Imagen 46. Object Related Reports"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../docs_assets/images/ModulesConf/RelatedReportsHtmlConf.png" data-desc-position="bottom"><img alt="Related Reports Configuration" src="../../docs_assets/images/ModulesConf/RelatedReportsHtmlConf.png" title="Imagen 47. Configuración Related Reports"></a></p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Id</td>
+<td>Identifica</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Related Reports Html</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Breve descripción</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Título</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td>Project Module</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>Tipo</td>
+</tr>
+<tr>
+<td>Object Name</td>
+<td>Objeto</td>
+</tr>
+<tr>
+<td>Object Where</td>
+<td>Filtro</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                  </article>
+                </div>
+              
+              
+                
+                <div class="fh-rightsidebar md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#boton-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Botón Tab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulo-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulo Tab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calendario-y-planificador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calendario y planificador
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gráfica
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organizador-de-documentos-e-imagenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organizador de documentos e imágenes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chatter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easy-pie-easy-info-easy-line-y-sparklines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Easy Pie, Easy Info, Easy Line y Sparklines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lista-de-objetos-editable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lista de objetos editable
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Embudo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulo-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo HTML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kanban" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kanban
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linea-de-tiempo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Línea de tiempo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtro-de-listado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtro de listado
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#correo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#panel-de-navegacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Panel de navegación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grafico-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gráfico de red
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edicion-de-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edición de objeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listado-de-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listado de objeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procesos-de-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procesos de objeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informes-de-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Informes de objeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#busqueda-de-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Busqueda de objetos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vista-de-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista de objetos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organigrama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organigrama
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-relacionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetos relacionados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procesos-relacionados-con-el-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procesos Relacionados con el Objeto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informes-relacionados-con-el-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Informes Relacionados con el Objeto
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+        
+      </main>
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.path", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/fh-structural/utils.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-modal.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-copy.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-popover.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-namepropagator.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/fh-versions.js"></script>
+      
+        <script src="../../javascripts/fh-structural/components/flx-navbutton.js"></script>
+      
+        <script src="../../javascripts/cultures/default_language.js"></script>
+      
+        <script src="../../javascripts/cultures/es.js"></script>
+      
+        <script src="../../javascripts/cultures/en.js"></script>
+      
+    
+    <dialog id="navigation-dialog" closedby="any">
+      <p class="input-group">
+        <label>Your flexys URL:</label>
+        <input type="text" id="navigation-dialog-flexy-url" value="https://">
+      </p>
+      <div class="button-container">
+        <button class="button" onclick="_nav(document.getElementById('navigation-dialog-flexy-url').value)">Confirm</button>
+      </div>
+    </dialog>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "zoom"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

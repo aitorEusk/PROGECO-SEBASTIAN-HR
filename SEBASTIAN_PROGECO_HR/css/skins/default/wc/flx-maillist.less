@@ -1,0 +1,429 @@
+﻿@import "../CssVars.less";
+
+.mailFilters flx-text > div {
+    margin-bottom: 5px
+}
+
+.childNodes {
+    padding-left: 8px
+}
+
+.mailFolders{font-size:12px;
+             line-height:1.5em;
+}
+
+.mailFolders .nochildren {
+    padding-left: 13px
+}
+
+.mailFolders [folderid] {
+    padding: 2px;
+    cursor: pointer;
+}
+
+.mailFolders [folderid].selected {
+    font-weight: bold;
+    color:@outstanding-color;
+}
+
+.mailFolders [folderid]:hover {
+    background-color: rgba(31, 142, 238, 0.19);
+    border: solid 1px #1f8eee;
+}
+
+.mailList .selected {
+    background-color: rgba(31, 142, 238, 0.19);
+
+    //border: solid 1px #1f8eee;
+}
+
+.mailList .nomail {
+}
+.mailList .nomail-data {
+    background-image: ResolveUrl('~/img/mails/empty.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+    width: 100%;
+}
+
+.mailList .nosettings-data {
+    background-image: ResolveUrl('~/img/mails/settings.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+    width: 100%;
+}
+.mailList .nomail-text, .mailList .nosettings-text {
+    font-size: 34px;
+    color: @border-module-color;
+    text-align: center;
+}
+
+.loadMoreRow .loadMore {
+    text-align: center;
+    color: @outstanding-color
+}
+
+.mailFilters {
+    padding-top: 20px
+}
+
+.mailFilters hr {
+    border-color: @border-module-color;
+}
+.mailFilters a {
+    color: @border-module-color;
+}
+
+.mailToolbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid @border-module-color;
+}
+
+.mailToolbar .mail-button-separator {
+    margin-right: 300px;
+    display: block
+}
+
+
+/*Mail template styles*/
+.box-mail-bagbutton {
+    width: 35px;
+    float: left;
+}
+
+.box-mail-bagbutton .btn.btn-default.bagButton {
+    border: none;
+    margin: 6px 0px 4px 4px;
+}
+
+.box-mail-bagbutton .btn.btn-default.bagButton.active {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.box-mail-data {
+    width: ~"calc(100% - 35px)";
+    float: right;
+}
+
+.box-mail {
+    color: lighten(@primary-color,30);
+    background-color: white;
+    border-left: solid 5px @outstanding-color;
+    line-height: 1.2;
+    padding-right: 4px;
+}
+
+.box-mail:hover {
+    background-color: lighten(@outstanding-color, 40);
+}
+
+.box-mail .from {
+    font-size: 16px;
+    font-weight: 300;
+    font-weight: bold;
+}
+
+.box-mail .message {
+    display:block;
+    font-size:11px;
+}
+
+.box-mail .subject {
+    line-height: 20px;
+    color: @outstanding-color;
+    font-weight: bold;
+}
+
+.box-mail .date {
+    font-size:12px;
+}
+
+.box-mail .icons {
+    font-size: 18px;
+}
+
+.box-mail.seen {
+    border-left: solid 5px darken(white, 10);
+}
+
+.box-mail.seen .subject, .box-mail.seen .date, .box-mail.seen .body, .box-mail.seen .from {
+    font-weight: normal;
+    color: @primary-color;
+}
+
+.box-mail .btn-default {
+    background-color: transparent;
+}
+
+.box-mail-folders {
+    padding: 10px;
+    line-height: 1.9;
+}
+
+
+flx-mailview > .toolbar > .btn-group > .btn {
+    background-color: transparent;
+    border: none;
+    margin-right: 14px;
+}
+
+
+.mail-viewer {
+    padding: 20px;
+    background-color: white;
+    margin-top: 15px;
+}
+
+.mail-viewer .from {
+    font-size: 16px;
+    color: @info-color;
+    font-weight:bold;
+}
+
+.mail-viewer iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.mail-viewer hr {
+    margin-top: @border-module-color;
+    //margin-bottom: 6px;
+}
+
+.mail-attachment {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 14px;
+    height: 48px;
+    line-height: 20px;
+    margin: 5px;
+    padding: 2px 4px;
+    text-size-adjust: 100%;
+    border: solid 1px @border-module-color;
+}
+
+.mail-attachment:hover {
+    background-color: lighten(@info-color, 40);
+}
+
+
+main[pagename=sysMailBoxPage] {
+    .LeftPosition {
+        width: 125px;
+    }
+
+    .RightPosition {
+        width: ~"calc(100% - 125px)";
+    }
+}
+
+main[pagename=syspage-list-mailobject] {
+    .LeftPosition {
+        width: 125px;
+    }
+
+    .RightPosition {
+        width: ~"calc(100% - 125px)";
+    }
+}
+
+.chatter_shadow() {
+    @box-shadow: 0 2px 2px 0 rgba(0,0,0,0.08), 0 3px 1px -2px rgba(0,0,0,.06), 0 1px 5px 0 rgba(0,0,0,.14);
+    -webkit-box-shadow: @box-shadow;
+    -moz-box-shadow: @box-shadow;
+    box-shadow: @box-shadow;
+}
+
+.mailviewer_transition(@property: all, @duration: .15s, @function: ease-in-out, @delay: 0s) {
+    @transition: @property @duration @function @delay;
+    -webkit-transition: @transition;
+    -moz-transition: @transition;
+    -o-transition: @transition;
+    transition: @transition;
+}
+
+.mail-viewer-attachment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    background-color: fade(#789A98, 10);
+    color: black;
+    overflow: hidden;
+    .mailviewer_transition();
+    width: 300px;
+    height: 36px;
+    margin: 10px 5px;
+    padding: 0px 10px;
+
+    > div:first-child {
+        max-width: 92%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        > i {
+            margin-right: 6px;
+        }
+
+        > small {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    .mail-viewer-download {
+        cursor: pointer;
+        opacity: .8;
+        font-weight: bold;
+        .mailviewer_transition();
+        border-radius: 4px;
+        padding: 4px 6px;
+        color: unset;
+        text-decoration: unset;
+
+        &:hover {
+            opacity: 1;
+            background-color: fade(#789A98, 20);
+        }
+    }
+}
+
+.box-mail-sync {
+    background-color: #fff;
+}
+
+.sync-content {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .sync {
+        width: 80px;
+        height: 50px;
+        position: relative;
+
+        p {
+            top: 0;
+            padding: 0;
+            margin: 0;
+            color: @outstanding-color;
+            animation: text 3.5s ease both infinite;
+            font-size: 12px;
+            letter-spacing: 1px;
+
+            @keyframes text {
+                0% {
+                    letter-spacing: 1px;
+                    transform: translateX(0px);
+                }
+
+                40% {
+                    letter-spacing: 2px;
+                    transform: translateX(26px);
+                }
+
+                80% {
+                    letter-spacing: 1px;
+                    transform: translateX(32px);
+                }
+
+                90% {
+                    letter-spacing: 2px;
+                    transform: translateX(0px);
+                }
+
+                100% {
+                    letter-spacing: 1px;
+                    transform: translateX(0px);
+                }
+            }
+        }
+
+        span {
+            background-color: lighten(@outstanding-color, 35);
+            border-radius: 50px;
+            display: block;
+            height: 16px;
+            width: 16px;
+            bottom: 0;
+            position: absolute;
+            transform: translateX(64px);
+            animation: loading 3.5s ease both infinite;
+
+            &:before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-color: @outstanding-color;
+                border-radius: inherit;
+                animation: loading2 3.5s ease both infinite;
+            }
+
+            @keyframes loading {
+                0% {
+                    width: 16px;
+                    transform: translateX(0px);
+                }
+
+                40% {
+                    width: 100%;
+                    transform: translateX(0px);
+                }
+
+                80% {
+                    width: 16px;
+                    transform: translateX(64px);
+                }
+
+                90% {
+                    width: 100%;
+                    transform: translateX(0px);
+                }
+
+                100% {
+                    width: 16px;
+                    transform: translateX(0px);
+                }
+            }
+
+            @keyframes loading2 {
+                0% {
+                    transform: translateX(0px);
+                    width: 16px;
+                }
+
+                40% {
+                    transform: translateX(0%);
+                    width: 80%;
+                }
+
+                80% {
+                    width: 100%;
+                    transform: translateX(0px);
+                }
+
+                90% {
+                    width: 80%;
+                    transform: translateX(15px);
+                }
+
+                100% {
+                    transform: translateX(0px);
+                    width: 16px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+﻿@import "../CssVars.less";
+//Notify
+.notifypopover {
+    min-width: 600px;
+    height: ~"calc(100% - 35px)";
+}
+.notifypopover flx-list[objectname="sysNotices"] {
+    height: inherit;
+    display: grid;
+
+    .btn-default {
+        background-color: @toolbarbtn-color;
+        color: @toolbarbtntext-color;
+        border-color: @toolbarbtnborder-color
+    }
+}
+
+.notify-dropdown b.badge {
+    margin: 2px 0;
+}
+.notifypopover .notify {
+    border: solid 1px silver;
+    border-bottom: none 0;
+    display: grid;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.notifypopover .notifypopover-buttons{
+    display: flex;
+    justify-content: right;
+}
+.notify .active {
+    background-color: lighten(@notify-color, 60);
+    color: @notify-color;
+}
+
+.notifypopover .notify .active {
+    border-left: solid 5px @notify-color;
+    padding: .5em;
+}
+
+.notify div.row.row-line:not(.active) {
+    background-color: darken(white,5);
+    color: @primary-color;
+    opacity: .60;
+}
+
+.notifypopover .notify div.row.row-line:not(.active) {
+    border-left: solid 5px darken(white,30);
+    padding: .5em;
+}
+
+
+.notify div.row.row-line:not(.active) button {
+    display: none;
+}

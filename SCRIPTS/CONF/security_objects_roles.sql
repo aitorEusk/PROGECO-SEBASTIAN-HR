@@ -843,19 +843,15 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"ObjectName":"emp_Team",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":true,
-	"ViewFilter":"(Teams.TeamId IN (SELECT TeamId FROM Employees_Teams WHERE EmployeeId IN (Select EmployeeId FROM dbo.fACM_GetVisibleEmployeeTbl({{CurrentReference}}))))",
 	"CanViewCollection":true,
-	"ViewFilterCollection":"(Teams.TeamId IN (SELECT TeamId FROM Employees_Teams WHERE EmployeeId IN (Select EmployeeId FROM dbo.fACM_GetVisibleEmployeeTbl({{CurrentReference}}))))",
 	"CanInsert":true,
 	"CanEdit":true,
-	"EditFilter":"(Teams.TeamId IN (SELECT TeamId FROM Employees_Teams WHERE EmployeeId IN (Select EmployeeId FROM dbo.fACM_GetVisibleEmployeeTbl({{CurrentReference}}))))",
 	"CanDelete":true,
-	"DeleteFilter":"(Teams.TeamId IN (SELECT TeamId FROM Employees_Teams WHERE EmployeeId IN (Select EmployeeId FROM dbo.fACM_GetVisibleEmployeeTbl({{CurrentReference}}))))",
 	"CanPrint":true,
 	"flxInsertedBy":"admin",
 	"flxUpdatedBy":"admin",
 	"flxInsertedDate":"2026-05-25T15:07:00",
-	"flxUpdatedDate":"2026-05-25T15:07:00",
+	"flxUpdatedDate":"2026-05-27T13:07:00",
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
@@ -1065,6 +1061,23 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"ObjectName":"PERS_Notificacion",
+	"RoleId":"users",
+	"CanView":true,
+	"ViewFilter":".PERS_Notificaciones.employeeid = ''{{currentReference}}''",
+	"CanViewCollection":true,
+	"ViewFilterCollection":".PERS_Notificaciones.employeeid = ''{{currentReference}}''",
+	"CanInsert":false,
+	"CanEdit":false,
+	"CanDelete":false,
+	"CanPrint":true,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-05-27T11:13:00",
+	"flxUpdatedDate":"2026-05-27T12:59:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"ObjectName":"Quadrant_Contract",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":true,
@@ -1148,6 +1161,7 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":true,
 	"CanViewCollection":true,
+	"ViewFilterCollection":"AspNetUsers.Id not in (''0'',''1'')",
 	"CanInsert":true,
 	"CanEdit":true,
 	"CanDelete":true,
@@ -1155,7 +1169,7 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"flxInsertedBy":"admin",
 	"flxUpdatedBy":"admin",
 	"flxInsertedDate":"2026-05-25T15:07:00",
-	"flxUpdatedDate":"2026-05-25T15:07:00",
+	"flxUpdatedDate":"2026-05-27T11:24:00",
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{

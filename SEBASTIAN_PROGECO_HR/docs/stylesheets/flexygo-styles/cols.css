@@ -1,0 +1,245 @@
+/* RESPONSIVE SIZING */
+.row {
+    width: 100%;
+    clear: both;
+    margin: 0;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    display: flow-root;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.col-11 {
+    width: 91.66666667%;
+}
+
+.col-10 {
+    width: 83.33333333%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-8 {
+    width: 66.66666667%;
+}
+
+.col-7 {
+    width: 58.33333333%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-5 {
+    width: 41.66666667%;
+}
+
+.col-4 {
+    width: 33.33333333%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-2 {
+    width: 16.66666667%;
+}
+
+.col-1 {
+    width: 8.33333333%;
+}
+
+.col-1of7 {
+    width: 14.2857143%;
+}
+
+/* One and half */
+.col-15 {
+    width: 12.44444445%;
+}
+
+.col-xl-12 {
+    width: 100%;
+}
+
+.col-xl-11 {
+    width: 91.66666667%;
+}
+
+.col-xl-10 {
+    width: 83.33333333%;
+}
+
+.col-xl-9 {
+    width: 75%;
+}
+
+.col-xl-8 {
+    width: 66.66666667%;
+}
+
+.col-xl-7 {
+    width: 58.33333333%;
+}
+
+.col-xl-6 {
+    width: 50%;
+}
+
+.col-xl-5 {
+    width: 41.66666667%;
+}
+
+.col-xl-4 {
+    width: 33.33333333%;
+}
+
+.col-xl-3 {
+    width: 25%;
+}
+
+.col-xl-2 {
+    width: 16.66666667%;
+}
+
+.col-xl-1 {
+    width: 8.33333333%;
+}
+
+/* One and half */
+.col-xl-15 {
+    width: 12.44444445%;
+}
+
+.padL-12 {
+    margin-left: 100%;
+}
+
+.padL-11 {
+    margin-left: 91.66666667%;
+}
+
+.padL-10 {
+    margin-left: 83.33333333%;
+}
+
+.padL-9 {
+    margin-left: 75%;
+}
+
+.padL-8 {
+    margin-left: 66.66666667%;
+}
+
+.padL-7 {
+    margin-left: 58.33333333%;
+}
+
+.padL-6 {
+    margin-left: 50%;
+}
+
+.padL-5 {
+    margin-left: 41.66666667%;
+}
+
+.padL-4 {
+    margin-left: 33.33333333%;
+}
+
+.padL-3 {
+    margin-left: 25%;
+}
+
+.padL-2 {
+    margin-left: 16.66666667%;
+}
+
+.padL-1 {
+    margin-left: 8.33333333%;
+}
+
+.padL-0 {
+    margin-left: 0;
+}
+
+.padL-xl-12 {
+    margin-left: 100%;
+}
+
+.padL-xl-11 {
+    margin-left: 91.66666667%;
+}
+
+.padL-xl-10 {
+    margin-left: 83.33333333%;
+}
+
+.padL-xl-9 {
+    margin-left: 75%;
+}
+
+.padL-xl-8 {
+    margin-left: 66.66666667%;
+}
+
+.padL-xl-7 {
+    margin-left: 58.33333333%;
+}
+
+.padL-xl-6 {
+    margin-left: 50%;
+}
+
+.padL-xl-5 {
+    margin-left: 41.66666667%;
+}
+
+.padL-xl-4 {
+    margin-left: 33.33333333%;
+}
+
+.padL-xl-3 {
+    margin-left: 25%;
+}
+
+.padL-xl-2 {
+    margin-left: 16.66666667%;
+}
+
+.padL-xl-1 {
+    margin-left: 8.33333333%;
+}
+
+.padL-xl-0 {
+    margin-left: 0;
+}
+
+.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1, .col-15, .col-1of7 {
+    float: left;
+    box-sizing: border-box;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+
+.col-xl-12, .col-xl-11, .col-xl-10, .col-xl-9, .col-xl-8, .col-xl-7, .col-xl-6, .col-xl-5, .col-xl-4, .col-xl-3, .col-xl-2, .col-xl-1, .col-xl-15 {
+    float: left;
+    box-sizing: border-box;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+
+.col-xl-6.module-placeholder .mod-expand, .col-xl-5.module-placeholder .mod-expand, .col-xl-4.module-placeholder .mod-expand, .col-xl-3.module-placeholder .mod-expand, .col-xl-2.module-placeholder .mod-expand, .col-xl-1.module-placeholder .mod-expand, .col-xl-15.module-placeholder .mod-expand {
+    width: 100%;
+}
+
+.col-6.module-placeholder .mod-expand, .col-5.module-placeholder .mod-expand, .col-4.module-placeholder .mod-expand, .col-3.module-placeholder .mod-expand, .col-2.module-placeholder .mod-expand, .col-1.module-placeholder .mod-expand, .col-15.module-placeholder .mod-expand {
+    width: 100%;
+}

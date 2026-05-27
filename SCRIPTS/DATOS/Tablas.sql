@@ -1,7 +1,7 @@
 -- Notificaciones
 CREATE TABLE [dbo].[PERS_Notificaciones](
 	[IdNotificacion] [int] NOT NULL,
-	[IdEmpleado] [int] NOT NULL,
+	[EmployeeId] [int] NOT NULL,
 	[Texto] [varchar](max) NOT NULL,
 	[Titulo] [varchar](1000) NOT NULL,
 	[InsertedBy] [int] NOT NULL,

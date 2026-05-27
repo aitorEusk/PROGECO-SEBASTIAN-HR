@@ -1,0 +1,372 @@
+/**
+ * @namespace flexygo
+ */
+/**
+* Security Library.
+*
+* @class security
+*/
+var flexygo;
+(function (flexygo) {
+    var security;
+    (function (security) {
+        function getToken(tokentype, tenant, callback) {
+            let params = [{ key: 'state', value: flexygo.utils.uniqueUUID() }];
+            if (tenant) {
+                params.push({ key: 'tenant', value: tenant });
+            }
+            if (tokentype) {
+                params.push({ key: 'tokentype', value: tokentype });
+            }
+            flexygo.nav.openURL(flexygo.utils.resolveUrl('~/Account/AzureAuth'), params);
+            flexygo.events.off(this, 'page', 'closed');
+            flexygo.events.on(this, 'page', 'closed', () => { callback(); flexygo.events.off(this, 'page', 'closed'); });
+        }
+        security.getToken = getToken;
+        function set(el, type, key, item, value, id, key2, key3) {
+            let newval = 1;
+            if (value == '1' || value == 'true') {
+                newval = 0;
+            }
+            let params = {
+                SecurityType: type,
+                SecurityKey: key,
+                SecurityKey2: key2,
+                SecurityKey3: key3,
+                SecurityItem: item,
+                SecurityItemValue: String(newval),
+                SecurityId: id
+            };
+            flexygo.ajax.syncPost('~/api/Security', 'SetSecurity', params, (response) => {
+                el.attr('data-value', String(newval === 1));
+                el.find('i:first').removeClass();
+                el.find('i:first').css('cursor', 'pointer');
+                if (newval == 1) {
+                    el.find('i:first').addClass('flx-icon icon-bool-v');
+                }
+                else {
+                    el.find('i:first').addClass('flx-icon icon-bool-x');
+                }
+            });
+        }
+        security.set = set;
+        function getObjectKey(type, key, key2, key3) {
+            let params = {
+                SecurityType: type,
+                SecurityKey: key,
+                SecurityKey2: key2,
+                SecurityKey3: key3
+            };
+            let ret = null;
+            flexygo.ajax.syncPost('~/api/Security', 'getObjectKey', params, (response) => {
+                ret = response;
+            });
+            return ret;
+        }
+        security.getObjectKey = getObjectKey;
+    })(security = flexygo.security || (flexygo.security = {}));
+})(flexygo || (flexygo = {}));
+/**
+* Security Roles.
+*
+* @class security.roles
+*/
+(function (flexygo) {
+    var security;
+    (function (security) {
+        var roles;
+        (function (roles) {
+            function init(el) {
+                let id = $(el).find('flx-list').attr('id');
+                let divlist = $("#" + id + ">div>div");
+                divlist.each((i, e) => {
+                    let dataField = $(e).attr('data-field');
+                    let dataKey = $(e).attr('data-key');
+                    let dataField2 = $(e).attr('data-field2');
+                    let dataKey2 = $(e).attr('data-key2');
+                    let dataField3 = $(e).attr('data-field3');
+                    let dataKey3 = $(e).attr('data-key3');
+                    let dataRole = $(e).attr('data-security-id');
+                    let dataSecurity = $(e).attr('data-security');
+                    let def = '\'' + dataField + '\':\'' + dataKey + '\',\'RoleId\':\'' + dataRole + '\'';
+                    if (dataField2) {
+                        def = def + ',\'' + dataField2 + '\':\'' + dataKey2 + '\'';
+                        if (dataField3) {
+                            def = def + ',\'' + dataField3 + '\':\'' + dataKey3 + '\'';
+                        }
+                    }
+                    //first columns take to edit mode
+                    $(e).children(':first').each((j, f) => {
+                        $(f).css('cursor', 'pointer');
+                        $(f).off();
+                        $(f).on('click', (ev) => {
+                            let objWhere = flexygo.security.getObjectKey(dataSecurity, dataKey, dataKey2, dataKey3);
+                            flexygo.nav.openPage('edit', dataSecurity, objWhere + " and RoleId='" + dataRole + "'", '{' + def + '}', 'popup', true);
+                        });
+                    });
+                    // element columns handle click on icon
+                    $(e).children('[data-element]').each((j, f) => {
+                        $(f).find('i:first').css('cursor', 'pointer');
+                        $(f).off();
+                        $(f).on("click", (ev) => {
+                            flexygo.security.set($(ev.currentTarget), dataSecurity, dataKey, $(ev.currentTarget).attr("data-element"), $(ev.currentTarget).attr("data-value"), dataRole, dataKey2, dataKey3);
+                        });
+                    });
+                });
+            }
+            roles.init = init;
+        })(roles = security.roles || (security.roles = {}));
+    })(security = flexygo.security || (flexygo.security = {}));
+})(flexygo || (flexygo = {}));
+/**
+* Security Faculties.
+*
+* @class security.Faculties
+*/
+(function (flexygo) {
+    var security;
+    (function (security) {
+        var faculties;
+        (function (faculties) {
+            function init(el) {
+                let id = $(el).find('flx-list').attr('id');
+                let divlist = $("#" + id + ">div>div");
+                divlist.each((i, e) => {
+                    let dataField = $(e).attr('data-field');
+                    let dataKey = $(e).attr('data-key');
+                    let dataField2 = $(e).attr('data-field2');
+                    let dataKey2 = $(e).attr('data-key2');
+                    let dataField3 = $(e).attr('data-field3');
+                    let dataKey3 = $(e).attr('data-key3');
+                    let dataFaculty = $(e).attr('data-security-id');
+                    let dataSecurity = $(e).attr('data-security');
+                    let def = '\'' + dataField + '\':\'' + dataKey + '\',\'FacultyId\':\'' + dataFaculty + '\'';
+                    if (dataField2) {
+                        def = def + ',\'' + dataField2 + '\':\'' + dataKey2 + '\'';
+                        if (dataField3) {
+                            def = def + ',\'' + dataField3 + '\':\'' + dataKey3 + '\'';
+                        }
+                    }
+                    //first columns take to edit mode
+                    $(e).children(':first').each((j, f) => {
+                        $(f).css('cursor', 'pointer');
+                        $(f).off();
+                        $(f).on('click', (ev) => {
+                            let objWhere = flexygo.security.getObjectKey(dataSecurity, dataKey, dataKey2, dataKey3);
+                            flexygo.nav.openPage('edit', dataSecurity, objWhere + " and FacultyId='" + dataFaculty + "'", '{' + def + '}', 'popup', true);
+                        });
+                    });
+                    // element columns handle click on icon
+                    $(e).children('[data-element]').each((j, f) => {
+                        $(f).find('i:first').css('cursor', 'pointer');
+                        $(f).off();
+                        $(f).on("click", (ev) => {
+                            flexygo.security.set($(ev.currentTarget), dataSecurity, dataKey, $(ev.currentTarget).attr("data-element"), $(ev.currentTarget).attr("data-value"), dataFaculty, dataKey2, dataKey3);
+                        });
+                    });
+                });
+            }
+            faculties.init = init;
+        })(faculties = security.faculties || (security.faculties = {}));
+    })(security = flexygo.security || (flexygo.security = {}));
+})(flexygo || (flexygo = {}));
+/**
+* Security users.
+*
+* @class security.users
+*/
+(function (flexygo) {
+    var security;
+    (function (security) {
+        var users;
+        (function (users) {
+            function init(el) {
+                let id = $(el).find('flx-list').attr('id');
+                let divlist = $("#" + id + ">div>div");
+                divlist.each((i, e) => {
+                    let dataField = $(e).attr('data-field');
+                    let dataKey = $(e).attr('data-key');
+                    let dataField2 = $(e).attr('data-field2');
+                    let dataKey2 = $(e).attr('data-key2');
+                    let dataField3 = $(e).attr('data-field3');
+                    let dataKey3 = $(e).attr('data-key3');
+                    let dataUser = $(e).attr('data-security-id');
+                    let dataSecurity = $(e).attr('data-security');
+                    let def = '\'' + dataField + '\':\'' + dataKey + '\',\'UserId\':\'' + dataUser + '\'';
+                    if (dataField2) {
+                        def = def + ',\'' + dataField2 + '\':\'' + dataKey2 + '\'';
+                        if (dataField3) {
+                            def = def + ',\'' + dataField3 + '\':\'' + dataKey3 + '\'';
+                        }
+                    }
+                    //first columns take to edit mode
+                    $(e).children(':first').each((j, f) => {
+                        $(f).css('cursor', 'pointer');
+                        $(f).off();
+                        $(f).on('click', (ev) => {
+                            let objWhere = flexygo.security.getObjectKey(dataSecurity, dataKey, dataKey2, dataKey3);
+                            flexygo.nav.openPage('edit', dataSecurity, objWhere + " and UserId='" + dataUser + "'", '{' + def + '}', 'popup', true);
+                        });
+                    });
+                    // element columns handle click on icon
+                    $(e).children('[data-element]').each((j, f) => {
+                        $(f).find('i:first').css('cursor', 'pointer');
+                        $(f).off();
+                        $(f).on("click", (ev) => {
+                            flexygo.security.set($(ev.currentTarget), dataSecurity, dataKey, $(ev.currentTarget).attr("data-element"), $(ev.currentTarget).attr("data-value"), dataUser, dataKey2, dataKey3);
+                        });
+                    });
+                });
+            }
+            users.init = init;
+        })(users = security.users || (security.users = {}));
+    })(security = flexygo.security || (flexygo.security = {}));
+})(flexygo || (flexygo = {}));
+(function (flexygo) {
+    var security;
+    (function (security) {
+        var webapi;
+        (function (webapi) {
+            function init(el) {
+                let divlist = $(el).find('[data-security]');
+                divlist.each((i, e) => {
+                    // element columns handle click on icon
+                    $(e).children('[data-element]').each((j, f) => {
+                        $(f).find('i:first').css('cursor', 'pointer');
+                        $(f).off();
+                        $(f).on("click", (ev) => {
+                            let parentDiv = $(f).closest('[data-security]');
+                            let currentDiv = $(ev.currentTarget);
+                            let dataSecurity = parentDiv.attr('data-security');
+                            let dataKey = parentDiv.attr('data-key');
+                            let dataKeyField = parentDiv.attr('data-key-field');
+                            let dataKey2 = parentDiv.attr('data-key2');
+                            let dataKey2Field = parentDiv.attr('data-key2-field');
+                            // create object where
+                            let objectwhere = '';
+                            objectwhere += dataKeyField + "='" + dataKey + "'";
+                            if (dataKey2Field) {
+                                objectwhere += " and " + dataKey2Field + "='" + dataKey2 + "'";
+                            }
+                            let dataElement = currentDiv.attr('data-element');
+                            let obj = new flexygo.obj.Entity(dataSecurity, objectwhere);
+                            obj.read();
+                            obj.data[dataKeyField].Value = dataKey;
+                            if (dataKey2Field) {
+                                obj.data[dataKey2Field].Value = dataKey2;
+                            }
+                            if (obj.data[dataElement].Value) {
+                                obj.data[dataElement].Value = false;
+                            }
+                            else {
+                                obj.data[dataElement].Value = true;
+                            }
+                            if (dataSecurity === 'WebAPI_Objects_Relation') {
+                                let objectPath = dataKey;
+                                $(parentDiv).parents('[data-key]').each(function () {
+                                    let object = $(this).attr('data-key');
+                                    objectPath = object + "|" + objectPath;
+                                });
+                                obj.data["ObjectPath"].Value = objectPath;
+                            }
+                            if (obj.update()) {
+                                currentDiv.find('i').attr('class', 'flx-icon icon-bool-' + ((obj.data[dataElement].Value) ? 'v' : 'x'));
+                                if ((dataSecurity === 'WebAPI_Objects_Relation' || dataSecurity === 'WebAPI_Object') && (dataElement === 'CanInsert')) {
+                                    let collapse = parentDiv.find('[data-toggle="collapse"]')[0];
+                                    if (obj.data[dataElement].Value) {
+                                        if ($(collapse).attr("relations") !== "0") {
+                                            $(collapse).removeClass('hidden');
+                                        }
+                                    }
+                                    else {
+                                        $(collapse).addClass('hidden');
+                                        if ($(collapse).attr("aria-expanded") === "true") {
+                                            $(collapse).click();
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    });
+                });
+            }
+            webapi.init = init;
+            function getRelatedObjects(el, objectName, parentObject, templateId) {
+                const params = [
+                    { key: 'ObjectName', value: objectName },
+                    { key: 'ParentObject', value: parentObject },
+                    { key: 'TemplateId', value: templateId }
+                ];
+                flexygo.nav.execProcess('pNet_GetRelatedObjects', '', '', null, params, 'current', false, $(el), (ret) => {
+                    let context;
+                    context = flexygo.environment;
+                    context.flexygo = flexygo;
+                    const htmlContent = flexygo.utils.parser.compileTemplate(ret.Data.Template[0], ret.Data.Relations, context);
+                    const row = $(el).closest('[data-security]');
+                    row.find('.child').html(htmlContent);
+                    flexygo.security.webapi.init(row[0]);
+                }, false);
+            }
+            webapi.getRelatedObjects = getRelatedObjects;
+        })(webapi = security.webapi || (security.webapi = {}));
+    })(security = flexygo.security || (flexygo.security = {}));
+})(flexygo || (flexygo = {}));
+(function (flexygo) {
+    var security;
+    (function (security) {
+        var AIObject;
+        (function (AIObject) {
+            function init(el, settingId) {
+                let divlist = $(el).find('[data-security]');
+                let isPropertylist = divlist.attr('is-property-list');
+                divlist.each((i, e) => {
+                    // element columns handle click on icon
+                    $(e).children('[data-element]').each((j, f) => {
+                        let parentDiv = $(f).closest('[data-security]');
+                        let dataSecurity = parentDiv.attr('data-security');
+                        let dataKey = parentDiv.attr('data-key');
+                        let dataKeyField = parentDiv.attr('data-key-field');
+                        let dataKey2 = parentDiv.attr('data-key2');
+                        let dataKey3 = parentDiv.attr('data-key3');
+                        let dataKey2Field = parentDiv.attr('data-key2-field');
+                        let dataKey3Field = parentDiv.attr('data-key3-field');
+                        let chatGPTSetting = (settingId && isPropertylist) ? settingId : parentDiv.attr('chatgpt-setting');
+                        let objectName = isPropertylist ? parentDiv.attr('object-name') : '';
+                        let properties = parentDiv.attr('prop-object');
+                        $(f).find('i:first').css('cursor', 'pointer');
+                        $(f).off();
+                        $(f).on("click", (ev) => {
+                            let currentDiv = $(ev.currentTarget);
+                            // create object where
+                            let objectwhere = '';
+                            objectwhere += dataKeyField + "='" + dataKey + "'";
+                            if (dataKey2Field) {
+                                objectwhere += " and " + dataKey2Field + "='" + dataKey2 + "'";
+                            }
+                            if (dataKey3Field) {
+                                objectwhere += " and " + dataKey3Field + "='" + dataKey3 + "'";
+                            }
+                            let dataElement = currentDiv.attr('data-element');
+                            let obj = new flexygo.obj.Entity(dataSecurity, objectwhere);
+                            obj.read();
+                            obj.data['SettingId'].Value = chatGPTSetting;
+                            obj.data[dataKeyField].Value = dataKey;
+                            if (isPropertylist) {
+                                obj.data["ObjectName"].Value = objectName;
+                            }
+                            if (dataKey2Field) {
+                                obj.data[dataKey2Field].Value = dataKey2;
+                            }
+                            obj.data[dataElement].Value = !obj.data[dataElement].Value;
+                            if (obj.update()) {
+                                currentDiv.find('i').attr('class', 'flx-icon icon-bool-' + ((obj.data[dataElement].Value) ? 'v' : 'x'));
+                            }
+                        });
+                    });
+                });
+            }
+            AIObject.init = init;
+        })(AIObject = security.AIObject || (security.AIObject = {}));
+    })(security = flexygo.security || (flexygo.security = {}));
+})(flexygo || (flexygo = {}));
+//# sourceMappingURL=security.js.map

@@ -1,0 +1,41 @@
+﻿@import "../CssVars.less";
+
+flx-footermenu{
+    display:none;
+    position:fixed;
+    bottom:0px;
+    width: 100%;
+    height: 60px;
+    background-color: @outstanding-color;
+    color: @txt-outstanding-color;
+    box-sizing: border-box;
+    
+}
+flx-footermenu .item{
+    padding:2px;
+    float:left;
+    height:60px;
+    width:60px;
+    text-align: center;
+    cursor: pointer;
+}
+flx-footermenu i{
+    box-sizing: border-box;
+    display:block;
+    padding-top:10px;
+    font-size:20px;
+    line-height:20px;
+}
+flx-footermenu span{
+    display:block;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-size:15px;
+   // font-family: 'latolight';
+}
+
+flx-footermenu .item:hover{
+  color:@txt-outstanding-color;
+  background-color:lighten(@outstanding-color,25%);
+}

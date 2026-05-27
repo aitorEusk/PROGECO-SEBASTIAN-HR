@@ -26,6 +26,17 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"PageName":"emp_MyCV",
+	"ModuleName":"PERS_Notificaciones_Empleado",
+	"LayoutPositionId":"CenterRightPosition",
+	"Order":0,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-05-27T10:16:00",
+	"flxUpdatedDate":"2026-05-27T10:16:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"PageName":"Notificacion_View",
 	"ModuleName":"Pers_Notificacion_View_Module",
 	"LayoutPositionId":"TopPosition",

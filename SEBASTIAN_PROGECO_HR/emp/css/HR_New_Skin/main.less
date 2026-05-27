@@ -1,0 +1,420 @@
+@import "hr-vars.less";
+@import "modules.less";
+@import "buttons.less";
+@import "labels.less";
+@import "areas.less";
+@import "Plugins/three-dots.css";
+
+
+
+body, main {
+    font-family: 'Plus Jakarta Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !important;
+    font-size: 15px;
+
+    #mainBlock {
+        min-height: unset !important;
+        /*        @media (min-width: 993px) {
+            height: calc(~"100vh - 82px");
+        }
+
+        @media (max-width: 993px) {
+            height: 100vh;
+        }*/
+
+        #mainContent {
+            position: relative;
+            overflow: unset;
+            padding-bottom: 0;
+
+            main {
+                height: 100%;
+                overflow: overlay;
+                padding: 25px 25px 0 25px;
+                margin: 0;
+            }
+        }
+    }
+}
+
+body {
+    overflow: hidden
+}
+
+/*Main clases*/
+.hr-soft-boxshadow {
+    -webkit-box-shadow: 1px 1px 15px 1px rgba(173,173,173,0.1);
+    -moz-box-shadow: 1px 1px 15px 1px rgba(173,173,173,0.1);
+    box-shadow: 1px 1px 15px 1px rgba(173,173,173,0.1);
+}
+
+.hr-round-borders, .hr-rounded {
+    border-radius: 10px;
+}
+
+.hr-title {
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: dbColor(NotifyColor);
+}
+
+.hr-subtitle {
+    font-size: 1.5em;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: dbColor(NotifyColor);
+}
+
+.hr-title-light {
+    text-transform: capitalize;
+    font-size: 2.5em;
+    color: @hr-subtitle-text-color;
+}
+
+.hr-subtitle-light {
+    font-size: 1.5em;
+    text-transform: capitalize;
+    color: @hr-subtitle-text-color;
+}
+
+.size-xl {
+    font-size: 24px;
+}
+
+
+.hr-border {
+    border: 1px solid #cfd7df;
+}
+
+.hr-border-top {
+    border-top: 1px solid #cfd7df;
+}
+
+.hr-border-right {
+    border-right: 1px solid #cfd7df;
+}
+
+.hr-border-left {
+    border-left: 1px solid #cfd7df;
+}
+
+.hr-border-bottom {
+    border-bottom: 1px solid #cfd7df;
+}
+
+.hr-hover-card {
+    /*    box-shadow: 0px 4px 6px 1px rgba(0,0,0,0.14);
+    border: 1px solid #cfd7df;
+    transition: all 0.3s ease-in-out 0s;*/
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    z-index: 1;
+}
+
+.hr-box-shadow-s {
+    box-shadow: 1px 2px 2px #0e0a0a15;
+}
+
+.hr-hover-list {
+    box-shadow: 1px 2px 2px #0e0a0a15;
+    border-color: @border-grey;
+    transition: border .8s, box-shadow .8s;
+}
+
+.bg-module {
+    background-color: unset !important;
+    color: dbColor(txtModuleHeaderColor) !important;
+    padding: .5em;
+}
+
+.hr-card {
+    border: none !important;
+    box-shadow: 1px 1px 4px 0px #9e9e9e66;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #FFFFFF;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+
+    &:hover, &.active {
+        &:extend(.hr-hover-card);
+    }
+
+    &:has(.dropdown.open) {
+        z-index: 1;
+    }
+}
+
+.hr-box-lightgrey {
+    padding: 5px;
+    background-color: #f8f8ff;
+    border-radius: 5px;
+}
+
+.hr-badge-grey {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(2, 6, 23, .06);
+    background: linear-gradient(180deg, #f8fafc, #edf2f7);
+}
+
+.hr-box-lightgrey-shadow {
+    &:extend(.hr-box-lightgrey);
+    box-shadow: 1px 6px 15px 1px rgba(173,173,173,0.1);
+}
+
+.hr-lightgrey-hover:hover {
+    background-color: #f8f8ff;
+}
+
+.hr-title-centered-lines {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: bold;
+    font-size: 28px;
+    color: dbColor(NotifyColor);
+
+
+    &::before {
+        content: '';
+        flex: 1;
+        height: 3px;
+        background: linear-gradient(to right, #60a5fa, #1e3a8a);
+    }
+
+    &::after {
+        content: '';
+        flex: 1;
+        height: 3px;
+        background: linear-gradient(to right, #1e3a8a, #60a5fa);
+    }
+}
+
+*[disabled] {
+    cursor: not-allowed;
+}
+
+
+.fullbackground {
+    background-color: #9e9e9e29;
+    color: #cfcfcf;
+    width: inherit;
+    backdrop-filter: blur(3px);
+
+    & > div {
+        width: 50px;
+    }
+}
+
+.animation-cont {
+    transform: scale(3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+}
+
+
+/* HTML: <div class="loader"></div> */
+.hr-loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid dbColor(outstandingColor);
+    animation: l20-1 0.8s infinite linear alternate, l20-2 1.6s infinite linear;
+}
+
+@keyframes l20-1 {
+    0% {
+        clip-path: polygon(50% 50%,0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0% )
+    }
+
+    12.5% {
+        clip-path: polygon(50% 50%,0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0% )
+    }
+
+    25% {
+        clip-path: polygon(50% 50%,0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100% )
+    }
+
+    50% {
+        clip-path: polygon(50% 50%,0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100% )
+    }
+
+    62.5% {
+        clip-path: polygon(50% 50%,100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100% )
+    }
+
+    75% {
+        clip-path: polygon(50% 50%,100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100% )
+    }
+
+    100% {
+        clip-path: polygon(50% 50%,50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100% )
+    }
+}
+
+@keyframes l20-2 {
+    0% {
+        transform: scaleY(1) rotate(0deg)
+    }
+
+    49.99% {
+        transform: scaleY(1) rotate(135deg)
+    }
+
+    50% {
+        transform: scaleY(-1) rotate(0deg)
+    }
+
+    100% {
+        transform: scaleY(-1) rotate(-135deg)
+    }
+}
+
+
+.weight-lighter {
+    font-weight: lighter
+}
+
+@media (min-width: dbSize(medium)) {
+
+    .emp-hide-max-m {
+        display: none;
+    }
+}
+
+@media (min-width: dbSize(large)) {
+
+    .emp-hide-max-l {
+        display: none;
+    }
+}
+
+.hr-show-only-small-display {
+    display: none !important;
+}
+
+@media (max-width: dbSize(medium)) {
+    .hr-show-only-small-display {
+        display: inherit !important;
+    }
+}
+
+
+@media (max-width: dbSize(medium)) {
+
+
+    .emp-flex-responsive {
+        display: block !important;
+
+        .emp-grid-end { //esto es as� para que si pasa a estar un contenedor debajo de otro, todo quede alineado a la izquierda.
+            display: grid;
+            align-items: center;
+            justify-content: start;
+            justify-items: start;
+        }
+    }
+}
+
+@media (max-width: dbSize(large)) {
+
+
+    .emp-flex-responsive {
+        display: flex;
+    }
+}
+//MEDIA COL
+.row {
+    .col-05 {
+        width: 4.1666%;
+    }
+}
+//No button on toolbar
+.emp-no-btn {
+    border: none;
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+.hr-ai-color {
+    color: #74437b;
+    background: -webkit-linear-gradient(#934d8e, #74437B, #002033);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hr-ai-background-color {
+    color: #FFFFFF;
+    background: linear-gradient(#934d8e, #74437B, #002033, #74437B, #934d8e);
+    background-size: 100% 200%;
+    background-position: 0% 0%;
+}
+
+
+.hr-ai-btn {
+    &:extend(.hr-ai-background-color);
+    transition: background-position 0.5s cubic-bezier(.4, 0, .2, 1);
+    color: #FFFFFF !important;
+
+
+    &:hover, &:focus, &:active {
+        background-position: 0% 50%;
+        color: #FFFFFF !important;
+        box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.75) !important;
+    }
+}
+
+.hr-ai-circle-btn {
+    &:extend(.hr-ai-btn);
+    border-radius: 50% !important;
+    width: 40px;
+    height: 40px;
+    font-size: 20px !important;
+    padding: 5px 15px;
+}
+
+@media (max-width: 768px) {
+    .hr-dropdown-mobile-menu-right {
+        right: 0 !important;
+        left: auto !important;
+    }
+}
+
+
+
+.hr-score {
+    font-size: 32px;
+}
+
+.hr-bar-custom-char {
+    display: flex;
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 14px;
+    background: #e5e7eb
+}
+
+/*OVERWRITE FLX CLASSES*/
+flx-list .options-box, flx-nav[mode=box] .box, .cardbox .box, flx-list[modulename="sysmod-sqllist-objects-count"] .easy-list li {
+    &:extend(.hr-card);
+
+    &:hover {
+        &:extend(.hr-hover-card);
+    }
+}
+
+flx-list[modulename="sysmod-sqllist-objects-count"] .easy-list li {
+    flx-easyinfo, .flx-easyinfo, .easy-info {
+        background-color: #FFFFFF;
+    }
+}

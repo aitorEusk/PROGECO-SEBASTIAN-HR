@@ -1,0 +1,212 @@
+﻿@import "../CssVars.less";
+
+//MODULE Manage
+
+#layoutList {
+    white-space: nowrap;
+    background-color: @bg-color;
+}
+
+#layoutList img {
+    height: 60px;
+    border: solid 1px silver;
+    margin: 10px 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 4px 4px 2px;
+    padding: 2px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#layoutPanel {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: @border-radius;
+    height: 100%;
+    overflow: auto;
+
+    li div.item {
+        background-color: @primary-color;
+        color: @txt-primary-color;
+        padding: .5em;
+    }
+}
+
+.moduleItem.ui-sortable-handle .item {
+    background-color: @primary-color;
+    color: @txt-primary-color;
+    padding: .5em;
+}
+
+#moduleList .buttonList {
+    display: none;
+}
+
+
+flx-modulemanager .layoutPanelOutside {
+    height: ~"calc(100% - 180px)";
+}
+
+#moduleList {
+    padding-top: 5px;
+}
+
+flx-modulemanager .module-placeholder {
+    padding: 5px;
+    padding-top: 0px;
+}
+
+flx-modulemanager .module-placeholder ul, #moduleList ul {
+    width: 100%;
+    min-height: 180px;
+    padding: 0px;
+}
+
+flx-modulemanager .box-primary, flx-modulemanager .box-warning {
+    border-radius: @border-radius;
+    border: none;
+}
+
+flx-modulemanager .module-placeholder ul {
+    background-color: lighten(@border-module-color,15);
+    border: dashed 1px darken(@border-module-color,10);
+}
+
+#layoutList .selected {
+    background-color: lighten(@outstanding-color,10);
+    border: solid 1px @outstanding-color;
+}
+
+flx-modulemanager .buttonList {
+    float: right;
+}
+
+flx-modulemanager .buttonList i {
+    margin-left: 3px;
+}
+
+flx-modulemanager .buttonList:hover {
+    font-weight: bold;
+}
+
+#layoutList img:hover {
+    background-color: lighten(@outstanding-color,10);
+    border: solid 1px @outstanding-color;
+}
+
+#moduleList strong {
+    display: none;
+}
+
+#moduleList li, #layoutPanel li {
+    box-shadow: rgba(0, 0, 0, 0.2) 4px 4px 2px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#moduleList li .box-primary.new {
+    background-color: @success-color;
+    color: @txt-success-color;
+}
+
+#moduleList li .box-primary:hover, #layoutPanel li .item:hover, #layoutPanel li .box-warning:hover {
+    background-color: @outstanding-color;
+    color: @txt-outstanding-color;
+    border-color: @header-color;
+}
+
+#bottomToolbar {
+    border-top: solid 1px @border-module-color !important;
+    clear: both;
+    padding-top: 3px;
+    text-align: center;
+}
+
+flx-modulemanager .moduleToolbar {
+    border-bottom: solid 1px @border-module-color;
+    padding: 5px;
+    background-color: @bg-color;
+}
+
+flx-modulemanager .moduleToolbar .btn {
+    padding: 2px 6px;
+}
+
+flx-modulemanager .relationwhere.selected, flx-modulemanager .events.selected {
+    color: lighten(@danger-color, 10);
+}
+
+flx-modulemanager .moduleToolbar .btn i {
+    font-size: 1.3em;
+}
+
+.moduleManager {
+    background-color: @header-color;
+    height: 100%;
+}
+
+
+#modulePanel {
+    height: ~"calc(100% - 135px)";
+    overflow: hidden;
+    padding-top: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#modulePanel .searchPanel {
+    padding-right: 15px;
+    flex: 1;
+}
+
+
+#moduleList {
+    overflow: hidden;
+    height: ~"calc(100%)";
+
+    li:not(.headerGroup) {
+        margin-left: 15px;
+    }
+}
+
+flx-modulemanager #layoutPanel .moduleTab > ul {
+    margin-top: 5px;
+    min-height: 50px;
+    border: dashed 1px lighten(@header-color,40);
+    padding: 5px;
+}
+
+flx-modulemanager .tabButton {
+    color: @warning-color;
+}
+
+flx-modulemanager .moduleTab {
+    display: none;
+}
+
+.tabForm > div {
+    margin-bottom: 20px;
+}
+
+.moduleManager .input-group.searchInput {
+    border: 1px solid @input-border-color;
+    border-radius: 4px;
+}
+
+.moduleManager input, .moduleManager .input-group-addon, .moduleManager .input-group-btn .btn.btn-default {
+    border: none;
+}
+
+.moduleManager input {
+    padding: 4px;
+}
+
+.moduleManager .input-group-btn .btn.btn-default {
+    background-color: transparent;
+    color: @txt-color;
+}
+
+.module-no-active {
+    text-decoration: line-through;
+    opacity: 0.8;
+}

@@ -1,0 +1,4150 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ContextVariables/">
+      
+      
+        <link rel="next" href="../CustomDLL/">
+      
+      
+      <link rel="icon" href="../../../docs_assets/images/logos/fl-favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Form controls - Flexygo Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom-colors.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/base.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/code-highlighting.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/css-class-components.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/404-error.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/components/fh-modal.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/components/fh-copy.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/components/fh-namepropagator.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/fh-structural/components/fh-versions.css">
+    
+      <link rel="stylesheet" href="../../../docs_assets/fh-structural/fonts/flags/flags.css">
+    
+      <link rel="stylesheet" href="../../../docs_assets/fh-structural/fonts/flexygo/utils.css">
+    
+      <link rel="stylesheet" href="../../../docs_assets/fh-structural/fonts/flexygo/flexygo-icons.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flexygo-styles/main-flexygo-styles.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flexygo-styles/cols.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/flexygo-styles/list-groups.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#form-controls" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="Flexygo Docs" class="md-header__button md-logo" aria-label="Flexygo Docs" data-md-component="logo">
+      
+  <img src="../../../docs_assets/images/logos/fl.svg" alt="logo">
+
+      Docs
+    </a>
+    <fh-versions></fh-versions>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+          </span>
+        </div>
+      </div>
+    </div>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <span onclick="changeLanguage('en')" class="md-select__link">
+              English
+            </span>
+          </li>
+        
+          <li class="md-select__item">
+            <span onclick="changeLanguage('es')" class="md-select__link">
+              Español
+            </span>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="darkmode" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0M8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0M3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8m13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8m-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13m3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061M2.343 2.343a.75.75 0 0 1 1.061 0l1.06 1.061a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-1.06-1.06a.75.75 0 0 1 0-1.06Z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="fh-sidebar md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="fh-sidebarheader">
+                  <a href="../../" title="Flexygo Docs" class="md-header__button md-logo" aria-label="Flexygo Docs" data-md-component="logo">
+                    
+  <img src="../../../docs_assets/images/logos/fl.svg" alt="logo">
+
+                    Docs
+                  </a>
+                  <fh-versions></fh-versions>
+                </div>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+    
+    <ul class="md-nav__list" data-md-scrollfix>
+        
+            
+            
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Flexygo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Training
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Training
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1Training/Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1Training/VideoTutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VideoTutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Addons
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Addons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Addons/1Addons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Information
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Addons/WhatsApp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WhatsApp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ahora Business Hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ahora Business Hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhSign/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abh Sign
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhSms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abh Sms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AhoraBusinessHub/AbhTicket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abh Ticket
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Connectors
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Connectors
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/AhoraERP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ahora ERP Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/AzureADIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure AD Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/AzureFormRecognizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Azure Form Recognizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/ClaveAuthentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cl@ve Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/FaceRecognition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Face Recognition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Google/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/GoogleAPIKey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google API Key
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/GooglePlaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Places
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/MailChimp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MailChimp Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/MailChimpProcesses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MailChimp Demo Processes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Office365/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Office 365 Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/OpenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ChatGPT integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/OtherflexygoIntegration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flexygo Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Passbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Passbook integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/PowerBI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Power BI Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/PushNotifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Push Notifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/RedSys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RedSys
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/Scales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scales Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/SendinBlue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SendinBlue Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Connectors/WacomSignature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wacom SDK Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Information
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Information
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/FriendlyURLs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Friendly URLs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/GoodPractices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Good practices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/MFA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flexygo MFA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/MailAccountsSettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mail Accounts Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/Navigator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigator Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/PageHierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Page Hierarchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Information/Security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/1HowToInstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingIntefaceTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Add an interface test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingNugetPackage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create NuGet package
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingProduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create a product
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingUnitaryTest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Add a unit test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/CreatingWebComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create a custom WebComponent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8">
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Chart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/ChartII/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chart II
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Chatter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chatter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/DocAndImageManager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Manager &amp; Image Manager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Funnel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funnel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Kanban/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kanban
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/ModuleManagement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/ObjectFilters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Object Filters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/PlannerModule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Planner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Popover/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Popover and Tooltip
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/SchedulerCalendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scheduler and Calendar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/TimelineModule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Timeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/WebMail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Mail
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Offline App
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Offline App
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/AccessandDescription/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offline App description
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/DesignEnvironment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design environment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/DesigningApp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Designing flexygo offline App
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/NavigationOptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offline Navigation options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offline AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineAndEmulatordifferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    App/Emulator differences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/OfflineDatabase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Offline Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/ReturnDataProcess/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Return Data Process
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/Trackingconfiguration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tracking configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/UsefulTokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Useful tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_11">
+        
+          
+          <label class="md-nav__link" for="__nav_9_11" id="__nav_9_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    JS Functions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_11">
+            <span class="md-nav__icon md-icon"></span>
+            JS Functions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Camera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Camera
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exports
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Forms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Location/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GPS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/NFC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NFC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Online-navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Online navigation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Parser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Parser
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OfflineApp/JSFunctions/Zebra-Printer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zebra Printer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CommonFunctions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Common Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ContextVariables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Variables
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Form controls
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Form controls
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-form-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Form Elements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numbers-an-dates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numbers an Dates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special fields
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-editors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Editors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkbox-radio-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkbox &amp; Radio buttons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nullable-checkbox-three-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nullable Checkbox (Three State)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      DB Select
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-multi-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      DB Multi Select
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Select
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input States
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input sizes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select sizes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#append-buttons-to-controls-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Append buttons to controls sizes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML Editor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upload
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-control-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom control dependencies
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CustomDLL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom DLL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CustomStored/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Custom Stored Procedure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DatabaseScriptJobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database script job
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FormValidators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Form Validators
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Imports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Imports
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LinkedServers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Linked Servers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NoticesSentences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notices Sentences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test Automation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UpdateTypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebAPI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Component
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11">
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Reporting
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Reporting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reporting/Newsandversionnotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    News and version notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_12">
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Style
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Style
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/CSSAndTypography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Typography and Styles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/FlagIcons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flag Icons
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/GridOptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grid Options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/Icon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Icons
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Style/Timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Timeline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+            
+            
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13">
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Templates
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Templates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formats
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/NavigationButton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigation button
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/ObjectTemplates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Object Templates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Skeletons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Skeletons
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Templates/Targets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Targets
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+        
+    </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            <div class="fh-maincontainer">
+              
+                <div class="md-content" data-md-component="content">
+                  <article class="md-content__inner md-typeset">
+                    
+                      
+
+
+
+<h1 id="form-controls">Form controls<a class="headerlink" href="#form-controls" title="Permanent link">¶</a></h1>
+<p><flx-navbutton class="link" type="openhelpid" helpid="syshelp-controls">Click here</flx-navbutton> to test them on Flexygo.</p>
+<h2 id="default-form-elements">Default Form Elements<a class="headerlink" href="#default-form-elements" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/Default.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/Default.PNG" title="Defaults"></a>
+</p><div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"mytext"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Text Field"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div><p></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"password"</span> <span class="na">name</span><span class="o">=</span><span class="s">"password"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Password"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid password"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">flx-textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">"area"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Text area"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-textarea</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">flx-combo</span> <span class="na">name</span><span class="o">=</span><span class="s">"select-1"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Amsterdam<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Atlanta<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Baltimore<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">&lt;/</span><span class="nt">flx-combo</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="numbers-an-dates">Numbers an Dates<a class="headerlink" href="#numbers-an-dates" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/NumbersAndDates.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/NumbersAndDates.PNG" title="Numbers and dates"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"date"</span> <span class="na">name</span><span class="o">=</span><span class="s">"date"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Date Field"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid date"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"datetime-local"</span> <span class="na">name</span><span class="o">=</span><span class="s">"datetime"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Date Time filed"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid date and time"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"time"</span> <span class="na">name</span><span class="o">=</span><span class="s">"time"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Time field"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid time"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"number"</span> <span class="na">name</span><span class="o">=</span><span class="s">"number"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"number"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid number"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"number"</span><span class="na">decimalplaces</span><span class="o">=</span><span class="s">"2"</span> <span class="na">name</span><span class="o">=</span><span class="s">"decimal"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"decimal number"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid decimal number"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="special-fields">Special fields<a class="headerlink" href="#special-fields" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/Special.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/Special.PNG" title="Special"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"tel"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-phone"</span> <span class="na">name</span><span class="o">=</span><span class="s">"telephone"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Telephone Number"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a telphone"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"email"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-web"</span> <span class="na">name</span><span class="o">=</span><span class="s">"email"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Email"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid email"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"url"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-internet"</span> <span class="na">name</span><span class="o">=</span><span class="s">"url"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Url Address"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid Url"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"color"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-custom"</span> <span class="na">name</span><span class="o">=</span><span class="s">"color"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Select a color"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must select a color"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"map"</span><span class="na">name</span><span class="o">=</span><span class="s">"coordinates"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Coordinates"</span> <span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">&lt;</span><span class="nt">flx-whiteboard</span> <span class="na">property</span><span class="o">=</span><span class="s">"whiteboard"</span> <span class="na">style</span><span class="o">=</span><span class="s">"height:100px"</span> <span class="na">name</span><span class="o">=</span><span class="s">"white board"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"White Board"</span> <span class="p">&gt;&lt;/</span><span class="nt">flx-whiteboard</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="code-editors">Code Editors<a class="headerlink" href="#code-editors" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/Code.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/Code.PNG" title="Code"></a></p>
+<p>Use the flx-code editor in any of these three established types htmlcode, javacode or sqlcode. The flx-code ajusts to div size containing it.</p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">flx-code</span> <span class="na">type</span><span class="o">=</span><span class="s">"htmlcode"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-code</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="checkbox-radio-buttons">Checkbox &amp; Radio buttons<a class="headerlink" href="#checkbox-radio-buttons" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/Checkbox.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/Checkbox.PNG" title="Checkboxes"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">"control-label txt-outstanding"</span> <span class="p">&gt;</span>Checkbox 1<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>  <span class="p">&lt;</span><span class="nt">flx-check</span> <span class="na">name</span><span class="o">=</span><span class="s">"check1"</span> <span class="na">class</span><span class="o">=</span><span class="s">"txt-outstanding"</span> <span class="na">checked</span><span class="p">&gt;&lt;/</span><span class="nt">flx-check</span><span class="p">&gt;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">"control-label txt-danger"</span> <span class="p">&gt;</span>Checkbox 2<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>  <span class="p">&lt;</span><span class="nt">flx-check</span> <span class="na">name</span><span class="o">=</span><span class="s">"check2"</span> <span class="na">class</span><span class="o">=</span><span class="s">"txt-danger"</span> <span class="na">checked</span><span class="p">&gt;&lt;/</span><span class="nt">flx-check</span><span class="p">&gt;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">"control-label txt-warning"</span> <span class="p">&gt;</span>Checkbox 3<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p">&lt;</span><span class="nt">flx-check</span> <span class="na">name</span><span class="o">=</span><span class="s">"check3"</span> <span class="na">class</span><span class="o">=</span><span class="s">"txt-warning"</span> <span class="na">checked</span><span class="p">&gt;&lt;/</span><span class="nt">flx-check</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">"control-label "</span> <span class="p">&gt;</span>Checkbox 1<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  <span class="p">&lt;</span><span class="nt">flx-check</span> <span class="na">name</span><span class="o">=</span><span class="s">"check1"</span> <span class="na">checked</span><span class="p">&gt;&lt;/</span><span class="nt">flx-check</span><span class="p">&gt;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">"control-label "</span> <span class="p">&gt;</span>Checkbox 2<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>  <span class="p">&lt;</span><span class="nt">flx-check</span> <span class="na">name</span><span class="o">=</span><span class="s">"check2"</span> <span class="na">checked</span><span class="p">&gt;&lt;/</span><span class="nt">flx-check</span><span class="p">&gt;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">"control-label "</span> <span class="p">&gt;</span>Checkbox 3<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">&lt;</span><span class="nt">flx-check</span> <span class="na">name</span><span class="o">=</span><span class="s">"check3"</span> <span class="na">checked</span><span class="p">&gt;&lt;/</span><span class="nt">flx-check</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/Radio.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/Radio.PNG" title="Radio buttons"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">&lt;</span><span class="nt">flx-radio</span> <span class="na">name</span><span class="o">=</span><span class="s">"radio1"</span> <span class="na">class</span><span class="o">=</span><span class="s">"txt-outstanding"</span> <span class="p">&gt;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value </span><span class="o">=</span> <span class="s">"1"</span><span class="p">&gt;</span> Option1 <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value </span><span class="o">=</span> <span class="s">"2"</span><span class="p">&gt;</span> Option1 <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value </span><span class="o">=</span> <span class="s">"3"</span><span class="p">&gt;</span> Option1 <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="p">&lt;/</span><span class="nt">flx-radio</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">&lt;</span><span class="nt">flx-radio</span> <span class="na">name</span><span class="o">=</span><span class="s">"radio2"</span> <span class="na">class</span><span class="o">=</span><span class="s">"txt-info inline"</span> <span class="p">&gt;</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value </span><span class="o">=</span>  <span class="s">"1"</span> <span class="p">&gt;</span>Option1<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value </span><span class="o">=</span>  <span class="s">"2"</span> <span class="p">&gt;</span>Option1<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value </span><span class="o">=</span>  <span class="s">"3"</span> <span class="p">&gt;</span>Option1<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">&lt;/</span><span class="nt">flx-radio</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/MultiSelectRadio.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/MultiSelectRadio.PNG" title="Multi select radio"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">&lt;</span><span class="nt">flx-radio</span> <span class="na">name</span><span class="o">=</span><span class="s">"radio1"</span> <span class="na">class</span><span class="o">=</span><span class="s">"txt-warning"</span> <span class="na">multiple</span> <span class="na">separator</span><span class="o">=</span><span class="s">";"</span> <span class="na">value</span><span class="o">=</span><span class="s">"1;2"</span><span class="p">&gt;</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value </span><span class="o">=</span> <span class="s">"1"</span><span class="p">&gt;</span> Option1 <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value </span><span class="o">=</span> <span class="s">"2"</span><span class="p">&gt;</span> Option1 <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value </span><span class="o">=</span> <span class="s">"3"</span><span class="p">&gt;</span> Option1 <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="p">&lt;/</span><span class="nt">flx-radio</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">&lt;</span><span class="nt">flx-radio</span> <span class="na">name</span><span class="o">=</span><span class="s">"radio1"</span> <span class="na">class</span><span class="o">=</span><span class="s">"txt-danger inline"</span> <span class="na">multiple</span> <span class="na">separator</span><span class="o">=</span><span class="s">";"</span> <span class="na">value</span><span class="o">=</span><span class="s">"option 1;option 2"</span><span class="p">&gt;</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>  <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span> Option1 <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>  <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span> Option1 <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>  <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span> Option1 <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="p">&lt;/</span><span class="nt">flx-radio</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="nullable-checkbox-three-state">Nullable Checkbox (Three State)<a class="headerlink" href="#nullable-checkbox-three-state" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/Nullable.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/Nullable.PNG" title="Nullable Checkbox"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">&lt;</span><span class="nt">label</span> <span class="na">class</span><span class="o">=</span><span class="s">"control-label txt-outstanding"</span> <span class="p">&gt;</span>Nullable Checkbox<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="p">&lt;</span><span class="nt">flx-check</span> <span class="na">name</span><span class="o">=</span><span class="s">"check1"</span> <span class="na">allowNull</span> <span class="na">class</span><span class="o">=</span><span class="s">"txt-outstanding"</span> <span class="na">checked</span><span class="p">&gt;&lt;/</span><span class="nt">flx-check</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="switches">Switches<a class="headerlink" href="#switches" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/Switch.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/Switch.PNG" title="Switches"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">&lt;</span><span class="nt">flx-switch</span><span class="p">&gt;&lt;/</span><span class="nt">flx-switch</span><span class="p">&gt;</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="p">&lt;</span><span class="nt">flx-switch</span> <span class="na">checked</span> <span class="p">&gt;&lt;/</span><span class="nt">flx-switch</span><span class="p">&gt;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="p">&lt;</span><span class="nt">flx-switch</span> <span class="na">class </span><span class="o">=</span> <span class="s">"switch-danger"</span> <span class="p">&gt;&lt;/</span><span class="nt">flx-switch</span><span class="p">&gt;</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="p">&lt;</span><span class="nt">flx-switch</span> <span class="na">checked</span> <span class="na">class </span><span class="o">=</span> <span class="s">"switch-danger"</span> <span class="p">&gt;&lt;/</span><span class="nt">flx-switch</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">&lt;</span><span class="nt">flx-switch</span>  <span class="na">class </span><span class="o">=</span> <span class="s">"inline"</span> <span class="p">&gt;&lt;/</span><span class="nt">flx-switch</span><span class="p">&gt;</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="p">&lt;</span><span class="nt">flx-switch</span> <span class="na">class </span><span class="o">=</span> <span class="s">"inline"</span>  <span class="na">checked</span> <span class="p">&gt;&lt;/</span><span class="nt">flx-switch</span><span class="p">&gt;</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="p">&lt;</span><span class="nt">flx-switch</span> <span class="na">class </span><span class="o">=</span> <span class="s">"inline switch-danger"</span> <span class="p">&gt;&lt;/</span><span class="nt">flx-switch</span><span class="p">&gt;</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="p">&lt;</span><span class="nt">flx-switch</span> <span class="na">checked</span> <span class="na">class </span><span class="o">=</span> <span class="s">"inline switch-danger"</span> <span class="p">&gt;&lt;/</span><span class="nt">flx-switch</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="db-select">DB Select<a class="headerlink" href="#db-select" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/DBSelect.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/DBSelect.PNG" title="DB Select"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">&lt;</span><span class="nt">flx-dbcombo</span> <span class="na">ObjectName</span><span class="o">=</span><span class="s">"sysObject"</span>  <span class="na">PlaceHolder</span><span class="o">=</span><span class="s">"Select icon"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-object"</span> <span class="na">ViewName</span><span class="o">=</span><span class="s">"iconsView"</span> <span class="na">SQLValueField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">SQLDisplayField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">additionalWhere</span><span class="o">=</span><span class="s">""</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a telphone"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-dbcombo</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">&lt;</span><span class="nt">flx-dbcombo</span> <span class="na">ObjectName</span><span class="o">=</span><span class="s">"sysObject"</span>  <span class="na">PlaceHolder</span><span class="o">=</span><span class="s">"Select icon"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-object"</span> <span class="na">ViewName</span><span class="o">=</span><span class="s">"iconsView"</span> <span class="na">SQLValueField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">SQLDisplayField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">additionalWhere</span><span class="o">=</span><span class="s">""</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid email"</span><span class="p">&gt;</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>  <span class="p">&lt;</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="p">&gt;&lt;</span><span class="nt">i</span>  <span class="na">class</span><span class="o">=</span><span class="s">"{{CssClass}} icon-lg icon-margin-right"</span> <span class="p">&gt;&lt;/</span><span class="nt">i</span> <span class="p">&gt;</span>{{IconName}}<span class="p">&lt;/</span><span class="nt">div</span> <span class="p">&gt;</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>  <span class="p">&lt;/</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="p">&lt;/</span><span class="nt">flx-dbcombo</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">&lt;</span><span class="nt">flx-dbcombo</span> <span class="na">class</span><span class="o">=</span><span class="s">"item-float"</span> <span class="na">ObjectName</span><span class="o">=</span><span class="s">"sysObject"</span>  <span class="na">PlaceHolder</span><span class="o">=</span><span class="s">"Uses .item-float"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-objectt"</span> <span class="na">ViewName</span><span class="o">=</span><span class="s">"iconsView"</span> <span class="na">SQLValueField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">additionalWhere</span><span class="o">=</span><span class="s">""</span> <span class="na">SQLDisplayField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid Url"</span><span class="p">&gt;</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>  <span class="p">&lt;</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    <span class="p">&lt;</span><span class="nt">i</span>  <span class="na">class</span><span class="o">=</span><span class="s">"txt-outstanding {{CssClass}} icon-2x icon-margin"</span>  <span class="na">title</span><span class="o">=</span><span class="s">"{{IconName}}"</span> <span class="p">&gt;&lt;/</span><span class="nt">i</span> <span class="p">&gt;</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>  <span class="p">&lt;/</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="p">&lt;/</span><span class="nt">flx-dbcombo</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">&lt;</span><span class="nt">flx-dbcombo</span> <span class="na">class</span><span class="o">=</span><span class="s">"item-float"</span> <span class="na">ObjectName</span><span class="o">=</span><span class="s">"sysObject"</span>  <span class="na">PlaceHolder</span><span class="o">=</span><span class="s">"Uses .item-float"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-object"</span> <span class="na">ViewName</span><span class="o">=</span><span class="s">"iconsView"</span> <span class="na">SQLValueField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">additionalWhere</span><span class="o">=</span><span class="s">""</span> <span class="na">SQLDisplayField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must select a color"</span><span class="p">&gt;</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>  <span class="p">&lt;</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"icon-box-s"</span> <span class="p">&gt;</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"icon-margin"</span> <span class="err">&lt;</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>        <span class="err">&lt;</span><span class="na">i</span>  <span class="na">class</span><span class="o">=</span><span class="s">"{{CssClass}} icon-lg icon-zoom"</span> <span class="p">&gt;&lt;/</span><span class="nt">i</span> <span class="p">&gt;</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>      <span class="p">&lt;/</span><span class="nt">div</span> <span class="p">&gt;</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>      <span class="p">&lt;</span><span class="nt">div</span> <span class="p">&gt;</span>{{IconName}}<span class="p">&lt;/</span><span class="nt">div</span> <span class="p">&gt;</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>    <span class="p">&lt;/</span><span class="nt">div</span> <span class="p">&gt;</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>  <span class="p">&lt;/</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="p">&lt;/</span><span class="nt">flx-dbcombo</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="db-multi-select">DB Multi Select<a class="headerlink" href="#db-multi-select" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/DBMulti.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/DBMulti.PNG" title="DBMultiSelect"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">&lt;</span><span class="nt">flx-multicombo</span> <span class="na">ObjectName</span><span class="o">=</span><span class="s">"sysObject"</span> <span class="na">additionalWhere</span><span class="o">=</span><span class="s">""</span>  <span class="na">PlaceHolder</span><span class="o">=</span><span class="s">"Select icon"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-icons"</span> <span class="na">ViewName</span><span class="o">=</span><span class="s">"iconsView"</span> <span class="na">SQLValueField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">SQLDisplayField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid email"</span><span class="p">&gt;</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>  <span class="p">&lt;</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="p">&gt;&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"{{CssClass}} icon-lg icon-margin-right"</span> <span class="p">&gt;&lt;/</span><span class="nt">i</span> <span class="p">&gt;</span>{{IconName}}<span class="p">&lt;/</span><span class="nt">div</span> <span class="p">&gt;</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>  <span class="p">&lt;/</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="p">&lt;/</span><span class="nt">flx-multicombo</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="multiple-select">Multiple Select<a class="headerlink" href="#multiple-select" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/MultiSelect.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/MultiSelect.PNG" title="MultiSelect"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">&lt;</span><span class="nt">flx-combo</span> <span class="na">name</span><span class="o">=</span><span class="s">"m-1"</span>  <span class="na">multiple</span> <span class="na">separator</span><span class="o">=</span><span class="s">";"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span> <span class="na">value</span><span class="o">=</span><span class="s">"Amsterdam;Baltimore"</span> <span class="p">&gt;</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Amsterdam<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Atlanta<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Baltimore<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="p">&lt;/</span><span class="nt">flx-combo</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="tags">Tags<a class="headerlink" href="#tags" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/Tags.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/Tags.PNG" title="Tags"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">&lt;</span><span class="nt">flx-tag</span> <span class="na">name</span><span class="o">=</span><span class="s">"tag-1"</span>  <span class="na">separator</span><span class="o">=</span><span class="s">";"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span> <span class="na">value</span><span class="o">=</span><span class="s">"Framework;Flexygo;Freeware"</span> <span class="p">&gt;&lt;/</span><span class="nt">flx-tag</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">&lt;</span><span class="nt">flx-tag</span> <span class="na">name</span><span class="o">=</span><span class="s">"tag-2"</span>  <span class="na">separator</span><span class="o">=</span><span class="s">";"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span> <span class="na">value</span><span class="o">=</span><span class="s">"good;bad"</span> <span class="p">&gt;</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>good<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>bad<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>ugly<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="p">&lt;/</span><span class="nt">flx-tag</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">&lt;</span><span class="nt">flx-tag</span> <span class="na">name</span><span class="o">=</span><span class="s">"tag-3"</span>  <span class="na">class</span><span class="o">=</span><span class="s">"size-l"</span>  <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-tag"</span>  <span class="na">separator</span><span class="o">=</span><span class="s">";"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span> <span class="na">value</span><span class="o">=</span><span class="s">"Framework;Flexygo;Freeware"</span> <span class="p">&gt;&lt;/</span><span class="nt">flx-tag</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="input-states">Input States<a class="headerlink" href="#input-states" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/InputStates.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/InputStates.PNG" title="Input States"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-warning"</span> <span class="na">name</span><span class="o">=</span><span class="s">"warning"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".has-warning"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-close"</span> <span class="na">name</span><span class="o">=</span><span class="s">"error"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".has-error"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-accepted"</span> <span class="na">name</span><span class="o">=</span><span class="s">"success"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".has-success"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="input-sizes">Input sizes<a class="headerlink" href="#input-sizes" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/InputSizes.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/InputSizes.PNG" title="Input Sizes"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-xs"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"mytext"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-xs"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-s"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"mytext"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-s"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"mytext"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-ms (Default input)"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-l"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"mytext"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-l"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"tel"</span><span class="na">class</span><span class="o">=</span><span class="s">"size-xs has-error"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-phone"</span> <span class="na">name</span><span class="o">=</span><span class="s">"telephone"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-xs has-error"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a telphone"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"email"</span><span class="na">class</span><span class="o">=</span><span class="s">"size-s has-warning"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-web"</span> <span class="na">name</span><span class="o">=</span><span class="s">"email"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-s .has-warning"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid email"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"url"</span><span class="na">class</span><span class="o">=</span><span class="s">"size-m has-success"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-internet"</span> <span class="na">name</span><span class="o">=</span><span class="s">"url"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-m .has-success"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid Url"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>
+</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"color"</span><span class="na">class</span><span class="o">=</span><span class="s">"size-l"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-custom"</span> <span class="na">name</span><span class="o">=</span><span class="s">"color"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-l"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must select a color"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="select-sizes">Select sizes<a class="headerlink" href="#select-sizes" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/SelectSizes.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/SelectSizes.PNG" title="Select Sizes"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="p">&lt;</span><span class="nt">flx-combo</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-xs has-warning"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-web"</span> <span class="na">name</span><span class="o">=</span><span class="s">"select-s"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Amsterdam<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Atlanta<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Baltimore<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="p">&lt;/</span><span class="nt">flx-combo</span><span class="p">&gt;</span>
+</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>
+</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="p">&lt;</span><span class="nt">flx-combo</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-s has-error"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-web"</span> <span class="na">name</span><span class="o">=</span><span class="s">"select-s"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;</span>
+</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Amsterdam<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-39-9"><a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Atlanta<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-39-10"><a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Baltimore<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-39-11"><a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a><span class="p">&lt;/</span><span class="nt">flx-combo</span><span class="p">&gt;</span>
+</span><span id="__span-39-12"><a id="__codelineno-39-12" name="__codelineno-39-12" href="#__codelineno-39-12"></a>
+</span><span id="__span-39-13"><a id="__codelineno-39-13" name="__codelineno-39-13" href="#__codelineno-39-13"></a><span class="p">&lt;</span><span class="nt">flx-combo</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-m "</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-web"</span> <span class="na">name</span><span class="o">=</span><span class="s">"select-s"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;</span>
+</span><span id="__span-39-14"><a id="__codelineno-39-14" name="__codelineno-39-14" href="#__codelineno-39-14"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Amsterdam<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-39-15"><a id="__codelineno-39-15" name="__codelineno-39-15" href="#__codelineno-39-15"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Atlanta<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-39-16"><a id="__codelineno-39-16" name="__codelineno-39-16" href="#__codelineno-39-16"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Baltimore<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-39-17"><a id="__codelineno-39-17" name="__codelineno-39-17" href="#__codelineno-39-17"></a><span class="p">&lt;/</span><span class="nt">flx-combo</span><span class="p">&gt;</span>
+</span><span id="__span-39-18"><a id="__codelineno-39-18" name="__codelineno-39-18" href="#__codelineno-39-18"></a>
+</span><span id="__span-39-19"><a id="__codelineno-39-19" name="__codelineno-39-19" href="#__codelineno-39-19"></a><span class="p">&lt;</span><span class="nt">flx-combo</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-l has-success"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-web"</span> <span class="na">name</span><span class="o">=</span><span class="s">"select-s"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;</span>
+</span><span id="__span-39-20"><a id="__codelineno-39-20" name="__codelineno-39-20" href="#__codelineno-39-20"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Amsterdam<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-39-21"><a id="__codelineno-39-21" name="__codelineno-39-21" href="#__codelineno-39-21"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Atlanta<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-39-22"><a id="__codelineno-39-22" name="__codelineno-39-22" href="#__codelineno-39-22"></a>  <span class="p">&lt;</span><span class="nt">option</span> <span class="p">&gt;</span>Baltimore<span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-39-23"><a id="__codelineno-39-23" name="__codelineno-39-23" href="#__codelineno-39-23"></a><span class="p">&lt;/</span><span class="nt">flx-combo</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="p">&lt;</span><span class="nt">flx-dbcombo</span> <span class="na">class</span><span class="o">=</span><span class="s">"item-float size-xs has-warning"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-web"</span> <span class="na">ObjectName</span><span class="o">=</span><span class="s">"sysObject"</span>  <span class="na">PlaceHolder</span><span class="o">=</span><span class="s">".item-float .size-xs .has-warning"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-object"</span> <span class="na">ViewName</span><span class="o">=</span><span class="s">"iconsView"</span> <span class="na">SQLValueField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">SQLDisplayField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a telphone"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-dbcombo</span><span class="p">&gt;</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>  <span class="p">&lt;</span><span class="nt">flx-dbcombo</span> <span class="na">class</span><span class="o">=</span><span class="s">"item-float size-s has-error"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-web"</span> <span class="na">ObjectName</span><span class="o">=</span><span class="s">"sysObject"</span>  <span class="na">PlaceHolder</span><span class="o">=</span><span class="s">".item-float .size-s .has-error"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-object"</span> <span class="na">ViewName</span><span class="o">=</span><span class="s">"iconsView"</span> <span class="na">SQLValueField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">SQLDisplayField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid email"</span><span class="p">&gt;</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>    <span class="p">&lt;</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">i</span>  <span class="na">class</span><span class="o">=</span><span class="s">"{{CssClass}} icon-lg icon-margin-right"</span> <span class="p">&gt;&lt;/</span><span class="nt">i</span> <span class="p">&gt;</span>{{IconName}}<span class="p">&lt;/</span><span class="nt">div</span> <span class="p">&gt;</span>
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>    <span class="p">&lt;/</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>  <span class="p">&lt;/</span><span class="nt">flx-dbcombo</span><span class="p">&gt;</span>
+</span><span id="__span-40-8"><a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a>
+</span><span id="__span-40-9"><a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a>  <span class="p">&lt;</span><span class="nt">flx-dbcombo</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-m "</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-web"</span> <span class="na">class</span><span class="o">=</span><span class="s">"item-float"</span> <span class="na">ObjectName</span><span class="o">=</span><span class="s">"sysObject"</span>  <span class="na">PlaceHolder</span><span class="o">=</span><span class="s">".item-float .size-m "</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-objectt"</span> <span class="na">ViewName</span><span class="o">=</span><span class="s">"iconsView"</span> <span class="na">SQLValueField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">SQLDisplayField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid Url"</span><span class="p">&gt;</span>
+</span><span id="__span-40-10"><a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a>    <span class="p">&lt;</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-40-11"><a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a>      <span class="p">&lt;</span><span class="nt">i</span>  <span class="na">class</span><span class="o">=</span><span class="s">"txt-outstanding {{CssClass}} icon-2x icon-margin"</span>  <span class="na">title</span><span class="o">=</span><span class="s">"{{IconName}}"</span> <span class="p">&gt;&lt;/</span><span class="nt">i</span> <span class="p">&gt;</span>
+</span><span id="__span-40-12"><a id="__codelineno-40-12" name="__codelineno-40-12" href="#__codelineno-40-12"></a>    <span class="p">&lt;/</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-40-13"><a id="__codelineno-40-13" name="__codelineno-40-13" href="#__codelineno-40-13"></a>  <span class="p">&lt;/</span><span class="nt">flx-dbcombo</span><span class="p">&gt;</span>
+</span><span id="__span-40-14"><a id="__codelineno-40-14" name="__codelineno-40-14" href="#__codelineno-40-14"></a>
+</span><span id="__span-40-15"><a id="__codelineno-40-15" name="__codelineno-40-15" href="#__codelineno-40-15"></a>  <span class="p">&lt;</span><span class="nt">flx-dbcombo</span> <span class="na">class</span><span class="o">=</span><span class="s">"item-float size-l has-success"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-web"</span> <span class="na">class</span><span class="o">=</span><span class="s">"item-float"</span> <span class="na">ObjectName</span><span class="o">=</span><span class="s">"sysObject"</span>  <span class="na">PlaceHolder</span><span class="o">=</span><span class="s">".size-l .has-success"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-object"</span> <span class="na">ViewName</span><span class="o">=</span><span class="s">"iconsView"</span> <span class="na">SQLValueField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">SQLDisplayField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must select a color"</span><span class="p">&gt;</span>
+</span><span id="__span-40-16"><a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a>    <span class="p">&lt;</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-40-17"><a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"icon-box-s"</span> <span class="p">&gt;</span>
+</span><span id="__span-40-18"><a id="__codelineno-40-18" name="__codelineno-40-18" href="#__codelineno-40-18"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"icon-margin"</span> <span class="err">&lt;</span>
+</span><span id="__span-40-19"><a id="__codelineno-40-19" name="__codelineno-40-19" href="#__codelineno-40-19"></a>      <span class="err">&lt;</span><span class="na">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"{{CssClass}} icon-lg icon-zoom"</span> <span class="p">&gt;&lt;/</span><span class="nt">i</span> <span class="p">&gt;</span>
+</span><span id="__span-40-20"><a id="__codelineno-40-20" name="__codelineno-40-20" href="#__codelineno-40-20"></a>    <span class="p">&lt;/</span><span class="nt">div</span> <span class="p">&gt;</span>
+</span><span id="__span-40-21"><a id="__codelineno-40-21" name="__codelineno-40-21" href="#__codelineno-40-21"></a>  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>{{IconName}}<span class="p">&lt;/</span><span class="nt">div</span> <span class="p">&gt;</span>
+</span><span id="__span-40-22"><a id="__codelineno-40-22" name="__codelineno-40-22" href="#__codelineno-40-22"></a>  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-40-23"><a id="__codelineno-40-23" name="__codelineno-40-23" href="#__codelineno-40-23"></a>  <span class="p">&lt;/</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-40-24"><a id="__codelineno-40-24" name="__codelineno-40-24" href="#__codelineno-40-24"></a><span class="p">&lt;/</span><span class="nt">flx-dbcombo</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="append-buttons-to-controls-sizes">Append buttons to controls sizes<a class="headerlink" href="#append-buttons-to-controls-sizes" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/AppendButtons.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/AppendButtons.PNG" title="Append buttons to controls sizes"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-xs"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">HelpId</span><span class="o">=</span><span class="s">"DD80AE68-552A-4E39-A081-1C13F0F939EF"</span>  <span class="na">name</span><span class="o">=</span><span class="s">"mytext"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-xs"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-s"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span>  <span class="na">HelpId</span><span class="o">=</span><span class="s">"DD80AE68-552A-4E39-A081-1C13F0F939EF"</span> <span class="na">name</span><span class="o">=</span><span class="s">"mytext"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-s"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>
+</span><span id="__span-41-5"><a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span>  <span class="na">HelpId</span><span class="o">=</span><span class="s">"DD80AE68-552A-4E39-A081-1C13F0F939EF"</span> <span class="na">name</span><span class="o">=</span><span class="s">"mytext"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-ms (Default input)"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span><span id="__span-41-6"><a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>
+</span><span id="__span-41-7"><a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="p">&lt;</span><span class="nt">flx-text</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-l"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span>  <span class="na">HelpId</span><span class="o">=</span><span class="s">"DD80AE68-552A-4E39-A081-1C13F0F939EF"</span> <span class="na">name</span><span class="o">=</span><span class="s">"mytext"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-l"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="p">&lt;</span><span class="nt">flx-combo</span> <span class="na">name</span><span class="o">=</span><span class="s">"select-1"</span>  <span class="na">class</span><span class="o">=</span><span class="s">"size-xs "</span> <span class="na">HelpId</span><span class="o">=</span><span class="s">"DD80AE68-552A-4E39-A081-1C13F0F939EF"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid text"</span><span class="p">&gt;</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>  <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span> Amsterdam <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>  <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span> Atlanta <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>  <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span> Baltimore <span class="p">&lt;</span><span class="nt">option</span><span class="p">&gt;</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="p">&lt;/</span><span class="nt">flx-combo</span><span class="p">&gt;</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="p">&lt;</span><span class="nt">flx-dbcombo</span> <span class="na">class</span><span class="o">=</span><span class="s">"item-float size-s has-error"</span> <span class="na">HelpId</span><span class="o">=</span><span class="s">"DD80AE68-552A-4E39-A081-1C13F0F939EF"</span>  <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-web"</span> <span class="na">ObjectName</span><span class="o">=</span><span class="s">"sysObject"</span>  <span class="na">PlaceHolder</span><span class="o">=</span><span class="s">".item-float .size-s .has-error"</span> <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-object"</span> <span class="na">ViewName</span><span class="o">=</span><span class="s">"iconsView"</span> <span class="na">SQLValueField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">SQLDisplayField</span><span class="o">=</span><span class="s">"IconName"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid email"</span><span class="p">&gt;</span>
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>  <span class="p">&lt;</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="p">&gt;&lt;</span><span class="nt">i</span>  <span class="na">class</span><span class="o">=</span><span class="s">"{{CssClass}} icon-lg icon-margin-right"</span> <span class="p">&gt;&lt;/</span><span class="nt">i</span> <span class="p">&gt;</span>{{IconName}}<span class="p">&lt;/</span><span class="nt">div</span> <span class="p">&gt;</span>
+</span><span id="__span-42-10"><a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a>  <span class="p">&lt;/</span><span class="nt">template</span> <span class="p">&gt;</span>
+</span><span id="__span-42-11"><a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a><span class="p">&lt;/</span><span class="nt">flx-dbcombo</span><span class="p">&gt;</span>
+</span><span id="__span-42-12"><a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a>
+</span><span id="__span-42-13"><a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a><span class="p">&lt;</span><span class="nt">flx-text</span>  <span class="na">type</span><span class="o">=</span><span class="s">"email"</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-m has-warning"</span> <span class="na">HelpId</span><span class="o">=</span><span class="s">"DD80AE68-552A-4E39-A081-1C13F0F939EF"</span>  <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-web"</span> <span class="na">name</span><span class="o">=</span><span class="s">"email"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-s .has-warning"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must enter a valid email"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-text</span><span class="p">&gt;</span>
+</span><span id="__span-42-14"><a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a>
+</span><span id="__span-42-15"><a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a><span class="p">&lt;</span><span class="nt">flx-textarea</span>  <span class="na">placeholder</span><span class="o">=</span><span class="s">"flx textarea"</span> <span class="na">class</span><span class="o">=</span><span class="s">"size-l"</span> <span class="na">HelpId</span><span class="o">=</span><span class="s">"DD80AE68-552A-4E39-A081-1C13F0F939EF"</span>  <span class="na">iconclass</span><span class="o">=</span><span class="s">"flx-icon icon-custom"</span> <span class="na">name</span><span class="o">=</span><span class="s">"color"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">".size-l"</span> <span class="na">required</span> <span class="na">requiredmessage</span><span class="o">=</span><span class="s">"You must select a color"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-textarea</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="html-editor">HTML Editor<a class="headerlink" href="#html-editor" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/HTMLEditor.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/HTMLEditor.PNG" title="HTML Editor"></a></p>
+<p>HTML Editor module use the flx-htmledit web component. You can add your HTML Editor by referencing HTML Editor module.</p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="p">&lt;</span><span class="nt">flx-htmledit</span><span class="p">&gt;&lt;/</span><span class="nt">flx-htmledit</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="image">Image<a class="headerlink" href="#image" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/Image.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/Image.PNG" title="Image"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="p">&lt;</span><span class="nt">flx-image</span> <span class="na">TypeMode</span><span class="o">=</span><span class="s">"file"</span> <span class="na">rootpath</span><span class="o">=</span><span class="s">"~/path/"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-image</span><span class="p">&gt;</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>    <span class="p">&lt;</span><span class="nt">flx-image</span> <span class="na">TypeMode</span><span class="o">=</span><span class="s">"base64"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-image</span><span class="p">&gt;</span>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>    <span class="p">&lt;</span><span class="nt">flx-image</span> <span class="err">...........</span> <span class="na">defaultvalue</span><span class="o">=</span><span class="s">"pathValue/base64Value"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-image</span><span class="p">&gt;</span>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>    <span class="p">&lt;</span><span class="nt">flx-image</span> <span class="err">...........</span> <span class="na">value</span><span class="o">=</span><span class="s">"firstValue"</span><span class="p">&gt;</span>
+</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a><span class="p">&lt;/</span><span class="nt">flx-image</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="upload">Upload<a class="headerlink" href="#upload" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/Upload.PNG" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/Upload.PNG" title="Upload"></a></p>
+<div class="language-html highlight"><span class="filename">HTML</span><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="p">&lt;</span><span class="nt">flx-upload</span> <span class="na">Type</span><span class="o">=</span><span class="s">"file"</span> <span class="na">rootpath</span><span class="o">=</span><span class="s">"~/path/"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-upload</span><span class="p">&gt;</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>  <span class="p">&lt;</span><span class="nt">flx-upload</span> <span class="na">Type</span><span class="o">=</span><span class="s">"base64"</span><span class="p">&gt;&lt;/</span><span class="nt">flx-upload</span><span class="p">&gt;</span>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>  <span class="p">&lt;</span><span class="nt">flx-upload</span> <span class="err">...........</span> <span class="na">value</span><span class="o">=</span><span class="s">"pathValue/base64Value"</span><span class="p">&gt;</span>
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="p">&lt;/</span><span class="nt">flx-upload</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="custom-control-dependencies">Custom control dependencies<a class="headerlink" href="#custom-control-dependencies" title="Permanent link">¶</a></h2>
+<p>Using dependencies for changing type of control of dependent property. You can use dependencies between properties to change the control type of the dependent property. Before creating the dependency you must create one or more custom controls that are the ones that you will assign to the dependent property.</p>
+<ul>
+<li><strong>Set custom control based on parent property values</strong>: You will first choose the values for which the dependent property will change and in the combo choose the corresponding custom control.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/CustomContDepValues.png" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/CustomContDepValues.png" title="Input Sizes"></a></p>
+<ul>
+<li><strong>Set the custom control via sql statement</strong>: In this case, it will be the sql statement that will establish the custom control of the dependent property. The sql statement must return the name of the custom control.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../../docs_assets/images/Controls/CustomContDepSelect.png" data-desc-position="bottom"><img alt="" src="../../../docs_assets/images/Controls/CustomContDepSelect.png" title="Input Sizes"></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                  </article>
+                </div>
+              
+              
+                
+                <div class="fh-rightsidebar md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-form-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Form Elements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numbers-an-dates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Numbers an Dates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special fields
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-editors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Editors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkbox-radio-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checkbox &amp; Radio buttons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nullable-checkbox-three-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nullable Checkbox (Three State)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      DB Select
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-multi-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      DB Multi Select
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Select
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input States
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input sizes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select sizes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#append-buttons-to-controls-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Append buttons to controls sizes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTML Editor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upload
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-control-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom control dependencies
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.path", "navigation.expand", "navigation.sections", "navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/utils.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/components/fh-modal.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/components/fh-copy.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/components/fh-popover.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/components/fh-namepropagator.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/components/fh-versions.js"></script>
+      
+        <script src="../../../javascripts/fh-structural/components/flx-navbutton.js"></script>
+      
+        <script src="../../../javascripts/cultures/default_language.js"></script>
+      
+        <script src="../../../javascripts/cultures/es.js"></script>
+      
+        <script src="../../../javascripts/cultures/en.js"></script>
+      
+    
+    <dialog id="navigation-dialog" closedby="any">
+      <p class="input-group">
+        <label>Your flexys URL:</label>
+        <input type="text" id="navigation-dialog-flexy-url" value="https://">
+      </p>
+      <div class="button-container">
+        <button class="button" onclick="_nav(document.getElementById('navigation-dialog-flexy-url').value)">Confirm</button>
+      </div>
+    </dialog>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "zoom"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

@@ -1,0 +1,79 @@
+﻿@import "../CssVars.less";
+
+flx-user {
+    display: block;
+
+    div.profile-mini {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            color: @outstanding-color;
+        }
+
+        div {
+            margin-right: 12px;
+
+            img {
+                width: 28px;
+                border-radius: 30px;
+            }
+        }
+
+        div {
+            span {
+                font-size: .8em;
+
+                @media (max-width: @medium) {
+                    font-size:unset;
+                }
+            }
+
+            p {
+                font-size: .6em;
+                margin: unset;
+            }
+        }
+    }
+}
+/*TODO: Use "flexbox" to align the li*/
+flx-nav[mode=menu] > ul > li[typeid="10"][class*="userwc"] > span {
+    padding: 9px 0 0 0;
+}
+
+
+.profilepopover{
+    min-width:800px;
+}
+
+.userphoto {
+    position: relative;
+    width: 25%;
+}
+
+.userphoto .image {
+    opacity: 1;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.userphoto .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.userphoto:hover .image {
+    opacity: 0.5;
+}
+
+.userphoto:hover .middle {
+    opacity: 1;
+}
+

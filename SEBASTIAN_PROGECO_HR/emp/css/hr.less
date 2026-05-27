@@ -1,0 +1,179 @@
+﻿@import "vars";
+@import "master";
+
+/*.hr-card {
+    &:hover {
+        &:extend(.hr-hover-card);
+    }
+    &:extend(.hr-border);
+    &:extend(.hr-rounded);
+}*/
+
+
+.hr-overtime-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background-color: white;
+
+    &.checked {
+        background-color: dbColor(successColor);
+        border: 1px solid dbColor(successColor);
+        color: white;
+    }
+}
+
+.emp-row-list.dataObject {
+    border-left: 4px solid white;
+
+    button.saveButton {
+        display: none;
+    }
+
+    &.dirty {
+        border-left: 4px solid dbColor(OutstandingColor);
+        background-color: #fff8e6;
+
+        button.saveButton {
+            display: initial;
+        }
+    }
+}
+
+flx-module.overflow-initial .cntBody {
+    overflow: initial;
+}
+
+
+flx-edit.form-inline div.grid-stack {
+    display: flex;
+    height: auto !important;
+
+    div.grid-stack-item {
+        display: flex;
+        position: initial;
+        width: auto !important;
+        height: max-content !important;
+    }
+}
+
+[modulename="hr_mod_OvertimeRegister_List"] {
+    flx-edit {
+        input.form-control[type="number"] {
+            width: 50px;
+        }
+    }
+}
+
+
+span.hr-toolbar-sep {
+    padding-left: 4px !important;
+    border-bottom: 1px solid #dedede; 
+    font-weight: 500;
+}
+
+li:has(.hr-toolbar-sep):hover {
+    background-color: transparent !important;
+    cursor: default;
+}
+
+span.hr-toolbar-option {
+    padding-left: 4px;
+}
+
+
+/*main.pageContainer.ui-dialog-content[pagename="C5CAB8EF-6B50-4F93-97E6-0B4557F18528"] {
+    padding: 0;
+}*/
+
+.flx-slide flx-module[modulename="hr_BagHoursLines_List"] .form-control[disabled] {
+    border: 1px solid #cccccc;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+
+
+flx-module[modulename="hr_BagHoursLines_Footer"] {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
+    width: 40%;
+    border-radius: 0;
+    background-color: #f8f8f8;
+    border-top: 2px solid #aaaaaa50;
+
+    .cntBodyHeader, .cntHeader {
+        display: none;
+        border-bottom: none;
+    }
+
+    .cntBody {
+        padding: 10px 0px
+    }
+}
+
+
+/***************************************************/
+/************** HR TABLE STYLES ******************/
+/***************************************************/
+.hr-list-table {
+    font-size: 13px;
+
+    .hr-list-table-header {
+        display: flex;
+        align-items: center;
+        /*background-color: lighten(dbColor(txtNavColor), 10%);*/
+        background: #adc1dd5e;
+        padding: 0px !important;
+        border: 1px solid rgba(232, 241, 248, 0.7);
+        border-width: 0 0 1px 0;
+
+        & > div {
+            padding: 10px 8px;
+
+            &[data-sort]:not(.sortAsc, .sortDsc):after { // Icono de ordenación
+                font: normal normal normal 14px/1 FontAwesome;
+                content: "\f0dc";
+                margin-left: 0.5em;
+            }
+
+            &[data-sort].sortAsc, &[data-sort].sortDsc {
+                color: dbColor(OutstandingColor);
+                font-weight: bold;
+            }
+
+            &:nth-child(even) {
+                /*                background-color: lighten(dbColor(NavColor), 12%);
+*/
+            }
+        }
+
+        * {
+            /*color: #e9e9e9;*/
+            color: dbColor(NavColor);
+            font-weight: 600;
+        }
+    }
+
+    .hr-list-table-item {
+        padding: 10px 0px;
+        border-bottom: 1px solid #e9e9e9;
+        transition: all 0.15s ease-in;
+        border-left: 6px solid transparent;
+
+        &:hover {
+            background-color: lighten(dbColor(txtNavColor), 18%);
+        }
+
+        &.selected {
+            border-left: 6px solid dbColor(NotifyColor);
+        }
+    }
+}
+

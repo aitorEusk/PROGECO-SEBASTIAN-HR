@@ -1,0 +1,1431 @@
+﻿@import "../hr";
+
+////////////////////////
+/*EMPLOYEE SPACE PAGE*/
+//////////////////////
+
+
+/*SIDE MENU EMPLOYEE SPACE*/
+main[pagename="emp_MyCV"] {
+    @media (max-width: dbSize(medium)) {
+
+        div.module-placeholder.CenterLeftPosition {
+            display: none;
+        }
+    }
+
+    @media (min-width: dbSize(medium)) {
+
+        flx-module[modulename="HR_MobileEmployeeMenu"] {
+            display: none;
+        }
+    }
+
+    flx-module[modulename="HR_MobileEmployeeMenu"] {
+        a.menu-btn {
+            position: fixed;
+            display: block;
+            bottom: 5vh;
+            right: 5vh;
+            z-index: 1000;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: x-large;
+            background: white;
+            box-shadow: 0px 0px 7px 0px rgba(138, 138, 138, 1);
+
+            &:focus, &:hover {
+                text-decoration: none !important;
+            }
+        }
+    }
+
+    flx-module[modulename="HR_EmployeeSpace_ObjectsLinkMenu"] {
+        height: 100%;
+
+        div.cntBody {
+            overflow-x: visible;
+
+            flx-list[modulename="HR_EmployeeSpace_ObjectsLinkMenu"] {
+                /*height: 100vh;*/
+                display: block;
+            }
+        }
+    }
+
+    #employee-space-menu {
+        margin-left: -20px;
+    }
+
+    #employee-space-menu-mobile {
+        background-color: #d9dded;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+
+
+
+    #employee-space-menu, #employee-space-menu-mobile {
+        background-color: transparent;
+        /*background-color: #d9dded;*/
+        font-weight: 500;
+        color: #2c2c2c;
+        height: 100%;
+        font-size: 0.85em;
+
+        .menu-node {
+
+            .menu-option {
+                /*font-size: large;*/
+                padding: 8px;
+                opacity: 1;
+                transition: opacity 1s ease 0s;
+
+                i {
+                    font-size: larger;
+                    width: 30px;
+                }
+
+                &:hover {
+                    /*background-color: #f0f2fc;*/
+                    background-color: #d9dded;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        .menu-separator {
+            hr {
+                border: 1px solid #2c2c2c2e;
+                border-radius: 0px;
+            }
+        }
+    }
+}
+
+
+/*END SIDE MENU EMPLOYEE SPACE*/
+
+
+/*EMPLOYEE VIEW MODULE*/
+
+
+@media (min-width: dbSize(medium)) {
+
+    flx-module[modulename="HR_EmployeeSpace_EmployeeInfo"] {
+        margin-top: 50px;
+        font-size: smaller;
+    }
+}
+
+flx-module[modulename="HR_EmployeeSpace_EmployeeInfo"] {
+
+
+    flx-view[modulename="HR_EmployeeSpace_EmployeeInfo"] {
+        .cnt-img {
+            position: relative;
+
+            img.emp-photo {
+                width: 150px;
+                height: auto;
+                position: absolute;
+                top: -80px;
+                border: 3px solid #ffffff;
+                border-radius: 5px;
+            }
+        }
+
+        .emp-pers-data {
+            background: #f0f2fc;
+            padding: 14px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+    }
+}
+/*END EMPLOYEE VIEW MODULE*/
+
+
+///////////////////////////
+/*END EMPLOYE SPACE PAGE*/
+/////////////////////////
+
+
+
+
+/****HOME***/
+
+//Initial configuration
+#initial-conf {
+    background-color: #001d4cde;
+    backdrop-filter: blur(5px);
+    position: fixed !important;
+    height: 100%;
+    top: 0 !important;
+    left: 0 !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    z-index: 10;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    .welcome-container {
+        text-align: center;
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 24px;
+        color: #333;
+    }
+
+    h2 {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    .mode-buttons {
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    .mode-button {
+        flex: 1;
+        padding: 20px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &.pro {
+            background-color: dbcolor(NotifyColor);
+
+            &:hover {
+                background-color: lighten(dbcolor(NotifyColor),10%);
+            }
+        }
+
+        &.lite {
+            background-color: dbcolor(InfoColor);
+
+            &:hover {
+                background-color: lighten(dbcolor(InfoColor),10%);
+            }
+        }
+    }
+
+    .footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #888;
+    }
+}
+
+
+//Planning
+.hr-wk-plan-main-cnt {
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: dbSize(medium)) {
+        overflow-x: auto;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+
+    .hr-wk-plan-item {
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: transparent;
+        width: 14.25%;
+        color: dbColor(primaryColor);
+
+        @media (max-width: dbSize(medium)) {
+            min-width: 120px;
+            width: 120px;
+            flex-shrink: 0;
+        }
+
+        .hr-card {
+            padding: 0px;
+            border-radius: 10px;
+
+            .hr-wk-plan-data-cnt {
+                border-bottom: 1px solid #dbdbdb;
+                /*padding-bottom: 10px;*/
+                width: 100%;
+                padding: 0 0 10px 0;
+
+                .hr-wk-plan-title {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 5vh;
+                    border-radius: 10px 10px 0px 0px;
+                }
+
+                .hr-wk-plan-today-cnt {
+                    display: flex;
+                    justify-content: flex-end;
+                    position: relative;
+
+                    .hr-wk-plan-today-text {
+                        font-size: 11px;
+                        border-radius: 20px;
+                        background-color: #dbdbdb;
+                        padding: 0px 7px;
+                        color: dbColor(primaryColor);
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        position: absolute;
+                        right: 2px;
+                        top: 4px;
+                    }
+                }
+
+                .hr-wk-plan-date {
+                    display: grid;
+                    justify-items: center;
+                    margin-top: 20px;
+                    margin-bottom: 15px;
+
+                    .hr-wk-plan-wd {
+                        font-size: 17px;
+                    }
+
+                    .hr-wk-plan-dnumber {
+                    }
+                }
+
+                .hr-wk-plan-shift {
+                    display: grid;
+                    justify-items: center;
+                    align-items: center;
+                    gap: 5px;
+
+                    .hr-wk-plan-shift-chip {
+                        border-radius: 20px;
+                        font-size: 12px;
+                        width: 70%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        width: stretch;
+                    }
+                }
+                }
+                .hr-wk-plan-hours-data {
+                    display: grid;
+                    align-items: center;
+                    justify-items: center;
+                    margin-top: 10px;
+
+                    .hr-wk-plan-hours-label {
+                        font-size: 12px;
+                        font-weight: bold;
+                    }
+
+                    .hr-wk-plan-hours-text {
+                        font-size: 18px;
+                        padding: 6px;
+                    }
+
+                    .hr-wk-plan-hours-difference {
+                        padding: 2px 15px;
+                        border-radius: 20px;
+                        margin-top: 10px;
+                        margin-bottom: 14px;
+                        font-weight: bold;
+
+                        &.danger {
+                            color: dbColor(DangerColor);
+                            background-color: fade(dbColor(DangerColor), 30%);
+
+                        }
+
+                        &.info {
+                            color: dbColor(InfoColor);
+                            background-color: fade(dbColor(InfoColor), 30%);
+                        }
+
+                        &.success {
+                            color: dbColor(SuccessColor);
+                            background-color: fade(dbColor(SuccessColor), 20%);
+                        }
+                    }
+                
+            }
+        }
+    }
+}
+/* HOME PAGE MODULES */
+flx-module.noheader .cntBodyHeader {
+    background: none !important;
+}
+
+.bg-white-module {
+    background: #fff;
+    height: 160px;
+    color: #003b68;
+    height: 180px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 14px;
+
+    .progressbar-container {
+        background-color: #d0d6f6;
+    }
+}
+
+.home-header {
+    font-size: 16px !important;
+    text-transform: none !important;
+    font-weight: normal !important;
+    color: #003b68 !important;
+    margin: 0 !important;
+
+    i {
+        color: #333;
+        font-size: 14px;
+    }
+}
+
+.module-auto-height {
+    min-height: 150px;
+}
+
+.btn-home-modules {
+    margin-right: 0;
+    padding-right: 0;
+}
+/* HOME BOARD */
+
+.board-container {
+    display: flow;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin: 10px;
+}
+
+.board-buttons {
+    .btn.board-filter-pill,
+    .btn.board-filter-all {
+        border-radius: 20px !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 14px !important;
+        font-size: 0.85em;
+
+        &.active{
+            border: 1px solid;
+            box-shadow: none;
+        }
+
+        &.tools {
+            background-color: #9e9e9e17 !important;
+            color: dbColor(ToolsColor) !important;
+
+            &:hover {
+                background-color: #9e9e9e17 !important;
+                border: 1px solid dbColor(ToolsColor) !important;
+            }
+        }
+
+        &.danger {
+            background-color: #9e9e9e17 !important;
+            color: dbColor(DangerColor) !important;
+
+            &:hover {
+                background-color: #9e9e9e17 !important;
+                border: 1px solid dbColor(DangerColor) !important;
+            }
+        }
+
+        &.success {
+            background-color: #9e9e9e17 !important;
+            color: dbColor(SuccessColor) !important;
+
+            &:hover {
+                background-color: #9e9e9e17 !important;
+                border: 1px solid dbColor(SuccessColor) !important;
+            }
+        }
+
+        &.outstanding {
+            background-color: #9e9e9e17 !important;
+            color: dbColor(NotifyColor) !important;
+
+            &:hover {
+                background-color: #9e9e9e17 !important;
+                border: 1px solid dbColor(NotifyColor) !important;
+            }
+        }
+
+        &.warning {
+            background-color: #9e9e9e17 !important;
+            color: dbColor(WarningColor) !important;
+
+            &:hover {
+                background-color: #9e9e9e17 !important;
+                border: 1px solid dbColor(WarningColor) !important;
+            }
+        }
+
+        &.info {
+            background-color: #9e9e9e17 !important;
+            color: dbColor(InfoColor) !important;
+
+            &:hover {
+                background-color: #9e9e9e17 !important;
+                border: 1px solid dbColor(InfoColor) !important;
+            }
+        }
+    }
+}
+
+.board-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 600;
+
+    &.txt-success {
+        background-color: fade(#34c38f, 12%);
+    }
+
+    &.txt-outstanding {
+        background-color: fade(#2196F3, 12%);
+    }
+
+    &.txt-warning {
+        background-color: fade(#f1b44c, 15%);
+    }
+
+    &.txt-danger {
+        background-color: fade(#f46a6a, 12%);
+    }
+
+    &.txt-tools {
+        background-color: fade(#6f42c1, 12%);
+    }
+}
+
+flx-list[modulename="emp_home_board"] {
+    .cntBody {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.post-container {
+    &:extend(.hr-card);
+    margin: 5px;
+    padding: 0;
+    width: 95%;
+    height: 100%;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header {
+    padding: 12px 14px 4px 14px;
+}
+
+.post-content {
+    padding: 4px 14px 10px 14px;
+    font-size: 0.9em;
+    flex: 1;
+
+    span {
+        font-weight: 600;
+        color: dbColor(NotifyColor);
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+.post-footer {
+    padding: 8px 10px;
+    margin-top: 0;
+    border-top: 1px solid #f0f0f0;
+    min-height: 44px;
+}
+
+.post-interactions {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+    margin: 0;
+}
+
+.post-options {
+    float: right;
+    height: 10px;
+    display: flex;
+    position: relative;
+}
+
+.post-options .dropdown .dropdown-toggle {
+    border: none;
+}
+
+.post-options .dropdown .dropdown-toggle:hover {
+    border: none;
+}
+/* Steps bar */
+flx-module[modulename="emp_PersonalData_StepsBar"],
+flx-module[modulename="emp_ModifyMarking_StepsBar"],
+flx-module[modulename="emp_Instance_Holiday_stepsbar_mod"],
+flx-module[modulename="HR_Instances_Requests_StepsBar"],
+flx-module[modulename="vHR_Instance_RemoveHolidays_StepBar"],
+flx-module[modulename="emp_AddMarking_StepsBar"] {
+
+    body {
+        background-color: transparent;
+    }
+
+    .container {
+        width: 100%;
+        color: white;
+        background: transparent;
+    }
+
+    .progressbar {
+        counter-reset: step;
+    }
+
+    .progressbar li {
+        position: relative;
+        list-style: none;
+        float: left;
+        text-align: center;
+    }
+
+    .progressbar li:before {
+        content: counter(step);
+        counter-increment: step;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #FFF;
+        display: block;
+        text-align: center;
+        margin: 0 auto 10px auto;
+        border-radius: 50%;
+        background-color: #f7b24b;
+        line-height: 39px;
+        position: inherit;
+        z-index: 1;
+    }
+
+    .progressbar li:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background: #f7b24b;
+        top: 20px;
+        left: -50%;
+        z-index: 0;
+    }
+
+    .progressbar li:first-child:after {
+        content: none;
+    }
+
+    .progressbar li.active:before {
+        background: #2ea879;
+    }
+
+    .progressbar li.active + li:after {
+        background: #2ea879;
+    }
+
+    .progressbar li.deny:before {
+        background: #f97b4e;
+    }
+
+    .progressbar li.deny + li:after {
+        background: #f97b4e;
+    }
+}
+/*Add Employees Documents List*/
+flx-list[modulename="HR_SetEmployeesDocuments"] {
+    i {
+        &.fa-file-word-o {
+            color: dbColor(NotifyColor);
+        }
+
+        &.fa-file-excel-o {
+            color: dbColor(SuccessColor);
+        }
+
+        &.fa-file-pdf-o {
+            color: #b51308;
+        }
+
+        &.fa-file-o {
+            color: dbColor(WarningColor);
+        }
+
+        &.fa-file-image-o {
+            color: dbColor(ToolsColor);
+        }
+
+        &.fa-file-powerpoint-o {
+            color: dbColor(DangerColor);
+        }
+
+        &.fa-file-text-o {
+            color: #33a2b7;
+        }
+    }
+}
+/**Employee Wizard Form**/
+flx-edit[mode="process"][processname="HR_CreateEmployee_Wizard"] {
+    label.error {
+        font-size: 12px;
+        float: right;
+        color: dbColor(DangerColor);
+    }
+}
+//**MARKINGS CUSTOM FILTERS**//
+.hr-markings-filter {
+    background-color: #f7f8fa;
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 1s ease-out,height 2s ease-out;
+    /*        opacity: 0;
+    height: 0;*/
+    overflow: hidden;
+
+    &.drg-visible {
+        opacity: 1;
+        height: auto;
+    }
+    /*.hr-markings-filter-combos*/
+    .hr-markings-filter-combos {
+        text-align: start;
+        text-transform: none !important;
+        letter-spacing: normal !important;
+
+        .hr-markings-cnt-combo {
+            max-height: 45px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+
+            &::-webkit-scrollbar-track {
+                background-color: #f7f8fa !important;
+            }
+
+            flx-multicombo {
+                background-color: transparent !important;
+                height: 40px !important;
+                display: block;
+
+                .input-group {
+                    background-color: transparent !important;
+                    border: none;
+                    border-bottom: 1.5px solid;
+                    border-radius: 0px;
+                    padding: 2px;
+
+                    .bootstrap-tagsinput {
+                        background-color: transparent !important;
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        .hr-markings-cnt-check {
+            height: 40px;
+            display: flex;
+            align-items: flex-end;
+
+            label.check-label {
+                font-size: 16px;
+                padding: 0 10px; /*
+                margin-bottom: 0px;*/
+            }
+        }
+
+        flx-text {
+            div, input {
+                background-color: transparent;
+                border-radius: 0;
+                border: none;
+                box-shadow: none;
+                border-radius: 0px;
+            }
+
+            input {
+                border-bottom: 1px solid;
+                height: 40px !important;
+                display: block;
+            }
+        }
+
+        button {
+            border: none;
+
+            &.dgr-filter {
+                color: dbColor(successColor);
+
+                &:hover {
+                    color: #FFFFFF;
+                }
+            }
+
+            &:hover {
+                border: none;
+                background-color: #f7f8fa;
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+/**RESERRVES**/
+/*.reserveHeigth {
+    min-height: 500px;
+}
+
+@media (max-width: 991px) {
+    .reserveHeigth .cntBody flx-scheduler #calendar .fc-view-container .fc-view .fc-scroller {
+        height: 60vh !important;
+    }
+}*/
+
+
+flx-module[modulename="emp_Resources_Reserves"] {
+    @media (max-width: 991px) {
+        height: 80vh;
+
+        flx-scheduler {
+            height: 80vh;
+            display: block;
+
+            div#calendar {
+                height: 80vh;
+
+                div.fc-view-container {
+                    height: 80vh;
+
+                    div.fc-view {
+                        height: 80vh;
+
+                        div.fc-scroller {
+                            height: 80vh !important;
+                        }
+                    }
+                }
+            }
+        }
+        /*        .reserveHeigth .cntBody flx-scheduler #calendar .fc-view-container .fc-view .fc-scroller {
+            height: 60vh !important;
+        }*/
+    }
+}
+/*Formulario Employees Leaves*/
+/* Para pintar el aviso si hay vacaciones. El la cultura se pone con una dependencia desde RegId. Esto es una fumada pero es como he podido apañarlo */
+/* Ocultamos el contenido real */
+flx-text[property="HasHolidays"] > * {
+    display: none;
+}
+
+flx-text[property="HasHolidays"]::before {
+    white-space: pre-line;
+    display: block;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+/* Textos por idioma */
+flx-text[property="HasHolidays"][value="es-es"]::before {
+    content: "⚠ Atención\A\A Este empleado tiene vacaciones en el periodo seleccionado.\A Si desea cancelarlas, marque la opción: Cancelar vacaciones";
+}
+
+flx-text[property="HasHolidays"][value="en-gb"]::before {
+    content: "⚠ Attention\A\A This employee has holidays in the selected period.\A If you want to cancel them, check the option: Cancel holidays";
+}
+
+flx-text[property="HasHolidays"][value="fr-fr"]::before {
+    content: "⚠ Attention\A\A Cet employé a des congés sur la période sélectionnée.\A Si vous souhaitez les supprimer, cochez l'option : Supprimer les congés";
+}
+
+flx-text[property="HasHolidays"][value="it-it"]::before {
+    content: "⚠ Attenzione\A\A Questo dipendente ha ferie nel periodo selezionato.\A Se desideri eliminarle, seleziona l'opzione: Elimina ferie";
+}
+/*Marcador turno*/
+.hr-shift-alias-marker {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    border-radius: 50%;
+    border: 3px solid;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/*Timeline de fichajes*/
+
+.hr-timeline-parent-cont {
+    display: grid;
+    justify-items: center;
+    padding: 5px;
+    padding-bottom: 10px;
+}
+
+.hr-timeline-container {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.hr-timeline-header {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.hr-timeline {
+    position: relative;
+}
+
+.hr-timeline-item {
+    display: flex;
+    position: relative;
+    padding-bottom: 0;
+
+    &:last-child {
+        padding-bottom: 0;
+        /*        .hr-timeline-line::before {
+            display: none;
+            background-color: transparent;
+        }*/
+
+        .hr-timeline-content {
+            padding-bottom: 0;
+        }
+    }
+
+    &:nth-last-child(2) {
+        .hr-timeline-line::before {
+            height: calc(100% + 60px);
+        }
+    }
+
+    &.hr-timeline-lastrecord {
+        .hr-timeline-line::before {
+            display: none;
+            background-color: transparent;
+        }
+    }
+}
+
+.hr-timeline-time {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    min-width: 50px;
+    padding-top: 8px;
+}
+
+.hr-timeline-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+    position: relative;
+    min-height: 80px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        height: calc(100% + 60px);
+        width: 3px;
+        background: #1e90ff;
+        z-index: 1;
+    }
+
+    &.hr-dashed::before {
+        background: linear-gradient(to bottom, #1e90ff 50%, transparent 50%);
+        background-size: 3px 8px;
+    }
+}
+
+.hr-timeline-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #1e90ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    flex-shrink: 0;
+    position: relative;
+
+    i {
+        width: 20px;
+        height: 20px;
+        /*color: #1e90ff;*/
+    }
+}
+
+.hr-timeline-content {
+    flex: 1;
+    padding-top: 8px;
+    /*padding-bottom: 40px;*/
+}
+
+.hr-timeline-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.hr-timeline-subtitle {
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    span {
+        background-color: #e8f4fd;
+        padding: 0px 15px;
+        border-radius: 8px;
+    }
+
+    i {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+.hr-timeline-total {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.hr-break {
+    background: #e8f4fd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-left: 90px;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    i {
+        width: 20px;
+        height: 20px;
+        color: #666;
+    }
+}
+
+.hr-break-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.hr-break-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.hr-break-duration {
+    font-size: 12px;
+    color: #666;
+}
+/**INCEDENCES RESOLUTION**/
+
+
+.batch-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.batch-action-card {
+    flex: 1;
+    background: white;
+    border: 2px solid #e2e6eb;
+    border-radius: 8px;
+    padding: 20px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.batch-action-card:hover {
+    border-color: #2196F3;
+    background-color: #f8fcff;
+}
+
+.batch-action-card.active {
+    border-color: #2196F3;
+    background-color: #E4F3FF;
+}
+
+.batch-action-card .icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f7fc;
+    border-radius: 8px;
+}
+
+.batch-action-card.active .icon {
+    background-color: #d6e9f5;
+}
+
+.batch-action-card .icon i {
+    font-size: 28px;
+    color: #2196F3;
+}
+
+.batch-action-card .title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #26587f;
+    margin: 0 0 6px 0;
+}
+
+.batch-action-card .description {
+    font-size: 12px;
+    color: #777777;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.batch-notes-section {
+    margin-bottom: 24px;
+}
+
+
+
+.batch-notes-section textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px;
+    border: 1px solid #e2e6eb;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical;
+    transition: border-color 0.2s;
+}
+
+.batch-notes-section textarea:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+.batch-notes-section textarea::placeholder {
+    color: #aaaaaa;
+}
+
+.batch-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 24px;
+    border-top: 1px solid #e2e6eb;
+}
+
+.hr-hint-label {
+    padding: 2px 10px;
+    background-color: #ececec;
+    color: #515151;
+    font-weight: bold;
+    border-radius: 50px;
+    font-size: 12px;
+    cursor: pointer;
+
+    i {
+        margin-right: 5px;
+    }
+}
+
+.hr-hint-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hr-hint-popover {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #373737;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.hr-hint-popover::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #333;
+}
+
+.hr-hint-container:hover .hr-hint-popover {
+    opacity: 1;
+    visibility: visible;
+}
+//// EMPLOYEE MARKINGS PAGE ////
+main[pagename="emp_hhrr_Employee_View_Markings"] {
+    .module-placeholder.TopPosition {
+        margin-bottom: 20px;
+    }
+}
+/*EMPLOYEES MARKINGS details PAGE*/
+main.pageContainer.ui-dialog-content.ui-widget-content.ui-dialog-normal[pagename="hr_Pg_ManageMarkings_Simple"] {
+
+    flx-module[modulename="HR_WorkingDay_Employee_Date"] {
+        margin: 0 !important;
+        border-radius: 5px 5px 0px 0px;
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+    }
+
+    flx-module[modulename="HR_WorkingDay_Employee_Buttons"] {
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        padding-top: 0 !important;
+        border-radius: 0px 0px 5px 5px;
+        box-shadow: 6px 7px 12px 2px #adadad1f !important;
+
+        .cntBody {
+            box-shadow: none !important;
+        }
+    }
+}
+///Maintenance Menu
+flx-module[modulename="hr_MaintenanceFilter"] {
+    .cntBody {
+        &:extend(.hr-card);
+    }
+}
+
+.hr-maintenance-menu {
+    .hr-card {
+        .hr-node-title {
+            color: dbColor(primaryColor);
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hr-node-link flx-navbutton {
+            transition: all 1s ease 0s;
+
+            &:hover {
+                color: dbColor(notifyColor);
+                font-weight: bold;
+            }
+        }
+    }
+}
+/*HEATMAP*/
+flx-list[modulename="HR_GDB_HeatMap_WorkdaysHealth"] {
+    display: block;
+    width: 100%;
+}
+
+.hm-grid {
+    width: 100%;
+}
+
+.hm-cell {
+    position: relative;
+    cursor: pointer;
+    transition: opacity .15s ease;
+    font-size: 9px;
+
+    &:not(.hm-cell-empty):hover {
+        opacity: .55;
+
+        .hm-tooltip {
+            display: block;
+        }
+    }
+}
+
+.hm-cell-empty {
+    visibility: hidden;
+}
+
+.hm-cell-success {
+    color: dbColor(successColor);
+}
+
+.hm-cell-warning {
+    color: dbColor(warningColor);
+}
+
+.hm-cell-danger {
+    color: dbColor(dangerColor);
+}
+
+.hm-cell-info {
+    color: dbColor(infoColor);
+}
+
+.hm-cell-muted {
+    color: #c7c7c7;
+}
+/*.hm-tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(50, 50, 50, .82);
+    color: #fff;
+    border-radius: 4px;
+    padding: 4px 8px;
+    white-space: nowrap;
+    font-size: 11px;
+    line-height: 1.6;
+    pointer-events: none;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 4px solid transparent;
+        border-top-color: rgba(50, 50, 50, .82);
+    }
+}
+
+.hm-tooltip-label {
+    opacity: .65;
+    margin-right: 3px;
+}*/
+
+div.popover:has(flx-schedulerview[modulename="emp_GeneralDB_JourneysCalendar"]) {
+    min-width: 400px;
+}
+/*EMPTY LISTS*/
+.hr-empty-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px 60px;
+    min-height: 250px;
+
+    .hr-empty-list-img {
+        height: auto;
+        margin-bottom: 10px;
+        opacity: 0.85;
+        user-select: none;
+        width: 65%;
+        pointer-events: none;
+        filter: grayscale(1);
+    }
+
+    .hr-empty-list-text {
+        font-size: 15px;
+        color: dbColor(primaryColor);
+        font-weight: 500;
+        max-width: 80%;
+        line-height: 1.5;
+    }
+}
+/*EDITGRID*/
+flx-list[mode="edit"] {
+    table.flxRszTbl {
+        tbody {
+            tr:not(.rowHeader) {
+                &:hover {
+                    input.form-control:not([disabled]) {
+                        color: dbColor(primaryColor) !important;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+// OCULTAR MENUS NONE DE MENUS CONTEXTUALES
+flx-contextmenu#flx-menu {
+    .flx-contextmenu {
+        li[title="-"] {
+            display: none;
+        }
+    }
+}

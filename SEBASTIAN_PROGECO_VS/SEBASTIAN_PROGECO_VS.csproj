@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CCB4BC07-9625-4119-AB40-E617E162BB12}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SEBASTIAN_PROGECO_VS</RootNamespace>
+    <AssemblyName>SEBASTIAN_PROGECO_VS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="flxDataManager, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxDataManager.dll</HintPath>
+    </Reference>
+    <Reference Include="flxEntity, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="flxEnvironment, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxEnvironment.dll</HintPath>
+    </Reference>
+    <Reference Include="flxGlobals, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxGlobals.dll</HintPath>
+    </Reference>
+    <Reference Include="flxLocalization, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxLocalization.dll</HintPath>
+    </Reference>
+    <Reference Include="flxObjectConfig, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxObjectConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="flxPlugins, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxPlugins.dll</HintPath>
+    </Reference>
+    <Reference Include="flxSearch, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="flxSecurity, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxSecurity.dll</HintPath>
+    </Reference>
+    <Reference Include="flxSession, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxSession.dll</HintPath>
+    </Reference>
+    <Reference Include="flxSettings, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="flxSignalR, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxSignalR.dll</HintPath>
+    </Reference>
+    <Reference Include="flxSysAbhProcess, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxSysAbhProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="flxSysProcess, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxSysProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="flxSysReports, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxSysReports.dll</HintPath>
+    </Reference>
+    <Reference Include="flxUI, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxUI.dll</HintPath>
+    </Reference>
+    <Reference Include="flxUtilities, Version=5.6.0.5, Culture=neutral, PublicKeyToken=d94feba4661f934f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="flxWebAPI">
+      <HintPath>..\SEBASTIAN_PROGECO\bin\flxWebAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\EmpleadoSpec.cs" />
+    <Compile Include="Clases\ListtoDataTableConverter.cs" />
+    <Compile Include="Clases\Marcaje.cs" />
+    <Compile Include="Connected Services\web_service_spec\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Documentos.cs" />
+    <Compile Include="Noticias.cs" />
+    <Compile Include="Notificaciones.cs" />
+    <Compile Include="Procesos.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\web_service_spec\SEBASTIAN_PROGECO_VS.web_service_spec.Clocking.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\web_service_spec\SEBASTIAN_PROGECO_VS.web_service_spec.Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\web_service_spec\SEBASTIAN_PROGECO_VS.web_service_spec.WSElement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\web_service_spec\WebService.wsdl" />
+    <None Include="Connected Services\web_service_spec\WebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\web_service_spec\WebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\web_service_spec\WebService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\web_service_spec\WebService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\web_service_spec\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\web_service_spec\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\web_service_spec\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\web_service_spec\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

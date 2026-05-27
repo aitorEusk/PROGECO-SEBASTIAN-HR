@@ -1,0 +1,264 @@
+import { r as registerInstance, k as h, l as getElement } from './index-3f6ae35e.js';
+import { s as sql, u as util } from './conftoken-949aae77.js';
+import { j as jquery } from './jquery-254bc370.js';
+import { p as parser } from './parser-ca618554.js';
+import { m as modalController } from './overlays-71eb67ef.js';
+import './process-es6-cc264d03.js';
+import './utils-515e0805.js';
+import './animation-160b6d8d.js';
+import './helpers-0fb1c204.js';
+import './ios.transition-9f5405f1.js';
+import './index-7e5eab7f.js';
+import './md.transition-d5eeb7f8.js';
+import './cubic-bezier-ed243a9b.js';
+import './index-d086042f.js';
+import './ionic-global-7b33f09f.js';
+import './index-cc97b114.js';
+import './index-f393b124.js';
+import './hardware-back-button-508e48cf.js';
+import './_commonjsHelpers-2a12c1e6.js';
+
+const flxMulticomboCss = "flx-multicombo{width:100%}flx-multicombo ion-input{width:calc(100% - 60px);max-width:calc(100% - 60px);float:left;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}flx-multicombo[clearbutton=\"false\"] ion-input{width:100%;max-width:100%;float:left}flx-multicombo ion-button{width:30px;float:right}flx-multicombo ion-button.ios{--padding-start:0px;--padding-end:0px}flx-multicombo ion-modal.multicombo ion-grid{border-bottom:1px solid #dedede;padding:5px 0 5px 0}flx-multicombo ion-modal.multicombo ion-col{padding:0}flx-multicombo ion-modal.multicombo ion-col[size=\"1\"]{display:flex;flex-direction:column;justify-content:center}flx-multicombo ion-input.multicombo{display:inline-block;margin:10px 0}flx-multicombo ion-input.multicombo input{display:none !important}flx-multicombo ion-input.multicombo>div{display:inline-flex;background:#d44388;margin:3px 3px 0 0;padding:2px;border-radius:5px;color:white;font-size:14px}flx-multicombo div.multiValues{position:absolute;padding-top:18px;overflow:auto;-ms-overflow-style:none;scrollbar-width:none;}flx-multicombo div.multiValues::-webkit-scrollbar{display:none}flx-multicombo div.multiValue{display:inline-flex;background:#398cbd;margin:3px 3px 0 0;padding:2px;border-radius:5px;color:white;font-size:14px;margin-bottom:5px}flx-sqllist ion-item.multiSelected ion-icon.flxCheckIcon{color:#007c11}";
+
+const FlxMulticombo = class {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+    this.value = undefined;
+    this.valueArr = [];
+    this.text = undefined;
+    this.name = undefined;
+    this.placeHolder = undefined;
+    this.disabled = false;
+    this.required = undefined;
+    this.dataMsgRequired = undefined;
+    this.min = undefined;
+    this.max = undefined;
+    this.dataMsgMin = undefined;
+    this.dataMsgMax = undefined;
+    this.class = undefined;
+    this.valuefield = undefined;
+    this.displayfield = undefined;
+    this.objectname = undefined;
+    this.sqlsentence = undefined;
+    this.sqlfilter = undefined;
+    this.orderby = undefined;
+    this.filter = undefined;
+    this.additional = undefined;
+    this.clearbutton = true;
+    this.tablename = undefined;
+    this.autoselect = undefined;
+    this.separator = undefined;
+    this.table = [];
+  }
+  componentWillLoad() {
+    this.load(true);
+  }
+  sqlsentenceHandler() {
+    this.load();
+  }
+  sqlfilterHandler() {
+    this.load();
+  }
+  additionalHandler() {
+    this.load();
+  }
+  filterlHandler() {
+    this.load();
+  }
+  async open() {
+    this.showItems();
+  }
+  async refresh() {
+    return this.load(true);
+  }
+  valueHandler() {
+    if (!this.me.getAttribute('avoid_dependencies')) {
+      jquery(this.me).trigger('change');
+    }
+    else {
+      this.me.removeAttribute('avoid_dependencies');
+    }
+    if (this.me.sqlValidatorFunction)
+      this.me.sqlValidatorFunction();
+    this.load(true);
+  }
+  load(first_load = false) {
+    if (this.sqlsentence) {
+      let onClickFunction = `
+                $(this).toggleClass('multiSelected');
+
+                let icon = $(this).find('ion-icon.flxCheckIcon');
+                if (icon.attr('name') === 'square-outline') icon.attr('name', 'checkbox-outline');
+                else icon.attr('name', 'square-outline');
+            `;
+      if (jquery(this.me).find('.comboTemplate').length > 0) {
+        this.template = `<ion-item lines="full" onClick="${onClickFunction}" value="{{${this.valuefield}|JS}}" text="{{${this.displayfield}|HTMLATTR}}"><ion-icon class="flxCheckIcon" name="square-outline"></ion-icon>${jquery('<div>' + jquery(this.me).find('.comboTemplate').html() + '</div>').html()}</ion-item>`;
+      }
+      else {
+        this.template = `<ion-item lines="full" onClick="${onClickFunction}" value="{{${this.valuefield}|JS}}" text="{{${this.displayfield}|HTMLATTR}}"><ion-icon class="flxCheckIcon" name="square-outline"></ion-icon><ion-label>{{${this.displayfield}}}</ion-label></ion-item>`;
+      }
+      let sentence = sql.addWhere(this.sqlsentence, this.filter);
+      sentence = sql.addWhere(sentence, this.additional);
+      if (this.value != null && this.value != "") {
+        //We create a where with the current values so we can get their descriptions after
+        let current_values_where;
+        if (this.tablename != null) {
+          current_values_where = `\`${this.tablename}\`.\`${this.valuefield}\` IN (`;
+        }
+        else {
+          current_values_where = `\`${this.valuefield}\`  IN (`;
+        }
+        let valuesArr = this.value.split(this.separator);
+        for (let i = 0; i < valuesArr.length; i++) {
+          current_values_where += `'${valuesArr[i]}'${i < valuesArr.length - 1 ? ', ' : ''}`;
+        }
+        current_values_where += ')';
+        sentence = sql.addWhere(sentence, current_values_where);
+        //After we have added the where to the sentence we consult it and get its descriptions
+        sql.getTable(sentence).then((tbl) => {
+          const input = jquery(this.me).find('ion-input');
+          input.find('div.multiValues').remove();
+          //We create the divs to show the values
+          let divValues = '', new_current_value = '';
+          const rows = sql.getRows(tbl);
+          if (rows.length) {
+            rows.forEach(value => {
+              divValues += `<div class="multiValue">${value[this.displayfield]}</div>`;
+              new_current_value += value[this.valuefield] + this.separator;
+            });
+          }
+          else if (first_load) {
+            //We only do this the first load so if there's an sql dependency it removes its values if they now do not appear
+            valuesArr.forEach(value => {
+              divValues += `<div class="multiValue">${value}</div>`;
+            });
+          }
+          divValues = `<div class="multiValues" style="width:${input.width()}px;" onclick="this.closest('ion-input').click();">${divValues}</div>`;
+          //We set the value removing the last separator and envelope all multiValue into the multiValues div and prepend it
+          if (new_current_value) {
+            this.value = new_current_value.slice(0, -1);
+          }
+          input.prepend(divValues);
+          this.updateItemContainerPosition();
+        });
+      }
+    }
+  }
+  async showItems() {
+    let component = `
+            <ion-fab vertical="top" horizontal="end" slot="fixed">
+                <ion-fab-button color="dark" class="close"">
+                    <ion-icon name="close"></ion-icon>
+                </ion-fab-button>
+            </ion-fab>
+            <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+                <ion-fab-button color="dark" class="save">
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                </ion-fab-button>
+            </ion-fab>
+            <ion-content class="placeholder">
+                <ion-header>
+                    <ion-searchbar cancel-button-text="${util.translate('msg.cancel')}" placeholder="${util.translate('list.search')}" mode="ios" autoselect="off" animated="true" ></ion-searchbar>
+                </ion-header>
+            </ion-content>
+        `;
+    const modal = await modalController.create({
+      component: 'ion-content'
+    });
+    let loadingSpinner = jquery('#loadingSpinnerModule');
+    loadingSpinner.css('visibility', 'visible');
+    modal.style.top = 'var(--ion-safe-area-top)';
+    await modal.present();
+    jquery(modal).find('.ion-page').html(component);
+    let list = document.createElement('flx-sqllist');
+    let sentence = sql.addWhere(this.sqlsentence, this.filter);
+    sentence = sql.addWhere(sentence, this.additional);
+    list.setAttribute("sqlsentence", sentence);
+    if (this.orderby) {
+      list.setAttribute("orderby", this.orderby);
+    }
+    jquery(list).append(jquery('<script class="bodyTemplate" type="text/template"></script>').text(this.template));
+    jquery(modal).find('.ion-page .placeholder').append(list);
+    let mBar = jquery(modal).find('ion-searchbar');
+    mBar.off('ionChange').on('ionChange', (ev) => {
+      if (mBar.val()) {
+        if (this.sqlfilter) {
+          list.params = [];
+          list.additional = parser.replaceAll(this.sqlfilter, '@findstringstarts', `'${mBar.val()}%'`);
+          list.additional = parser.replaceAll(list.additional, '@findstringends', `%'${mBar.val()}'`);
+          list.additional = parser.replaceAll(list.additional, '@findstringexact', `'${mBar.val()}'`);
+          list.additional = parser.replaceAll(list.additional, '@findstring', `'%${mBar.val()}%'`);
+        }
+        else {
+          list.params = ['%' + mBar.val() + '%'];
+          list.additional = `\`${this.displayfield}\` like ? `;
+        }
+      }
+      else {
+        list.params = [];
+        list.additional = null;
+      }
+      list.refresh(ev);
+    });
+    setTimeout(() => { mBar[0].setFocus(); }, 500);
+    jquery(modal).find('ion-fab-button.close').on('click', () => {
+      modal.dismiss();
+    });
+    jquery(modal).find('ion-fab-button.save').on('click', () => {
+      let values = '';
+      let input = jquery(this.me).find('ion-input');
+      let selected = jquery(modal).find('ion-item.multiSelected'), divValues = `<div class="multiValues" style="width:${input.width()}px;" onclick="this.closest('ion-input').click();">`;
+      for (let i = 0; i < selected.length; i++) {
+        const itm = selected[i];
+        values += itm.getAttribute('value') + (i < selected.length - 1 ? this.separator : '');
+        divValues += `<div class="multiValue">${itm.getAttribute('text')}</div>`;
+      }
+      this.value = values;
+      input.find('div.multiValues').remove();
+      input.prepend(divValues + '</div>');
+      modal.dismiss();
+      this.updateItemContainerPosition();
+    });
+    jquery(document).off('cancelSelect').on('cancelSelect', (_ev) => {
+      modal.dismiss();
+      jquery(document).off('select');
+      jquery(document).off('cancelSelect');
+    });
+    loadingSpinner.css('visibility', 'hidden');
+  }
+  cleanValue() {
+    this.value = '';
+    jquery(this.me).trigger('change');
+    this.me.querySelector('div.multiValues').remove();
+    this.updateItemContainerPosition();
+  }
+  updateItemContainerPosition() {
+    const ion_item = this.me.closest('ion-item');
+    if (ion_item) {
+      if (this.value)
+        ion_item.classList.add('item-has-value');
+      else
+        ion_item.classList.remove('item-has-value');
+    }
+  }
+  render() {
+    if (this.clearbutton == false) {
+      return ([h("ion-input", { disabled: this.disabled, type: "text", readonly: true, onClick: () => { !this.disabled ? this.showItems() : null; } })]);
+    }
+    else {
+      return ([h("ion-input", { disabled: this.disabled, type: "text", readonly: true, onClick: () => { !this.disabled ? this.showItems() : null; } }), h("ion-button", { disabled: this.disabled, onClick: () => { this.cleanValue(); }, shape: "round", slot: "end", color: "light" }, "x")
+      ]);
+    }
+  }
+  get me() { return getElement(this); }
+  static get watchers() { return {
+    "sqlsentence": ["sqlsentenceHandler"],
+    "sqlfilter": ["sqlfilterHandler"],
+    "additional": ["additionalHandler"],
+    "filter": ["filterlHandler"],
+    "value": ["valueHandler"]
+  }; }
+};
+FlxMulticombo.style = flxMulticomboCss;
+
+export { FlxMulticombo as flx_multicombo };

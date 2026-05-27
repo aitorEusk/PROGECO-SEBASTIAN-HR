@@ -1,0 +1,17 @@
+.flex{
+	display: flex;
+}
+
+.flex-vertical-center {
+    display: flex;
+    align-items: center;
+	height: 100%;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.bold{
+    font-weight: bold;
+}
