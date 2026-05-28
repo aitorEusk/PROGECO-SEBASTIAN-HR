@@ -311,6 +311,22 @@ Update [Objects_Properties_Dependencies] set [flxUpdatedDate]='2026-05-25T13:25:
 Update [Objects_Properties_Dependencies] set [Active]=0 where [ObjectName]=N'emp_Holidays_Type' AND [PropertyName]=N'GroupId' AND [DependingPropertyName]=N'CounterTypeId'
 Update [Objects_Properties_Dependencies] set [flxUpdatedDate]='2026-05-25T13:25:00' where [ObjectName]=N'emp_Holidays_Type' AND [PropertyName]=N'GroupId' AND [DependingPropertyName]=N'CounterTypeId'
 Update [Objects_Templates] set [IsDefault]=0 where [TemplateId]=N'emp_EmployeeListTemplate_2'
+Update [Objects_Search] set [SQLSentence]='( EXISTS (
+ SELECT * FROM [dbo].[Employees] FlxTblFilter 
+ LEFT JOIN (Select Department, Descrip from Departments ) [FlxCmb1] ON [FlxCmb1].[Department]=[Employees].[Department] 
+ LEFT JOIN (Select Office, Descrip from Offices ) [FlxCmb2] ON [FlxCmb2].[Office]=[Employees].[Office] 
+
+ WHERE ( CONVERT(varchar,[Employees].[EmployeeId])  Like {~@Param1|16|200|FindString~} 
+ or  [Employees].[Name]  LIKE {~@Param2|16|122|FindString~} 
+ or  [Employees].[Surname]  LIKE {~@Param3|16|122|FindString~} 
+ or  [FlxCmb1].[Descrip]  LIKE {~@Param4|16|200|FindString~} 
+ or  [FlxCmb2].[Descrip]  LIKE {~@Param5|16|200|FindString~} 
+)
+ AND  [Employees].[EmployeeId] = [FlxTblFilter].[EmployeeId] 
+
+))
+' where [SearchId]=N'E2B8C337-860F-4958-A5F8-E8D9E0DF1EB7'
+Update [Objects_Search] set [Name]='Propiedades' where [SearchId]=N'F31EBB1A-5B25-4B5D-A720-17DF80543743'
 Update [Objects_Views] set [IsDefault]=0 where [ObjectName]=N'emp_Employee' AND [ViewName]=N'vHR_EmployeesCombo'
 Update [Pages_Modules] set [LayoutPositionId]='CenterRightPosition' where [PageName]=N'emp_MyCV' AND [ModuleName]=N'emp_EmployeeChatter'
 Update [Pages_Modules] set [Order]=11 where [PageName]=N'emp_MyCV' AND [ModuleName]=N'emp_EmployeeChatter'
@@ -329,6 +345,8 @@ Update [ToolBars_Buttons] set [Disabled]=1 where [ButtonId]=N'7B71AFF7-2DD2-4A25
 Update [ToolBars_Buttons] set [flxUpdatedDate]='2026-05-25T13:25:00' where [ButtonId]=N'7B71AFF7-2DD2-4A25-888C-491068DBF091'
 Update [ToolBars_Buttons] set [Disabled]=1 where [ButtonId]=N'ADE4B7CD-D59C-4643-8EEF-A405BA27B45A'
 Update [ToolBars_Buttons] set [flxUpdatedDate]='2026-05-25T13:25:00' where [ButtonId]=N'ADE4B7CD-D59C-4643-8EEF-A405BA27B45A'
+Update [ToolBars_Buttons] set [SQLEnabled]='SELECT CASE WHEN ''{{CurrentRoleId}}'' IN (''admins'',''hresources'',''hresourcesLow'',''PERS_ADMIN_PROGECO'') THEN 1 ELSE 0 END' where [ButtonId]=N'C332D43F-3AEC-4805-8021-886FE9CFD352'
+Update [ToolBars_Buttons] set [flxUpdatedDate]='2026-05-28T15:37:00' where [ButtonId]=N'C332D43F-3AEC-4805-8021-886FE9CFD352'
 Update [ToolBars_Buttons] set [flxUpdatedDate]='2026-05-25T13:25:00' where [ButtonId]=N'C7878721-7F85-4DB7-83D4-AA769E6F84FF'
 Update [ToolBars_Buttons] set [Disabled]=1 where [ButtonId]=N'd4fda67c-93be-4c62-baf6-e1d7ecbfb197'
 Update [ToolBars_Buttons] set [flxUpdatedDate]='2026-05-25T13:25:00' where [ButtonId]=N'd4fda67c-93be-4c62-baf6-e1d7ecbfb197'

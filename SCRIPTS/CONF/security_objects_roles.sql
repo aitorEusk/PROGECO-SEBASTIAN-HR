@@ -414,6 +414,21 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"ObjectName":"emp_Employee_Team",
+	"RoleId":"PERS_ADMIN_PROGECO",
+	"CanView":true,
+	"CanViewCollection":true,
+	"CanInsert":true,
+	"CanEdit":true,
+	"CanDelete":true,
+	"CanPrint":true,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-05-28T15:45:00",
+	"flxUpdatedDate":"2026-05-28T15:45:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"ObjectName":"emp_EmployeePersonalData",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":true,
