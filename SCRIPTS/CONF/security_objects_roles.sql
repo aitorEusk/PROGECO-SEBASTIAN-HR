@@ -1140,6 +1140,23 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"ObjectName":"SysModule",
+	"RoleId":"PERS_ADMIN_PROGECO",
+	"CanView":true,
+	"CanViewCollection":true,
+	"CanInsert":true,
+	"CanEdit":true,
+	"EditFilter":"Modules.OriginId<>0 OR dbo.funNet_GetOrigin()=0",
+	"CanDelete":true,
+	"DeleteFilter":"Modules.OriginId<>0 OR dbo.funNet_GetOrigin()=0",
+	"CanPrint":true,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-06-01T08:58:00",
+	"flxUpdatedDate":"2026-06-01T08:58:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"ObjectName":"sysObject",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":true,

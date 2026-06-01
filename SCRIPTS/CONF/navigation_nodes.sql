@@ -4,9 +4,27 @@ BEGIN TRY
 
 DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar(max),''),N'
 [{
+	"NodeId":"57FB4836-4010-431E-BC0C-835BA9A0F41C",
+	"ParentNodeId":"0ED1F46B-3832-445A-8129-A1AE75AB606F",
+	"Order":8,
+	"Title":"Canal denuncias",
+	"IconName":"Complaint Channel",
+	"Descrip":"Canal  denuncias",
+	"TypeId":"external_page",
+	"Url":"https:\/\/cd.ahora.es\/Index?u=ew0KICAibmF2aWdhdGVGdW4iOiAib3BlbnBhZ2VuYW1lIiwNCiAgInBhZ2VuYW1lIjogImNjX3BvcnRhbF9ob21lIiwNCiAgInRhcmdldGlkIjogIm1haW4iLA0KICAib2JqZWN0bmFtZSI6ICJjY19jb21wYW55IiwNCiAgIm9iamVjdHdoZXJlIjogIkNvbXBhbmllcy5Db21wYW55SWQgPSAnMUI0M0Y2MEEtRTAyMC00MEU2LTlDNUItNDdDMzRFQUExQkVFJyIsDQogICJkZWZhdWx0cyI6ICJ7J0NvbXBhbnlJZCc6JzFCNDNGNjBBLUUwMjAtNDBFNi05QzVCLTQ3QzM0RUFBMUJFRSd9Ig0KfQ==",
+	"TargetId":"current",
+	"BadgeRefresh":0,
+	"Enabled":true,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-05-29T16:01:00",
+	"flxUpdatedDate":"2026-05-29T16:01:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"NodeId":"92854290-D0CE-4890-A190-94BB80404DD7",
 	"ParentNodeId":"0ED1F46B-3832-445A-8129-A1AE75AB606F",
-	"Order":0,
+	"Order":1,
 	"Title":"Notificaciones",
 	"IconName":"bell-2",
 	"Descrip":"Notificaciones",

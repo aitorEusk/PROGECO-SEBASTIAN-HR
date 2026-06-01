@@ -4,6 +4,52 @@ BEGIN TRY
 
 DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar(max),''),N'
 [{
+	"ObjectName":"emp_Suggestion_Mailbox",
+	"PropertyName":"TypeId",
+	"DependingPropertyName":"Anonymous_suggestion",
+	"Order":2,
+	"Active":true,
+	"HiddenValues":"complain",
+	"ConnStringId":"DataConnectionString",
+	"Offline":false,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-05-29T13:57:00",
+	"flxUpdatedDate":"2026-05-29T13:57:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"ObjectName":"emp_Suggestion_Mailbox",
+	"PropertyName":"TypeId",
+	"DependingPropertyName":"ComplaintTypeId",
+	"Order":3,
+	"Active":true,
+	"VisibleValues":"complain",
+	"RequiredValues":"complain",
+	"ConnStringId":"DataConnectionString",
+	"Offline":false,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-05-29T13:57:00",
+	"flxUpdatedDate":"2026-05-29T13:57:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"ObjectName":"emp_Suggestion_Mailbox",
+	"PropertyName":"TypeId",
+	"DependingPropertyName":"Public",
+	"Order":1,
+	"Active":false,
+	"HiddenValues":"complain",
+	"ConnStringId":"DataConnectionString",
+	"Offline":false,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-05-29T13:57:00",
+	"flxUpdatedDate":"2026-05-29T13:57:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"ObjectName":"sysUser",
 	"PropertyName":"Reference",
 	"DependingPropertyName":"Email",

@@ -46,6 +46,19 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"ModuleEventId":"88192ab0-dee1-4b39-a693-55ecfe35aeef",
+	"ModuleName":"PERS_HR_Documents_EmployeeSpace",
+	"EventClass":"document",
+	"EventType":"uploaded",
+	"EventAction":"refresh",
+	"Active":true,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-06-01T11:02:00",
+	"flxUpdatedDate":"2026-06-01T11:02:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"ModuleEventId":"965cc406-ad5a-4191-b9f8-6e580806ca8e",
 	"ModuleName":"Pers_Notificacion_View_Module",
 	"EventClass":"entity",
@@ -56,6 +69,32 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"flxUpdatedBy":"admin",
 	"flxInsertedDate":"2025-03-04T21:43:00",
 	"flxUpdatedDate":"2025-03-04T21:43:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"ModuleEventId":"c33b07ee-76d7-44e1-9e37-21711e47c971",
+	"ModuleName":"PERS_HR_Documents_EmployeeSpace",
+	"EventClass":"document",
+	"EventType":"updated",
+	"EventAction":"refresh",
+	"Active":true,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-06-01T11:01:00",
+	"flxUpdatedDate":"2026-06-01T11:01:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"ModuleEventId":"c74a1eec-610d-4b01-99e5-b438e1c76b9f",
+	"ModuleName":"PERS_HR_Documents_EmployeeSpace",
+	"EventClass":"document",
+	"EventType":"deleted",
+	"EventAction":"refresh",
+	"Active":true,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-06-01T11:01:00",
+	"flxUpdatedDate":"2026-06-01T11:01:00",
 	"OriginAddonId":"Main",
 	"OriginId":2}]')
 
