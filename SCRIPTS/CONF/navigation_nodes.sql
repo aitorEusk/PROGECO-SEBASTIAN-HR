@@ -4,9 +4,29 @@ BEGIN TRY
 
 DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar(max),''),N'
 [{
-	"NodeId":"57FB4836-4010-431E-BC0C-835BA9A0F41C",
+	"NodeId":"B85466A8-A52C-48FF-83BD-00E1EC2D1D79",
 	"ParentNodeId":"0ED1F46B-3832-445A-8129-A1AE75AB606F",
 	"Order":8,
+	"Title":"Equipos",
+	"IconName":"team-management",
+	"Descrip":"Equipos",
+	"TypeId":"object",
+	"TargetId":"current",
+	"PageTypeId":"list",
+	"ObjectName":"emp_Teams",
+	"ObjectWhere":"(Teams.InsertedBy ={{CurrentReference}}) OR (Teams.TeamId in (SELECT TeamId FROM Employees_Teams WHERE EmployeeId = {{CurrentReference}})  AND ISNULL(Teams.Disabled,0) = 0 AND ISNULL(Teams.[Private],0) = 0) OR (''{{CurrentRoleId}}'' in (''admins'',''hresources'',''hresourcesLow'',''PERS_ADMIN_PROGECO''))",
+	"BadgeRefresh":0,
+	"Enabled":true,
+	"flxInsertedBy":"admin",
+	"flxUpdatedBy":"admin",
+	"flxInsertedDate":"2026-06-03T13:46:00",
+	"flxUpdatedDate":"2026-06-03T13:46:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"57FB4836-4010-431E-BC0C-835BA9A0F41C",
+	"ParentNodeId":"0ED1F46B-3832-445A-8129-A1AE75AB606F",
+	"Order":9,
 	"Title":"Canal denuncias",
 	"IconName":"Complaint Channel",
 	"Descrip":"Canal  denuncias",

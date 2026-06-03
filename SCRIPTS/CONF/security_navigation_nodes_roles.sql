@@ -344,6 +344,106 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"OriginAddonId":"Main",
 	"OriginId":2
 },{
+	"NodeId":"908C5B82-8A17-416A-B671-89B452CC6AB5",
+	"RoleId":"access-points",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-06-03T11:46:00",
+	"flxUpdatedDate":"2026-06-03T11:46:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"908C5B82-8A17-416A-B671-89B452CC6AB5",
+	"RoleId":"admins",
+	"CanView":true,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-06-03T11:46:00",
+	"flxUpdatedDate":"2026-06-03T11:46:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"908C5B82-8A17-416A-B671-89B452CC6AB5",
+	"RoleId":"allUsers",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-06-03T11:47:00",
+	"flxUpdatedDate":"2026-06-03T11:47:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"908C5B82-8A17-416A-B671-89B452CC6AB5",
+	"RoleId":"HR_Manager",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-06-03T11:47:00",
+	"flxUpdatedDate":"2026-06-03T11:47:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"908C5B82-8A17-416A-B671-89B452CC6AB5",
+	"RoleId":"hresources",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-06-03T11:47:00",
+	"flxUpdatedDate":"2026-06-03T11:47:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"908C5B82-8A17-416A-B671-89B452CC6AB5",
+	"RoleId":"hresourcesLow",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-06-03T11:47:00",
+	"flxUpdatedDate":"2026-06-03T11:47:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"908C5B82-8A17-416A-B671-89B452CC6AB5",
+	"RoleId":"notRegistered",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-06-03T11:47:00",
+	"flxUpdatedDate":"2026-06-03T11:47:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"908C5B82-8A17-416A-B671-89B452CC6AB5",
+	"RoleId":"PERS_ADMIN_PROGECO",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-06-03T11:46:00",
+	"flxUpdatedDate":"2026-06-03T11:46:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"908C5B82-8A17-416A-B671-89B452CC6AB5",
+	"RoleId":"registered",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-06-03T11:47:00",
+	"flxUpdatedDate":"2026-06-03T11:47:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
+	"NodeId":"908C5B82-8A17-416A-B671-89B452CC6AB5",
+	"RoleId":"users",
+	"CanView":false,
+	"flxInsertedBy":"unknown",
+	"flxUpdatedBy":"unknown",
+	"flxInsertedDate":"2026-06-03T11:47:00",
+	"flxUpdatedDate":"2026-06-03T11:47:00",
+	"OriginAddonId":"Main",
+	"OriginId":2
+},{
 	"NodeId":"BA322241-F49A-465F-8153-8D8F7454759B",
 	"RoleId":"PERS_ADMIN_PROGECO",
 	"CanView":false,

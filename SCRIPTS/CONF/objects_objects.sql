@@ -4,38 +4,6 @@ BEGIN TRY
 
 DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar(max),''),N'
 [{
-	"ObjectName":"emp_Employee",
-	"ChildCollection":"sysChatters",
-	"ObjectRelation":"EmployeeId=DestinationObjectId|''emp_Employee''=DestinationObjectName",
-	"ObjectDefaults":"EmployeeId=DestinationObjectId|''emp_Employee''=DestinationObjectName",
-	"ShowInMenu":true,
-	"ShowInAnalysis":false,
-	"OneToOneRelation":false,
-	"Order":0,
-	"RemoveOnDelete":true,
-	"flxInsertedBy":"admin",
-	"flxUpdatedBy":"admin",
-	"flxInsertedDate":"2026-05-25T15:57:00",
-	"flxUpdatedDate":"2026-05-25T15:57:00",
-	"OriginAddonId":"Main",
-	"OriginId":2
-},{
-	"ObjectName":"emp_Employee",
-	"ChildCollection":"sysObjectImages",
-	"ObjectRelation":"EmployeeId=ObjectId|''emp_Employee''=ObjectName",
-	"ObjectDefaults":"EmployeeId=ObjectId|''emp_Employee''=ObjectName",
-	"ShowInMenu":true,
-	"ShowInAnalysis":false,
-	"OneToOneRelation":false,
-	"Order":0,
-	"RemoveOnDelete":true,
-	"flxInsertedBy":"unknown",
-	"flxUpdatedBy":"unknown",
-	"flxInsertedDate":"2026-05-25T14:51:00",
-	"flxUpdatedDate":"2026-05-25T14:51:00",
-	"OriginAddonId":"Main",
-	"OriginId":2
-},{
 	"ObjectName":"emp_Employee_ContractData",
 	"ChildCollection":"sysObjectImages",
 	"ObjectRelation":"ContractId=ObjectId|''emp_Employee_ContractData''=ObjectName",
@@ -49,38 +17,6 @@ DECLARE @DATA nvarchar(max)  = convert(nvarchar(max),'')+concat(convert(nvarchar
 	"flxUpdatedBy":"unknown",
 	"flxInsertedDate":"2026-05-27T12:40:00",
 	"flxUpdatedDate":"2026-05-27T12:40:00",
-	"OriginAddonId":"Main",
-	"OriginId":2
-},{
-	"ObjectName":"emp_Part_Expenses",
-	"ChildCollection":"sysObjectImages",
-	"ObjectRelation":"PartId=ObjectId|''emp_Part_Expenses''=ObjectName",
-	"ObjectDefaults":"PartId=ObjectId|''emp_Part_Expenses''=ObjectName",
-	"ShowInMenu":true,
-	"ShowInAnalysis":false,
-	"OneToOneRelation":false,
-	"Order":0,
-	"RemoveOnDelete":true,
-	"flxInsertedBy":"unknown",
-	"flxUpdatedBy":"unknown",
-	"flxInsertedDate":"2026-05-25T14:51:00",
-	"flxUpdatedDate":"2026-05-25T14:51:00",
-	"OriginAddonId":"Main",
-	"OriginId":2
-},{
-	"ObjectName":"emp_Suggestion_Mailbox",
-	"ChildCollection":"sysObjectImages",
-	"ObjectRelation":"SuggestionId=ObjectId|''emp_Suggestion_Mailbox''=ObjectName",
-	"ObjectDefaults":"SuggestionId=ObjectId|''emp_Suggestion_Mailbox''=ObjectName",
-	"ShowInMenu":true,
-	"ShowInAnalysis":false,
-	"OneToOneRelation":false,
-	"Order":0,
-	"RemoveOnDelete":true,
-	"flxInsertedBy":"unknown",
-	"flxUpdatedBy":"unknown",
-	"flxInsertedDate":"2026-05-25T14:51:00",
-	"flxUpdatedDate":"2026-05-25T14:51:00",
 	"OriginAddonId":"Main",
 	"OriginId":2}]')
 
