@@ -1,4 +1,11 @@
-﻿Update [Objects_Search] set [SQLSentence]='( EXISTS (
+﻿Update [AspNetRoles] set [Hidden]=1 where [Id]=N'admins'
+Update [AspNetUsers] set [Email]='sebastian@euskodata.com' where [Id]=N'1'
+Update [AspNetUsers] set [NormalizedEmail]='SEBASTIAN@EUSKODATA.COM' where [Id]=N'1'
+Update [AspNetUsers] set [PasswordHash]='AEdQTjgpHt65HUjftBJiPaoLhwkKjH1YhrlMq1Mpy/x5vsfckbkHg9c8xlAr7itgIw==' where [Id]=N'1'
+Update [AspNetUsers] set [CultureId]='es-ES' where [Id]=N'1'
+Update [AspNetUsers] set [flxUpdatedDate]='2026-05-27T12:46:00' where [Id]=N'1'
+Update [Documents_Category] set [Category]='Genérico' where [CategoryId]=N'sysdoc-generic'
+Update [Objects_Search] set [SQLSentence]='( EXISTS (
  SELECT * FROM [dbo].[AspNetUsers] FlxTblFilter 
  LEFT JOIN (Select Id, Name from ASPNetRoles where Hidden=0 ) [FlxCmb1] ON [FlxCmb1].[Id]=[AspNetUsers].[RoleId] 
  LEFT JOIN (SELECT [ProfileName], [Descrip] from AspNetProfiles ) [FlxCmb2] ON [FlxCmb2].[ProfileName]=[AspNetUsers].[ProfileName] 
@@ -14,10 +21,3 @@
 
 ))
 ' where [SearchId]=N'53AFF8FC-5D04-4358-9B17-8302EF6E25D8'
-Update [AspNetRoles] set [Hidden]=1 where [Id]=N'admins'
-Update [AspNetUsers] set [Email]='sebastian@euskodata.com' where [Id]=N'1'
-Update [AspNetUsers] set [NormalizedEmail]='SEBASTIAN@EUSKODATA.COM' where [Id]=N'1'
-Update [AspNetUsers] set [PasswordHash]='AEdQTjgpHt65HUjftBJiPaoLhwkKjH1YhrlMq1Mpy/x5vsfckbkHg9c8xlAr7itgIw==' where [Id]=N'1'
-Update [AspNetUsers] set [CultureId]='es-ES' where [Id]=N'1'
-Update [AspNetUsers] set [flxUpdatedDate]='2026-05-27T12:46:00' where [Id]=N'1'
-Update [Documents_Category] set [Category]='Genérico' where [CategoryId]=N'sysdoc-generic'
