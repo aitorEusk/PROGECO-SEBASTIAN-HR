@@ -1,4 +1,6 @@
-﻿Update [Objects_Search] set [SQLSentence]='( EXISTS (
+﻿Update [Objects] set [flxUpdatedDate]='2026-06-03T15:24:00' where [ObjectName]=N'sysObject'
+Update [Objects_Search] set [Name]='Propiedades' where [SearchId]=N'3FCB5A50-DDCC-4E95-86BC-2CB55A7FC6FB'
+Update [Objects_Search] set [SQLSentence]='( EXISTS (
  SELECT * FROM [dbo].[AspNetUsers] FlxTblFilter 
  LEFT JOIN (Select Id, Name from ASPNetRoles where Hidden=0 ) [FlxCmb1] ON [FlxCmb1].[Id]=[AspNetUsers].[RoleId] 
  LEFT JOIN (SELECT [ProfileName], [Descrip] from AspNetProfiles ) [FlxCmb2] ON [FlxCmb2].[ProfileName]=[AspNetUsers].[ProfileName] 
